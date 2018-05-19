@@ -1,1 +1,8 @@
 "Wind, Synthesized, A.wav" by InspectorJ of Freesound.org
+Various game assets (Cross Hairs) by Kenny, www.kenney.nl
+Placeholder (because it's copyrighted) music "In The Sky" by Viceroy
+Placeholder music "Nazca" by DJ Deku
+Orange_Juice for the initial game idea + assets from Acceleration of Suguri 2
+GDQuest for Godot tutorials
+Godot Engine
+Godot community
