@@ -1,0 +1,18 @@
+[remap]
+
+importer="ogg_vorbis"
+type="AudioStreamOGGVorbis"
+path="res://.import/2. Nazca - DEKU (Realism.).ogg-b193741130dbd122d83f4e53b4ef9be1.oggstr"
+
+[deps]
+
+source_file="res://music/2. Nazca - DEKU (Realism.).ogg"
+source_md5="4d6bef610270c7b99b2839b93fde98f4"
+
+dest_files=[ "res://.import/2. Nazca - DEKU (Realism.).ogg-b193741130dbd122d83f4e53b4ef9be1.oggstr" ]
+dest_md5="43d96b667f4e298f5c108c1696a18754"
+
+[params]
+
+loop=true
+loop_offset=0

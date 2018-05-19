@@ -1,0 +1,36 @@
+[gd_scene load_steps=3 format=2]
+
+[ext_resource path="res://characters/player/star_breaker/weapon/fire_trail.gd" type="Script" id=1]
+
+
+
+[sub_resource type="Gradient" id=1]
+
+offsets = PoolRealArray( 0, 0.254438, 1 )
+colors = PoolColorArray( 0.737488, 0.0117188, 1, 0, 0.996094, 0.525284, 0.889426, 0.425412, 1, 1, 1, 1 )
+
+[node name="FireTrail" type="Line2D"]
+
+points = PoolVector2Array(  )
+width = 20.0
+default_color = Color( 1, 0.664063, 0.876648, 1 )
+gradient = SubResource( 1 )
+texture_mode = 1039858427
+begin_cap_mode = 1
+sharp_limit = 2.0
+round_precision = 8
+script = ExtResource( 1 )
+_sections_unfolded = [ "Border", "Capping", "Fill", "Transform" ]
+target_path = null
+trail_length = 40.0
+
+[node name="TrailTimer" type="Timer" parent="." index="0"]
+
+process_mode = 1
+wait_time = 0.01
+one_shot = false
+autostart = true
+
+[connection signal="timeout" from="TrailTimer" to="." method="_on_TrailTimer_timeout"]
+
+

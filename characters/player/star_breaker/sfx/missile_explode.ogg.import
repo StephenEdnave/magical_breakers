@@ -1,0 +1,18 @@
+[remap]
+
+importer="ogg_vorbis"
+type="AudioStreamOGGVorbis"
+path="res://.import/missile_explode.ogg-04bc2f401de2e82e67f8cb8abbfbbcd9.oggstr"
+
+[deps]
+
+source_file="res://characters/player/star_breaker/sfx/missile_explode.ogg"
+source_md5="a4530454aadce76d04f766c2d7bbd05c"
+
+dest_files=[ "res://.import/missile_explode.ogg-04bc2f401de2e82e67f8cb8abbfbbcd9.oggstr" ]
+dest_md5="d6a8f711321537e905529ae2f321e460"
+
+[params]
+
+loop=false
+loop_offset=0

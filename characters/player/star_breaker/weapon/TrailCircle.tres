@@ -1,0 +1,16 @@
+[gd_resource type="ShaderMaterial" load_steps=2 format=2]
+
+[ext_resource path="res://characters/player/star_breaker/weapon/TrailCircle.shader" type="Shader" id=1]
+
+[resource]
+
+render_priority = 0
+shader = ExtResource( 1 )
+shader_param/blend = null
+shader_param/circle_count = null
+shader_param/circle_thickness = null
+shader_param/circle_radius = null
+shader_param/radius_range = null
+shader_param/box = null
+_sections_unfolded = [ "shader_param" ]
+

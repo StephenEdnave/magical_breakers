@@ -1,0 +1,18 @@
+[remap]
+
+importer="ogg_vorbis"
+type="AudioStreamOGGVorbis"
+path="res://.import/sprite_shoot.ogg-2700881f97866d72a9d53b287da861f9.oggstr"
+
+[deps]
+
+source_file="res://sfx/sprite_shoot.ogg"
+source_md5="c2259776d01618bdb848d8d0f3dd3308"
+
+dest_files=[ "res://.import/sprite_shoot.ogg-2700881f97866d72a9d53b287da861f9.oggstr" ]
+dest_md5="ca812880dc9ce2839085cfe723fa220c"
+
+[params]
+
+loop=false
+loop_offset=0

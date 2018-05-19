@@ -1,0 +1,32 @@
+[remap]
+
+importer="texture"
+type="StreamTexture"
+path="res://.import/sb_rng00 copy.png-35e462d2ae6ba05d7c14142263f16116.stex"
+
+[deps]
+
+source_file="res://characters/player/star_breaker/sprites/sb_rng00 copy.png"
+source_md5="246df03de1e7dcf7dc8c4ac36ff91669"
+
+dest_files=[ "res://.import/sb_rng00 copy.png-35e462d2ae6ba05d7c14142263f16116.stex" ]
+dest_md5="2b0aa65fd08611bfee8d92165063152e"
+
+[params]
+
+compress/mode=0
+compress/lossy_quality=0.7
+compress/hdr_mode=0
+compress/normal_map=0
+flags/repeat=0
+flags/filter=true
+flags/mipmaps=false
+flags/anisotropic=false
+flags/srgb=2
+process/fix_alpha_border=true
+process/premult_alpha=false
+process/HDR_as_SRGB=false
+stream=false
+size_limit=0
+detect_3d=true
+svg/scale=1.0

@@ -1,0 +1,16 @@
+[gd_scene load_steps=2 format=2]
+
+[ext_resource path="res://objects/miscellaneous/crosshairs/sprites/crosshair033.png" type="Texture" id=1]
+
+[node name="TargetReticle" type="Node2D"]
+
+[node name="BodyPivot" type="Position2D" parent="." index="0"]
+
+[node name="Body" type="Sprite" parent="BodyPivot" index="0"]
+
+modulate = Color( 0.909973, 1, 0.902344, 1 )
+z_index = 6
+texture = ExtResource( 1 )
+_sections_unfolded = [ "Transform", "Visibility", "Z Index" ]
+
+

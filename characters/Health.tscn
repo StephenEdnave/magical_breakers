@@ -1,0 +1,33 @@
+[gd_scene load_steps=2 format=2]
+
+[ext_resource path="res://characters/health.gd" type="Script" id=1]
+
+[node name="Health" type="Node"]
+
+script = ExtResource( 1 )
+max_health = 5
+
+[node name="PoisonTimer" type="Timer" parent="." index="0"]
+
+process_mode = 1
+wait_time = 1.0
+one_shot = false
+autostart = false
+
+[node name="BurnTimer" type="Timer" parent="." index="1"]
+
+process_mode = 1
+wait_time = 1.0
+one_shot = false
+autostart = false
+
+[node name="HitPauseTimer" type="Timer" parent="." index="2"]
+
+pause_mode = 2
+process_mode = 1
+wait_time = 0.06
+one_shot = true
+autostart = false
+_sections_unfolded = [ "Pause" ]
+
+

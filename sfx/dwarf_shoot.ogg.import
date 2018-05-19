@@ -1,0 +1,18 @@
+[remap]
+
+importer="ogg_vorbis"
+type="AudioStreamOGGVorbis"
+path="res://.import/dwarf_shoot.ogg-70b8bf710264959e99e6a263e00af6dd.oggstr"
+
+[deps]
+
+source_file="res://sfx/dwarf_shoot.ogg"
+source_md5="bc95eeeab909d3381081b5450b16cec2"
+
+dest_files=[ "res://.import/dwarf_shoot.ogg-70b8bf710264959e99e6a263e00af6dd.oggstr" ]
+dest_md5="ddb21624bea5056e2e86aa49e53f87b6"
+
+[params]
+
+loop=false
+loop_offset=0

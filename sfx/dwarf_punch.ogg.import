@@ -1,0 +1,18 @@
+[remap]
+
+importer="ogg_vorbis"
+type="AudioStreamOGGVorbis"
+path="res://.import/dwarf_punch.ogg-bd08c07814342439dcddce53c15f602a.oggstr"
+
+[deps]
+
+source_file="res://sfx/dwarf_punch.ogg"
+source_md5="4a1b17f02e0857a353079af4e57d3be6"
+
+dest_files=[ "res://.import/dwarf_punch.ogg-bd08c07814342439dcddce53c15f602a.oggstr" ]
+dest_md5="eb5bf3c93deb972205d7e87910eca444"
+
+[params]
+
+loop=false
+loop_offset=0
