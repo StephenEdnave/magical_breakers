@@ -6,7 +6,7 @@
 [ext_resource path="res://textures/transitions/Transitions.tscn" type="PackedScene" id=4]
 [ext_resource path="res://music/2. Nazca - DEKU (Realism.).ogg" type="AudioStream" id=5]
 
-[node name="MainMenu" type="Node2D"]
+[node name="MainMenu" type="Node2D" index="0"]
 
 script = ExtResource( 1 )
 
