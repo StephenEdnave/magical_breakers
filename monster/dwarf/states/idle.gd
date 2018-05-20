@@ -28,7 +28,7 @@ func handle_input(host, event):
 
 
 func update(host, delta):
-	if host.position.distance_to(host.target_position) < SPOT_RANGE:
+	if host.global_position.distance_to(host.target_position) < SPOT_RANGE:
 		if not host.has_target:
 			return
 		return SPOT

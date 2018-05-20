@@ -102,4 +102,4 @@ func _on_animation_finished(name):
 
 
 func position_changed():
-	emit_signal("position_changed", position)
+	emit_signal("position_changed", global_position)

@@ -5,26 +5,30 @@ extends Node2D
 # var b = "textvar"
 
 func _ready():
-	$CanvasLayer/MainMenuContainer/PlayButton.connect("button_down", self, "_on_PlayButton_button_down")
-	$CanvasLayer/MainMenuContainer/HowToPlayButton.connect("button_down", self, "_on_HowToPlayButton_button_down")
-	$CanvasLayer/MainMenuContainer/ExitButton.connect("button_down", self, "_on_ExitButton_button_down")
+	$CanvasLayer/MainMenuContainer/Buttons/PlayButton.connect("button_down", self, "_on_PlayButton_button_down")
+	$CanvasLayer/MainMenuContainer/Buttons/HowToPlayButton.connect("button_down", self, "_on_HowToPlayButton_button_down")
+	$CanvasLayer/MainMenuContainer/Buttons/ExitButton.connect("button_down", self, "_on_ExitButton_button_down")
 	$CanvasLayer/HowToPlayMenuContainer/ReturnButton.connect("button_down", self, "_on_ReturnButton_button_down")
 
 
 func _on_PlayButton_button_down():
-	$Music.stop()
+	$Tween.interpolate_property($Music, "volume_db", $Music.volume_db, -100.0, 1, Tween.TRANS_QUAD, Tween.EASE_IN)
+	$Tween.start()
+	$ButtonPress.play()
+	$AnimationPlayer.play("main_menu_to_how_to_play")
 	$CanvasLayer/Transitions.fade_in("res://Level.tscn")
 
 
 func _on_HowToPlayButton_button_down():
-	$CanvasLayer/HowToPlayMenuContainer.visible = true
-	$CanvasLayer/MainMenuContainer.visible = false
+	$ButtonPress.play()
+	$AnimationPlayer.play("main_menu_to_how_to_play")
 
 
 func _on_ExitButton_button_down():
+	$ButtonPress.play()
 	get_tree().quit()
 
 
 func _on_ReturnButton_button_down():
-	$CanvasLayer/MainMenuContainer.visible = true
-	$CanvasLayer/HowToPlayMenuContainer.visible = false
+	$ButtonPress.play()
+	$AnimationPlayer.play("how_to_play_to_main_menu")

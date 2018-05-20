@@ -49,7 +49,7 @@ func _ready():
 
 
 func follow(velocity, target_position, max_speed):
-	var desired_velocity = (target_position - position).normalized() * max_speed
+	var desired_velocity = (target_position - global_position).normalized() * max_speed
 
 	var push = calculate_avoid_force(desired_velocity)
 	var steering = (desired_velocity - velocity + push) / MASS
@@ -60,7 +60,7 @@ func follow(velocity, target_position, max_speed):
 func arrive_to(velocity, target_position, slow_radius=DEFAULT_SLOW_RADIUS, max_speed=DEFAULT_MAX_SPEED, avoid=false):
 	var distance_to_target = position.distance_to(target_position)
 
-	var desired_velocity = (target_position - position).normalized() * max_speed
+	var desired_velocity = (target_position - global_position).normalized() * max_speed
 	if distance_to_target < slow_radius:
 		desired_velocity *= (distance_to_target / slow_radius) * .75 + .25
 

@@ -736,8 +736,6 @@ SPOT_RANGE = 400.0
 
 [node name="States" type="Node" parent="." index="0"]
 
-editor/display_folded = true
-
 [node name="Idle" type="Node" parent="States" index="0"]
 
 script = ExtResource( 2 )

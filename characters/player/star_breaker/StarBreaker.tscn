@@ -1,4 +1,4 @@
-[gd_scene load_steps=64 format=2]
+[gd_scene load_steps=65 format=2]
 
 [ext_resource path="res://characters/Character.tscn" type="PackedScene" id=1]
 [ext_resource path="res://characters/player/player.gd" type="Script" id=2]
@@ -50,6 +50,7 @@
 [ext_resource path="res://characters/player/star_breaker/weapon/weapon_pivot.gd" type="Script" id=48]
 [ext_resource path="res://sfx/dash.ogg" type="AudioStream" id=49]
 [ext_resource path="res://sfx/sprite_explode.ogg" type="AudioStream" id=50]
+[ext_resource path="res://sfx/lock_on.wav" type="AudioStream" id=51]
 
 [sub_resource type="Animation" id=1]
 
@@ -727,10 +728,6 @@ tracks/3/keys = {
 script = ExtResource( 2 )
 _sections_unfolded = [ "Collision", "Material", "Transform", "Visibility", "Z Index", "collision" ]
 
-[node name="States" parent="." index="0"]
-
-editor/display_folded = true
-
 [node name="Idle" parent="States" index="0"]
 
 script = ExtResource( 3 )
@@ -836,7 +833,15 @@ autoplay = false
 mix_target = 0
 bus = "Master"
 
-[node name="StatusPivot" parent="." index="10"]
+[node name="LockOnSound" type="AudioStreamPlayer" parent="." index="10"]
+
+stream = ExtResource( 51 )
+volume_db = -8.0
+autoplay = false
+mix_target = 0
+bus = "Master"
+
+[node name="StatusPivot" parent="." index="11"]
 
 editor/display_folded = true
 

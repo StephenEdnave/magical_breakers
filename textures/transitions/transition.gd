@@ -11,13 +11,13 @@ func _ready():
 func fade_in(_scene_path):
 	scene_path = _scene_path
 	$Effect.visible = true
-	$Tween.interpolate_property($Effect, "cutoff", -0.1, 1.1, 0.6, Tween.TRANS_QUAD, Tween.TRANS_LINEAR)
+	$Tween.interpolate_property($Effect, "cutoff", -0.1, 1.1, 0.5, Tween.TRANS_QUAD, Tween.TRANS_LINEAR)
 	$Tween.start()
 
 
 func fade_out():
 	$Effect.visible = true
-	$Tween.interpolate_property($Effect, "cutoff", 1.1, -0.1, 0.6, Tween.TRANS_QUAD, Tween.TRANS_LINEAR)
+	$Tween.interpolate_property($Effect, "cutoff", 1.1, -0.1, 0.5, Tween.TRANS_QUAD, Tween.TRANS_LINEAR)
 	$Tween.start()
 
 

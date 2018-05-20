@@ -31,7 +31,7 @@ func move(host):
 
 func update_look_direction(host):
 	if host.target:
-		var vector_to_target = host.target_position - host.position
+		var vector_to_target = host.target_position - host.global_position
 		host.look_direction.x = sign(vector_to_target.x)
 	elif last_move_direction.x != 0:
 		host.look_direction.x = last_move_direction.x

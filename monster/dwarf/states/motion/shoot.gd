@@ -52,9 +52,9 @@ func _on_Weapon_attack_started(host):
 	if host.has_target:
 		vector = host.target_position - host.position
 	angle = rad2deg(vector.angle())
-	if sign(vector.x) == -1 or (look_direction.x == -1 and vector.x == 0): # host is facing left, requires input_direction so default doesn't face right
-		angle -= 180
-		host.get_node("WeaponPivot").scale = Vector2(-1, -1)
+#	if sign(vector.x) == -1 or (look_direction.x == -1 and vector.x == 0): # host is facing left, requires input_direction so default doesn't face right
+#		angle -= 180
+#		host.get_node("WeaponPivot").scale = Vector2(-1, -1)
 	host.get_node("BodyPivot").get_node("Arm").rotation_degrees = angle
 	host.get_node("BodyPivot").get_node("Hand").rotation_degrees = angle
 	host.get_node("WeaponPivot").rotation_degrees = angle

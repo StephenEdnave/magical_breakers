@@ -34,4 +34,6 @@ func update(host, delta):
 	if host.position.distance_to(host.start_position) < ARRIVE_DISTANCE:
 		return IDLE
 	elif host.position.distance_to(host.target_position) < SPOT_RANGE:
+		if not host.has_target:
+			return
 		return SPOT

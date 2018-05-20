@@ -1,0 +1,24 @@
+[remap]
+
+importer="wav"
+type="AudioStreamSample"
+path="res://.import/lock_on.wav-25985fc9a40f58e6e23af2b4aec2ca58.sample"
+
+[deps]
+
+source_file="res://sfx/lock_on.wav"
+source_md5="02f09faa59d4adf8970f37d64290c58b"
+
+dest_files=[ "res://.import/lock_on.wav-25985fc9a40f58e6e23af2b4aec2ca58.sample" ]
+dest_md5="e173090b335bb7ec08717bbea0ef2671"
+
+[params]
+
+force/8_bit=false
+force/mono=false
+force/max_rate=false
+force/max_rate_hz=44100
+edit/trim=true
+edit/normalize=true
+edit/loop=false
+compress/mode=0
