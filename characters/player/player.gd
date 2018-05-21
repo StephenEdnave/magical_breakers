@@ -9,11 +9,13 @@ enum LOCK_ON_STATES { INACTIVE, ACTIVE }
 var lock_on_state = INACTIVE
 
 func _ready():
+	is_player = true
+	
 	target_reticle = TargetReticle.instance()
 	add_child(target_reticle)
 	target_reticle.visible = false
 	lock_on_state = INACTIVE
-	_change_lock_on_state()
+#	_change_lock_on_state()
 	
 	$States/Dash.connect("projectile_grazed", self, "_on_projectile_grazed")
 

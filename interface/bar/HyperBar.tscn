@@ -13,6 +13,7 @@ _sections_unfolded = [ "Rect", "Theme" ]
 
 [node name="Counter" parent="." index="0"]
 
+visible = false
 _sections_unfolded = [ "Patch Margin", "Rect", "Theme" ]
 
 [node name="Icon" parent="Counter" index="0"]
@@ -26,7 +27,9 @@ _sections_unfolded = [ "Margin", "Theme", "custom_fonts" ]
 
 [node name="TextureProgress" parent="." index="1"]
 
-rect_min_size = Vector2( 100, 0 )
+margin_left = 0.0
+margin_right = 150.0
+rect_min_size = Vector2( 150, 25 )
 texture_under = ExtResource( 4 )
 texture_progress = ExtResource( 5 )
 _sections_unfolded = [ "Grow Direction", "Rect", "Textures" ]

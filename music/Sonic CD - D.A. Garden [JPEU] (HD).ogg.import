@@ -1,0 +1,18 @@
+[remap]
+
+importer="ogg_vorbis"
+type="AudioStreamOGGVorbis"
+path="res://.import/Sonic CD - D.A. Garden [JPEU] (HD).ogg-342d52b7fadee9c8b7690f01b76c6c88.oggstr"
+
+[deps]
+
+source_file="res://music/Sonic CD - D.A. Garden [JPEU] (HD).ogg"
+source_md5="d7cf194a6a8b70a93b107d71c8a2ee72"
+
+dest_files=[ "res://.import/Sonic CD - D.A. Garden [JPEU] (HD).ogg-342d52b7fadee9c8b7690f01b76c6c88.oggstr" ]
+dest_md5="bd1ef57df4a0811efdb872d844cbe6de"
+
+[params]
+
+loop=true
+loop_offset=0

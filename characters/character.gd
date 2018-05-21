@@ -25,6 +25,8 @@ onready var Tween = $Tween
 
 var look_direction = Vector2(1, 0)
 
+var is_player = false
+
 func _ready():
 	$AnimationPlayer.play("SETUP")
 	current_state = STATES[IDLE]

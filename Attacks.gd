@@ -94,14 +94,14 @@ var attacks = {
 		knockback_duration = 0.2,
 		hit_pause = 0.002, },
 	"dwarf_projectile_energy": { 
-		damage = 30 , 
+		damage = 20 , 
 		effect = GlobalConstants.HEALTH_EFFECT.NONE,
 		damage_type = GlobalConstants.HEALTH_DAMAGE_TYPE.NONE ,
 		knockback_force = 30 ,
 		knockback_duration = 0.5,
 		hit_pause = 0.01 },
 	"dwarf_projectile_explosion": { 
-		damage = 50 , 
+		damage = 30 , 
 		effect = GlobalConstants.HEALTH_EFFECT.NONE,
 		damage_type = GlobalConstants.HEALTH_DAMAGE_TYPE.NONE ,
 		knockback_force = 50 ,

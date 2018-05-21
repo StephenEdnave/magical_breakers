@@ -1,11 +1,11 @@
 [gd_scene load_steps=20 format=2]
 
 [ext_resource path="res://characters/character.gd" type="Script" id=1]
-[ext_resource path="res://characters/states/motion/idle.gd" type="Script" id=2]
-[ext_resource path="res://characters/states/motion/walk.gd" type="Script" id=3]
-[ext_resource path="res://characters/states/motion/dash.gd" type="Script" id=4]
+[ext_resource path="res://characters/states/motion/on_ground/idle.gd" type="Script" id=2]
+[ext_resource path="res://characters/states/motion/on_ground/walk.gd" type="Script" id=3]
+[ext_resource path="res://characters/states/motion/on_ground/dash.gd" type="Script" id=4]
 [ext_resource path="res://characters/states/stagger.gd" type="Script" id=5]
-[ext_resource path="res://characters/states/motion/attack.gd" type="Script" id=6]
+[ext_resource path="res://characters/states/motion/on_ground/attack.gd" type="Script" id=6]
 [ext_resource path="res://characters/states/die.gd" type="Script" id=7]
 [ext_resource path="res://characters/Health.tscn" type="PackedScene" id=8]
 [ext_resource path="res://characters/body.png" type="Texture" id=9]
@@ -13,6 +13,7 @@
 [ext_resource path="res://characters/shadow.png" type="Texture" id=11]
 [ext_resource path="res://objects/miscellaneous/status_burning.png" type="Texture" id=12]
 [ext_resource path="res://particles/BurnParticles.tscn" type="PackedScene" id=13]
+
 
 [sub_resource type="Animation" id=1]
 
