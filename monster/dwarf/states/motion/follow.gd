@@ -42,9 +42,9 @@ func update(host, delta):
 	velocity = host.follow(velocity, host.target_position, max_follow_speed)
 	move(host)
 	host.get_node("BodyPivot").scale.x = look_direction.x
-	if host.position.distance_to(host.target_position) <= CHARGE_RANGE:
+	if host.global_position.distance_to(host.target_position) <= CHARGE_RANGE:
 		return CHARGE_PREPARE
-	if host.position.distance_to(host.target_position) > FOLLOW_RANGE:
+	if host.global_position.distance_to(host.target_position) > FOLLOW_RANGE:
 		return RETURN
 
 

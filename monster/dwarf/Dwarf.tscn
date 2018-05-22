@@ -1,4 +1,4 @@
-[gd_scene load_steps=38 format=2]
+[gd_scene load_steps=39 format=2]
 
 [ext_resource path="res://monster/dwarf/dwarf.gd" type="Script" id=1]
 [ext_resource path="res://monster/dwarf/states/idle.gd" type="Script" id=2]
@@ -12,18 +12,19 @@
 [ext_resource path="res://monster/dwarf/states/charge_cooldown.gd" type="Script" id=10]
 [ext_resource path="res://monster/dwarf/states/die.gd" type="Script" id=11]
 [ext_resource path="res://monster/dwarf/states/motion/shoot.gd" type="Script" id=12]
-[ext_resource path="res://monster/dwarf/sprites/sm_dwarf03.png" type="Texture" id=13]
-[ext_resource path="res://monster/dwarf/sprites/sm_dwarf09.png" type="Texture" id=14]
-[ext_resource path="res://monster/dwarf/sprites/sm_dwarf06.png" type="Texture" id=15]
-[ext_resource path="res://monster/dwarf/sprites/sm_dwarf12.png" type="Texture" id=16]
-[ext_resource path="res://monster/dwarf/sprites/sm_dwarf13.png" type="Texture" id=17]
-[ext_resource path="res://monster/exclamation-mark.png" type="Texture" id=18]
-[ext_resource path="res://objects/miscellaneous/status_burning.png" type="Texture" id=19]
-[ext_resource path="res://particles/BurnParticles.tscn" type="PackedScene" id=20]
-[ext_resource path="res://characters/Health.tscn" type="PackedScene" id=21]
-[ext_resource path="res://sfx/dash.ogg" type="AudioStream" id=22]
-[ext_resource path="res://sfx/dwarf_punch.ogg" type="AudioStream" id=23]
-[ext_resource path="res://sfx/dwarf_punch_impact.ogg" type="AudioStream" id=24]
+[ext_resource path="res://monster/dwarf/states/motion/end_wave.gd" type="Script" id=13]
+[ext_resource path="res://monster/dwarf/sprites/sm_dwarf03.png" type="Texture" id=14]
+[ext_resource path="res://monster/dwarf/sprites/sm_dwarf09.png" type="Texture" id=15]
+[ext_resource path="res://monster/dwarf/sprites/sm_dwarf06.png" type="Texture" id=16]
+[ext_resource path="res://monster/dwarf/sprites/sm_dwarf12.png" type="Texture" id=17]
+[ext_resource path="res://monster/dwarf/sprites/sm_dwarf13.png" type="Texture" id=18]
+[ext_resource path="res://monster/exclamation-mark.png" type="Texture" id=19]
+[ext_resource path="res://objects/miscellaneous/status_burning.png" type="Texture" id=20]
+[ext_resource path="res://particles/BurnParticles.tscn" type="PackedScene" id=21]
+[ext_resource path="res://characters/Health.tscn" type="PackedScene" id=22]
+[ext_resource path="res://sfx/dash.ogg" type="AudioStream" id=23]
+[ext_resource path="res://sfx/dwarf_punch.ogg" type="AudioStream" id=24]
+[ext_resource path="res://sfx/dwarf_punch_impact.ogg" type="AudioStream" id=25]
 
 [sub_resource type="Animation" id=1]
 
@@ -101,7 +102,7 @@ tracks/5/keys = {
 "times": PoolRealArray( 0 ),
 "transitions": PoolRealArray( 1 ),
 "update": 1,
-"values": [ ExtResource( 13 ) ]
+"values": [ ExtResource( 14 ) ]
 }
 tracks/6/type = "value"
 tracks/6/path = NodePath("BodyPivot/Arm:visible")
@@ -168,7 +169,7 @@ tracks/1/keys = {
 "times": PoolRealArray( 0 ),
 "transitions": PoolRealArray( 1 ),
 "update": 1,
-"values": [ ExtResource( 14 ) ]
+"values": [ ExtResource( 15 ) ]
 }
 tracks/2/type = "value"
 tracks/2/path = NodePath("BodyPivot/Arm:visible")
@@ -223,7 +224,7 @@ tracks/1/keys = {
 "times": PoolRealArray( 0 ),
 "transitions": PoolRealArray( 1 ),
 "update": 1,
-"values": [ ExtResource( 14 ) ]
+"values": [ ExtResource( 15 ) ]
 }
 tracks/2/type = "value"
 tracks/2/path = NodePath("BodyPivot/Hand:visible")
@@ -307,7 +308,7 @@ tracks/1/keys = {
 "times": PoolRealArray( 0 ),
 "transitions": PoolRealArray( 1 ),
 "update": 1,
-"values": [ ExtResource( 13 ) ]
+"values": [ ExtResource( 14 ) ]
 }
 tracks/2/type = "value"
 tracks/2/path = NodePath("BodyPivot/Hand:visible")
@@ -362,7 +363,7 @@ tracks/1/keys = {
 "times": PoolRealArray( 0 ),
 "transitions": PoolRealArray( 1 ),
 "update": 1,
-"values": [ ExtResource( 15 ) ]
+"values": [ ExtResource( 16 ) ]
 }
 
 [sub_resource type="Animation" id=7]
@@ -452,7 +453,7 @@ tracks/6/keys = {
 "times": PoolRealArray( 0 ),
 "transitions": PoolRealArray( 1 ),
 "update": 1,
-"values": [ ExtResource( 14 ) ]
+"values": [ ExtResource( 15 ) ]
 }
 tracks/7/type = "value"
 tracks/7/path = NodePath("BodyPivot/Arm:visible")
@@ -524,7 +525,7 @@ tracks/1/keys = {
 "times": PoolRealArray( 0 ),
 "transitions": PoolRealArray( 1 ),
 "update": 1,
-"values": [ ExtResource( 15 ) ]
+"values": [ ExtResource( 16 ) ]
 }
 tracks/2/type = "value"
 tracks/2/path = NodePath("BodyPivot/Hand:visible")
@@ -650,7 +651,7 @@ tracks/5/keys = {
 "times": PoolRealArray( 0 ),
 "transitions": PoolRealArray( 1 ),
 "update": 1,
-"values": [ ExtResource( 13 ) ]
+"values": [ ExtResource( 14 ) ]
 }
 
 [sub_resource type="Animation" id=11]
@@ -717,7 +718,7 @@ anim_offset_random = 0.0
 anim_loop = false
 _sections_unfolded = [ "Emission Shape", "Gravity", "Initial Velocity", "Linear Accel", "Scale", "Spread", "Trail" ]
 
-[node name="Dwarf" type="KinematicBody2D" groups=[
+[node name="Dwarf" type="KinematicBody2D" index="0" groups=[
 "monsters",
 ]]
 
@@ -732,7 +733,7 @@ ARRIVE_DISTANCE = 6.0
 DEFAULT_SLOW_RADIUS = 200.0
 DEFAULT_MAX_SPEED = 300.0
 MASS = 8.0
-SPOT_RANGE = 400.0
+SPOT_RANGE = 6000.0
 
 [node name="States" type="Node" parent="." index="0"]
 
@@ -759,7 +760,7 @@ script = ExtResource( 5 )
 
 script = ExtResource( 6 )
 CHARGE_RANGE = 300.0
-FOLLOW_RANGE = 1400.0
+FOLLOW_RANGE = 6000.0
 max_follow_speed = 400.0
 SHOOT_RANGE = 600.0
 SHOOT_TIME = 2.0
@@ -792,6 +793,11 @@ script = ExtResource( 11 )
 
 script = ExtResource( 12 )
 primary_weapon_path = "res://monster/dwarf/weapon/DwarfGun.tscn"
+
+[node name="EndWave" type="Node" parent="States" index="11"]
+
+script = ExtResource( 13 )
+max_return_speed = 800.0
 
 [node name="AnimationPlayer" type="AnimationPlayer" parent="." index="1"]
 
@@ -848,7 +854,7 @@ _sections_unfolded = [ "Transform", "Visibility", "Z Index" ]
 
 position = Vector2( -15.6292, -9.49536 )
 scale = Vector2( 1.4, 1.4 )
-texture = ExtResource( 13 )
+texture = ExtResource( 14 )
 flip_h = true
 _sections_unfolded = [ "Offset", "Transform", "Visibility" ]
 
@@ -858,7 +864,7 @@ visible = false
 position = Vector2( -11.6759, -5.56784 )
 rotation = 1.03195
 scale = Vector2( 1.4, 1.4 )
-texture = ExtResource( 16 )
+texture = ExtResource( 17 )
 flip_h = true
 _sections_unfolded = [ "Offset", "Transform", "Visibility" ]
 
@@ -867,7 +873,7 @@ _sections_unfolded = [ "Offset", "Transform", "Visibility" ]
 visible = false
 position = Vector2( 15.9268, 42.1836 )
 scale = Vector2( 1.4, 1.4 )
-texture = ExtResource( 17 )
+texture = ExtResource( 18 )
 flip_h = true
 _sections_unfolded = [ "Offset", "Transform", "Visibility" ]
 
@@ -877,7 +883,7 @@ visible = false
 position = Vector2( 80.3541, -196.371 )
 rotation = 0.253141
 scale = Vector2( 2, 2 )
-texture = ExtResource( 18 )
+texture = ExtResource( 19 )
 _sections_unfolded = [ "Transform", "Visibility" ]
 
 [node name="WeaponPivot" type="Position2D" parent="." index="6"]
@@ -892,6 +898,7 @@ position = Vector2( 134.072, 3.06368e-05 )
 
 [node name="StatusPivot" type="Position2D" parent="." index="7"]
 
+editor/display_folded = true
 position = Vector2( 10, 0 )
 _sections_unfolded = [ "Transform", "Z Index" ]
 
@@ -900,10 +907,10 @@ _sections_unfolded = [ "Transform", "Z Index" ]
 visible = false
 position = Vector2( 92.6279, -121.362 )
 z_index = 6
-texture = ExtResource( 19 )
+texture = ExtResource( 20 )
 _sections_unfolded = [ "Transform", "Z Index" ]
 
-[node name="BurnParticles" parent="StatusPivot" index="1" instance=ExtResource( 20 )]
+[node name="BurnParticles" parent="StatusPivot" index="1" instance=ExtResource( 21 )]
 
 [node name="ChargeParticles" type="Particles2D" parent="." index="8"]
 
@@ -937,7 +944,7 @@ wait_time = 1.0
 one_shot = false
 autostart = false
 
-[node name="Health" parent="." index="10" instance=ExtResource( 21 )]
+[node name="Health" parent="." index="10" instance=ExtResource( 22 )]
 
 max_health = 2000
 
@@ -951,7 +958,7 @@ collision_mask = 1
 
 [node name="ChargePrepare" type="AudioStreamPlayer" parent="." index="12"]
 
-stream = ExtResource( 22 )
+stream = ExtResource( 23 )
 volume_db = 2.0
 autoplay = false
 mix_target = 0
@@ -959,7 +966,7 @@ bus = "Master"
 
 [node name="ChargeStart" type="AudioStreamPlayer" parent="." index="13"]
 
-stream = ExtResource( 23 )
+stream = ExtResource( 24 )
 volume_db = 4.0
 autoplay = false
 mix_target = 0
@@ -967,7 +974,7 @@ bus = "Master"
 
 [node name="ChargeImpact" type="AudioStreamPlayer" parent="." index="14"]
 
-stream = ExtResource( 24 )
+stream = ExtResource( 25 )
 volume_db = 9.0
 autoplay = false
 mix_target = 0

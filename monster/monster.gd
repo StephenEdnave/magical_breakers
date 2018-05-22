@@ -31,7 +31,6 @@ func _ready():
 	
 	Anim.connect('animation_finished', self, '_on_animation_finished')
 	
-	set_as_toplevel(true)
 	start_position = global_position
 	
 	original_scale = scale
@@ -122,6 +121,10 @@ func _on_Health_status_changed(old_status, new_status):
 			$StatusPivot/StatusIcon.texture = load("res://objects/miscellaneous/status_burning.png")
 			$StatusPivot/StatusIcon.visible = true
 			$StatusPivot/BurnParticles.emitting = true
+
+
+func end_wave():
+	pass
 
 
 func die():

@@ -43,4 +43,4 @@ func _on_animation_finished(name):
 		"how_to_play_to_main_menu":
 			$AnimationPlayer.play("open_main_menu")
 		"main_menu_transition_out":
-			get_tree().change_scene("res://Level.tscn")
+			get_tree().change_scene("res://environment/in_the_sky/InTheSky.tscn")

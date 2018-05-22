@@ -2,7 +2,7 @@ extends '../monster.gd'
 
 signal state_changed
 
-enum STATE_IDS { IDLE, ROAM, RETURN, SPOT, FOLLOW, STAGGER, CHARGE_PREPARE, CHARGE, CHARGE_COOLDOWN, DIE, DEAD, SHOOT}
+enum STATE_IDS { IDLE, ROAM, RETURN, SPOT, FOLLOW, STAGGER, CHARGE_PREPARE, CHARGE, CHARGE_COOLDOWN, DIE, DEAD, SHOOT, END_WAVE}
 onready var STATES = {
 	IDLE:$'States/Idle',
 	ROAM:$'States/Roam',
@@ -15,6 +15,7 @@ onready var STATES = {
 	CHARGE_COOLDOWN:$'States/ChargeCooldown',
 	DIE:$'States/Die',
 	SHOOT:$'States/Shoot',
+	END_WAVE:$'States/EndWave'
 #	DEAD:$'States/Dead'
 }
 
@@ -27,6 +28,7 @@ func _ready():
 	STATES[RETURN].setup(SPOT_RANGE, ARRIVE_DISTANCE)
 	STATES[SPOT].setup(SPOT_RANGE)
 	STATES[SHOOT].setup(self)
+	STATES[END_WAVE].setup(ARRIVE_DISTANCE)
 	
 	current_state = STATES[IDLE]
 	current_state.enter(self)
@@ -71,3 +73,7 @@ func _on_Health_health_changed(new_health, knockback):
 #		if knockback == true:
 #			go_to_state(STAGGER)
 	._on_Health_health_changed(new_health, knockback)
+
+
+func end_wave():
+	go_to_state(END_WAVE)

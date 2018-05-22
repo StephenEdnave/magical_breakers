@@ -50,7 +50,7 @@ func _on_Weapon_attack_started(host):
 	var angle = 0
 	var vector = Vector2()
 	if host.has_target:
-		vector = host.target_position - host.position
+		vector = host.target_position - host.global_position
 	angle = rad2deg(vector.angle())
 #	if sign(vector.x) == -1 or (look_direction.x == -1 and vector.x == 0): # host is facing left, requires input_direction so default doesn't face right
 #		angle -= 180

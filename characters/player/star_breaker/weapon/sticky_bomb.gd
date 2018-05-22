@@ -26,7 +26,7 @@ func _physics_process(delta):
 	
 	rotation_degrees = rad2deg(velocity.angle())
 	if target_position:
-		direction = (target_position - position).normalized()
+		direction = (target_position - global_position).normalized()
 		var desired_velocity = direction * velocity.length()
 		var steering_velocity = (desired_velocity - velocity).normalized() * steering_acceleration
 		velocity += steering_velocity

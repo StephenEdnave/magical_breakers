@@ -48,6 +48,8 @@ func _change_lock_on_state():
 			lock_on_state = LOCK_ON_STATES.INACTIVE
 			target_reticle.visible = false
 		LOCK_ON_STATES.INACTIVE:
+			if not target:
+				return
 			lock_on_state = LOCK_ON_STATES.ACTIVE
 			target_position = target.global_position
 			target_reticle.global_position = target_position

@@ -104,6 +104,9 @@ func _on_Weapon_attack_started(host):
 		vector = host.target_position - host.global_position
 	else:
 		vector = get_input_direction(host)
+	
+	move(host) # Get the correct direction to face
+	
 	if vector:
 		angle = rad2deg(vector.angle())
 	else:

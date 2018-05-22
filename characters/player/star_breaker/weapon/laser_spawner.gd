@@ -38,16 +38,16 @@ func _physics_process(delta):
 func spawn():
 	var spawn = $Pivot/Spawn1
 	var projectile = Projectile.instance()
-	get_tree().get_root().add_child(projectile)
+	host.get_parent().add_child(projectile)
 	projectile.clockwise = true
-	projectile.position = spawn.global_position
+	projectile.global_position = spawn.global_position
 	projectile.scale = host.scale
 	projectile.set_direction(Vector2(cos(deg2rad(spawn.global_rotation_degrees)), sin(deg2rad(spawn.global_rotation_degrees))).normalized())
 	
 	spawn = $Pivot/Spawn2
 	projectile = Projectile.instance()
-	get_tree().get_root().add_child(projectile)
+	host.get_parent().add_child(projectile)
 	projectile.clockwise = false
-	projectile.position = spawn.global_position
+	projectile.global_position = spawn.global_position
 	projectile.scale = host.scale
 	projectile.set_direction(Vector2(cos(deg2rad(spawn.global_rotation_degrees)), sin(deg2rad(spawn.global_rotation_degrees))).normalized())
