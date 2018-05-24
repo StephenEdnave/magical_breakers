@@ -26,6 +26,14 @@ func _ready():
 
 
 func _change_status(new_status):
+	# Death takes precedence over regular status effects
+	if new_status == GlobalConstants.HEALTH_STATUS.DEAD:
+		$PoisonTimer.stop()
+		$FireTimer.stop()
+		status = new_status
+		emit_signal("status_changed", new_status)
+		return
+	
 	# Don't change status if there is a current one active
 	match status:
 		GlobalConstants.HEALTH_STATUS.POISON:

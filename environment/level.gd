@@ -60,13 +60,13 @@ func change_scene(scene):
 
 
 func win():
-	$Tween.interpolate_property($Music, "volume_db", $Music.volume_db, -100.0, 1, Tween.TRANS_QUAD, Tween.EASE_IN)
+	$Tween.interpolate_property($Music, "volume_db", $Music.volume_db, -100.0, 3, Tween.TRANS_QUAD, Tween.EASE_IN)
 	$Tween.interpolate_property(Engine, "time_scale", 0.5, 1, 2, Tween.TRANS_QUAD, Tween.EASE_IN)
 	$Tween.start()
 	player.set_process(false)
 	yield(get_tree().create_timer(1), "timeout")
 	Engine.time_scale = 1
-	yield(get_tree().create_timer(3), "timeout")
+	yield(get_tree().create_timer(5), "timeout")
 	Engine.time_scale = 1
 	change_scene(WinMenu)
 
