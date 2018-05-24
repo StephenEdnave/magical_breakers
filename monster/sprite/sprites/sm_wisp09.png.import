@@ -2,15 +2,15 @@
 
 importer="texture"
 type="StreamTexture"
-path="res://.import/sunset.png-cd044ab132dc52c91e8ef7e7aa2a00d2.stex"
+path="res://.import/sm_wisp09.png-e9dad6f415489ab0d09f24c8a79f6a77.stex"
 
 [deps]
 
-source_file="res://main_menu/sunset.png"
-source_md5="15c1f6e6855aec8892a4956c00cbc981"
+source_file="res://monster/sprite/sprites/sm_wisp09.png"
+source_md5="3f0fdb46676651abc19e426b05bd7d8c"
 
-dest_files=[ "res://.import/sunset.png-cd044ab132dc52c91e8ef7e7aa2a00d2.stex" ]
-dest_md5="a8575c97afcc6f55912bc4c36bc22d9a"
+dest_files=[ "res://.import/sm_wisp09.png-e9dad6f415489ab0d09f24c8a79f6a77.stex" ]
+dest_md5="2cbd630cb0d30737d7f82eb845190641"
 
 [params]
 

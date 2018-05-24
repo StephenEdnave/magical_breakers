@@ -1,4 +1,4 @@
-[gd_scene load_steps=20 format=2]
+[gd_scene load_steps=19 format=2]
 
 [ext_resource path="res://characters/character.gd" type="Script" id=1]
 [ext_resource path="res://characters/states/motion/on_ground/idle.gd" type="Script" id=2]
@@ -11,9 +11,7 @@
 [ext_resource path="res://characters/body.png" type="Texture" id=9]
 [ext_resource path="res://characters/weapon/weapon_pivot.gd" type="Script" id=10]
 [ext_resource path="res://characters/shadow.png" type="Texture" id=11]
-[ext_resource path="res://objects/miscellaneous/status_burning.png" type="Texture" id=12]
-[ext_resource path="res://particles/BurnParticles.tscn" type="PackedScene" id=13]
-
+[ext_resource path="res://objects/StatusIcon.tscn" type="PackedScene" id=12]
 
 [sub_resource type="Animation" id=1]
 
@@ -260,8 +258,11 @@ MAX_WALK_SPEED = 450
 [node name="Dash" type="Node" parent="States" index="2"]
 
 script = ExtResource( 4 )
-MAX_DASH_SPEED = 1000
+MAX_DASH_SPEED = 1100
 MIN_DASH_SPEED = 600
+particles_per_second = 6
+BEGIN_DURATION = 0.1
+BEGIN_SPEED = 1400
 
 [node name="Stagger" type="Node" parent="States" index="3"]
 
@@ -358,14 +359,7 @@ _sections_unfolded = [ "Visibility" ]
 
 _sections_unfolded = [ "Transform" ]
 
-[node name="StatusIcon" type="Sprite" parent="StatusPivot" index="0"]
-
-visible = false
-position = Vector2( 53.4458, -98.5408 )
-texture = ExtResource( 12 )
-_sections_unfolded = [ "Transform" ]
-
-[node name="BurnParticles" parent="StatusPivot" index="1" instance=ExtResource( 13 )]
+[node name="StatusIcon" parent="StatusPivot" index="0" instance=ExtResource( 12 )]
 
 visible = false
 

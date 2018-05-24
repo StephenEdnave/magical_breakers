@@ -2,15 +2,15 @@
 
 importer="texture"
 type="StreamTexture"
-path="res://.import/gold.png-f3c6b8fdfb91eb1de04a5c5a1796575f.stex"
+path="res://.import/sm_exp01.png-99da64617e32d5ce161eaf8bcbf5bd3e.stex"
 
 [deps]
 
-source_file="res://main_menu/gold.png"
-source_md5="660e8b18c7c0b881f7534d65adbfa35f"
+source_file="res://monster/sprite/sprites/sm_exp01.png"
+source_md5="e106bfd0251cb48639fb985a5f26a739"
 
-dest_files=[ "res://.import/gold.png-f3c6b8fdfb91eb1de04a5c5a1796575f.stex" ]
-dest_md5="fdbc703a01d69619df51f57417744ca7"
+dest_files=[ "res://.import/sm_exp01.png-99da64617e32d5ce161eaf8bcbf5bd3e.stex" ]
+dest_md5="4522e30b1fdda3f2a6e35536487e8cba"
 
 [params]
 

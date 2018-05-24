@@ -1,4 +1,4 @@
-[gd_scene load_steps=39 format=2]
+[gd_scene load_steps=38 format=2]
 
 [ext_resource path="res://monster/dwarf/dwarf.gd" type="Script" id=1]
 [ext_resource path="res://monster/dwarf/states/idle.gd" type="Script" id=2]
@@ -19,12 +19,11 @@
 [ext_resource path="res://monster/dwarf/sprites/sm_dwarf12.png" type="Texture" id=17]
 [ext_resource path="res://monster/dwarf/sprites/sm_dwarf13.png" type="Texture" id=18]
 [ext_resource path="res://monster/exclamation-mark.png" type="Texture" id=19]
-[ext_resource path="res://objects/miscellaneous/status_burning.png" type="Texture" id=20]
-[ext_resource path="res://particles/BurnParticles.tscn" type="PackedScene" id=21]
-[ext_resource path="res://characters/Health.tscn" type="PackedScene" id=22]
-[ext_resource path="res://sfx/dash.ogg" type="AudioStream" id=23]
-[ext_resource path="res://sfx/dwarf_punch.ogg" type="AudioStream" id=24]
-[ext_resource path="res://sfx/dwarf_punch_impact.ogg" type="AudioStream" id=25]
+[ext_resource path="res://objects/StatusIcon.tscn" type="PackedScene" id=20]
+[ext_resource path="res://characters/Health.tscn" type="PackedScene" id=21]
+[ext_resource path="res://sfx/dash.ogg" type="AudioStream" id=22]
+[ext_resource path="res://sfx/dwarf_punch.ogg" type="AudioStream" id=23]
+[ext_resource path="res://sfx/dwarf_punch_impact.ogg" type="AudioStream" id=24]
 
 [sub_resource type="Animation" id=1]
 
@@ -718,7 +717,7 @@ anim_offset_random = 0.0
 anim_loop = false
 _sections_unfolded = [ "Emission Shape", "Gravity", "Initial Velocity", "Linear Accel", "Scale", "Spread", "Trail" ]
 
-[node name="Dwarf" type="KinematicBody2D" index="0" groups=[
+[node name="Dwarf" type="KinematicBody2D" groups=[
 "monsters",
 ]]
 
@@ -902,15 +901,9 @@ editor/display_folded = true
 position = Vector2( 10, 0 )
 _sections_unfolded = [ "Transform", "Z Index" ]
 
-[node name="StatusIcon" type="Sprite" parent="StatusPivot" index="0"]
+[node name="StatusIcon" parent="StatusPivot" index="0" instance=ExtResource( 20 )]
 
 visible = false
-position = Vector2( 92.6279, -121.362 )
-z_index = 6
-texture = ExtResource( 20 )
-_sections_unfolded = [ "Transform", "Z Index" ]
-
-[node name="BurnParticles" parent="StatusPivot" index="1" instance=ExtResource( 21 )]
 
 [node name="ChargeParticles" type="Particles2D" parent="." index="8"]
 
@@ -944,7 +937,7 @@ wait_time = 1.0
 one_shot = false
 autostart = false
 
-[node name="Health" parent="." index="10" instance=ExtResource( 22 )]
+[node name="Health" parent="." index="10" instance=ExtResource( 21 )]
 
 max_health = 2000
 
@@ -958,7 +951,7 @@ collision_mask = 1
 
 [node name="ChargePrepare" type="AudioStreamPlayer" parent="." index="12"]
 
-stream = ExtResource( 23 )
+stream = ExtResource( 22 )
 volume_db = 2.0
 autoplay = false
 mix_target = 0
@@ -966,7 +959,7 @@ bus = "Master"
 
 [node name="ChargeStart" type="AudioStreamPlayer" parent="." index="13"]
 
-stream = ExtResource( 24 )
+stream = ExtResource( 23 )
 volume_db = 4.0
 autoplay = false
 mix_target = 0
@@ -974,7 +967,7 @@ bus = "Master"
 
 [node name="ChargeImpact" type="AudioStreamPlayer" parent="." index="14"]
 
-stream = ExtResource( 25 )
+stream = ExtResource( 24 )
 volume_db = 9.0
 autoplay = false
 mix_target = 0

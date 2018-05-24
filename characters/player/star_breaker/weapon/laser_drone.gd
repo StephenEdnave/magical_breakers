@@ -48,8 +48,6 @@ func _on_LaserTick_timeout():
 		return
 	
 	var collider = $RayCast2D.get_collider()
-	if not collider:
-		return
 	var shape_check = collider.has_node("CollisionShape2D") and not collider.get_node("CollisionShape2D").disabled
 	var polygon_check = collider.has_node("CollisionPolygon2D") and not collider.get_node("CollisionPolygon2D").disabled
 	if not (shape_check or polygon_check):
@@ -59,8 +57,8 @@ func _on_LaserTick_timeout():
 		collider.take_damage(self, "star_b_drone_laser")
 	
 	# Particles
-	current_laser_length = collider_distance
-	$Line2D.points[1] = ($Line2D.points[1] - $Line2D.points[0]).normalized() * collider_distance
+	current_laser_length = max(collider_distance, 1)
+	$Line2D.points[1] = ($Line2D.points[1] - $Line2D.points[0]).normalized() * current_laser_length
 	$HitParticles.position = $Line2D.points[1]
 	$LaserStart.position = $Line2D.points[0]
 	$LaserStart2.position = $Line2D.points[0]

@@ -32,7 +32,6 @@ func _ready():
 	Anim.connect('animation_finished', self, '_on_animation_finished')
 	
 	start_position = global_position
-	
 	original_scale = scale
 	
 	var target = get_tree().get_root().get_node('Level/YSort/Player')
@@ -104,30 +103,9 @@ func _on_Health_health_changed(new_health, knockback):
 	emit_signal("health_changed", new_health)
 
 
-func _on_Health_status_changed(old_status, new_status):
-	# Exit status
-	match old_status:
-		GlobalConstants.HEALTH_STATUS.POISONED:
-			$BodyPivot/StatusIcon.visible = false
-		GlobalConstants.HEALTH_STATUS.BURNED:
-			$StatusPivot/StatusIcon.visible = false
-			$StatusPivot/BurnParticles.emitting = false
-	
-	# Enter status
-	match new_status:
-		GlobalConstants.HEALTH_STATUS.POISONED:
-			$BodyPivot/StatusIcon.visible = true
-		GlobalConstants.HEALTH_STATUS.BURNED:
-			$StatusPivot/StatusIcon.texture = load("res://objects/miscellaneous/status_burning.png")
-			$StatusPivot/StatusIcon.visible = true
-			$StatusPivot/BurnParticles.emitting = true
+func _on_Health_status_changed(new_status):
+	$StatusPivot/StatusIcon.change_status(new_status)
 
 
 func end_wave():
 	pass
-
-
-func die():
-	remove_from_group("monsters")
-	emit_signal("died")
-	queue_free()

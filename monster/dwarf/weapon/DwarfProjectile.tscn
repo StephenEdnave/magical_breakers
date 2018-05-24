@@ -13,8 +13,6 @@
 [ext_resource path="res://sfx/sprite_shoot.ogg" type="AudioStream" id=11]
 [ext_resource path="res://sfx/dwarf_projectile_explosion.ogg" type="AudioStream" id=12]
 
-
-
 [sub_resource type="CircleShape2D" id=1]
 
 custom_solver_bias = 0.0
@@ -137,20 +135,20 @@ tracks/2/keys = {
 "values": [ true ]
 }
 
-[sub_resource type="Curve" id=10]
+[sub_resource type="Curve" id=5]
 
 min_value = 0.0
 max_value = 1.0
 bake_resolution = 100
 _data = [ Vector2( 0, 0.231445 ), 0.0, 0.0, 0, 0, Vector2( 1, 1 ), 0.0, 0.0, 0, 0 ]
 
-[sub_resource type="CurveTexture" id=11]
+[sub_resource type="CurveTexture" id=6]
 
 flags = 4
 width = 2048
-curve = SubResource( 10 )
+curve = SubResource( 5 )
 
-[sub_resource type="ParticlesMaterial" id=12]
+[sub_resource type="ParticlesMaterial" id=7]
 
 render_priority = 0
 trail_divisor = 1
@@ -179,7 +177,7 @@ angle = 0.0
 angle_random = 0.0
 scale = 2.0
 scale_random = 0.0
-scale_curve = SubResource( 11 )
+scale_curve = SubResource( 6 )
 color = Color( 1, 1, 1, 1 )
 hue_variation = 0.0
 hue_variation_random = 0.0
@@ -265,7 +263,7 @@ fract_delta = true
 visibility_rect = Rect2( -100, -100, 200, 200 )
 local_coords = true
 draw_order = 0
-process_material = SubResource( 12 )
+process_material = SubResource( 7 )
 texture = ExtResource( 10 )
 normal_map = null
 h_frames = 1

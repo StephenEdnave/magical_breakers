@@ -2,15 +2,15 @@
 
 importer="texture"
 type="StreamTexture"
-path="res://.import/muffin-dot-dat.png-8c0bfa3eff224d87462b77ec0ae761f4.stex"
+path="res://.import/sunset.png-51150ae9431a4bddb55494540685dfdb.stex"
 
 [deps]
 
-source_file="res://main_menu/muffin-dot-dat.png"
-source_md5="9938ee66e56cda1aa353f1a86e27fc4b"
+source_file="res://menus/main_menu/sunset.png"
+source_md5="15c1f6e6855aec8892a4956c00cbc981"
 
-dest_files=[ "res://.import/muffin-dot-dat.png-8c0bfa3eff224d87462b77ec0ae761f4.stex" ]
-dest_md5="ffb8eca6c7a61e2e7523b2424dff815c"
+dest_files=[ "res://.import/sunset.png-51150ae9431a4bddb55494540685dfdb.stex" ]
+dest_md5="a8575c97afcc6f55912bc4c36bc22d9a"
 
 [params]
 

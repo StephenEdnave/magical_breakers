@@ -24,7 +24,7 @@ func enter(host):
 
 # Clean up the state. Reinitialize values like a timer
 func exit(host):
-	host.get_node("RayCast2D").visible = false
+	pass
 
 
 func handle_input(host, event):

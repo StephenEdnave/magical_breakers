@@ -1,0 +1,135 @@
+[gd_scene load_steps=19 format=2]
+
+[ext_resource path="res://monster/Monster.tscn" type="PackedScene" id=1]
+[ext_resource path="res://monster/sprite/sprite.gd" type="Script" id=2]
+[ext_resource path="res://monster/sprite/states/idle.gd" type="Script" id=3]
+[ext_resource path="res://monster/sprite/states/motion/roam.gd" type="Script" id=4]
+[ext_resource path="res://monster/sprite/states/motion/return.gd" type="Script" id=5]
+[ext_resource path="res://monster/sprite/states/motion/spot.gd" type="Script" id=6]
+[ext_resource path="res://monster/sprite/states/motion/follow.gd" type="Script" id=7]
+[ext_resource path="res://monster/sprite/states/stagger.gd" type="Script" id=8]
+[ext_resource path="res://monster/sprite/states/die.gd" type="Script" id=9]
+[ext_resource path="res://monster/sprite/states/motion/shoot.gd" type="Script" id=10]
+[ext_resource path="res://monster/sprite/states/motion/end_wave.gd" type="Script" id=11]
+[ext_resource path="res://monster/sprite/sprites/sm_wisp00.png" type="Texture" id=12]
+[ext_resource path="res://monster/sprite/sprites/sm_wisp01.png" type="Texture" id=13]
+[ext_resource path="res://monster/sprite/sprites/sm_wisp02.png" type="Texture" id=14]
+[ext_resource path="res://monster/sprite/sprites/sm_wisp03.png" type="Texture" id=15]
+[ext_resource path="res://monster/sham/textures/sm_wisp00.png" type="Texture" id=16]
+
+[sub_resource type="Animation" id=2]
+
+resource_name = "walk"
+length = 0.4
+loop = true
+step = 0.1
+tracks/0/type = "value"
+tracks/0/path = NodePath("BodyPivot/Sprite:texture")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0, 0.1, 0.2, 0.3 ),
+"transitions": PoolRealArray( 1, 1, 1, 1 ),
+"update": 1,
+"values": [ ExtResource( 12 ), ExtResource( 13 ), ExtResource( 14 ), ExtResource( 15 ) ]
+}
+
+[sub_resource type="CapsuleShape2D" id=1]
+
+custom_solver_bias = 0.0
+radius = 19.4749
+height = 38.6222
+
+[node name="Sprite" index="0" instance=ExtResource( 1 )]
+
+script = ExtResource( 2 )
+ARRIVE_DISTANCE = 6.0
+DEFAULT_SLOW_RADIUS = 200.0
+DEFAULT_MAX_SPEED = 300.0
+MASS = 8.0
+SPOT_RANGE = 6000.0
+
+[node name="Idle" type="Node" parent="States" index="0"]
+
+script = ExtResource( 3 )
+
+[node name="Roam" type="Node" parent="States" index="1"]
+
+script = ExtResource( 4 )
+max_roam_speed = 200.0
+ROAM_RADIUS = 140.0
+
+[node name="Return" type="Node" parent="States" index="2"]
+
+script = ExtResource( 5 )
+max_return_speed = 200.0
+
+[node name="Spot" type="Node" parent="States" index="3"]
+
+script = ExtResource( 6 )
+
+[node name="Follow" type="Node" parent="States" index="4"]
+
+script = ExtResource( 7 )
+CHARGE_RANGE = 300.0
+FOLLOW_RANGE = 6000.0
+max_follow_speed = 320.0
+SHOOT_RANGE = 6000.0
+SHOOT_TIME = 2.0
+TARGET_RADIUS = 500.0
+
+[node name="Stagger" type="Node" parent="States" index="5"]
+
+script = ExtResource( 8 )
+
+[node name="Die" type="Node" parent="States" index="6"]
+
+script = ExtResource( 9 )
+
+[node name="Shoot" type="Node" parent="States" index="7"]
+
+script = ExtResource( 10 )
+primary_weapon_path = "res://monster/sprite/weapons/SpriteGun.tscn"
+
+[node name="EndWave" type="Node" parent="States" index="8"]
+
+script = ExtResource( 11 )
+max_return_speed = 800.0
+
+[node name="Health" parent="." index="1"]
+
+max_health = 300
+
+[node name="AnimationPlayer" parent="." index="2"]
+
+anims/walk = SubResource( 2 )
+
+[node name="CollisionPolygon2D" parent="." index="4"]
+
+polygon = PoolVector2Array( -25.9885, -52.5346, -18.6579, -84.3003, 16.3659, -85.1149, 21.2529, -50.0911, 16.3659, -8.55122, -16.2144, -9.36573 )
+disabled = true
+
+[node name="CollisionShape2D" parent="." index="5"]
+
+shape = SubResource( 1 )
+disabled = false
+
+[node name="Sprite" type="Sprite" parent="BodyPivot" index="0"]
+
+texture = ExtResource( 16 )
+_sections_unfolded = [ "Transform", "Visibility" ]
+
+[node name="StatusPivot" parent="." index="7"]
+
+editor/display_folded = false
+_sections_unfolded = [ "Transform", "Visibility" ]
+
+[node name="WeaponPivot" parent="." index="8"]
+
+editor/display_folded = true
+
+[node name="PrimaryWeaponSpawn" type="Position2D" parent="WeaponPivot" index="0"]
+
+

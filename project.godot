@@ -11,7 +11,7 @@ config_version=3
 [application]
 
 config/name="100% Star Sweet Magical Breakers"
-run/main_scene="res://main_menu/MainMenu.tscn"
+run/main_scene="res://menus/main_menu/MainMenu.tscn"
 boot_splash/image="res://characters/player/star_breaker/sprites/res_bgp.png"
 config/icon="res://characters/player/star_breaker/sprites/sb_starb02.png"
 

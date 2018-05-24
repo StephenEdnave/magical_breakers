@@ -1,4 +1,4 @@
-[gd_scene load_steps=32 format=2]
+[gd_scene load_steps=31 format=2]
 
 [ext_resource path="res://environment/level.gd" type="Script" id=1]
 [ext_resource path="res://characters/player/star_breaker/StarBreaker.tscn" type="PackedScene" id=2]
@@ -6,9 +6,8 @@
 [ext_resource path="res://environment/in_the_sky/cloud_1.png" type="Texture" id=4]
 [ext_resource path="res://environment/in_the_sky/skybox.png" type="Texture" id=5]
 [ext_resource path="res://interface/Interface.tscn" type="PackedScene" id=6]
-[ext_resource path="res://textures/transitions/Transitions.tscn" type="PackedScene" id=7]
-[ext_resource path="res://music/Silent Rhythm (Stage 4) - SUGURI.ogg" type="AudioStream" id=8]
-[ext_resource path="res://environment/in_the_sky/inspectorj_wind-synthesized-a.wav" type="AudioStream" id=9]
+[ext_resource path="res://music/Silent Rhythm (Stage 4) - SUGURI.ogg" type="AudioStream" id=7]
+[ext_resource path="res://environment/in_the_sky/inspectorj_wind-synthesized-a.wav" type="AudioStream" id=8]
 
 [sub_resource type="Animation" id=1]
 
@@ -449,6 +448,7 @@ blend_times = [  ]
 
 [node name="YSort" type="YSort" parent="." index="1"]
 
+editor/display_folded = true
 position = Vector2( -38.0278, 25.3518 )
 sort_enabled = true
 _sections_unfolded = [ "Sort", "Transform" ]
@@ -499,6 +499,7 @@ _sections_unfolded = [ "Drag Margin", "Editor", "Limit", "Offset", "Smoothing", 
 
 [node name="Foreground" type="ParallaxBackground" parent="." index="2"]
 
+editor/display_folded = true
 layer = 5
 offset = Vector2( 0, 0 )
 rotation = 0.0
@@ -855,6 +856,7 @@ _sections_unfolded = [ "Offset", "Transform" ]
 
 [node name="UI" type="CanvasLayer" parent="." index="6"]
 
+editor/display_folded = true
 layer = 100
 offset = Vector2( 0, 0 )
 rotation = 0.0
@@ -863,11 +865,9 @@ transform = Transform2D( 1, 0, 0, 1, 0, 0 )
 
 [node name="Interface" parent="UI" index="0" instance=ExtResource( 6 )]
 
-[node name="Transitions" parent="UI" index="1" instance=ExtResource( 7 )]
-
 [node name="Music" type="AudioStreamPlayer" parent="." index="7"]
 
-stream = ExtResource( 8 )
+stream = ExtResource( 7 )
 volume_db = 0.0
 autoplay = true
 mix_target = 0
@@ -875,10 +875,19 @@ bus = "Master"
 
 [node name="Ambience" type="AudioStreamPlayer" parent="." index="8"]
 
-stream = ExtResource( 9 )
+stream = ExtResource( 8 )
 volume_db = -20.0
 autoplay = true
 mix_target = 0
 bus = "Master"
+
+[node name="Tween" type="Tween" parent="." index="9"]
+
+repeat = false
+playback_process_mode = 1
+playback_speed = 1.0
+playback/active = false
+playback/repeat = false
+playback/speed = 1.0
 
 

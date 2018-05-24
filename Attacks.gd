@@ -25,7 +25,7 @@ var attacks = {
 	"star_b_melee_1": { 
 		damage = 100 , 
 		animation = "attack_fast",
-		effect = GlobalConstants.HEALTH_EFFECT.BURN,
+		effect = GlobalConstants.HEALTH_EFFECT.FIRE,
 		damage_type = GlobalConstants.HEALTH_DAMAGE_TYPE.FIRE ,
 		knockback_force = 10 ,
 		knockback_duration = 0.4,
@@ -35,7 +35,7 @@ var attacks = {
 	"star_b_melee_2": { 
 		damage = 100 , 
 		animation = "attack_fast",
-		effect = GlobalConstants.HEALTH_EFFECT.BURN,
+		effect = GlobalConstants.HEALTH_EFFECT.FIRE,
 		damage_type = GlobalConstants.HEALTH_DAMAGE_TYPE.FIRE ,
 		knockback_force = 10 ,
 		knockback_duration = 0.4,
@@ -45,7 +45,7 @@ var attacks = {
 	"star_b_melee_3": { 
 		damage = 75 , 
 		animation = "attack_straight",
-		effect = GlobalConstants.HEALTH_EFFECT.BURN,
+		effect = GlobalConstants.HEALTH_EFFECT.FIRE,
 		damage_type = GlobalConstants.HEALTH_DAMAGE_TYPE.FIRE ,
 		knockback_force = 10 ,
 		knockback_duration = 0.4, 
@@ -55,7 +55,7 @@ var attacks = {
 	"star_b_melee_4": {
 		damage = 200,
 		animation = "attack_medium",
-		effect = GlobalConstants.HEALTH_EFFECT.BURN,
+		effect = GlobalConstants.HEALTH_EFFECT.FIRE,
 		damage_type = GlobalConstants.HEALTH_DAMAGE_TYPE.FIRE,
 		knockback_force = 50,
 		knockback_duration = 0.6, 
@@ -110,6 +110,18 @@ var attacks = {
 	"dwarf_gun": {
 		animation = "attack",
 		host_animation = "shoot"
-		}
+		},
 	
+	
+	# Sprite
+	"sprite_gun": {
+		animation = "attack",
+		host_animation = "walk" },
+	"sprite_projectile": { 
+		damage = 50 , 
+		effect = GlobalConstants.HEALTH_EFFECT.NONE,
+		damage_type = GlobalConstants.HEALTH_DAMAGE_TYPE.NONE ,
+		knockback_force = 50 ,
+		knockback_duration = 0.5,
+		hit_pause = 0.02 },
 }

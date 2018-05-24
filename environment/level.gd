@@ -1,6 +1,8 @@
 extends Node2D
 
-var MainMenu = "res://main_menu/MainMenu.tscn"
+var MainMenu = "res://menus/main_menu/MainMenu.tscn"
+var WinMenu = "res://menus/win_menu/WinMenu.tscn"
+
 var player = null
 var player_max_health = 0
 
@@ -54,11 +56,19 @@ func _on_player_died():
 func change_scene(scene):
 	$Music.stop()
 	$Ambience.stop()
-	$UI/Transitions.fade_in(scene)
+	get_tree().change_scene(scene)
 
 
 func win():
-	change_scene(MainMenu)
+	$Tween.interpolate_property($Music, "volume_db", $Music.volume_db, -100.0, 1, Tween.TRANS_QUAD, Tween.EASE_IN)
+	$Tween.interpolate_property(Engine, "time_scale", 0.5, 1, 2, Tween.TRANS_QUAD, Tween.EASE_IN)
+	$Tween.start()
+	player.set_process(false)
+	yield(get_tree().create_timer(1), "timeout")
+	Engine.time_scale = 1
+	yield(get_tree().create_timer(3), "timeout")
+	Engine.time_scale = 1
+	change_scene(WinMenu)
 
 
 func wave_ended():

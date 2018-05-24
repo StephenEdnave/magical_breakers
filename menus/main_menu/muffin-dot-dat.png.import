@@ -2,15 +2,15 @@
 
 importer="texture"
 type="StreamTexture"
-path="res://.import/skybox.PNG-4c7ee7aacbffc034487bdfcec4721c5d.stex"
+path="res://.import/muffin-dot-dat.png-b544ac4db8c3ce96803ccab01ca8bc5a.stex"
 
 [deps]
 
-source_file="res://main_menu/skybox.PNG"
-source_md5="a0a7f7dd8572c7da0b7cc6383c8b5745"
+source_file="res://menus/main_menu/muffin-dot-dat.png"
+source_md5="9938ee66e56cda1aa353f1a86e27fc4b"
 
-dest_files=[ "res://.import/skybox.PNG-4c7ee7aacbffc034487bdfcec4721c5d.stex" ]
-dest_md5="7e3f30715bea64454db5d59c31b7692f"
+dest_files=[ "res://.import/muffin-dot-dat.png-b544ac4db8c3ce96803ccab01ca8bc5a.stex" ]
+dest_md5="ffb8eca6c7a61e2e7523b2424dff815c"
 
 [params]
 

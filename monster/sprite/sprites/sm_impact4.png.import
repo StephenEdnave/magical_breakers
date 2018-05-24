@@ -2,15 +2,15 @@
 
 importer="texture"
 type="StreamTexture"
-path="res://.import/glossy_button.png-03cf0dfffc39d637212119147331979f.stex"
+path="res://.import/sm_impact4.png-da01096d44731f6b8b297e8e423c07e4.stex"
 
 [deps]
 
-source_file="res://main_menu/glossy_button.png"
-source_md5="3a04d8ee5349dc5236ce5c0c1cde258f"
+source_file="res://monster/sprite/sprites/sm_impact4.png"
+source_md5="750c687fbe0dc4e441eab9763afd55d8"
 
-dest_files=[ "res://.import/glossy_button.png-03cf0dfffc39d637212119147331979f.stex" ]
-dest_md5="8b797c28d003eab2ed0204288143781e"
+dest_files=[ "res://.import/sm_impact4.png-da01096d44731f6b8b297e8e423c07e4.stex" ]
+dest_md5="e588479948cc4499301732906932fc77"
 
 [params]
 

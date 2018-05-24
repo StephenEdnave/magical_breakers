@@ -2,15 +2,15 @@
 
 importer="texture"
 type="StreamTexture"
-path="res://.import/fragile-soft-machine.png-f3d4beb33904f5cda975fbec56091577.stex"
+path="res://.import/sm_wisp_fld.png-b3392de6db529798b5aebb6eff9db447.stex"
 
 [deps]
 
-source_file="res://main_menu/fragile-soft-machine.png"
-source_md5="6990fe08e27652508e091f8db6f264a9"
+source_file="res://monster/sprite/sprites/sm_wisp_fld.png"
+source_md5="19be7a9eed9458b606aab0d1d997a2d0"
 
-dest_files=[ "res://.import/fragile-soft-machine.png-f3d4beb33904f5cda975fbec56091577.stex" ]
-dest_md5="6745b1c479c9c4e245ec5d7e72165678"
+dest_files=[ "res://.import/sm_wisp_fld.png-b3392de6db529798b5aebb6eff9db447.stex" ]
+dest_md5="403e6625898177bae29d289a1de6c802"
 
 [params]
 

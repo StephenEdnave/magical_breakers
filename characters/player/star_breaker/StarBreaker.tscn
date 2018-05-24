@@ -722,13 +722,6 @@ tracks/3/keys = {
 script = ExtResource( 2 )
 _sections_unfolded = [ "Collision", "Material", "Transform", "Visibility", "Z Index", "collision" ]
 
-[node name="Dash" parent="States" index="2"]
-
-MAX_DASH_SPEED = 1100
-particles_per_second = 6
-BEGIN_DURATION = 0.1
-BEGIN_SPEED = 1400
-
 [node name="Attack" parent="States" index="4"]
 
 primary_weapon_path = "res://characters/player/star_breaker/weapon/LaserSpawner.tscn"
@@ -816,9 +809,5 @@ volume_db = -8.0
 autoplay = false
 mix_target = 0
 bus = "Master"
-
-[node name="StatusPivot" parent="." index="11"]
-
-editor/display_folded = true
 
 
