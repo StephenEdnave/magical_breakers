@@ -11,7 +11,7 @@ func _ready():
 	$AnimationPlayer.connect("animation_finished", self, "_on_animation_finished")
 	$VisibilityNotifier2D.connect("screen_exited", self, "_on_VisibilityNotifier2D_screen_exited")
 	exploded = false
-	
+
 
 func _physics_process(delta):
 	velocity += velocity.normalized() * acceleration

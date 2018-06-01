@@ -12,7 +12,7 @@ margin_right = 200.0
 margin_bottom = 1024.0
 rect_min_size = Vector2( 200, 0 )
 
-[node name="Label" parent="Counter" index="0"]
+[node name="Label" parent="Counter" index="1"]
 
 margin_left = -193.0
 

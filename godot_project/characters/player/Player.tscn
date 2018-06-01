@@ -225,12 +225,9 @@ tracks/1/keys = {
 script = ExtResource( 2 )
 _sections_unfolded = [ "Collision", "Transform", "Visibility", "Z Index", "collision" ]
 
-[node name="Dash" parent="States" index="2"]
+[node name="States" parent="." index="0"]
 
-MAX_DASH_SPEED = 1100
-particles_per_second = 6
-BEGIN_DURATION = 0.1
-BEGIN_SPEED = 1400
+editor/display_folded = false
 
 [node name="Dead" parent="States" index="6"]
 
@@ -251,9 +248,5 @@ max_health = 3000
 [node name="Body" parent="BodyPivot" index="0"]
 
 texture = ExtResource( 4 )
-
-[node name="WeaponPivot" parent="." index="6"]
-
-editor/display_folded = true
 
 

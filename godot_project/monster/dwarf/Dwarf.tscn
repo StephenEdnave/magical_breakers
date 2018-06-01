@@ -955,7 +955,7 @@ stream = ExtResource( 22 )
 volume_db = 2.0
 autoplay = false
 mix_target = 0
-bus = "Master"
+bus = "SFX"
 
 [node name="ChargeStart" type="AudioStreamPlayer" parent="." index="13"]
 
@@ -963,7 +963,7 @@ stream = ExtResource( 23 )
 volume_db = 4.0
 autoplay = false
 mix_target = 0
-bus = "Master"
+bus = "SFX"
 
 [node name="ChargeImpact" type="AudioStreamPlayer" parent="." index="14"]
 
@@ -971,6 +971,6 @@ stream = ExtResource( 24 )
 volume_db = 9.0
 autoplay = false
 mix_target = 0
-bus = "Master"
+bus = "SFX"
 
 

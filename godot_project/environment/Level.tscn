@@ -51,8 +51,20 @@ tracks/2/keys = {
 "update": 1,
 "values": [ false ]
 }
+tracks/3/type = "value"
+tracks/3/path = NodePath("UI/Transitions/BlackArrows:rect_size")
+tracks/3/interp = 1
+tracks/3/loop_wrap = true
+tracks/3/imported = false
+tracks/3/enabled = true
+tracks/3/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 0,
+"values": [ Vector2( 2100, 1561 ) ]
+}
 
-[sub_resource type="Animation" id=23]
+[sub_resource type="Animation" id=2]
 
 resource_name = "enter"
 length = 0.5
@@ -83,10 +95,10 @@ tracks/1/keys = {
 "values": [ Vector2( 2100, 1561 ), Vector2( 2100, 51 ) ]
 }
 
-[sub_resource type="Animation" id=24]
+[sub_resource type="Animation" id=3]
 
 resource_name = "exit"
-length = 1.0
+length = 0.5
 loop = false
 step = 0.1
 tracks/0/type = "value"
@@ -126,9 +138,8 @@ tracks/2/keys = {
 "values": [ false, true ]
 }
 
-[sub_resource type="Animation" id=2]
+[sub_resource type="Animation" id=4]
 
-resource_name = "level"
 length = 30.0
 loop = true
 step = 0.1
@@ -145,18 +156,18 @@ tracks/0/keys = {
 "values": [ Vector2( 0, 0 ), Vector2( 1026.75, -12.676 ), Vector2( -19.0139, 836.612 ), Vector2( -38.0278, 25.3518 ) ]
 }
 
-[sub_resource type="Gradient" id=3]
+[sub_resource type="Gradient" id=5]
 
 offsets = PoolRealArray( 0, 0.136095, 0.733728, 0.994083, 1 )
 colors = PoolColorArray( 1, 1, 1, 0, 0.726563, 1, 0.980774, 0.353608, 0.554291, 0.503906, 1, 0.143647, 1, 1, 1, 0.11051, 0.985949, 0.947103, 1, 0.193636 )
 
-[sub_resource type="GradientTexture" id=4]
+[sub_resource type="GradientTexture" id=6]
 
 flags = 4
-gradient = SubResource( 3 )
+gradient = SubResource( 5 )
 width = 2048
 
-[sub_resource type="ParticlesMaterial" id=5]
+[sub_resource type="ParticlesMaterial" id=7]
 
 render_priority = 0
 trail_divisor = 1
@@ -186,7 +197,7 @@ angle = 0.0
 angle_random = 0.0
 scale = 4.0
 scale_random = 1.0
-color_ramp = SubResource( 4 )
+color_ramp = SubResource( 6 )
 hue_variation = 0.0
 hue_variation_random = 0.0
 anim_speed = 0.0
@@ -196,18 +207,18 @@ anim_offset_random = 0.0
 anim_loop = false
 _sections_unfolded = [ "Color", "Emission Shape", "Initial Velocity", "Scale", "Spread" ]
 
-[sub_resource type="Gradient" id=6]
+[sub_resource type="Gradient" id=8]
 
 offsets = PoolRealArray( 0, 0.118343, 0.751479, 1 )
 colors = PoolColorArray( 0.967529, 1, 0.78125, 0, 0.0490714, 0.00549316, 0.15625, 0.176824, 0.0338745, 0, 0.117188, 0.0386667, 1, 1, 1, 0 )
 
-[sub_resource type="GradientTexture" id=7]
+[sub_resource type="GradientTexture" id=9]
 
 flags = 4
-gradient = SubResource( 6 )
+gradient = SubResource( 8 )
 width = 2048
 
-[sub_resource type="ParticlesMaterial" id=8]
+[sub_resource type="ParticlesMaterial" id=10]
 
 render_priority = 0
 trail_divisor = 1
@@ -236,7 +247,7 @@ angle = 15.0
 angle_random = 1.0
 scale = 6.0
 scale_random = 1.0
-color_ramp = SubResource( 7 )
+color_ramp = SubResource( 9 )
 hue_variation = 0.0
 hue_variation_random = 0.0
 anim_speed = 0.0
@@ -246,7 +257,7 @@ anim_offset_random = 0.0
 anim_loop = false
 _sections_unfolded = [ "Angle", "Color", "Gravity", "Initial Velocity", "Scale", "Spread" ]
 
-[sub_resource type="ParticlesMaterial" id=9]
+[sub_resource type="ParticlesMaterial" id=11]
 
 render_priority = 5
 trail_divisor = 1
@@ -286,18 +297,18 @@ anim_offset_random = 0.0
 anim_loop = false
 _sections_unfolded = [ "Angle", "Color", "Emission Shape", "Initial Velocity", "Scale" ]
 
-[sub_resource type="Gradient" id=11]
+[sub_resource type="Gradient" id=12]
 
 offsets = PoolRealArray( 0, 0.130178, 0.792899, 1 )
 colors = PoolColorArray( 0.222656, 0, 0.177429, 0, 1, 0.476563, 0.709656, 0.861882, 1, 0.632721, 0.433594, 0.203824, 0.996094, 0.876203, 0.770416, 0 )
 
-[sub_resource type="GradientTexture" id=12]
+[sub_resource type="GradientTexture" id=13]
 
 flags = 4
-gradient = SubResource( 11 )
+gradient = SubResource( 12 )
 width = 2048
 
-[sub_resource type="ParticlesMaterial" id=13]
+[sub_resource type="ParticlesMaterial" id=14]
 
 render_priority = 0
 trail_divisor = 1
@@ -327,7 +338,7 @@ angle = 0.0
 angle_random = 0.0
 scale = 3.0
 scale_random = 1.0
-color_ramp = SubResource( 12 )
+color_ramp = SubResource( 13 )
 hue_variation = 0.0
 hue_variation_random = 0.0
 anim_speed = 0.0
@@ -337,18 +348,18 @@ anim_offset_random = 0.0
 anim_loop = false
 _sections_unfolded = [ "Color", "Emission Shape", "Gravity", "Initial Velocity", "Scale", "Spread" ]
 
-[sub_resource type="Gradient" id=14]
+[sub_resource type="Gradient" id=15]
 
 offsets = PoolRealArray( 0, 0.0887574, 0.816568, 1 )
 colors = PoolColorArray( 1, 0.894531, 0.956329, 0, 0.648438, 0.884644, 1, 0.403294, 1, 0.875, 0.948242, 0.734824, 1, 1, 1, 0 )
 
-[sub_resource type="GradientTexture" id=15]
+[sub_resource type="GradientTexture" id=16]
 
 flags = 4
-gradient = SubResource( 14 )
+gradient = SubResource( 15 )
 width = 2048
 
-[sub_resource type="ParticlesMaterial" id=16]
+[sub_resource type="ParticlesMaterial" id=17]
 
 render_priority = 0
 trail_divisor = 1
@@ -378,7 +389,7 @@ angle = 0.0
 angle_random = 0.0
 scale = 6.0
 scale_random = 0.2
-color_ramp = SubResource( 15 )
+color_ramp = SubResource( 16 )
 hue_variation = 0.0
 hue_variation_random = 0.0
 anim_speed = 0.0
@@ -388,18 +399,18 @@ anim_offset_random = 0.0
 anim_loop = false
 _sections_unfolded = [ "Color", "Emission Shape", "Scale" ]
 
-[sub_resource type="Gradient" id=17]
+[sub_resource type="Gradient" id=18]
 
 offsets = PoolRealArray( 0, 0.236686, 0.769231, 1 )
 colors = PoolColorArray( 1, 0.988068, 0.910156, 0, 1, 0.910248, 0.324219, 0.116, 0.263092, 0, 0.910156, 0.160235, 1, 0.917969, 0.946808, 0 )
 
-[sub_resource type="GradientTexture" id=18]
+[sub_resource type="GradientTexture" id=19]
 
 flags = 4
-gradient = SubResource( 17 )
+gradient = SubResource( 18 )
 width = 2048
 
-[sub_resource type="ParticlesMaterial" id=19]
+[sub_resource type="ParticlesMaterial" id=20]
 
 render_priority = 0
 trail_divisor = 1
@@ -429,7 +440,7 @@ angle = 0.0
 angle_random = 0.0
 scale = 0.1
 scale_random = 1.0
-color_ramp = SubResource( 18 )
+color_ramp = SubResource( 19 )
 hue_variation = 0.0
 hue_variation_random = 0.0
 anim_speed = 0.0
@@ -439,18 +450,18 @@ anim_offset_random = 0.0
 anim_loop = false
 _sections_unfolded = [ "Color", "Damping", "Emission Shape", "Initial Velocity", "Spread" ]
 
-[sub_resource type="Gradient" id=20]
+[sub_resource type="Gradient" id=21]
 
 offsets = PoolRealArray( 0, 0.153846, 1 )
 colors = PoolColorArray( 1, 1, 1, 0, 1, 0.679688, 0.859863, 0.248627, 1, 1, 1, 0 )
 
-[sub_resource type="GradientTexture" id=21]
+[sub_resource type="GradientTexture" id=22]
 
 flags = 4
-gradient = SubResource( 20 )
+gradient = SubResource( 21 )
 width = 2048
 
-[sub_resource type="ParticlesMaterial" id=22]
+[sub_resource type="ParticlesMaterial" id=23]
 
 render_priority = 0
 trail_divisor = 1
@@ -480,7 +491,7 @@ angle = 0.0
 angle_random = 0.0
 scale = 0.6
 scale_random = 1.0
-color_ramp = SubResource( 21 )
+color_ramp = SubResource( 22 )
 hue_variation = 0.0
 hue_variation_random = 0.0
 anim_speed = 0.0
@@ -502,14 +513,14 @@ playback_process_mode = 1
 playback_default_blend_time = 0.0
 playback_speed = 1.0
 anims/SETUP = SubResource( 1 )
-anims/enter = SubResource( 23 )
-anims/exit = SubResource( 24 )
-anims/level = SubResource( 2 )
+anims/enter = SubResource( 2 )
+anims/exit = SubResource( 3 )
+anims/level = SubResource( 4 )
 blend_times = [  ]
 
 [node name="YSort" type="YSort" parent="." index="1"]
 
-position = Vector2( -38.0278, 25.3518 )
+editor/display_folded = true
 sort_enabled = true
 _sections_unfolded = [ "Sort", "Transform" ]
 
@@ -552,6 +563,7 @@ _sections_unfolded = [ "Drag Margin", "Editor", "Limit", "Offset", "Smoothing", 
 
 [node name="Foreground" type="ParallaxBackground" parent="." index="2"]
 
+editor/display_folded = true
 layer = 5
 offset = Vector2( 0, 0 )
 rotation = 0.0
@@ -589,7 +601,7 @@ fract_delta = true
 visibility_rect = Rect2( -1000, -4000, 6000, 6000 )
 local_coords = true
 draw_order = 0
-process_material = SubResource( 5 )
+process_material = SubResource( 7 )
 texture = ExtResource( 3 )
 normal_map = null
 h_frames = 1
@@ -621,7 +633,7 @@ fract_delta = true
 visibility_rect = Rect2( -2000, -5000, 6000, 6000 )
 local_coords = true
 draw_order = 0
-process_material = SubResource( 8 )
+process_material = SubResource( 10 )
 texture = ExtResource( 3 )
 normal_map = null
 h_frames = 1
@@ -653,7 +665,7 @@ fract_delta = true
 visibility_rect = Rect2( -3000, -3000, 6000, 6000 )
 local_coords = true
 draw_order = 0
-process_material = SubResource( 9 )
+process_material = SubResource( 11 )
 texture = ExtResource( 3 )
 normal_map = null
 h_frames = 1
@@ -662,6 +674,7 @@ _sections_unfolded = [ "Drawing", "Process Material", "Textures", "Time", "Trans
 
 [node name="Background" type="ParallaxBackground" parent="." index="3"]
 
+editor/display_folded = true
 layer = -2
 offset = Vector2( 0, 0 )
 rotation = 0.0
@@ -678,7 +691,6 @@ scroll_ignore_camera_zoom = true
 
 editor/display_folded = true
 position = Vector2( 38.0278, -50.704 )
-scale = Vector2( 1, 1 )
 motion_scale = Vector2( 0.1, 0.1 )
 motion_offset = Vector2( 0, 0 )
 motion_mirroring = Vector2( 0, 0 )
@@ -701,7 +713,7 @@ fract_delta = true
 visibility_rect = Rect2( -3000, -3000, 6000, 6000 )
 local_coords = true
 draw_order = 0
-process_material = SubResource( 13 )
+process_material = SubResource( 14 )
 texture = ExtResource( 3 )
 normal_map = null
 h_frames = 1
@@ -712,7 +724,6 @@ _sections_unfolded = [ "Drawing", "Process Material", "Textures", "Time", "Trans
 
 editor/display_folded = true
 position = Vector2( 38.0278, -50.704 )
-scale = Vector2( 1, 1 )
 motion_scale = Vector2( 0.2, 0.2 )
 motion_offset = Vector2( 0, 0 )
 motion_mirroring = Vector2( 0, 0 )
@@ -735,7 +746,7 @@ fract_delta = true
 visibility_rect = Rect2( -3000, -5000, 6000, 6000 )
 local_coords = true
 draw_order = 0
-process_material = SubResource( 16 )
+process_material = SubResource( 17 )
 texture = ExtResource( 3 )
 normal_map = null
 h_frames = 1
@@ -746,7 +757,6 @@ _sections_unfolded = [ "Drawing", "Process Material", "Textures", "Time", "Trans
 
 editor/display_folded = true
 position = Vector2( 49.7568, -332.204 )
-scale = Vector2( 1, 1 )
 motion_scale = Vector2( 0.3, 0.3 )
 motion_offset = Vector2( 0, 0 )
 motion_mirroring = Vector2( 0, 0 )
@@ -769,7 +779,7 @@ fract_delta = true
 visibility_rect = Rect2( -3000, -3000, 6000, 6000 )
 local_coords = true
 draw_order = 0
-process_material = SubResource( 19 )
+process_material = SubResource( 20 )
 texture = ExtResource( 3 )
 normal_map = null
 h_frames = 1
@@ -780,7 +790,6 @@ _sections_unfolded = [ "Drawing", "Process Material", "Textures", "Time", "Trans
 
 editor/display_folded = true
 position = Vector2( 14.5693, 312.9 )
-scale = Vector2( 1, 1 )
 motion_scale = Vector2( 0.4, 0.4 )
 motion_offset = Vector2( 0, 0 )
 motion_mirroring = Vector2( 0, 0 )
@@ -803,7 +812,7 @@ fract_delta = true
 visibility_rect = Rect2( -3000, -3000, 6000, 6000 )
 local_coords = true
 draw_order = 0
-process_material = SubResource( 19 )
+process_material = SubResource( 20 )
 texture = ExtResource( 3 )
 normal_map = null
 h_frames = 1
@@ -814,7 +823,6 @@ _sections_unfolded = [ "Drawing", "Process Material", "Textures", "Time", "Trans
 
 editor/display_folded = true
 position = Vector2( 38.0278, -50.704 )
-scale = Vector2( 1, 1 )
 motion_scale = Vector2( 0.6, 0.6 )
 motion_offset = Vector2( 0, 0 )
 motion_mirroring = Vector2( 0, 0 )
@@ -838,7 +846,7 @@ fract_delta = true
 visibility_rect = Rect2( -100, -3000, 6000, 6000 )
 local_coords = true
 draw_order = 0
-process_material = SubResource( 22 )
+process_material = SubResource( 23 )
 texture = ExtResource( 3 )
 normal_map = null
 h_frames = 1
@@ -877,6 +885,7 @@ _sections_unfolded = [ "Offset", "Transform" ]
 
 [node name="UI" type="CanvasLayer" parent="." index="5"]
 
+editor/display_folded = true
 layer = 100
 offset = Vector2( 0, 0 )
 rotation = 0.0
@@ -929,7 +938,7 @@ stream = ExtResource( 7 )
 volume_db = 0.0
 autoplay = true
 mix_target = 0
-bus = "Master"
+bus = "Music"
 
 [node name="Ambience" type="AudioStreamPlayer" parent="." index="7"]
 
@@ -937,7 +946,7 @@ stream = ExtResource( 8 )
 volume_db = -20.0
 autoplay = true
 mix_target = 0
-bus = "Master"
+bus = "SFX"
 
 [node name="Tween" type="Tween" parent="." index="8"]
 

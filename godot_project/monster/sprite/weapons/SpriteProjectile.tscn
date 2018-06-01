@@ -299,7 +299,7 @@ stream = ExtResource( 8 )
 volume_db = 0.0
 autoplay = true
 mix_target = 0
-bus = "Master"
+bus = "SFX"
 
 [node name="ExplosionSFX" type="AudioStreamPlayer" parent="." index="7"]
 
@@ -307,6 +307,6 @@ stream = ExtResource( 9 )
 volume_db = 8.0
 autoplay = false
 mix_target = 0
-bus = "Master"
+bus = "SFX"
 
 

@@ -568,7 +568,7 @@ stream = ExtResource( 6 )
 volume_db = 0.0
 autoplay = false
 mix_target = 0
-bus = "Master"
+bus = "SFX"
 
 [node name="SpawnAudio" type="AudioStreamPlayer" parent="." index="9"]
 
@@ -576,7 +576,7 @@ stream = ExtResource( 7 )
 volume_db = 0.0
 autoplay = false
 mix_target = 0
-bus = "Master"
+bus = "SFX"
 
 [node name="LaserStart2" type="Particles2D" parent="." index="10"]
 

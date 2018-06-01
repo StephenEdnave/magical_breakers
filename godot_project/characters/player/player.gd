@@ -1,9 +1,11 @@
 extends "../character.gd"
 
+signal lock_on
+
 var target = null
+var target_position = Vector2()
 onready var TargetReticle = preload("res://objects/miscellaneous/crosshairs/TargetReticle.tscn")
 var target_reticle = null
-var target_position = Vector2()
 
 enum LOCK_ON_STATES { INACTIVE, ACTIVE }
 var lock_on_state = INACTIVE
@@ -11,20 +13,12 @@ var lock_on_state = INACTIVE
 func _ready():
 	is_player = true
 	
-	target_reticle = TargetReticle.instance()
-	add_child(target_reticle)
-	target_reticle.visible = false
-	lock_on_state = INACTIVE
-#	_change_lock_on_state()
-	
 	$States/Dash.connect("projectile_grazed", self, "_on_projectile_grazed")
 
 
 func _process(delta):
-	match lock_on_state:
-		LOCK_ON_STATES.ACTIVE:
-			target_position = target.global_position
-			target_reticle.global_position = target_position
+	if target:
+		target_position = target.global_position
 
 
 func _input(event):
@@ -33,28 +27,20 @@ func _input(event):
 
 
 func _change_lock_on_state():
+	emit_signal("lock_on")
 	if target:
 		target.disconnect("died", self, "_on_target_disconnect")
-	target = find_closest_enemy()
-	if target:
-		target.connect("died", self, "_on_target_disconnect")
 	
-	match lock_on_state:
-		LOCK_ON_STATES.ACTIVE:
-			if target:
-				$LockOnSound.play()
-				return
-			target_position = Vector2()
-			lock_on_state = LOCK_ON_STATES.INACTIVE
-			target_reticle.visible = false
-		LOCK_ON_STATES.INACTIVE:
-			if not target:
-				return
-			lock_on_state = LOCK_ON_STATES.ACTIVE
-			target_position = target.global_position
-			target_reticle.global_position = target_position
-			target_reticle.visible = true
-			$LockOnSound.play()
+	target = find_closest_enemy()
+	if not target:
+		target_position = Vector2()
+		return
+	target.connect("died", self, "_on_target_disconnect")
+	target_position = target.global_position
+	
+	target_reticle = TargetReticle.instance()
+	add_child(target_reticle)
+	target_reticle.setup(self)
 
 
 func find_closest_enemy():

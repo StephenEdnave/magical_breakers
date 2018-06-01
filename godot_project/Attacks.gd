@@ -124,4 +124,17 @@ var attacks = {
 		knockback_force = 50 ,
 		knockback_duration = 0.5,
 		hit_pause = 0.02 },
+	
+	
+	# Basic Plushy
+	"basic_plushy_gun": {
+		animation = "attack",
+		host_animation = "walk" },
+	"basic_plushy_projectile": {
+		damage = 50 , 
+		effect = GlobalConstants.HEALTH_EFFECT.NONE,
+		damage_type = GlobalConstants.HEALTH_DAMAGE_TYPE.NONE ,
+		knockback_force = 50 ,
+		knockback_duration = 0.5,
+		hit_pause = 0.02 },
 }

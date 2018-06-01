@@ -1,4 +1,4 @@
-[gd_scene load_steps=14 format=2]
+[gd_scene load_steps=15 format=2]
 
 [ext_resource path="res://menus/win_menu/win_menu.gd" type="Script" id=1]
 [ext_resource path="res://menus/main_menu/skybox.PNG" type="Texture" id=2]
@@ -9,6 +9,7 @@
 [ext_resource path="res://interface/sprites/blue_button13.png" type="Texture" id=7]
 [ext_resource path="res://characters/player/star_breaker/sprites/res_chr.png" type="Texture" id=8]
 [ext_resource path="res://music/Sonic CD - D.A. Garden [JPEU] (HD).ogg" type="AudioStream" id=9]
+[ext_resource path="res://sfx/lock_on.wav" type="AudioStream" id=10]
 
 [sub_resource type="Animation" id=1]
 
@@ -504,6 +505,7 @@ blend_times = [  ]
 
 [node name="Container" type="Container" parent="." index="3"]
 
+editor/display_folded = true
 anchor_left = 0.0
 anchor_top = 0.0
 anchor_right = 1.0
@@ -521,10 +523,10 @@ anchor_left = 0.0
 anchor_top = 0.0
 anchor_right = 0.0
 anchor_bottom = 0.0
-margin_left = -311.0
-margin_top = -832.0
-margin_right = 1789.0
-margin_bottom = 650.0
+margin_left = -1396.0
+margin_top = 430.0
+margin_right = 704.0
+margin_bottom = 476.0
 rect_rotation = 20.0
 rect_pivot_offset = Vector2( 0, 0 )
 rect_clip_content = false
@@ -539,6 +541,7 @@ _sections_unfolded = [ "Rect" ]
 [node name="MenuItems" type="VBoxContainer" parent="Container" index="1"]
 
 editor/display_folded = true
+visible = false
 anchor_left = 0.0
 anchor_top = 0.0
 anchor_right = 0.0
@@ -653,10 +656,10 @@ anchor_left = 0.0
 anchor_top = 0.0
 anchor_right = 0.0
 anchor_bottom = 0.0
-margin_left = 2052.0
-margin_top = 958.0
-margin_right = 4152.0
-margin_bottom = 1295.0
+margin_left = 3703.0
+margin_top = 473.0
+margin_right = 5803.0
+margin_bottom = 519.0
 rect_rotation = 175.0
 rect_pivot_offset = Vector2( 0, 0 )
 rect_clip_content = false
@@ -675,10 +678,10 @@ anchor_left = 0.0
 anchor_top = 0.0
 anchor_right = 0.0
 anchor_bottom = 0.0
-margin_left = -690.0
-margin_top = -174.0
-margin_right = 1410.0
-margin_bottom = 145.0
+margin_left = -2474.0
+margin_top = 284.0
+margin_right = -374.0
+margin_bottom = 330.0
 rect_rotation = -5.0
 rect_pivot_offset = Vector2( 0, 0 )
 rect_clip_content = false
@@ -696,10 +699,10 @@ anchor_left = 1.0
 anchor_top = 0.5
 anchor_right = 1.0
 anchor_bottom = 0.5
-margin_left = 284.0
-margin_top = -196.0
-margin_right = 2340.0
-margin_bottom = 1893.0
+margin_left = 1306.0
+margin_top = -250.0
+margin_right = 3362.0
+margin_bottom = 1839.0
 rect_scale = Vector2( 0.8, 0.8 )
 rect_pivot_offset = Vector2( 0, 0 )
 rect_clip_content = false
@@ -717,9 +720,17 @@ stream = ExtResource( 9 )
 volume_db = 0.0
 autoplay = true
 mix_target = 0
-bus = "Master"
+bus = "Music"
 
-[node name="Tween" type="Tween" parent="." index="6"]
+[node name="ButtonPress" type="AudioStreamPlayer" parent="." index="6"]
+
+stream = ExtResource( 10 )
+volume_db = 0.0
+autoplay = false
+mix_target = 0
+bus = "SFX"
+
+[node name="Tween" type="Tween" parent="." index="7"]
 
 repeat = false
 playback_process_mode = 1

@@ -11,8 +11,6 @@
 [ext_resource path="res://characters/player/star_breaker/sfx/missile_launch.ogg" type="AudioStream" id=9]
 [ext_resource path="res://characters/player/star_breaker/sfx/missile_explode.ogg" type="AudioStream" id=10]
 
-
-
 [sub_resource type="CircleShape2D" id=1]
 
 custom_solver_bias = 0.0
@@ -383,7 +381,7 @@ stream = ExtResource( 9 )
 volume_db = 0.0
 autoplay = true
 mix_target = 0
-bus = "Master"
+bus = "SFX"
 
 [node name="ExplosionSFX" type="AudioStreamPlayer" parent="." index="9"]
 
@@ -391,6 +389,6 @@ stream = ExtResource( 10 )
 volume_db = 8.0
 autoplay = false
 mix_target = 0
-bus = "Master"
+bus = "SFX"
 
 

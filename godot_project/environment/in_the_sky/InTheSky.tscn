@@ -11,19 +11,11 @@
 [ext_resource path="res://environment/in_the_sky/waves/Wave8.tscn" type="PackedScene" id=9]
 [ext_resource path="res://menus/main_menu/skybox.PNG" type="Texture" id=10]
 
-[node name="Level" index="0" instance=ExtResource( 1 )]
-
-[node name="YSort" parent="." index="1"]
-
-position = Vector2( 0, 0 )
+[node name="Level" instance=ExtResource( 1 )]
 
 [node name="Player" parent="YSort" index="0"]
 
 position = Vector2( 339.765, 563.335 )
-
-[node name="Waves" parent="YSort" index="1"]
-
-editor/display_folded = true
 
 [node name="Wave1" parent="YSort/Waves" index="0" instance=ExtResource( 2 )]
 

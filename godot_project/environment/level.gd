@@ -22,7 +22,7 @@ func _ready():
 	_on_player_hyper_changed(100.0)
 	
 	$AnimationPlayer.connect("animation_finished", self, "_on_animation_finished")
-	$AnimationPlayer.play("enter")
+	$AnimationPlayer.play("SETUP")
 	
 	for wave in $YSort/Waves.get_children():
 		wave.connect("wave_ended", self, "wave_ended")
@@ -90,6 +90,8 @@ func wave_ended():
 
 func _on_animation_finished(name):
 	match name:
+		"SETUP":
+			$AnimationPlayer.play("enter")
 		"enter":
 			$AnimationPlayer.play("level")
 		"exit":

@@ -722,6 +722,10 @@ tracks/3/keys = {
 script = ExtResource( 2 )
 _sections_unfolded = [ "Collision", "Material", "Transform", "Visibility", "Z Index", "collision" ]
 
+[node name="States" parent="." index="0"]
+
+editor/display_folded = false
+
 [node name="Attack" parent="States" index="4"]
 
 primary_weapon_path = "res://characters/player/star_breaker/weapon/LaserSpawner.tscn"
@@ -757,10 +761,6 @@ max_health = 3000
 position = Vector2( 0, 0 )
 _sections_unfolded = [ "Transform" ]
 
-[node name="BodyPivot" parent="." index="5"]
-
-editor/display_folded = true
-
 [node name="Body" parent="BodyPivot" index="0"]
 
 texture = ExtResource( 4 )
@@ -770,7 +770,6 @@ _sections_unfolded = [ "Offset", "Transform", "Visibility", "Z Index" ]
 
 [node name="WeaponPivot" parent="." index="6"]
 
-editor/display_folded = true
 position = Vector2( -3.67545, -53.7445 )
 script = ExtResource( 42 )
 
@@ -792,7 +791,7 @@ stream = ExtResource( 43 )
 volume_db = 0.0
 autoplay = false
 mix_target = 0
-bus = "Master"
+bus = "SFX"
 
 [node name="DeathSound" type="AudioStreamPlayer" parent="." index="9"]
 
@@ -800,7 +799,7 @@ stream = ExtResource( 44 )
 volume_db = 0.0
 autoplay = false
 mix_target = 0
-bus = "Master"
+bus = "SFX"
 
 [node name="LockOnSound" type="AudioStreamPlayer" parent="." index="10"]
 
@@ -808,6 +807,6 @@ stream = ExtResource( 45 )
 volume_db = -8.0
 autoplay = false
 mix_target = 0
-bus = "Master"
+bus = "SFX"
 
 

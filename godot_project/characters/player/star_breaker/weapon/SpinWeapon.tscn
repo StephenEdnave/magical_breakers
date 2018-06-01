@@ -693,7 +693,7 @@ load_path = "res://.import/sb_flames.PNG-7f51cc4d69009bf302351a250e0f18e5.stex"
 custom_solver_bias = 0.0
 extents = Vector2( 176, 119.603 )
 
-[node name="SpinWeapon" type="Area2D" index="0"]
+[node name="SpinWeapon" type="Area2D"]
 
 scale = Vector2( 0.8, 0.8 )
 input_pickable = true
@@ -847,6 +847,6 @@ stream = ExtResource( 4 )
 volume_db = 0.0
 autoplay = false
 mix_target = 0
-bus = "Master"
+bus = "SFX"
 
 

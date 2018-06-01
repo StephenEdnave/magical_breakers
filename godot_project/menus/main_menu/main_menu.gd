@@ -1,19 +1,24 @@
 extends Node2D
 
-# class member variables go here, for example:
-# var a = 2
-# var b = "textvar"
-
 func _ready():
-	$CanvasLayer/MainMenuContainer/Buttons/PlayButton.connect("button_down", self, "_on_PlayButton_button_down")
-	$CanvasLayer/MainMenuContainer/Buttons/HowToPlayButton.connect("button_down", self, "_on_HowToPlayButton_button_down")
-	$CanvasLayer/MainMenuContainer/Buttons/ExitButton.connect("button_down", self, "_on_ExitButton_button_down")
-	$CanvasLayer/MainMenuContainer/Buttons/CreditsButton.connect("button_down", self, "_on_CreditsButton_button_down")
-	$CanvasLayer/HowToPlayMenuContainer/ReturnButton.connect("button_down", self, "_on_HowToPlayReturnButton_button_down")
-	$CanvasLayer/CreditsContainer/ReturnButton.connect("button_down", self, "_on_CreditsReturnButton_button_down")
+	$CanvasLayer/MainMenu/Buttons/PlayButton.connect("button_down", self, "_on_PlayButton_button_down")
+	$CanvasLayer/MainMenu/Buttons/ConfigButton.connect("button_down", self, "_on_ConfigButton_button_down")
+	$CanvasLayer/MainMenu/Buttons/ExitButton.connect("button_down", self, "_on_ExitButton_button_down")
+	$CanvasLayer/MainMenu/Buttons/CreditsButton.connect("button_down", self, "_on_CreditsButton_button_down")
+	$CanvasLayer/Config/ReturnButton.connect("button_down", self, "_on_ConfigReturnButton_button_down")
+	$CanvasLayer/Credits/ReturnButton.connect("button_down", self, "_on_CreditsReturnButton_button_down")
 	
 	$AnimationPlayer.connect("animation_finished", self, "_on_animation_finished")
 	$AnimationPlayer.play("open_main_menu")
+	
+	
+	# Music/sound editing
+	$CanvasLayer/Config/SoundPanel/SFXBar/VolumeBar.value = (AudioServer.get_bus_volume_db(1) + 60) / 60 * 100
+	$CanvasLayer/Config/SoundPanel/MusicBar/VolumeBar.value = (AudioServer.get_bus_volume_db(2) + 60) / 60 * 100
+	$CanvasLayer/Config/SoundPanel/SFXBar/MinusButton.connect("button_down", self, "_on_SFXDown_button_down")
+	$CanvasLayer/Config/SoundPanel/SFXBar/PlusButton.connect("button_down", self, "_on_SFXUp_button_down")
+	$CanvasLayer/Config/SoundPanel/MusicBar/MinusButton.connect("button_down", self, "_on_MusicDown_button_down")
+	$CanvasLayer/Config/SoundPanel/MusicBar/PlusButton.connect("button_down", self, "_on_MusicUp_button_down")
 
 
 func _on_PlayButton_button_down():
@@ -23,9 +28,9 @@ func _on_PlayButton_button_down():
 	$AnimationPlayer.play("main_menu_transition_out")
 
 
-func _on_HowToPlayButton_button_down():
+func _on_ConfigButton_button_down():
 	$ButtonPress.play()
-	$AnimationPlayer.play("main_menu_to_how_to_play")
+	$AnimationPlayer.play("main_menu_to_config")
 
 
 func _on_ExitButton_button_down():
@@ -38,9 +43,9 @@ func _on_CreditsButton_button_down():
 	$AnimationPlayer.play("main_menu_to_credits")
 
 
-func _on_HowToPlayReturnButton_button_down():
+func _on_ConfigReturnButton_button_down():
 	$ButtonPress.play()
-	$AnimationPlayer.play("how_to_play_to_main_menu")
+	$AnimationPlayer.play("config_to_main_menu")
 
 
 func _on_CreditsReturnButton_button_down():
@@ -52,9 +57,53 @@ func _on_animation_finished(name):
 	match name:
 		"open_main_menu":
 			$AnimationPlayer.play("main_menu")
-		"how_to_play_to_main_menu":
+		"config_to_main_menu":
 			$AnimationPlayer.play("open_main_menu")
 		"main_menu_transition_out":
 			get_tree().change_scene("res://environment/in_the_sky/InTheSky.tscn")
 		"credits_to_main_menu":
 			$AnimationPlayer.play("open_main_menu")
+
+
+func _on_SFXDown_button_down():
+	var volume = AudioServer.get_bus_volume_db(1)
+	volume -= 4
+	volume = max(volume, -40.0)
+	AudioServer.set_bus_volume_db(1, volume)
+	$ButtonPress.play()
+	var progress = (AudioServer.get_bus_volume_db(1) + 40) / 40 * 100
+	$CanvasLayer/Config/SoundPanel/SFXBar/VolumeBar.value = progress
+	$CanvasLayer/Config/SoundPanel/SFXBar/PercentLabel.text = str(progress) + "%"
+
+
+func _on_SFXUp_button_down():
+	var volume = AudioServer.get_bus_volume_db(1)
+	volume += 4
+	volume = min(volume, 0.0)
+	AudioServer.set_bus_volume_db(1, volume)
+	$ButtonPress.play()
+	var progress = (AudioServer.get_bus_volume_db(1) + 40) / 40 * 100
+	$CanvasLayer/Config/SoundPanel/SFXBar/VolumeBar.value = progress
+	$CanvasLayer/Config/SoundPanel/SFXBar/PercentLabel.text = str(progress) + "%"
+
+
+func _on_MusicDown_button_down():
+	var volume = AudioServer.get_bus_volume_db(2)
+	volume -= 4
+	volume = max(volume, -40.0)
+	AudioServer.set_bus_volume_db(2, volume)
+	$ButtonPress.play()
+	var progress = (AudioServer.get_bus_volume_db(2) + 40) / 40 * 100
+	$CanvasLayer/Config/SoundPanel/MusicBar/VolumeBar.value = progress
+	$CanvasLayer/Config/SoundPanel/MusicBar/PercentLabel.text = str(progress) + "%"
+
+
+func _on_MusicUp_button_down():
+	var volume = AudioServer.get_bus_volume_db(2)
+	volume += 4
+	volume = min(volume, 0.0)
+	AudioServer.set_bus_volume_db(2, volume)
+	$ButtonPress.play()
+	var progress = (AudioServer.get_bus_volume_db(2) + 40) / 40 * 100
+	$CanvasLayer/Config/SoundPanel/MusicBar/VolumeBar.value = progress
+	$CanvasLayer/Config/SoundPanel/MusicBar/PercentLabel.text = str(progress) + "%"

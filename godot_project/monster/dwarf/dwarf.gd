@@ -77,3 +77,7 @@ func _on_Health_health_changed(new_health, knockback):
 
 func end_wave():
 	go_to_state(END_WAVE)
+
+
+func die():
+	go_to_state(DIE)

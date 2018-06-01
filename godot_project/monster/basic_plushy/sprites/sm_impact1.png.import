@@ -2,15 +2,15 @@
 
 importer="texture"
 type="StreamTexture"
-path="res://.import/reticle.png-15c4c292ede0288f8d101ec502319f43.stex"
+path="res://.import/sm_impact1.png-19fc7331680e23bc2a2256653baaa7d3.stex"
 
 [deps]
 
-source_file="res://objects/miscellaneous/crosshairs/reticle.png"
-source_md5="08109a2503aa487c0f666926e1664eb8"
+source_file="res://monster/basic_plushy/sprites/sm_impact1.png"
+source_md5="807908de957d0a45fc22c0b9a17d62c5"
 
-dest_files=[ "res://.import/reticle.png-15c4c292ede0288f8d101ec502319f43.stex" ]
-dest_md5="5864b5190b18cdafd9a8bb7c81e5f3e3"
+dest_files=[ "res://.import/sm_impact1.png-19fc7331680e23bc2a2256653baaa7d3.stex" ]
+dest_md5="737abbc5062536823ffbcd7381b1a940"
 
 [params]
 

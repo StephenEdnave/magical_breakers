@@ -2,8 +2,6 @@
 
 [ext_resource path="res://characters/player/star_breaker/dash_particles.gd" type="Script" id=1]
 
-
-
 [sub_resource type="CapsuleShape2D" id=1]
 
 custom_solver_bias = 0.0

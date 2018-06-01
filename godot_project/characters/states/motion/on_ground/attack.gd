@@ -100,7 +100,7 @@ func _on_Weapon_attack_started(host):
 	var angle = 0
 	var vector = Vector2()
 	if host.target:
-		vector = host.target_position - host.global_position
+		vector = host.target.global_position - host.global_position
 	else:
 		vector = get_input_direction(host)
 	
