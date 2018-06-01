@@ -32,7 +32,7 @@ func handle_input(host, event):
 
 
 func update(host, delta):
-	velocity = host.arrive_to(velocity, roam_target_position, roam_slow_radius, max_roam_speed)
+	velocity = arrive_to(host, velocity, roam_target_position, roam_slow_radius, max_roam_speed)
 	move(host)
 	host.get_node("BodyPivot").scale.x = look_direction.x
 	if host.global_position.distance_to(roam_target_position) < host.ARRIVE_DISTANCE:

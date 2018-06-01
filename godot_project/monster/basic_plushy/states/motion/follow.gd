@@ -1,6 +1,5 @@
 extends 'motion.gd'
 
-export(float) var CHARGE_RANGE = 300.0
 export(float) var FOLLOW_RANGE = 650.0
 export(float) var max_follow_speed = 320.0
 export(float) var SHOOT_RANGE = 600.0
@@ -41,7 +40,7 @@ func update(host, delta):
 		host.STATES[SHOOT].velocity = velocity
 		return SHOOT
 	
-	velocity = host.follow(velocity, host.target_position + (host.global_position - host.target_position).normalized() * TARGET_RADIUS, max_follow_speed)
+	velocity = follow(host, velocity, host.target_position + (host.global_position - host.target_position).normalized() * TARGET_RADIUS, max_follow_speed)
 	move(host)
 	host.get_node("BodyPivot").scale.x = look_direction.x
 	if host.global_position.distance_to(host.target_position) > FOLLOW_RANGE:

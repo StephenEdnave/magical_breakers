@@ -728,13 +728,11 @@ collision_mask = 7
 collision/safe_margin = 0.08
 script = ExtResource( 1 )
 _sections_unfolded = [ "Collision", "Z Index" ]
-ARRIVE_DISTANCE = 6.0
-DEFAULT_SLOW_RADIUS = 200.0
-DEFAULT_MAX_SPEED = 300.0
-MASS = 8.0
 SPOT_RANGE = 6000.0
 
 [node name="States" type="Node" parent="." index="0"]
+
+editor/display_folded = true
 
 [node name="Idle" type="Node" parent="States" index="0"]
 
@@ -743,21 +741,37 @@ script = ExtResource( 2 )
 [node name="Roam" type="Node" parent="States" index="1"]
 
 script = ExtResource( 3 )
+ARRIVE_DISTANCE = 6.0
+DEFAULT_SLOW_RADIUS = 200.0
+DEFAULT_MAX_SPEED = 300.0
+MASS = 8.0
 max_roam_speed = 200.0
 ROAM_RADIUS = 140.0
 
 [node name="Return" type="Node" parent="States" index="2"]
 
 script = ExtResource( 4 )
+ARRIVE_DISTANCE = 6.0
+DEFAULT_SLOW_RADIUS = 200.0
+DEFAULT_MAX_SPEED = 300.0
+MASS = 8.0
 max_return_speed = 200.0
 
 [node name="Spot" type="Node" parent="States" index="3"]
 
 script = ExtResource( 5 )
+ARRIVE_DISTANCE = 6.0
+DEFAULT_SLOW_RADIUS = 200.0
+DEFAULT_MAX_SPEED = 300.0
+MASS = 8.0
 
 [node name="Follow" type="Node" parent="States" index="4"]
 
 script = ExtResource( 6 )
+ARRIVE_DISTANCE = 6.0
+DEFAULT_SLOW_RADIUS = 200.0
+DEFAULT_MAX_SPEED = 300.0
+MASS = 8.0
 CHARGE_RANGE = 300.0
 FOLLOW_RANGE = 6000.0
 max_follow_speed = 400.0
@@ -771,11 +785,19 @@ script = ExtResource( 7 )
 [node name="ChargePrepare" type="Node" parent="States" index="6"]
 
 script = ExtResource( 8 )
+ARRIVE_DISTANCE = 6.0
+DEFAULT_SLOW_RADIUS = 200.0
+DEFAULT_MAX_SPEED = 300.0
+MASS = 8.0
 CHARGE_PREPARE_DURATION = 0.5
 
 [node name="Charge" type="Node" parent="States" index="7"]
 
 script = ExtResource( 9 )
+ARRIVE_DISTANCE = 6.0
+DEFAULT_SLOW_RADIUS = 200.0
+DEFAULT_MAX_SPEED = 300.0
+MASS = 8.0
 CHARGE_MAX_DISTANCE = 2000.0
 max_charge_speed = 1400.0
 
@@ -791,11 +813,19 @@ script = ExtResource( 11 )
 [node name="Shoot" type="Node" parent="States" index="10"]
 
 script = ExtResource( 12 )
+ARRIVE_DISTANCE = 6.0
+DEFAULT_SLOW_RADIUS = 200.0
+DEFAULT_MAX_SPEED = 300.0
+MASS = 8.0
 primary_weapon_path = "res://monster/dwarf/weapon/DwarfGun.tscn"
 
 [node name="EndWave" type="Node" parent="States" index="11"]
 
 script = ExtResource( 13 )
+ARRIVE_DISTANCE = 6.0
+DEFAULT_SLOW_RADIUS = 200.0
+DEFAULT_MAX_SPEED = 300.0
+MASS = 8.0
 max_return_speed = 800.0
 
 [node name="AnimationPlayer" type="AnimationPlayer" parent="." index="1"]

@@ -13,6 +13,10 @@
 
 [node name="Level" instance=ExtResource( 1 )]
 
+[node name="YSort" parent="." index="1"]
+
+editor/display_folded = false
+
 [node name="Player" parent="YSort" index="0"]
 
 position = Vector2( 339.765, 563.335 )
@@ -49,10 +53,6 @@ position = Vector2( 256.786, 840.39 )
 
 editor/display_folded = true
 position = Vector2( 256.786, 840.39 )
-
-[node name="Background" parent="." index="3"]
-
-editor/display_folded = true
 
 [node name="MainMenuScreen" type="TextureRect" parent="UI/Transitions" index="0"]
 

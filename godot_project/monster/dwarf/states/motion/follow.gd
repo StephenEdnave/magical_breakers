@@ -39,7 +39,7 @@ func update(host, delta):
 		host.STATES[SHOOT].velocity = velocity
 		return SHOOT
 	
-	velocity = host.follow(velocity, host.target_position, max_follow_speed)
+	velocity = follow(host, velocity, host.target_position, max_follow_speed)
 	move(host)
 	host.get_node("BodyPivot").scale.x = look_direction.x
 	if host.global_position.distance_to(host.target_position) <= CHARGE_RANGE:

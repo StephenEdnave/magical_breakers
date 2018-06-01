@@ -25,10 +25,9 @@ export(float) var SPOT_RANGE = 320.0
 func _ready():
 	STATES[IDLE].setup(self, SPOT_RANGE)
 	STATES[ROAM].setup(SPOT_RANGE)
-	STATES[RETURN].setup(SPOT_RANGE, ARRIVE_DISTANCE)
+	STATES[RETURN].setup(SPOT_RANGE)
 	STATES[SPOT].setup(SPOT_RANGE)
 	STATES[SHOOT].setup(self)
-	STATES[END_WAVE].setup(ARRIVE_DISTANCE)
 	
 	current_state = STATES[IDLE]
 	current_state.enter(self)

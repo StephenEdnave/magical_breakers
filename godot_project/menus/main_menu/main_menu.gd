@@ -66,44 +66,64 @@ func _on_animation_finished(name):
 
 
 func _on_SFXDown_button_down():
-	var volume = AudioServer.get_bus_volume_db(1)
-	volume -= 4
-	volume = max(volume, -40.0)
-	AudioServer.set_bus_volume_db(1, volume)
+	var bus_index = AudioServer.get_bus_index("SFX")
+	var volume = AudioServer.get_bus_volume_db(bus_index)
+	volume -= 3
+	volume = max(volume, -30.0)
+	if not volume == -30.0:
+		AudioServer.set_bus_mute(bus_index, false)
+	else:
+		AudioServer.set_bus_mute(bus_index, true)
+	AudioServer.set_bus_volume_db(bus_index, volume)
 	$ButtonPress.play()
-	var progress = (AudioServer.get_bus_volume_db(1) + 40) / 40 * 100
+	var progress = (volume + 30) / 30 * 100
 	$CanvasLayer/Config/SoundPanel/SFXBar/VolumeBar.value = progress
 	$CanvasLayer/Config/SoundPanel/SFXBar/PercentLabel.text = str(progress) + "%"
 
 
 func _on_SFXUp_button_down():
-	var volume = AudioServer.get_bus_volume_db(1)
-	volume += 4
+	var bus_index = AudioServer.get_bus_index("SFX")
+	var volume = AudioServer.get_bus_volume_db(bus_index)
+	volume += 3
 	volume = min(volume, 0.0)
-	AudioServer.set_bus_volume_db(1, volume)
+	if not volume == -30.0:
+		AudioServer.set_bus_mute(bus_index, false)
+	else:
+		AudioServer.set_bus_mute(bus_index, true)
+	AudioServer.set_bus_volume_db(bus_index, volume)
 	$ButtonPress.play()
-	var progress = (AudioServer.get_bus_volume_db(1) + 40) / 40 * 100
+	var progress = (volume + 30) / 30 * 100
 	$CanvasLayer/Config/SoundPanel/SFXBar/VolumeBar.value = progress
 	$CanvasLayer/Config/SoundPanel/SFXBar/PercentLabel.text = str(progress) + "%"
 
 
 func _on_MusicDown_button_down():
-	var volume = AudioServer.get_bus_volume_db(2)
-	volume -= 4
-	volume = max(volume, -40.0)
-	AudioServer.set_bus_volume_db(2, volume)
+	var bus_index = AudioServer.get_bus_index("Music")
+	var volume = AudioServer.get_bus_volume_db(bus_index)
+	volume -= 3
+	volume = max(volume, -30.0)
+	if not volume == -30.0:
+		AudioServer.set_bus_mute(bus_index, false)
+	else:
+		AudioServer.set_bus_mute(bus_index, true)
+	AudioServer.set_bus_volume_db(bus_index, volume)
 	$ButtonPress.play()
-	var progress = (AudioServer.get_bus_volume_db(2) + 40) / 40 * 100
+	var progress = (volume + 30) / 30 * 100
 	$CanvasLayer/Config/SoundPanel/MusicBar/VolumeBar.value = progress
 	$CanvasLayer/Config/SoundPanel/MusicBar/PercentLabel.text = str(progress) + "%"
 
 
 func _on_MusicUp_button_down():
-	var volume = AudioServer.get_bus_volume_db(2)
-	volume += 4
+	var bus_index = AudioServer.get_bus_index("Music")
+	var volume = AudioServer.get_bus_volume_db(bus_index)
+	volume += 3
 	volume = min(volume, 0.0)
-	AudioServer.set_bus_volume_db(2, volume)
+	if not volume == -30.0:
+		AudioServer.set_bus_mute(bus_index, false)
+	else:
+		AudioServer.set_bus_mute(bus_index, true)
+	AudioServer.set_bus_volume_db(bus_index, volume)
 	$ButtonPress.play()
-	var progress = (AudioServer.get_bus_volume_db(2) + 40) / 40 * 100
+	var progress = (volume + 30) / 30 * 100
 	$CanvasLayer/Config/SoundPanel/MusicBar/VolumeBar.value = progress
 	$CanvasLayer/Config/SoundPanel/MusicBar/PercentLabel.text = str(progress) + "%"

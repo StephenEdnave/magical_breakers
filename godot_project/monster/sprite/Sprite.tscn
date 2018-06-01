@@ -42,13 +42,9 @@ custom_solver_bias = 0.0
 radius = 19.4749
 height = 38.6222
 
-[node name="Sprite" instance=ExtResource( 1 )]
+[node name="Sprite" index="0" instance=ExtResource( 1 )]
 
 script = ExtResource( 2 )
-ARRIVE_DISTANCE = 6.0
-DEFAULT_SLOW_RADIUS = 200.0
-DEFAULT_MAX_SPEED = 300.0
-MASS = 8.0
 SPOT_RANGE = 6000.0
 
 [node name="Idle" type="Node" parent="States" index="0"]
@@ -58,24 +54,40 @@ script = ExtResource( 3 )
 [node name="Roam" type="Node" parent="States" index="1"]
 
 script = ExtResource( 4 )
+ARRIVE_DISTANCE = 6.0
+DEFAULT_SLOW_RADIUS = 200.0
+DEFAULT_MAX_SPEED = 300.0
+MASS = 8.0
 max_roam_speed = 200.0
 ROAM_RADIUS = 140.0
 
 [node name="Return" type="Node" parent="States" index="2"]
 
 script = ExtResource( 5 )
+ARRIVE_DISTANCE = 6.0
+DEFAULT_SLOW_RADIUS = 200.0
+DEFAULT_MAX_SPEED = 300.0
+MASS = 8.0
 max_return_speed = 200.0
 
 [node name="Spot" type="Node" parent="States" index="3"]
 
 script = ExtResource( 6 )
+ARRIVE_DISTANCE = 6.0
+DEFAULT_SLOW_RADIUS = 200.0
+DEFAULT_MAX_SPEED = 300.0
+MASS = 8.0
 
 [node name="Follow" type="Node" parent="States" index="4"]
 
 script = ExtResource( 7 )
+ARRIVE_DISTANCE = 6.0
+DEFAULT_SLOW_RADIUS = 200.0
+DEFAULT_MAX_SPEED = 300.0
+MASS = 8.0
 CHARGE_RANGE = 300.0
 FOLLOW_RANGE = 6000.0
-max_follow_speed = 320.0
+max_follow_speed = 500.0
 SHOOT_RANGE = 6000.0
 SHOOT_TIME = 2.0
 TARGET_RADIUS = 500.0
@@ -91,11 +103,19 @@ script = ExtResource( 9 )
 [node name="Shoot" type="Node" parent="States" index="7"]
 
 script = ExtResource( 10 )
+ARRIVE_DISTANCE = 6.0
+DEFAULT_SLOW_RADIUS = 200.0
+DEFAULT_MAX_SPEED = 300.0
+MASS = 8.0
 primary_weapon_path = "res://monster/sprite/weapons/SpriteGun.tscn"
 
 [node name="EndWave" type="Node" parent="States" index="8"]
 
 script = ExtResource( 11 )
+ARRIVE_DISTANCE = 6.0
+DEFAULT_SLOW_RADIUS = 200.0
+DEFAULT_MAX_SPEED = 300.0
+MASS = 8.0
 max_return_speed = 800.0
 
 [node name="Health" parent="." index="1"]
@@ -108,6 +128,7 @@ anims/walk = SubResource( 1 )
 
 [node name="CollisionPolygon2D" parent="." index="4"]
 
+visible = false
 polygon = PoolVector2Array( -25.9885, -52.5346, -18.6579, -84.3003, 16.3659, -85.1149, 21.2529, -50.0911, 16.3659, -8.55122, -16.2144, -9.36573 )
 disabled = true
 
@@ -115,6 +136,10 @@ disabled = true
 
 shape = SubResource( 2 )
 disabled = false
+
+[node name="BodyPivot" parent="." index="6"]
+
+editor/display_folded = true
 
 [node name="Sprite" type="Sprite" parent="BodyPivot" index="0"]
 
@@ -130,5 +155,12 @@ _sections_unfolded = [ "Transform", "Visibility" ]
 editor/display_folded = true
 
 [node name="PrimaryWeaponSpawn" type="Position2D" parent="WeaponPivot" index="0"]
+
+[node name="RoamTimer" type="Timer" parent="." index="10"]
+
+process_mode = 1
+wait_time = 1.0
+one_shot = false
+autostart = false
 
 

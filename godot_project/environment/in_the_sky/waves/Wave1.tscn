@@ -8,6 +8,6 @@
 [node name="SpawnPosition" parent="SpawnPositions" index="0" instance=ExtResource( 2 )]
 
 position = Vector2( 2100.34, 389.384 )
-object = "res://monster/sprite/Sprite.tscn"
+object = "res://monster/missile_dropper/MissileDropper.tscn"
 
 
