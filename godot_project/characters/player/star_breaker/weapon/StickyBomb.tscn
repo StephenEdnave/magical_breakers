@@ -6,7 +6,7 @@
 [ext_resource path="res://characters/player/star_breaker/sprites/sb_missile06.png" type="Texture" id=4]
 [ext_resource path="res://characters/player/star_breaker/sprites/sb_missile10.png" type="Texture" id=5]
 [ext_resource path="res://characters/player/star_breaker/sprites/sb_missile11.png" type="Texture" id=6]
-[ext_resource path="res://characters/player/star_breaker/weapon/smoke_tex.png" type="Texture" id=7]
+[ext_resource path="res://characters/player/star_breaker/weapon/black_smoke_12.png" type="Texture" id=7]
 [ext_resource path="res://characters/player/star_breaker/sprites/sb_impct00.png" type="Texture" id=8]
 [ext_resource path="res://characters/player/star_breaker/sfx/missile_launch.ogg" type="AudioStream" id=9]
 [ext_resource path="res://characters/player/star_breaker/sfx/missile_explode.ogg" type="AudioStream" id=10]
@@ -159,8 +159,8 @@ tracks/3/keys = {
 
 [sub_resource type="Gradient" id=5]
 
-offsets = PoolRealArray( 0, 0.627219, 0.970213, 1 )
-colors = PoolColorArray( 0.164063, 0.164063, 0.164063, 1, 1, 1, 1, 0.33702, 0.5625, 0.5625, 0.5625, 0.0434374, 1, 1, 1, 0 )
+offsets = PoolRealArray( 0, 0.621302, 0.970213, 1 )
+colors = PoolColorArray( 0.0577087, 0, 0.238281, 0.442, 0.937624, 0.786774, 0.992188, 0.138118, 0.5625, 0.5625, 0.5625, 0.0434374, 1, 1, 1, 0 )
 
 [sub_resource type="GradientTexture" id=6]
 
@@ -173,7 +173,7 @@ width = 2048
 min_value = 0.0
 max_value = 1.0
 bake_resolution = 100
-_data = [ Vector2( 0, 0.0488281 ), 0.0, 0.0, 0, 0, Vector2( 0.112853, 0.0917969 ), 0.66788, 0.66788, 0, 0, Vector2( 1, 1 ), 0.0, 0.0, 0, 0 ]
+_data = [ Vector2( 0, 0 ), 0.0, 0.0, 0, 0, Vector2( 0.263046, 0.0380859 ), 0.66788, 0.66788, 0, 0, Vector2( 1, 1 ), 0.0, 0.0, 0, 0 ]
 
 [sub_resource type="CurveTexture" id=8]
 
@@ -189,7 +189,7 @@ emission_shape = 0
 flag_align_y = false
 flag_rotate_y = true
 flag_disable_z = true
-spread = 5.0
+spread = 15.0
 flatness = 0.0
 gravity = Vector3( 0, 0, 0 )
 initial_velocity = 100.0

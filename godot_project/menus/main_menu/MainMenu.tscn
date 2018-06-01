@@ -1291,7 +1291,6 @@ _sections_unfolded = [ "Textures", "Theme", "custom_fonts" ]
 
 [node name="Config" type="Container" parent="CanvasLayer" index="3"]
 
-editor/display_folded = true
 visible = false
 anchor_left = 0.0
 anchor_top = 0.0
@@ -1594,7 +1593,7 @@ anchor_top = 0.0
 anchor_right = 0.0
 anchor_bottom = 0.0
 margin_left = 362.0
-margin_right = 421.0
+margin_right = 430.0
 margin_bottom = 27.0
 rect_pivot_offset = Vector2( 0, 0 )
 rect_clip_content = false
@@ -1733,7 +1732,7 @@ anchor_top = 0.0
 anchor_right = 0.0
 anchor_bottom = 0.0
 margin_left = 362.0
-margin_right = 421.0
+margin_right = 430.0
 margin_bottom = 27.0
 rect_pivot_offset = Vector2( 0, 0 )
 rect_clip_content = false
@@ -1776,7 +1775,6 @@ _sections_unfolded = [ "Textures", "Theme", "custom_fonts" ]
 
 [node name="MainMenu" type="Container" parent="CanvasLayer" index="4"]
 
-visible = false
 self_modulate = Color( 0, 0, 0, 1 )
 anchor_left = 0.0
 anchor_top = 0.0
@@ -1790,7 +1788,7 @@ mouse_filter = 0
 mouse_default_cursor_shape = 0
 size_flags_horizontal = 1
 size_flags_vertical = 1
-_sections_unfolded = [ "Visibility" ]
+_sections_unfolded = [ "Theme", "Visibility" ]
 
 [node name="Buttons" type="VBoxContainer" parent="CanvasLayer/MainMenu" index="0"]
 

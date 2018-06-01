@@ -221,8 +221,6 @@ _sections_unfolded = [ "Transform", "Visibility", "Z Index" ]
 
 [node name="StatusPivot" type="Position2D" parent="." index="7"]
 
-editor/display_folded = true
-
 [node name="StatusIcon" parent="StatusPivot" index="0" instance=ExtResource( 9 )]
 
 visible = false

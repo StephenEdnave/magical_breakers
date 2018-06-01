@@ -133,7 +133,7 @@ tracks/2/keys = {
 "values": [ false ]
 }
 
-[node name="StatusIcon" type="Node2D"]
+[node name="StatusIcon" type="Node2D" index="0"]
 
 position = Vector2( 123.033, -135.336 )
 z_index = 6
@@ -151,7 +151,7 @@ _sections_unfolded = [ "Transform" ]
 [node name="BurnParticles" parent="Pivot" index="1" instance=ExtResource( 3 )]
 
 position = Vector2( -123.033, 141.488 )
-emitting = true
+_sections_unfolded = [ "Drawing", "Process Material", "Textures", "Time", "Transform", "Visibility", "Z Index" ]
 
 [node name="AnimationPlayer" type="AnimationPlayer" parent="." index="1"]
 

@@ -1,0 +1,18 @@
+[remap]
+
+importer="ogg_vorbis"
+type="AudioStreamOGGVorbis"
+path="res://.import/FIBRE - Ill Go Back.ogg-90f8aec3f0212874182df09258329819.oggstr"
+
+[deps]
+
+source_file="res://music/FIBRE - Ill Go Back.ogg"
+source_md5="f8b560557d3e0b46b1efa52e00178e8d"
+
+dest_files=[ "res://.import/FIBRE - Ill Go Back.ogg-90f8aec3f0212874182df09258329819.oggstr" ]
+dest_md5="dcad3d486059c790600d008be4c97d97"
+
+[params]
+
+loop=true
+loop_offset=0

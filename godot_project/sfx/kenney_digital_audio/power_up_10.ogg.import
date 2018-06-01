@@ -1,0 +1,18 @@
+[remap]
+
+importer="ogg_vorbis"
+type="AudioStreamOGGVorbis"
+path="res://.import/power_up_10.ogg-c2f0cb7eebeb93e380508642bd65c5f3.oggstr"
+
+[deps]
+
+source_file="res://sfx/kenney_digital_audio/power_up_10.ogg"
+source_md5="d9d73883717ab8e2024aef0ea920cd61"
+
+dest_files=[ "res://.import/power_up_10.ogg-c2f0cb7eebeb93e380508642bd65c5f3.oggstr" ]
+dest_md5="51d93cd4d896baa777ec6a148f444717"
+
+[params]
+
+loop=false
+loop_offset=0

@@ -1,0 +1,18 @@
+[remap]
+
+importer="ogg_vorbis"
+type="AudioStreamOGGVorbis"
+path="res://.import/zap_three_tone_down.ogg-176ffd9902c61a2aa40b5935a626367c.oggstr"
+
+[deps]
+
+source_file="res://sfx/kenney_digital_audio/zap_three_tone_down.ogg"
+source_md5="c9cba63ec9018c247e7602c3c4bad825"
+
+dest_files=[ "res://.import/zap_three_tone_down.ogg-176ffd9902c61a2aa40b5935a626367c.oggstr" ]
+dest_md5="4cadd2dba006424b7ac284c5c810ce21"
+
+[params]
+
+loop=false
+loop_offset=0

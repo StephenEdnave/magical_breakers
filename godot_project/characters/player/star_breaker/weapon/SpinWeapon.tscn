@@ -1,9 +1,11 @@
-[gd_scene load_steps=19 format=2]
+[gd_scene load_steps=13 format=2]
 
 [ext_resource path="res://characters/player/star_breaker/weapon/spin_weapon.gd" type="Script" id=1]
-[ext_resource path="res://characters/player/star_breaker/weapon/FireTrail.tscn" type="PackedScene" id=2]
-[ext_resource path="res://characters/player/star_breaker/weapon/TrailCircle.tres" type="Material" id=3]
-[ext_resource path="res://characters/player/star_breaker/sfx/flame.ogg" type="AudioStream" id=4]
+[ext_resource path="res://characters/player/star_breaker/weapon/spin_weapon_fire.tres" type="Material" id=2]
+[ext_resource path="res://characters/player/star_breaker/weapon/fire_sprite_sheet.png" type="Texture" id=3]
+[ext_resource path="res://characters/player/star_breaker/weapon/FireTrail.tscn" type="PackedScene" id=4]
+[ext_resource path="res://characters/player/star_breaker/weapon/TrailCircle.tres" type="Material" id=5]
+[ext_resource path="res://characters/player/star_breaker/sfx/flame.ogg" type="AudioStream" id=6]
 
 [sub_resource type="Animation" id=1]
 
@@ -251,10 +253,10 @@ tracks/1/loop_wrap = true
 tracks/1/imported = false
 tracks/1/enabled = true
 tracks/1/keys = {
-"times": PoolRealArray( 0, 0.06, 0.08, 0.1, 0.12, 0.16, 0.2, 0.22, 0.24 ),
-"transitions": PoolRealArray( 1, 1, 1, 1, 1, 1, 1, 1, 1 ),
+"times": PoolRealArray( 0, 0.06, 0.08, 0.1, 0.12, 0.16, 0.2, 0.22, 0.24, 0.28, 0.32 ),
+"transitions": PoolRealArray( 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1 ),
 "update": 0,
-"values": [ Vector2( 2.40929, 54.7877 ), Vector2( -43.119, 56.5945 ), Vector2( 83.5016, 73.4173 ), Vector2( 145.224, -10.5301 ), Vector2( 79.2908, -91.4379 ), Vector2( -57.1244, -115.847 ), Vector2( -90.9089, -59.9942 ), Vector2( -88.1845, -54.3812 ), Vector2( 35.139, -103.733 ) ]
+"values": [ Vector2( 2.40929, 54.7877 ), Vector2( -43.119, 56.5945 ), Vector2( 83.5016, 73.4173 ), Vector2( 145.224, -10.5301 ), Vector2( 79.2908, -91.4379 ), Vector2( -57.1244, -115.847 ), Vector2( -90.9089, -59.9942 ), Vector2( -88.1845, -54.3812 ), Vector2( 35.139, -103.733 ), Vector2( -161.154, 53.0761 ), Vector2( -26.9077, 133.173 ) ]
 }
 tracks/2/type = "value"
 tracks/2/path = NodePath("Pivot/Fire:emitting")
@@ -263,7 +265,7 @@ tracks/2/loop_wrap = true
 tracks/2/imported = false
 tracks/2/enabled = true
 tracks/2/keys = {
-"times": PoolRealArray( 0, 0.22 ),
+"times": PoolRealArray( 0, 0.32 ),
 "transitions": PoolRealArray( 1, 1 ),
 "update": 1,
 "values": [ true, false ]
@@ -275,7 +277,7 @@ tracks/3/loop_wrap = true
 tracks/3/imported = false
 tracks/3/enabled = true
 tracks/3/keys = {
-"times": PoolRealArray( 0, 0.28 ),
+"times": PoolRealArray( 0, 0.4 ),
 "transitions": PoolRealArray( 1, 1 ),
 "update": 1,
 "values": [ true, false ]
@@ -287,10 +289,10 @@ tracks/4/loop_wrap = true
 tracks/4/imported = false
 tracks/4/enabled = true
 tracks/4/keys = {
-"times": PoolRealArray( 0, 0.04, 0.06, 0.08, 0.1, 0.16, 0.18, 0.2, 0.22, 0.24 ),
-"transitions": PoolRealArray( 1, 1, 1, 1, 1, 1, 1, 1, 1, 1 ),
+"times": PoolRealArray( 0, 0.04, 0.06, 0.08, 0.1, 0.16, 0.18, 0.2, 0.22, 0.24, 0.28, 0.34, 0.38 ),
+"transitions": PoolRealArray( 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1 ),
 "update": 0,
-"values": [ Vector2( -22.668, 148.74 ), Vector2( -60.6505, 111.874 ), Vector2( 29.8373, 158.794 ), Vector2( 167.245, 39.2606 ), Vector2( 258.85, -8.77612 ), Vector2( 175.065, -88.0926 ), Vector2( 175.065, -88.0926 ), Vector2( -10.938, -137.246 ), Vector2( -67.3533, -81.3898 ), Vector2( 5.26037, -140.598 ) ]
+"values": [ Vector2( -22.668, 148.74 ), Vector2( -60.6505, 111.874 ), Vector2( 29.8373, 158.794 ), Vector2( 167.245, 39.2606 ), Vector2( 258.85, -8.77612 ), Vector2( 175.065, -88.0926 ), Vector2( 175.065, -88.0926 ), Vector2( -10.938, -137.246 ), Vector2( -67.3533, -81.3898 ), Vector2( 5.26037, -140.598 ), Vector2( -113.193, 20.7236 ), Vector2( 216.219, 78.2578 ), Vector2( 138.379, -57.1169 ) ]
 }
 tracks/5/type = "value"
 tracks/5/path = NodePath("SFX:playing")
@@ -574,124 +576,10 @@ tracks/7/keys = {
 "values": [ false ]
 }
 
-[sub_resource type="Gradient" id=6]
-
-offsets = PoolRealArray( 0, 0.272189, 0.727811, 1 )
-colors = PoolColorArray( 1, 1, 1, 1, 0.988281, 0.837723, 0.837723, 0.756902, 0, 0, 0, 0.121569, 0, 0, 0, 0 )
-
-[sub_resource type="GradientTexture" id=7]
-
-flags = 4
-gradient = SubResource( 6 )
-width = 2048
-
-[sub_resource type="Curve" id=8]
-
-min_value = 0.0
-max_value = 1.0
-bake_resolution = 100
-_data = [ Vector2( 0.00203111, 0.59668 ), 0.0, 0.0, 0, 0, Vector2( 0.0311947, 1 ), -2.3316, -2.3316, 0, 0, Vector2( 0.755911, 0.25293 ), -0.327415, -0.327415, 0, 0, Vector2( 1, 0.446289 ), 1.41605, 0.0, 0, 0 ]
-
-[sub_resource type="CurveTexture" id=9]
-
-flags = 4
-width = 2048
-curve = SubResource( 8 )
-
-[sub_resource type="ParticlesMaterial" id=10]
-
-render_priority = 5
-trail_divisor = 1
-emission_shape = 0
-flag_align_y = false
-flag_rotate_y = false
-flag_disable_z = true
-spread = 45.0
-flatness = 0.0
-gravity = Vector3( 0, 0, 0 )
-initial_velocity = 300.0
-initial_velocity_random = 1.0
-angular_velocity = 360.0
-angular_velocity_random = 1.0
-orbit_velocity = 0.0
-orbit_velocity_random = 0.0
-linear_accel = 0.0
-linear_accel_random = 0.0
-radial_accel = 0.0
-radial_accel_random = 0.0
-tangential_accel = 0.0
-tangential_accel_random = 0.0
-damping = 0.0
-damping_random = 0.0
-angle = 360.0
-angle_random = 1.0
-scale = 1.0
-scale_random = 0.3
-scale_curve = SubResource( 9 )
-color_ramp = SubResource( 7 )
-hue_variation = 0.0
-hue_variation_random = 0.0
-anim_speed = 1.0
-anim_speed_random = 0.0
-anim_offset = 0.0
-anim_offset_random = 0.0
-anim_loop = false
-_sections_unfolded = [ "Angle", "Angular Velocity", "Color", "Emission Shape", "Hue Variation", "Radial Accel", "Scale", "Trail" ]
-
-[sub_resource type="StreamTexture" id=11]
-
-flags = 4
-load_path = "res://.import/sb_flames.PNG-7f51cc4d69009bf302351a250e0f18e5.stex"
-
-[sub_resource type="ParticlesMaterial" id=12]
-
-render_priority = 5
-trail_divisor = 1
-emission_shape = 0
-flag_align_y = false
-flag_rotate_y = false
-flag_disable_z = true
-spread = 45.0
-flatness = 0.0
-gravity = Vector3( 0, 0, 0 )
-initial_velocity = 300.0
-initial_velocity_random = 1.0
-angular_velocity = 360.0
-angular_velocity_random = 1.0
-orbit_velocity = 0.0
-orbit_velocity_random = 0.0
-linear_accel = 0.0
-linear_accel_random = 0.0
-radial_accel = 0.0
-radial_accel_random = 0.0
-tangential_accel = 0.0
-tangential_accel_random = 0.0
-damping = 0.0
-damping_random = 0.0
-angle = 0.0
-angle_random = 0.0
-scale = 1.0
-scale_random = 0.2
-scale_curve = SubResource( 9 )
-color_ramp = SubResource( 7 )
-hue_variation = 0.0
-hue_variation_random = 0.0
-anim_speed = 1.0
-anim_speed_random = 0.0
-anim_offset = 0.0
-anim_offset_random = 0.0
-anim_loop = false
-_sections_unfolded = [ "Emission Shape", "Trail" ]
-
-[sub_resource type="StreamTexture" id=13]
-
-flags = 4
-load_path = "res://.import/sb_flames.PNG-7f51cc4d69009bf302351a250e0f18e5.stex"
-
-[sub_resource type="RectangleShape2D" id=14]
+[sub_resource type="RectangleShape2D" id=12]
 
 custom_solver_bias = 0.0
-extents = Vector2( 176, 119.603 )
+extents = Vector2( 266.978, 150.549 )
 
 [node name="SpinWeapon" type="Area2D"]
 
@@ -750,11 +638,11 @@ fract_delta = true
 visibility_rect = Rect2( -100, -100, 200, 200 )
 local_coords = false
 draw_order = 0
-process_material = SubResource( 10 )
-texture = SubResource( 11 )
+process_material = ExtResource( 2 )
+texture = ExtResource( 3 )
 normal_map = null
 h_frames = 3
-v_frames = 2
+v_frames = 3
 _sections_unfolded = [ "Drawing", "Process Material", "Textures", "Time", "Transform", "Visibility" ]
 
 [node name="Fire2" type="Particles2D" parent="Pivot" index="1"]
@@ -776,11 +664,11 @@ fract_delta = true
 visibility_rect = Rect2( -100, -100, 200, 200 )
 local_coords = false
 draw_order = 0
-process_material = SubResource( 12 )
-texture = SubResource( 13 )
+process_material = ExtResource( 2 )
+texture = ExtResource( 3 )
 normal_map = null
 h_frames = 3
-v_frames = 2
+v_frames = 3
 _sections_unfolded = [ "Drawing", "Material", "Process Material", "Textures", "Time", "Transform", "Visibility" ]
 
 [node name="FireTrails" type="Position2D" parent="." index="2"]
@@ -788,7 +676,7 @@ _sections_unfolded = [ "Drawing", "Material", "Process Material", "Textures", "T
 visible = false
 _sections_unfolded = [ "Transform" ]
 
-[node name="FireTrail" parent="FireTrails" index="0" instance=ExtResource( 2 )]
+[node name="FireTrail" parent="FireTrails" index="0" instance=ExtResource( 4 )]
 
 z_index = -100
 z_as_relative = false
@@ -796,14 +684,14 @@ _sections_unfolded = [ "Border", "Capping", "Fill", "Material", "Transform", "Vi
 target_path = NodePath("../../Pivot/Fire")
 trail_length = 20.0
 
-[node name="FireTrail2" parent="FireTrails" index="1" instance=ExtResource( 2 )]
+[node name="FireTrail2" parent="FireTrails" index="1" instance=ExtResource( 4 )]
 
 target_path = NodePath("../../Pivot/Fire2")
 trail_length = 20.0
 
 [node name="TextureRect" type="TextureRect" parent="FireTrails" index="2"]
 
-material = ExtResource( 3 )
+material = ExtResource( 5 )
 anchor_left = 0.0
 anchor_top = 0.0
 anchor_right = 0.0
@@ -824,26 +712,25 @@ _sections_unfolded = [ "Material" ]
 
 visible = false
 build_mode = 0
-polygon = PoolVector2Array( 255, 1.25004, 210.305, 67.4137, 177.5, 107.5, 13.6027, 152.24, -88.2106, 110.496, -165.589, 44.3177, -70.9023, 36.1726, -98.3919, -3.53458, -65.8116, -31.0242, -179.843, -105.348, 5.45769, -161.345, 204.196, -90.3969 )
+polygon = PoolVector2Array( 281.249, -3.75095, 254.999, 93.7488, 176.249, 146.249, 16.249, 163.749, -88.2106, 110.496, -165.589, 44.3177, -70.9023, 36.1726, -98.3919, -3.53458, -65.8116, -31.0242, -179.843, -105.348, 26.249, -223.751, 252.499, -145.001 )
 _sections_unfolded = [ "Visibility" ]
 
 [node name="CollisionAttackMedium" type="CollisionPolygon2D" parent="." index="4"]
 
 visible = false
 build_mode = 0
-polygon = PoolVector2Array( 335.594, -3.7233, 216.25, 140, -9.99992, 222.5, -112.5, 67.5, -51.6929, 24.5462, -63.2752, -0.44714, -44.9874, -28.4885, -140.892, -111.645, -1.4077, -182.915, 194.074, -157.461 )
+polygon = PoolVector2Array( 363.748, 2.49905, 268.749, 177.499, -9.99992, 222.5, -112.5, 67.5, -51.6929, 24.5462, -63.2752, -0.44714, -44.9874, -28.4885, -140.892, -111.645, 27.499, -255, 258.749, -202.501 )
 _sections_unfolded = [ "Visibility" ]
 
 [node name="CollisionAttackStraight" type="CollisionShape2D" parent="." index="5"]
 
-visible = false
 position = Vector2( 156.799, 3.7421 )
-shape = SubResource( 14 )
+shape = SubResource( 12 )
 _sections_unfolded = [ "Transform", "Visibility" ]
 
 [node name="SFX" type="AudioStreamPlayer" parent="." index="6"]
 
-stream = ExtResource( 4 )
+stream = ExtResource( 6 )
 volume_db = 0.0
 autoplay = false
 mix_target = 0

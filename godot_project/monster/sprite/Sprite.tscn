@@ -123,7 +123,6 @@ _sections_unfolded = [ "Transform", "Visibility" ]
 
 [node name="StatusPivot" parent="." index="7"]
 
-editor/display_folded = false
 _sections_unfolded = [ "Transform", "Visibility" ]
 
 [node name="WeaponPivot" parent="." index="8"]

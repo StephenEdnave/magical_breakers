@@ -2,7 +2,7 @@
 
 [ext_resource path="res://objects/miscellaneous/crosshairs/target_reticle.gd" type="Script" id=1]
 [ext_resource path="res://objects/miscellaneous/crosshairs/sprites/crosshair049.png" type="Texture" id=2]
-[ext_resource path="res://sfx/lock_on.wav" type="AudioStream" id=3]
+[ext_resource path="res://sfx/kenney_digital_audio/power_up_2.ogg" type="AudioStream" id=3]
 
 [sub_resource type="Animation" id=1]
 
@@ -99,7 +99,7 @@ tracks/2/keys = {
 "times": PoolRealArray( 0, 0.2, 0.3 ),
 "transitions": PoolRealArray( 4, 0.25, 1 ),
 "update": 0,
-"values": [ Vector2( 3, 3 ), Vector2( 0.8, 0.8 ), Vector2( 1, 1 ) ]
+"values": [ Vector2( 3, 3 ), Vector2( 0.2, 0.2 ), Vector2( 1, 1 ) ]
 }
 tracks/3/type = "value"
 tracks/3/path = NodePath("BodyPivot/Body:modulate")
@@ -224,7 +224,7 @@ tracks/3/keys = {
 "values": [ Color( 0.909973, 1, 0.902344, 1 ) ]
 }
 
-[node name="TargetReticle" type="Node2D"]
+[node name="TargetReticle" type="Node2D" index="0"]
 
 script = ExtResource( 1 )
 
@@ -243,7 +243,7 @@ stream = ExtResource( 3 )
 volume_db = 0.0
 autoplay = false
 mix_target = 0
-bus = "Master"
+bus = "SFX"
 
 [node name="AnimationPlayer" type="AnimationPlayer" parent="." index="2"]
 

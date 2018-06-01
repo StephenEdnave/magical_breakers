@@ -1,0 +1,18 @@
+[remap]
+
+importer="ogg_vorbis"
+type="AudioStreamOGGVorbis"
+path="res://.import/phaser_up_3.ogg-df18bc8eaa84bb536c9630391890c8d1.oggstr"
+
+[deps]
+
+source_file="res://sfx/kenney_digital_audio/phaser_up_3.ogg"
+source_md5="4d0fd2210c9721a6605a03b79e56c102"
+
+dest_files=[ "res://.import/phaser_up_3.ogg-df18bc8eaa84bb536c9630391890c8d1.oggstr" ]
+dest_md5="dbf2b91d205c33d117efe7535b21c413"
+
+[params]
+
+loop=false
+loop_offset=0

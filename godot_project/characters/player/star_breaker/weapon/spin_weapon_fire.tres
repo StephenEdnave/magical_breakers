@@ -1,0 +1,67 @@
+[gd_resource type="ParticlesMaterial" load_steps=5 format=2]
+
+[sub_resource type="Gradient" id=6]
+
+offsets = PoolRealArray( 0, 0.171598, 1 )
+colors = PoolColorArray( 1, 1, 1, 0.502745, 1, 0.949219, 0.949219, 0.320431, 0, 0, 0, 0 )
+
+[sub_resource type="GradientTexture" id=7]
+
+flags = 4
+gradient = SubResource( 6 )
+width = 2048
+
+[sub_resource type="Curve" id=8]
+
+min_value = 0.0
+max_value = 1.0
+bake_resolution = 100
+_data = [ Vector2( 0, 0.510742 ), 0.0, 0.0, 0, 0, Vector2( 0.129622, 0.94043 ), 7.07216, 7.07216, 0, 0, Vector2( 0.147849, 0.360352 ), -0.327415, -0.327415, 0, 0, Vector2( 0.999427, 0.457031 ), 0.755572, 0.0, 0, 0 ]
+
+[sub_resource type="CurveTexture" id=9]
+
+flags = 4
+width = 2048
+curve = SubResource( 8 )
+
+[resource]
+
+render_priority = 5
+trail_divisor = 1
+emission_shape = 1
+emission_sphere_radius = 32.0
+flag_align_y = false
+flag_rotate_y = false
+flag_disable_z = true
+spread = 45.0
+flatness = 0.0
+gravity = Vector3( 0, 0, 0 )
+initial_velocity = 300.0
+initial_velocity_random = 1.0
+angular_velocity = 360.0
+angular_velocity_random = 1.0
+orbit_velocity = 0.0
+orbit_velocity_random = 0.0
+linear_accel = 0.0
+linear_accel_random = 0.0
+radial_accel = 0.0
+radial_accel_random = 0.0
+tangential_accel = 0.0
+tangential_accel_random = 0.0
+damping = 0.0
+damping_random = 0.0
+angle = 360.0
+angle_random = 1.0
+scale = 0.5
+scale_random = 0.3
+scale_curve = SubResource( 9 )
+color_ramp = SubResource( 7 )
+hue_variation = 0.0
+hue_variation_random = 0.0
+anim_speed = 1.0
+anim_speed_random = 0.0
+anim_offset = 0.0
+anim_offset_random = 0.0
+anim_loop = false
+_sections_unfolded = [ "Angular Velocity", "Animation", "Color", "Emission Shape", "Hue Variation", "Radial Accel", "Scale", "Trail" ]
+
