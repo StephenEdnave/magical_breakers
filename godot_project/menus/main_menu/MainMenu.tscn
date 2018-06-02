@@ -641,7 +641,7 @@ length = 0.5
 loop = false
 step = 0.1
 tracks/0/type = "value"
-tracks/0/path = NodePath("CanvasLayer/StartMenu:modulate")
+tracks/0/path = NodePath("CanvasLayer/Background/BlueArrows:rect_size")
 tracks/0/interp = 1
 tracks/0/loop_wrap = true
 tracks/0/imported = false
@@ -650,46 +650,46 @@ tracks/0/keys = {
 "times": PoolRealArray( 0 ),
 "transitions": PoolRealArray( 1 ),
 "update": 0,
-"values": [ Color( 1, 1, 1, 1 ) ]
+"values": [ Vector2( 2100, 1166 ) ]
 }
 tracks/1/type = "value"
-tracks/1/path = NodePath("CanvasLayer/StartMenu:visible")
+tracks/1/path = NodePath("CanvasLayer/Background/BlueArrows:rect_position")
 tracks/1/interp = 1
 tracks/1/loop_wrap = true
 tracks/1/imported = false
 tracks/1/enabled = true
 tracks/1/keys = {
-"times": PoolRealArray( 0 ),
-"transitions": PoolRealArray( 1 ),
-"update": 1,
-"values": [ false ]
-}
-tracks/2/type = "value"
-tracks/2/path = NodePath("CanvasLayer/Background/BlueArrows:rect_size")
-tracks/2/interp = 1
-tracks/2/loop_wrap = true
-tracks/2/imported = false
-tracks/2/enabled = true
-tracks/2/keys = {
-"times": PoolRealArray( 0 ),
-"transitions": PoolRealArray( 1 ),
-"update": 0,
-"values": [ Vector2( 2100, 1166 ) ]
-}
-tracks/3/type = "value"
-tracks/3/path = NodePath("CanvasLayer/Background/BlueArrows:rect_position")
-tracks/3/interp = 1
-tracks/3/loop_wrap = true
-tracks/3/imported = false
-tracks/3/enabled = true
-tracks/3/keys = {
 "times": PoolRealArray( 0, 0.5 ),
 "transitions": PoolRealArray( 1, 1 ),
 "update": 0,
 "values": [ Vector2( -2076, 67 ), Vector2( -2294, 793 ) ]
 }
+tracks/2/type = "value"
+tracks/2/path = NodePath("CanvasLayer/Background/Pink Arrows:rect_position")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/keys = {
+"times": PoolRealArray( 0, 0.5 ),
+"transitions": PoolRealArray( 1, 1 ),
+"update": 0,
+"values": [ Vector2( -724, -988 ), Vector2( -972, -854 ) ]
+}
+tracks/3/type = "value"
+tracks/3/path = NodePath("CanvasLayer/Background/Pink Arrows:rect_size")
+tracks/3/interp = 1
+tracks/3/loop_wrap = true
+tracks/3/imported = false
+tracks/3/enabled = true
+tracks/3/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 0,
+"values": [ Vector2( 2100, 1083 ) ]
+}
 tracks/4/type = "value"
-tracks/4/path = NodePath("CanvasLayer/Background/Pink Arrows:rect_position")
+tracks/4/path = NodePath("CanvasLayer/Background/WhiteArrows:rect_position")
 tracks/4/interp = 1
 tracks/4/loop_wrap = true
 tracks/4/imported = false
@@ -698,82 +698,82 @@ tracks/4/keys = {
 "times": PoolRealArray( 0, 0.5 ),
 "transitions": PoolRealArray( 1, 1 ),
 "update": 0,
-"values": [ Vector2( -724, -988 ), Vector2( -972, -854 ) ]
+"values": [ Vector2( 1155, -414 ), Vector2( 1298, -698 ) ]
 }
 tracks/5/type = "value"
-tracks/5/path = NodePath("CanvasLayer/Background/Pink Arrows:rect_size")
+tracks/5/path = NodePath("CanvasLayer/Background/BlackArrows:rect_position")
 tracks/5/interp = 1
 tracks/5/loop_wrap = true
 tracks/5/imported = false
 tracks/5/enabled = true
 tracks/5/keys = {
-"times": PoolRealArray( 0 ),
-"transitions": PoolRealArray( 1 ),
-"update": 0,
-"values": [ Vector2( 2100, 1083 ) ]
-}
-tracks/6/type = "value"
-tracks/6/path = NodePath("CanvasLayer/Background/WhiteArrows:rect_position")
-tracks/6/interp = 1
-tracks/6/loop_wrap = true
-tracks/6/imported = false
-tracks/6/enabled = true
-tracks/6/keys = {
-"times": PoolRealArray( 0, 0.5 ),
-"transitions": PoolRealArray( 1, 1 ),
-"update": 0,
-"values": [ Vector2( 1155, -414 ), Vector2( 1298, -698 ) ]
-}
-tracks/7/type = "value"
-tracks/7/path = NodePath("CanvasLayer/Background/BlackArrows:rect_position")
-tracks/7/interp = 1
-tracks/7/loop_wrap = true
-tracks/7/imported = false
-tracks/7/enabled = true
-tracks/7/keys = {
 "times": PoolRealArray( 0, 0.5 ),
 "transitions": PoolRealArray( 1, 1 ),
 "update": 0,
 "values": [ Vector2( -727, 880 ), Vector2( -268, 1603 ) ]
 }
+tracks/6/type = "value"
+tracks/6/path = NodePath("CanvasLayer/Background/WhiteArrows:rect_size")
+tracks/6/interp = 1
+tracks/6/loop_wrap = true
+tracks/6/imported = false
+tracks/6/enabled = true
+tracks/6/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 0,
+"values": [ Vector2( 2100, 1314 ) ]
+}
+tracks/7/type = "value"
+tracks/7/path = NodePath("CanvasLayer/Background/BlackArrows:rect_size")
+tracks/7/interp = 1
+tracks/7/loop_wrap = true
+tracks/7/imported = false
+tracks/7/enabled = true
+tracks/7/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 0,
+"values": [ Vector2( 2100, 1314 ) ]
+}
 tracks/8/type = "value"
-tracks/8/path = NodePath("CanvasLayer/Background/WhiteArrows:rect_size")
+tracks/8/path = NodePath("CanvasLayer/Background/WhiteArrows:rect_rotation")
 tracks/8/interp = 1
 tracks/8/loop_wrap = true
 tracks/8/imported = false
 tracks/8/enabled = true
 tracks/8/keys = {
-"times": PoolRealArray( 0 ),
-"transitions": PoolRealArray( 1 ),
+"times": PoolRealArray( 0, 0.5 ),
+"transitions": PoolRealArray( 1, 1 ),
 "update": 0,
-"values": [ Vector2( 2100, 1314 ) ]
+"values": [ -8.11, -19.58 ]
 }
 tracks/9/type = "value"
-tracks/9/path = NodePath("CanvasLayer/Background/BlackArrows:rect_size")
+tracks/9/path = NodePath("CanvasLayer/Background/BlackArrows:rect_rotation")
 tracks/9/interp = 1
 tracks/9/loop_wrap = true
 tracks/9/imported = false
 tracks/9/enabled = true
 tracks/9/keys = {
-"times": PoolRealArray( 0 ),
-"transitions": PoolRealArray( 1 ),
+"times": PoolRealArray( 0, 0.5 ),
+"transitions": PoolRealArray( 1, 1 ),
 "update": 0,
-"values": [ Vector2( 2100, 1314 ) ]
+"values": [ -4.04, -19.58 ]
 }
 tracks/10/type = "value"
-tracks/10/path = NodePath("CanvasLayer/LevelSelect:visible")
+tracks/10/path = NodePath("CanvasLayer/Background/Pink Arrows:rect_rotation")
 tracks/10/interp = 1
 tracks/10/loop_wrap = true
 tracks/10/imported = false
 tracks/10/enabled = true
 tracks/10/keys = {
-"times": PoolRealArray( 0 ),
-"transitions": PoolRealArray( 1 ),
-"update": 1,
-"values": [ true ]
+"times": PoolRealArray( 0, 0.5 ),
+"transitions": PoolRealArray( 1, 1 ),
+"update": 0,
+"values": [ -2.32, -19.58 ]
 }
 tracks/11/type = "value"
-tracks/11/path = NodePath("CanvasLayer/Background/WhiteArrows:rect_rotation")
+tracks/11/path = NodePath("CanvasLayer/Background/BlueArrows:rect_rotation")
 tracks/11/interp = 1
 tracks/11/loop_wrap = true
 tracks/11/imported = false
@@ -782,43 +782,19 @@ tracks/11/keys = {
 "times": PoolRealArray( 0, 0.5 ),
 "transitions": PoolRealArray( 1, 1 ),
 "update": 0,
-"values": [ -8.11, -19.58 ]
+"values": [ -2.99, -19.58 ]
 }
 tracks/12/type = "value"
-tracks/12/path = NodePath("CanvasLayer/Background/BlackArrows:rect_rotation")
+tracks/12/path = NodePath("CanvasLayer/LevelSelect:visible")
 tracks/12/interp = 1
 tracks/12/loop_wrap = true
 tracks/12/imported = false
 tracks/12/enabled = true
 tracks/12/keys = {
-"times": PoolRealArray( 0, 0.5 ),
-"transitions": PoolRealArray( 1, 1 ),
-"update": 0,
-"values": [ -4.04, -19.58 ]
-}
-tracks/13/type = "value"
-tracks/13/path = NodePath("CanvasLayer/Background/Pink Arrows:rect_rotation")
-tracks/13/interp = 1
-tracks/13/loop_wrap = true
-tracks/13/imported = false
-tracks/13/enabled = true
-tracks/13/keys = {
-"times": PoolRealArray( 0, 0.5 ),
-"transitions": PoolRealArray( 1, 1 ),
-"update": 0,
-"values": [ -2.32, -19.58 ]
-}
-tracks/14/type = "value"
-tracks/14/path = NodePath("CanvasLayer/Background/BlueArrows:rect_rotation")
-tracks/14/interp = 1
-tracks/14/loop_wrap = true
-tracks/14/imported = false
-tracks/14/enabled = true
-tracks/14/keys = {
-"times": PoolRealArray( 0, 0.5 ),
-"transitions": PoolRealArray( 1, 1 ),
-"update": 0,
-"values": [ -2.99, -19.58 ]
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 1,
+"values": [ false ]
 }
 
 [sub_resource type="Animation" id=5]
@@ -1220,7 +1196,7 @@ tracks/8/loop_wrap = true
 tracks/8/imported = false
 tracks/8/enabled = true
 tracks/8/keys = {
-"times": PoolRealArray( 1 ),
+"times": PoolRealArray( 0.7 ),
 "transitions": PoolRealArray( 1 ),
 "values": [ {
 "args": [  ],
@@ -1277,7 +1253,7 @@ tracks/3/loop_wrap = true
 tracks/3/imported = false
 tracks/3/enabled = true
 tracks/3/keys = {
-"times": PoolRealArray( 0, 0.6, 1 ),
+"times": PoolRealArray( 0, 0.5, 0.9 ),
 "transitions": PoolRealArray( 0.202847, 0.25, 1 ),
 "update": 0,
 "values": [ Vector2( -1507, 497 ), Vector2( -1732, 324 ), Vector2( -2076, 67 ) ]
@@ -1289,7 +1265,7 @@ tracks/4/loop_wrap = true
 tracks/4/imported = false
 tracks/4/enabled = true
 tracks/4/keys = {
-"times": PoolRealArray( 0, 0.6, 1 ),
+"times": PoolRealArray( 0, 0.5, 0.9 ),
 "transitions": PoolRealArray( 0.222165, 0.25, 1 ),
 "update": 0,
 "values": [ Vector2( -1497, 508 ), Vector2( -1206, -57 ), Vector2( -724, -988 ) ]
@@ -1313,8 +1289,8 @@ tracks/6/loop_wrap = true
 tracks/6/imported = false
 tracks/6/enabled = true
 tracks/6/keys = {
-"times": PoolRealArray( 0, 0.6, 1 ),
-"transitions": PoolRealArray( 0.0965936, 0.25, 1 ),
+"times": PoolRealArray( 0, 0.5, 0.9 ),
+"transitions": PoolRealArray( 0.797154, 0.25, 1 ),
 "update": 0,
 "values": [ Vector2( -1470, 485 ), Vector2( 214, -114 ), Vector2( 1155, -414 ) ]
 }
@@ -1325,7 +1301,7 @@ tracks/7/loop_wrap = true
 tracks/7/imported = false
 tracks/7/enabled = true
 tracks/7/keys = {
-"times": PoolRealArray( 0, 0.6, 1 ),
+"times": PoolRealArray( 0, 0.5, 0.9 ),
 "transitions": PoolRealArray( 0.115912, 0.25, 1 ),
 "update": 0,
 "values": [ Vector2( -1475, 491 ), Vector2( -1043, 670 ), Vector2( -727, 880 ) ]
@@ -1361,10 +1337,10 @@ tracks/10/loop_wrap = true
 tracks/10/imported = false
 tracks/10/enabled = true
 tracks/10/keys = {
-"times": PoolRealArray( 0 ),
-"transitions": PoolRealArray( 1 ),
+"times": PoolRealArray( 0, 0.7 ),
+"transitions": PoolRealArray( 1, 1 ),
 "update": 1,
-"values": [ true ]
+"values": [ false, true ]
 }
 tracks/11/type = "value"
 tracks/11/path = NodePath("CanvasLayer/Background/BlueArrows:rect_rotation")
@@ -1373,7 +1349,7 @@ tracks/11/loop_wrap = true
 tracks/11/imported = false
 tracks/11/enabled = true
 tracks/11/keys = {
-"times": PoolRealArray( 0, 0.8 ),
+"times": PoolRealArray( 0, 0.5 ),
 "transitions": PoolRealArray( 13.4688, 1 ),
 "update": 0,
 "values": [ -19.58, -2.99 ]
@@ -1397,7 +1373,7 @@ tracks/13/loop_wrap = true
 tracks/13/imported = false
 tracks/13/enabled = true
 tracks/13/keys = {
-"times": PoolRealArray( 0, 0.8 ),
+"times": PoolRealArray( 0, 0.7 ),
 "transitions": PoolRealArray( 13.4688, 1 ),
 "update": 0,
 "values": [ -19.58, -4.04 ]
@@ -1421,7 +1397,7 @@ tracks/15/loop_wrap = true
 tracks/15/imported = false
 tracks/15/enabled = true
 tracks/15/keys = {
-"times": PoolRealArray( 1 ),
+"times": PoolRealArray( 0.9 ),
 "transitions": PoolRealArray( 1 ),
 "values": [ {
 "args": [  ],
@@ -1886,7 +1862,6 @@ _sections_unfolded = [ "Rect", "custom_fonts" ]
 [node name="LevelSelect" type="Container" parent="CanvasLayer" index="2"]
 
 editor/display_folded = true
-visible = false
 anchor_left = 0.0
 anchor_top = 0.0
 anchor_right = 1.0
@@ -1980,11 +1955,11 @@ anchor_left = 0.0
 anchor_top = 0.0
 anchor_right = 0.0
 anchor_bottom = 0.0
-margin_left = -1489.98
-margin_top = 468.749
-margin_right = 610.019
-margin_bottom = 1175.75
-rect_rotation = -19.58
+margin_left = 1155.0
+margin_top = -414.0
+margin_right = 3255.0
+margin_bottom = 900.0
+rect_rotation = -8.11
 rect_pivot_offset = Vector2( 0, 0 )
 rect_clip_content = false
 mouse_filter = 1
@@ -2002,11 +1977,11 @@ anchor_left = 0.0
 anchor_top = 0.0
 anchor_right = 0.0
 anchor_bottom = 0.0
-margin_left = -1483.0
-margin_top = 488.188
-margin_right = 617.0
-margin_bottom = 1625.19
-rect_rotation = -19.58
+margin_left = -727.0
+margin_top = 880.0
+margin_right = 1373.0
+margin_bottom = 2194.0
+rect_rotation = -4.04
 rect_pivot_offset = Vector2( 0, 0 )
 rect_clip_content = false
 mouse_filter = 1
@@ -2024,11 +1999,11 @@ anchor_left = 0.0
 anchor_top = 0.0
 anchor_right = 0.0
 anchor_bottom = 0.0
-margin_left = -1518.94
-margin_top = 496.384
-margin_right = 581.0
-margin_bottom = 1801.78
-rect_rotation = -19.58
+margin_left = -724.0
+margin_top = -988.0
+margin_right = 1376.0
+margin_bottom = 95.0
+rect_rotation = -2.32
 rect_pivot_offset = Vector2( 0, 0 )
 rect_clip_content = false
 mouse_filter = 1
@@ -2046,11 +2021,11 @@ anchor_left = 0.0
 anchor_top = 0.0
 anchor_right = 0.0
 anchor_bottom = 0.0
-margin_left = -1565.57
-margin_top = 477.339
-margin_right = 534.427
-margin_bottom = 1590.34
-rect_rotation = -19.58
+margin_left = -2076.0
+margin_top = 67.0
+margin_right = 24.0
+margin_bottom = 1233.0
+rect_rotation = -2.99
 rect_pivot_offset = Vector2( 0, 0 )
 rect_clip_content = false
 mouse_filter = 1
@@ -2177,9 +2152,9 @@ anchor_top = 0.0
 anchor_right = 0.0
 anchor_bottom = 0.0
 margin_left = 116.0
-margin_top = 136.0
+margin_top = 155.0
 margin_right = 643.0
-margin_bottom = 609.0
+margin_bottom = 628.0
 rect_pivot_offset = Vector2( 0, 0 )
 rect_clip_content = false
 mouse_filter = 1
@@ -2935,11 +2910,12 @@ group = null
 text = "Return"
 flat = false
 align = 1
-_sections_unfolded = [ "Textures", "Theme", "custom_fonts" ]
+_sections_unfolded = [ "Rect", "Textures", "Theme", "custom_fonts" ]
 
 [node name="StartMenu" type="Container" parent="CanvasLayer" index="6"]
 
 editor/display_folded = true
+visible = false
 self_modulate = Color( 0, 0, 0, 1 )
 anchor_left = 0.0
 anchor_top = 0.0

@@ -4,8 +4,6 @@
 
 [node name="Level" instance=ExtResource( 1 )]
 
-name = "level"
-
 [node name="ParallaxLayer" type="ParallaxLayer" parent="Skybox" index="0"]
 
 motion_scale = Vector2( 1, 1 )

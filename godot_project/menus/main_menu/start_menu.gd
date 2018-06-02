@@ -2,6 +2,10 @@ extends Container
 
 var main_menu = null
 
+var pointer_scene = null
+var pointer = null
+const POINTER_OFFSET = Vector2(-5.0, 0.0)
+
 var BUTTON_AMOUNT = 0
 var current_selection = 0
 
@@ -14,45 +18,58 @@ func _ready():
 	$Buttons/CreditsButton.connect("button_down", self, "_on_CreditsButton_button_down")
 
 
-func setup(_main_menu):
+func setup(_main_menu, _pointer_scene):
 	main_menu = _main_menu
-	set_process_input(true)
+	set_process_input(false)
+	
+	pointer_scene = _pointer_scene
+	pointer = pointer_scene.instance()
+	add_child(pointer)
+	pointer.visible = false
 
 
 func enter():
 	set_process_input(true)
+	pointer.visible = true
+	pointer.global_position = $Buttons.get_child(current_selection).rect_global_position + POINTER_OFFSET
 
 
 func _input(event):
 	if event.is_action_pressed("ui_up"):
+		main_menu.get_node("ButtonPress").play()
 		current_selection -= 1
 		if current_selection < 0:
 			current_selection = BUTTON_AMOUNT - 1
 	elif event.is_action_pressed("ui_down"):
+		main_menu.get_node("ButtonPress").play()
 		current_selection += 1
 		if current_selection >= BUTTON_AMOUNT:
 			current_selection = 0
 	elif event.is_action_pressed("ui_select"):
 		$Buttons.get_child(current_selection).emit_signal("button_down")
 	elif event.is_action_pressed("ui_cancel"):
+		main_menu.get_node("ButtonPress").play()
 		current_selection = BUTTON_AMOUNT - 1
+	
+	pointer.global_position = $Buttons.get_child(current_selection).rect_global_position + POINTER_OFFSET
 
 
 func _on_PlayButton_button_down():
-	main_menu.get_node("Tween").interpolate_property(main_menu.get_node("Music"), "volume_db", main_menu.get_node("Music").volume_db, -100.0, 1, Tween.TRANS_QUAD, Tween.EASE_IN)
-	main_menu.get_node("Tween").start()
+	pointer.visible = false
 	main_menu.get_node("ButtonPress").play()
-	main_menu.get_node("AnimationPlayer").play("main_menu_transition_out")
+	main_menu.get_node("AnimationPlayer").play("main_menu_to_level_select")
 	set_process_input(false)
 
 
 func _on_ConfigButton_button_down():
+	pointer.visible = false
 	main_menu.get_node("ButtonPress").play()
 	main_menu.get_node("AnimationPlayer").play("main_menu_to_config")
 	set_process_input(false)
 
 
 func _on_ExitButton_button_down():
+	pointer.visible = false
 	main_menu.get_node("ButtonPress").play()
 	main_menu.get_node("CanvasLayer").get_node("ExitPanel").visible = true
 	main_menu.get_node("CanvasLayer").get_node("ExitPanel").enter()
@@ -61,6 +78,7 @@ func _on_ExitButton_button_down():
 
 
 func _on_CreditsButton_button_down():
+	pointer.visible = false
 	main_menu.get_node("ButtonPress").play()
 	main_menu.get_node("AnimationPlayer").play("main_menu_to_credits")
 	set_process_input(false)
