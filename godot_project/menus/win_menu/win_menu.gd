@@ -13,8 +13,8 @@ func _ready():
 
 
 func setup():
-	$Container/MenuItems/CharacterLabel.text = "Star Breaker"
-	$Container/MenuItems/LevelLabel.text = "the level"
+	$Container/MenuItems/CharacterLabel.text = GameManager.player_character
+	$Container/MenuItems/LevelLabel.text = GameManager.level_name
 
 
 func _on_MainMenuButton_button_down():

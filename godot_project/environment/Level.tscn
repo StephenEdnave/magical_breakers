@@ -1,13 +1,12 @@
-[gd_scene load_steps=32 format=2]
+[gd_scene load_steps=11 format=2]
 
 [ext_resource path="res://environment/level.gd" type="Script" id=1]
 [ext_resource path="res://characters/player/star_breaker/StarBreaker.tscn" type="PackedScene" id=2]
-[ext_resource path="res://environment/in_the_sky/cloud_1.png" type="Texture" id=3]
-[ext_resource path="res://environment/in_the_sky/skybox.png" type="Texture" id=4]
-[ext_resource path="res://interface/Interface.tscn" type="PackedScene" id=5]
-[ext_resource path="res://menus/main_menu/arrow.png" type="Texture" id=6]
-[ext_resource path="res://music/Silent Rhythm (Stage 4) - SUGURI.ogg" type="AudioStream" id=7]
-[ext_resource path="res://environment/in_the_sky/inspectorj_wind-synthesized-a.wav" type="AudioStream" id=8]
+[ext_resource path="res://interface/Interface.tscn" type="PackedScene" id=3]
+[ext_resource path="res://menus/main_menu/skybox.PNG" type="Texture" id=4]
+[ext_resource path="res://menus/main_menu/arrow.png" type="Texture" id=5]
+[ext_resource path="res://music/Silent Rhythm (Stage 4) - SUGURI.ogg" type="AudioStream" id=6]
+[ext_resource path="res://environment/in_the_sky/inspectorj_wind-synthesized-a.wav" type="AudioStream" id=7]
 
 [sub_resource type="Animation" id=1]
 
@@ -16,7 +15,7 @@ length = 0.01
 loop = false
 step = 0.1
 tracks/0/type = "value"
-tracks/0/path = NodePath("YSort:position")
+tracks/0/path = NodePath("Transitions/BlackArrows:visible")
 tracks/0/interp = 1
 tracks/0/loop_wrap = true
 tracks/0/imported = false
@@ -24,11 +23,11 @@ tracks/0/enabled = true
 tracks/0/keys = {
 "times": PoolRealArray( 0 ),
 "transitions": PoolRealArray( 1 ),
-"update": 0,
-"values": [ Vector2( 0, 0 ) ]
+"update": 1,
+"values": [ true ]
 }
 tracks/1/type = "value"
-tracks/1/path = NodePath("UI/Transitions/BlackArrows:visible")
+tracks/1/path = NodePath("Transitions/MainMenuScreen:visible")
 tracks/1/interp = 1
 tracks/1/loop_wrap = true
 tracks/1/imported = false
@@ -37,27 +36,15 @@ tracks/1/keys = {
 "times": PoolRealArray( 0 ),
 "transitions": PoolRealArray( 1 ),
 "update": 1,
-"values": [ true ]
+"values": [ false ]
 }
 tracks/2/type = "value"
-tracks/2/path = NodePath("UI/Transitions/MainMenuScreen:visible")
+tracks/2/path = NodePath("Transitions/BlackArrows:rect_size")
 tracks/2/interp = 1
 tracks/2/loop_wrap = true
 tracks/2/imported = false
 tracks/2/enabled = true
 tracks/2/keys = {
-"times": PoolRealArray( 0 ),
-"transitions": PoolRealArray( 1 ),
-"update": 1,
-"values": [ false ]
-}
-tracks/3/type = "value"
-tracks/3/path = NodePath("UI/Transitions/BlackArrows:rect_size")
-tracks/3/interp = 1
-tracks/3/loop_wrap = true
-tracks/3/imported = false
-tracks/3/enabled = true
-tracks/3/keys = {
 "times": PoolRealArray( 0 ),
 "transitions": PoolRealArray( 1 ),
 "update": 0,
@@ -71,7 +58,7 @@ length = 0.5
 loop = false
 step = 0.1
 tracks/0/type = "value"
-tracks/0/path = NodePath("UI/Transitions/BlackArrows:visible")
+tracks/0/path = NodePath("Transitions/BlackArrows:visible")
 tracks/0/interp = 1
 tracks/0/loop_wrap = true
 tracks/0/imported = false
@@ -83,7 +70,7 @@ tracks/0/keys = {
 "values": [ true, false ]
 }
 tracks/1/type = "value"
-tracks/1/path = NodePath("UI/Transitions/BlackArrows:rect_size")
+tracks/1/path = NodePath("Transitions/BlackArrows:rect_size")
 tracks/1/interp = 1
 tracks/1/loop_wrap = true
 tracks/1/imported = false
@@ -94,6 +81,18 @@ tracks/1/keys = {
 "update": 0,
 "values": [ Vector2( 2100, 1561 ), Vector2( 2100, 51 ) ]
 }
+tracks/2/type = "value"
+tracks/2/path = NodePath("Transitions/MainMenuScreen:visible")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 1,
+"values": [ false ]
+}
 
 [sub_resource type="Animation" id=3]
 
@@ -102,7 +101,7 @@ length = 0.5
 loop = false
 step = 0.1
 tracks/0/type = "value"
-tracks/0/path = NodePath("UI/Transitions/BlackArrows:visible")
+tracks/0/path = NodePath("Transitions/BlackArrows:visible")
 tracks/0/interp = 1
 tracks/0/loop_wrap = true
 tracks/0/imported = false
@@ -114,7 +113,7 @@ tracks/0/keys = {
 "values": [ true ]
 }
 tracks/1/type = "value"
-tracks/1/path = NodePath("UI/Transitions/BlackArrows:rect_size")
+tracks/1/path = NodePath("Transitions/BlackArrows:rect_size")
 tracks/1/interp = 1
 tracks/1/loop_wrap = true
 tracks/1/imported = false
@@ -126,7 +125,7 @@ tracks/1/keys = {
 "values": [ Vector2( 2100, 51 ), Vector2( 2100, 1561 ), Vector2( 2100, 51 ) ]
 }
 tracks/2/type = "value"
-tracks/2/path = NodePath("UI/Transitions/MainMenuScreen:visible")
+tracks/2/path = NodePath("Transitions/MainMenuScreen:visible")
 tracks/2/interp = 1
 tracks/2/loop_wrap = true
 tracks/2/imported = false
@@ -138,387 +137,12 @@ tracks/2/keys = {
 "values": [ false, true ]
 }
 
-[sub_resource type="Animation" id=4]
-
-length = 30.0
-loop = true
-step = 0.1
-tracks/0/type = "value"
-tracks/0/path = NodePath("YSort:position")
-tracks/0/interp = 1
-tracks/0/loop_wrap = true
-tracks/0/imported = false
-tracks/0/enabled = true
-tracks/0/keys = {
-"times": PoolRealArray( 0, 10.4, 16.4, 29.6 ),
-"transitions": PoolRealArray( 1, 1, 1, 1 ),
-"update": 0,
-"values": [ Vector2( 0, 0 ), Vector2( 1026.75, -12.676 ), Vector2( -19.0139, 836.612 ), Vector2( -38.0278, 25.3518 ) ]
-}
-
-[sub_resource type="Gradient" id=5]
-
-offsets = PoolRealArray( 0, 0.136095, 0.733728, 0.994083, 1 )
-colors = PoolColorArray( 1, 1, 1, 0, 0.726563, 1, 0.980774, 0.353608, 0.554291, 0.503906, 1, 0.143647, 1, 1, 1, 0.11051, 0.985949, 0.947103, 1, 0.193636 )
-
-[sub_resource type="GradientTexture" id=6]
-
-flags = 4
-gradient = SubResource( 5 )
-width = 2048
-
-[sub_resource type="ParticlesMaterial" id=7]
-
-render_priority = 0
-trail_divisor = 1
-emission_shape = 2
-emission_box_extents = Vector3( 2000, 100, 1 )
-flag_align_y = false
-flag_rotate_y = false
-flag_disable_z = true
-spread = 10.0
-flatness = 0.0
-gravity = Vector3( 0, 0, 0 )
-initial_velocity = 300.0
-initial_velocity_random = 1.0
-angular_velocity = 0.0
-angular_velocity_random = 0.0
-orbit_velocity = 0.0
-orbit_velocity_random = 0.0
-linear_accel = 0.0
-linear_accel_random = 0.0
-radial_accel = 0.0
-radial_accel_random = 0.0
-tangential_accel = 0.0
-tangential_accel_random = 0.0
-damping = 0.0
-damping_random = 0.0
-angle = 0.0
-angle_random = 0.0
-scale = 4.0
-scale_random = 1.0
-color_ramp = SubResource( 6 )
-hue_variation = 0.0
-hue_variation_random = 0.0
-anim_speed = 0.0
-anim_speed_random = 0.0
-anim_offset = 0.0
-anim_offset_random = 0.0
-anim_loop = false
-_sections_unfolded = [ "Color", "Emission Shape", "Initial Velocity", "Scale", "Spread" ]
-
-[sub_resource type="Gradient" id=8]
-
-offsets = PoolRealArray( 0, 0.118343, 0.751479, 1 )
-colors = PoolColorArray( 0.967529, 1, 0.78125, 0, 0.0490714, 0.00549316, 0.15625, 0.176824, 0.0338745, 0, 0.117188, 0.0386667, 1, 1, 1, 0 )
-
-[sub_resource type="GradientTexture" id=9]
-
-flags = 4
-gradient = SubResource( 8 )
-width = 2048
-
-[sub_resource type="ParticlesMaterial" id=10]
-
-render_priority = 0
-trail_divisor = 1
-emission_shape = 0
-flag_align_y = false
-flag_rotate_y = false
-flag_disable_z = true
-spread = 10.0
-flatness = 0.0
-gravity = Vector3( 0, 0, 0 )
-initial_velocity = 200.0
-initial_velocity_random = 0.0
-angular_velocity = 0.0
-angular_velocity_random = 0.0
-orbit_velocity = 0.0
-orbit_velocity_random = 0.0
-linear_accel = 0.0
-linear_accel_random = 0.0
-radial_accel = 0.0
-radial_accel_random = 0.0
-tangential_accel = 0.0
-tangential_accel_random = 0.0
-damping = 0.0
-damping_random = 0.0
-angle = 15.0
-angle_random = 1.0
-scale = 6.0
-scale_random = 1.0
-color_ramp = SubResource( 9 )
-hue_variation = 0.0
-hue_variation_random = 0.0
-anim_speed = 0.0
-anim_speed_random = 0.0
-anim_offset = 0.0
-anim_offset_random = 0.0
-anim_loop = false
-_sections_unfolded = [ "Angle", "Color", "Gravity", "Initial Velocity", "Scale", "Spread" ]
-
-[sub_resource type="ParticlesMaterial" id=11]
-
-render_priority = 5
-trail_divisor = 1
-emission_shape = 2
-emission_box_extents = Vector3( 1, 1080, 1 )
-flag_align_y = false
-flag_rotate_y = false
-flag_disable_z = true
-spread = 30.0
-flatness = 0.0
-gravity = Vector3( 0, 0, 0 )
-initial_velocity = 50.0
-initial_velocity_random = 0.0
-angular_velocity = 0.0
-angular_velocity_random = 0.0
-orbit_velocity = 0.0
-orbit_velocity_random = 0.0
-linear_accel = 0.0
-linear_accel_random = 0.0
-radial_accel = 0.0
-radial_accel_random = 0.0
-tangential_accel = 0.0
-tangential_accel_random = 0.0
-damping = 0.0
-damping_random = 0.0
-angle = 0.0
-angle_random = 0.0
-scale = 8.0
-scale_random = 0.0
-color = Color( 0.886719, 0.838795, 0.807053, 0.099451 )
-hue_variation = 0.0
-hue_variation_random = 0.0
-anim_speed = 0.0
-anim_speed_random = 0.0
-anim_offset = 0.0
-anim_offset_random = 0.0
-anim_loop = false
-_sections_unfolded = [ "Angle", "Color", "Emission Shape", "Initial Velocity", "Scale" ]
-
-[sub_resource type="Gradient" id=12]
-
-offsets = PoolRealArray( 0, 0.130178, 0.792899, 1 )
-colors = PoolColorArray( 0.222656, 0, 0.177429, 0, 1, 0.476563, 0.709656, 0.861882, 1, 0.632721, 0.433594, 0.203824, 0.996094, 0.876203, 0.770416, 0 )
-
-[sub_resource type="GradientTexture" id=13]
-
-flags = 4
-gradient = SubResource( 12 )
-width = 2048
-
-[sub_resource type="ParticlesMaterial" id=14]
-
-render_priority = 0
-trail_divisor = 1
-emission_shape = 2
-emission_box_extents = Vector3( 2000, 1, 1 )
-flag_align_y = false
-flag_rotate_y = false
-flag_disable_z = true
-spread = 5.0
-flatness = 0.0
-gravity = Vector3( 0, 0, 0 )
-initial_velocity = 5.0
-initial_velocity_random = 0.0
-angular_velocity = 8.04345e-43
-angular_velocity_random = 0.0
-orbit_velocity = 0.0
-orbit_velocity_random = 0.0
-linear_accel = 0.0
-linear_accel_random = 0.0
-radial_accel = 0.0
-radial_accel_random = 0.0
-tangential_accel = 0.0
-tangential_accel_random = 0.0
-damping = 0.0
-damping_random = 0.0
-angle = 0.0
-angle_random = 0.0
-scale = 3.0
-scale_random = 1.0
-color_ramp = SubResource( 13 )
-hue_variation = 0.0
-hue_variation_random = 0.0
-anim_speed = 0.0
-anim_speed_random = 0.0
-anim_offset = 0.0
-anim_offset_random = 0.0
-anim_loop = false
-_sections_unfolded = [ "Color", "Emission Shape", "Gravity", "Initial Velocity", "Scale", "Spread" ]
-
-[sub_resource type="Gradient" id=15]
-
-offsets = PoolRealArray( 0, 0.0887574, 0.816568, 1 )
-colors = PoolColorArray( 1, 0.894531, 0.956329, 0, 0.648438, 0.884644, 1, 0.403294, 1, 0.875, 0.948242, 0.734824, 1, 1, 1, 0 )
-
-[sub_resource type="GradientTexture" id=16]
-
-flags = 4
-gradient = SubResource( 15 )
-width = 2048
-
-[sub_resource type="ParticlesMaterial" id=17]
-
-render_priority = 0
-trail_divisor = 1
-emission_shape = 2
-emission_box_extents = Vector3( 4000, 0, 1 )
-flag_align_y = false
-flag_rotate_y = false
-flag_disable_z = true
-spread = 45.0
-flatness = 0.0
-gravity = Vector3( 0, 0, 0 )
-initial_velocity = 1.0
-initial_velocity_random = 0.0
-angular_velocity = 0.0
-angular_velocity_random = 0.0
-orbit_velocity = 0.0
-orbit_velocity_random = 0.0
-linear_accel = 0.0
-linear_accel_random = 0.0
-radial_accel = 0.0
-radial_accel_random = 0.0
-tangential_accel = 0.0
-tangential_accel_random = 0.0
-damping = 0.0
-damping_random = 0.0
-angle = 0.0
-angle_random = 0.0
-scale = 6.0
-scale_random = 0.2
-color_ramp = SubResource( 16 )
-hue_variation = 0.0
-hue_variation_random = 0.0
-anim_speed = 0.0
-anim_speed_random = 0.0
-anim_offset = 0.0
-anim_offset_random = 0.0
-anim_loop = false
-_sections_unfolded = [ "Color", "Emission Shape", "Scale" ]
-
-[sub_resource type="Gradient" id=18]
-
-offsets = PoolRealArray( 0, 0.236686, 0.769231, 1 )
-colors = PoolColorArray( 1, 0.988068, 0.910156, 0, 1, 0.910248, 0.324219, 0.116, 0.263092, 0, 0.910156, 0.160235, 1, 0.917969, 0.946808, 0 )
-
-[sub_resource type="GradientTexture" id=19]
-
-flags = 4
-gradient = SubResource( 18 )
-width = 2048
-
-[sub_resource type="ParticlesMaterial" id=20]
-
-render_priority = 0
-trail_divisor = 1
-emission_shape = 2
-emission_box_extents = Vector3( 2000, 100, 1 )
-flag_align_y = false
-flag_rotate_y = false
-flag_disable_z = true
-spread = 15.0
-flatness = 0.0
-gravity = Vector3( 0, 0, 0 )
-initial_velocity = 20.0
-initial_velocity_random = 0.0
-angular_velocity = 0.0
-angular_velocity_random = 0.0
-orbit_velocity = 0.0
-orbit_velocity_random = 0.0
-linear_accel = 0.0
-linear_accel_random = 0.0
-radial_accel = 0.0
-radial_accel_random = 0.0
-tangential_accel = 0.0
-tangential_accel_random = 0.0
-damping = 0.0
-damping_random = 0.0
-angle = 0.0
-angle_random = 0.0
-scale = 0.1
-scale_random = 1.0
-color_ramp = SubResource( 19 )
-hue_variation = 0.0
-hue_variation_random = 0.0
-anim_speed = 0.0
-anim_speed_random = 0.0
-anim_offset = 0.0
-anim_offset_random = 0.0
-anim_loop = false
-_sections_unfolded = [ "Color", "Damping", "Emission Shape", "Initial Velocity", "Spread" ]
-
-[sub_resource type="Gradient" id=21]
-
-offsets = PoolRealArray( 0, 0.153846, 1 )
-colors = PoolColorArray( 1, 1, 1, 0, 1, 0.679688, 0.859863, 0.248627, 1, 1, 1, 0 )
-
-[sub_resource type="GradientTexture" id=22]
-
-flags = 4
-gradient = SubResource( 21 )
-width = 2048
-
-[sub_resource type="ParticlesMaterial" id=23]
-
-render_priority = 0
-trail_divisor = 1
-emission_shape = 2
-emission_box_extents = Vector3( 2000, 1000, 1 )
-flag_align_y = false
-flag_rotate_y = false
-flag_disable_z = true
-spread = 20.0
-flatness = 0.0
-gravity = Vector3( 0, 0, 0 )
-initial_velocity = 200.0
-initial_velocity_random = 0.0
-angular_velocity = 0.0
-angular_velocity_random = 0.0
-orbit_velocity = 0.0
-orbit_velocity_random = 0.0
-linear_accel = 0.0
-linear_accel_random = 0.0
-radial_accel = 0.0
-radial_accel_random = 0.0
-tangential_accel = 0.0
-tangential_accel_random = 0.0
-damping = 0.0
-damping_random = 0.0
-angle = 0.0
-angle_random = 0.0
-scale = 0.6
-scale_random = 1.0
-color_ramp = SubResource( 22 )
-hue_variation = 0.0
-hue_variation_random = 0.0
-anim_speed = 0.0
-anim_speed_random = 0.0
-anim_offset = 0.0
-anim_offset_random = 0.0
-anim_loop = false
-_sections_unfolded = [ "Color", "Emission Shape", "Gravity", "Initial Velocity", "Scale", "Spread" ]
-
 [node name="Level" type="Node2D"]
 
 script = ExtResource( 1 )
+name = "level"
 
-[node name="AnimationPlayer" type="AnimationPlayer" parent="." index="0"]
-
-root_node = NodePath("..")
-autoplay = ""
-playback_process_mode = 1
-playback_default_blend_time = 0.0
-playback_speed = 1.0
-anims/SETUP = SubResource( 1 )
-anims/enter = SubResource( 2 )
-anims/exit = SubResource( 3 )
-anims/level = SubResource( 4 )
-blend_times = [  ]
-
-[node name="YSort" type="YSort" parent="." index="1"]
+[node name="YSort" type="YSort" parent="." index="0"]
 
 editor/display_folded = true
 sort_enabled = true
@@ -561,9 +185,8 @@ _sections_unfolded = [ "Drag Margin", "Editor", "Limit", "Offset", "Smoothing", 
 
 [node name="Waves" type="Node2D" parent="YSort" index="1"]
 
-[node name="Foreground" type="ParallaxBackground" parent="." index="2"]
+[node name="Foreground" type="ParallaxBackground" parent="." index="1"]
 
-editor/display_folded = true
 layer = 5
 offset = Vector2( 0, 0 )
 rotation = 0.0
@@ -576,105 +199,8 @@ scroll_limit_begin = Vector2( 0, 0 )
 scroll_limit_end = Vector2( 0, 0 )
 scroll_ignore_camera_zoom = false
 
-[node name="Clouds2" type="ParallaxLayer" parent="Foreground" index="0"]
+[node name="Background" type="ParallaxBackground" parent="." index="2"]
 
-position = Vector2( 600.505, 434.464 )
-motion_scale = Vector2( 2, 2 )
-motion_offset = Vector2( 0, 0 )
-motion_mirroring = Vector2( 0, 0 )
-_sections_unfolded = [ "Motion", "Transform" ]
-
-[node name="Particles2D" type="Particles2D" parent="Foreground/Clouds2" index="0"]
-
-position = Vector2( 1961.82, 938.294 )
-scale = Vector2( -1, 1 )
-emitting = true
-amount = 8
-lifetime = 20.0
-one_shot = false
-preprocess = 0.0
-speed_scale = 1.0
-explosiveness = 0.0
-randomness = 0.0
-fixed_fps = 0
-fract_delta = true
-visibility_rect = Rect2( -1000, -4000, 6000, 6000 )
-local_coords = true
-draw_order = 0
-process_material = SubResource( 7 )
-texture = ExtResource( 3 )
-normal_map = null
-h_frames = 1
-v_frames = 1
-_sections_unfolded = [ "Drawing", "Process Material", "Textures", "Time", "Transform", "Visibility" ]
-
-[node name="Clouds3" type="ParallaxLayer" parent="Foreground" index="1"]
-
-visible = false
-motion_scale = Vector2( 1.2, 1.2 )
-motion_offset = Vector2( 1.5, 1.5 )
-motion_mirroring = Vector2( 0, 0 )
-_sections_unfolded = [ "Motion" ]
-
-[node name="Particles2D" type="Particles2D" parent="Foreground/Clouds3" index="0"]
-
-position = Vector2( 1020.85, 1930.53 )
-scale = Vector2( -1, 1 )
-emitting = true
-amount = 10
-lifetime = 20.0
-one_shot = false
-preprocess = 0.0
-speed_scale = 1.0
-explosiveness = 0.0
-randomness = 0.0
-fixed_fps = 0
-fract_delta = true
-visibility_rect = Rect2( -2000, -5000, 6000, 6000 )
-local_coords = true
-draw_order = 0
-process_material = SubResource( 10 )
-texture = ExtResource( 3 )
-normal_map = null
-h_frames = 1
-v_frames = 1
-_sections_unfolded = [ "Drawing", "Process Material", "Textures", "Transform" ]
-
-[node name="Clouds0" type="ParallaxLayer" parent="Foreground" index="2"]
-
-visible = false
-motion_scale = Vector2( 3, 3 )
-motion_offset = Vector2( 0, 0 )
-motion_mirroring = Vector2( 0, 0 )
-_sections_unfolded = [ "Motion", "Transform" ]
-
-[node name="Particles" type="Particles2D" parent="Foreground/Clouds0" index="0"]
-
-position = Vector2( 1093.75, 950.202 )
-scale = Vector2( -1, 1 )
-emitting = true
-amount = 2
-lifetime = 10.0
-one_shot = false
-preprocess = 0.0
-speed_scale = 1.0
-explosiveness = 0.0
-randomness = 0.0
-fixed_fps = 0
-fract_delta = true
-visibility_rect = Rect2( -3000, -3000, 6000, 6000 )
-local_coords = true
-draw_order = 0
-process_material = SubResource( 11 )
-texture = ExtResource( 3 )
-normal_map = null
-h_frames = 1
-v_frames = 1
-_sections_unfolded = [ "Drawing", "Process Material", "Textures", "Time", "Transform", "Visibility" ]
-
-[node name="Background" type="ParallaxBackground" parent="." index="3"]
-
-editor/display_folded = true
 layer = -2
 offset = Vector2( 0, 0 )
 rotation = 0.0
@@ -687,175 +213,8 @@ scroll_limit_begin = Vector2( 0, 0 )
 scroll_limit_end = Vector2( 0, 0 )
 scroll_ignore_camera_zoom = true
 
-[node name="Clouds7" type="ParallaxLayer" parent="Background" index="0"]
+[node name="Skybox" type="ParallaxBackground" parent="." index="3"]
 
-editor/display_folded = true
-position = Vector2( 38.0278, -50.704 )
-motion_scale = Vector2( 0.1, 0.1 )
-motion_offset = Vector2( 0, 0 )
-motion_mirroring = Vector2( 0, 0 )
-_sections_unfolded = [ "Motion" ]
-
-[node name="Particles2D" type="Particles2D" parent="Background/Clouds7" index="0"]
-
-position = Vector2( 1194.32, 693.33 )
-scale = Vector2( -1, 1 )
-emitting = true
-amount = 8
-lifetime = 30.0
-one_shot = false
-preprocess = 0.0
-speed_scale = 1.0
-explosiveness = 0.0
-randomness = 0.0
-fixed_fps = 0
-fract_delta = true
-visibility_rect = Rect2( -3000, -3000, 6000, 6000 )
-local_coords = true
-draw_order = 0
-process_material = SubResource( 14 )
-texture = ExtResource( 3 )
-normal_map = null
-h_frames = 1
-v_frames = 1
-_sections_unfolded = [ "Drawing", "Process Material", "Textures", "Time", "Transform" ]
-
-[node name="Clouds6" type="ParallaxLayer" parent="Background" index="1"]
-
-editor/display_folded = true
-position = Vector2( 38.0278, -50.704 )
-motion_scale = Vector2( 0.2, 0.2 )
-motion_offset = Vector2( 0, 0 )
-motion_mirroring = Vector2( 0, 0 )
-_sections_unfolded = [ "Motion" ]
-
-[node name="Particles2D" type="Particles2D" parent="Background/Clouds6" index="0"]
-
-position = Vector2( -892.448, 1667.31 )
-scale = Vector2( -1, 1 )
-emitting = true
-amount = 6
-lifetime = 15.0
-one_shot = false
-preprocess = 0.0
-speed_scale = 1.0
-explosiveness = 0.0
-randomness = 0.0
-fixed_fps = 0
-fract_delta = true
-visibility_rect = Rect2( -3000, -5000, 6000, 6000 )
-local_coords = true
-draw_order = 0
-process_material = SubResource( 17 )
-texture = ExtResource( 3 )
-normal_map = null
-h_frames = 1
-v_frames = 1
-_sections_unfolded = [ "Drawing", "Process Material", "Textures", "Time", "Transform" ]
-
-[node name="Clouds5" type="ParallaxLayer" parent="Background" index="2"]
-
-editor/display_folded = true
-position = Vector2( 49.7568, -332.204 )
-motion_scale = Vector2( 0.3, 0.3 )
-motion_offset = Vector2( 0, 0 )
-motion_mirroring = Vector2( 0, 0 )
-_sections_unfolded = [ "Motion" ]
-
-[node name="Particles2D" type="Particles2D" parent="Background/Clouds5" index="0"]
-
-position = Vector2( 861.99, 503.353 )
-scale = Vector2( -1, 1 )
-emitting = true
-amount = 10
-lifetime = 10.0
-one_shot = false
-preprocess = 0.0
-speed_scale = 1.0
-explosiveness = 0.0
-randomness = 0.0
-fixed_fps = 0
-fract_delta = true
-visibility_rect = Rect2( -3000, -3000, 6000, 6000 )
-local_coords = true
-draw_order = 0
-process_material = SubResource( 20 )
-texture = ExtResource( 3 )
-normal_map = null
-h_frames = 1
-v_frames = 1
-_sections_unfolded = [ "Drawing", "Process Material", "Textures", "Time", "Transform" ]
-
-[node name="Clouds3" type="ParallaxLayer" parent="Background" index="3"]
-
-editor/display_folded = true
-position = Vector2( 14.5693, 312.9 )
-motion_scale = Vector2( 0.4, 0.4 )
-motion_offset = Vector2( 0, 0 )
-motion_mirroring = Vector2( 0, 0 )
-_sections_unfolded = [ "Motion" ]
-
-[node name="Particles2D" type="Particles2D" parent="Background/Clouds3" index="0"]
-
-position = Vector2( 861.99, 503.353 )
-scale = Vector2( -1, 1 )
-emitting = true
-amount = 10
-lifetime = 10.0
-one_shot = false
-preprocess = 0.0
-speed_scale = 1.0
-explosiveness = 0.0
-randomness = 0.0
-fixed_fps = 0
-fract_delta = true
-visibility_rect = Rect2( -3000, -3000, 6000, 6000 )
-local_coords = true
-draw_order = 0
-process_material = SubResource( 20 )
-texture = ExtResource( 3 )
-normal_map = null
-h_frames = 1
-v_frames = 1
-_sections_unfolded = [ "Drawing", "Process Material", "Textures", "Time", "Transform" ]
-
-[node name="Clouds2" type="ParallaxLayer" parent="Background" index="4"]
-
-editor/display_folded = true
-position = Vector2( 38.0278, -50.704 )
-motion_scale = Vector2( 0.6, 0.6 )
-motion_offset = Vector2( 0, 0 )
-motion_mirroring = Vector2( 0, 0 )
-_sections_unfolded = [ "Motion" ]
-
-[node name="Particles2D" type="Particles2D" parent="Background/Clouds2" index="0"]
-
-position = Vector2( 3294.65, 872.146 )
-rotation = 3.14159
-scale = Vector2( 1, -1 )
-emitting = true
-amount = 4
-lifetime = 10.0
-one_shot = false
-preprocess = 0.0
-speed_scale = 1.0
-explosiveness = 0.0
-randomness = 0.0
-fixed_fps = 0
-fract_delta = true
-visibility_rect = Rect2( -100, -3000, 6000, 6000 )
-local_coords = true
-draw_order = 0
-process_material = SubResource( 23 )
-texture = ExtResource( 3 )
-normal_map = null
-h_frames = 1
-v_frames = 1
-_sections_unfolded = [ "Drawing", "Process Material", "Textures", "Time", "Transform" ]
-
-[node name="Skybox" type="ParallaxBackground" parent="." index="4"]
-
-editor/display_folded = true
 layer = -100
 offset = Vector2( 0, 0 )
 rotation = 0.0
@@ -869,33 +228,19 @@ scroll_limit_end = Vector2( 0, 0 )
 scroll_ignore_camera_zoom = false
 _sections_unfolded = [ "Scroll" ]
 
-[node name="ParallaxLayer" type="ParallaxLayer" parent="Skybox" index="0"]
+[node name="UI" type="CanvasLayer" parent="." index="4"]
 
-motion_scale = Vector2( 0.04, 0.04 )
-motion_offset = Vector2( 0, 0 )
-motion_mirroring = Vector2( 0, 0 )
-_sections_unfolded = [ "Motion" ]
-
-[node name="Skybox" type="Sprite" parent="Skybox/ParallaxLayer" index="0"]
-
-position = Vector2( 121.006, 84.1113 )
-scale = Vector2( 0.8, 0.8 )
-texture = ExtResource( 4 )
-_sections_unfolded = [ "Offset", "Transform" ]
-
-[node name="UI" type="CanvasLayer" parent="." index="5"]
-
-editor/display_folded = true
 layer = 100
 offset = Vector2( 0, 0 )
 rotation = 0.0
 scale = Vector2( 1, 1 )
 transform = Transform2D( 1, 0, 0, 1, 0, 0 )
 
-[node name="Interface" parent="UI" index="0" instance=ExtResource( 5 )]
+[node name="Interface" parent="UI" index="0" instance=ExtResource( 3 )]
 
 [node name="Transitions" type="Container" parent="UI" index="1"]
 
+editor/display_folded = true
 anchor_left = 0.0
 anchor_top = 0.0
 anchor_right = 0.0
@@ -909,7 +254,15 @@ mouse_default_cursor_shape = 0
 size_flags_horizontal = 1
 size_flags_vertical = 1
 
-[node name="BlackArrows" type="TextureRect" parent="UI/Transitions" index="0"]
+[node name="MainMenuScreen" type="Sprite" parent="UI/Transitions" index="0"]
+
+visible = false
+position = Vector2( 685.312, 391.196 )
+scale = Vector2( 0.547351, 0.547351 )
+texture = ExtResource( 4 )
+_sections_unfolded = [ "Visibility" ]
+
+[node name="BlackArrows" type="TextureRect" parent="UI/Transitions" index="1"]
 
 modulate = Color( 0, 0, 0, 1 )
 anchor_left = 0.0
@@ -927,28 +280,40 @@ mouse_filter = 1
 mouse_default_cursor_shape = 0
 size_flags_horizontal = 1
 size_flags_vertical = 1
-texture = ExtResource( 6 )
+texture = ExtResource( 5 )
 expand = true
 stretch_mode = 2
 _sections_unfolded = [ "Rect", "Visibility" ]
 
-[node name="Music" type="AudioStreamPlayer" parent="." index="6"]
+[node name="AnimationPlayer" type="AnimationPlayer" parent="UI" index="2"]
 
-stream = ExtResource( 7 )
+root_node = NodePath("..")
+autoplay = ""
+playback_process_mode = 1
+playback_default_blend_time = 0.0
+playback_speed = 1.0
+anims/SETUP = SubResource( 1 )
+anims/enter = SubResource( 2 )
+anims/exit = SubResource( 3 )
+blend_times = [  ]
+
+[node name="Music" type="AudioStreamPlayer" parent="." index="5"]
+
+stream = ExtResource( 6 )
 volume_db = 0.0
 autoplay = true
 mix_target = 0
 bus = "Music"
 
-[node name="Ambience" type="AudioStreamPlayer" parent="." index="7"]
+[node name="Ambience" type="AudioStreamPlayer" parent="." index="6"]
 
-stream = ExtResource( 8 )
+stream = ExtResource( 7 )
 volume_db = -20.0
 autoplay = true
 mix_target = 0
 bus = "SFX"
 
-[node name="Tween" type="Tween" parent="." index="8"]
+[node name="Tween" type="Tween" parent="." index="7"]
 
 repeat = false
 playback_process_mode = 1

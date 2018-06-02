@@ -10,8 +10,8 @@ height = 232.707
 
 [sub_resource type="Gradient" id=2]
 
-offsets = PoolRealArray( 0, 0.775148, 1 )
-colors = PoolColorArray( 1, 1, 1, 0.679529, 1, 1, 1, 0.353608, 1, 1, 1, 0 )
+offsets = PoolRealArray( 0, 0.512605, 0.775148, 1 )
+colors = PoolColorArray( 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 0.353608, 1, 1, 1, 0 )
 
 [sub_resource type="GradientTexture" id=3]
 
@@ -70,7 +70,7 @@ anim_speed_random = 0.0
 anim_offset = 0.0
 anim_offset_random = 0.0
 anim_loop = false
-_sections_unfolded = [ "Angle", "Emission Shape", "Flags", "Gravity", "Scale", "Trail" ]
+_sections_unfolded = [ "Angle", "Color", "Emission Shape", "Flags", "Gravity", "Scale", "Trail" ]
 
 [sub_resource type="StreamTexture" id=7]
 

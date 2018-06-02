@@ -11,6 +11,8 @@ var player_max_health = 0
 
 var current_wave = 0
 
+export (String) var name = "level"
+
 func _ready():
 	current_state = NORMAL
 	
@@ -21,8 +23,8 @@ func _ready():
 	_on_player_health_changed(player.get_node("Health").health)
 	_on_player_hyper_changed(100.0)
 	
-	$AnimationPlayer.connect("animation_finished", self, "_on_animation_finished")
-	$AnimationPlayer.play("SETUP")
+	$UI/AnimationPlayer.connect("animation_finished", self, "_on_ui_animation_finished")
+	$UI/AnimationPlayer.play("SETUP")
 	
 	for wave in $YSort/Waves.get_children():
 		wave.connect("wave_ended", self, "wave_ended")
@@ -59,7 +61,7 @@ func _on_player_hyper_changed(hyper):
 func _on_player_died():
 	current_state = GAME_OVER
 	yield (get_tree().create_timer(2.0), "timeout")
-	$AnimationPlayer.play("exit")
+	$UI/AnimationPlayer.play("exit")
 
 
 func change_scene(scene):
@@ -77,7 +79,7 @@ func win():
 	Engine.time_scale = 1
 	yield(get_tree().create_timer(5), "timeout")
 	Engine.time_scale = 1
-	$AnimationPlayer.play("exit")
+	$UI/AnimationPlayer.play("exit")
 
 
 func wave_ended():
@@ -88,12 +90,10 @@ func wave_ended():
 		$YSort/Waves.get_child(current_wave).start_wave()
 
 
-func _on_animation_finished(name):
+func _on_ui_animation_finished(name):
 	match name:
 		"SETUP":
-			$AnimationPlayer.play("enter")
-		"enter":
-			$AnimationPlayer.play("level")
+			$UI/AnimationPlayer.play("enter")
 		"exit":
 			if current_state == NORMAL:
 				change_scene(WinMenu)

@@ -1,0 +1,17 @@
+[gd_scene load_steps=2 format=2]
+
+[ext_resource path="res://environment/Level.tscn" type="PackedScene" id=1]
+
+[node name="Level" instance=ExtResource( 1 )]
+
+name = "level"
+
+[node name="ParallaxLayer" type="ParallaxLayer" parent="Skybox" index="0"]
+
+motion_scale = Vector2( 1, 1 )
+motion_offset = Vector2( 0, 0 )
+motion_mirroring = Vector2( 0, 0 )
+
+[node name="Sprite" type="Sprite" parent="Skybox/ParallaxLayer" index="0"]
+
+

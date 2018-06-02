@@ -13,6 +13,8 @@
 
 [node name="Level" instance=ExtResource( 1 )]
 
+name = "level"
+
 [node name="YSort" parent="." index="1"]
 
 editor/display_folded = false
@@ -20,6 +22,10 @@ editor/display_folded = false
 [node name="Player" parent="YSort" index="0"]
 
 position = Vector2( 339.765, 563.335 )
+
+[node name="Waves" parent="YSort" index="1"]
+
+editor/display_folded = true
 
 [node name="Wave1" parent="YSort/Waves" index="0" instance=ExtResource( 2 )]
 
@@ -36,23 +42,6 @@ position = Vector2( 339.765, 563.335 )
 [node name="Wave7" parent="YSort/Waves" index="6" instance=ExtResource( 8 )]
 
 [node name="Wave8" parent="YSort/Waves" index="7" instance=ExtResource( 9 )]
-
-[node name="Clouds2" parent="Foreground" index="0"]
-
-editor/display_folded = true
-modulate = Color( 1, 1, 1, 0.486196 )
-position = Vector2( 339.383, 1330.81 )
-_sections_unfolded = [ "Motion", "Transform", "Visibility" ]
-
-[node name="Clouds3" parent="Foreground" index="1"]
-
-editor/display_folded = true
-position = Vector2( 256.786, 840.39 )
-
-[node name="Clouds0" parent="Foreground" index="2"]
-
-editor/display_folded = true
-position = Vector2( 256.786, 840.39 )
 
 [node name="MainMenuScreen" type="TextureRect" parent="UI/Transitions" index="0"]
 
@@ -73,9 +62,5 @@ texture = ExtResource( 10 )
 expand = true
 stretch_mode = 0
 _sections_unfolded = [ "Rect", "Visibility" ]
-
-[node name="BlackArrows" parent="UI/Transitions" index="1"]
-
-margin_bottom = -248.0
 
 

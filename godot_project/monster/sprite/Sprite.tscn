@@ -42,7 +42,7 @@ custom_solver_bias = 0.0
 radius = 19.4749
 height = 38.6222
 
-[node name="Sprite" index="0" instance=ExtResource( 1 )]
+[node name="Sprite" instance=ExtResource( 1 )]
 
 script = ExtResource( 2 )
 SPOT_RANGE = 6000.0
