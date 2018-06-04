@@ -29,6 +29,7 @@ func setup(_main_menu, _pointer_scene):
 func enter():
 	set_process_input(true)
 	
+	confirm_selected = true
 	pointer.visible = true
 	pointer.global_position = $SelectButton.rect_global_position + POINTER_OFFSET
 

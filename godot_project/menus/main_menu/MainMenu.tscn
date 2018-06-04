@@ -338,6 +338,18 @@ tracks/22/keys = {
 "update": 0,
 "values": [ -19.58 ]
 }
+tracks/23/type = "value"
+tracks/23/path = NodePath("CanvasLayer/LevelConfirmScreen:visible")
+tracks/23/interp = 1
+tracks/23/loop_wrap = true
+tracks/23/imported = false
+tracks/23/enabled = true
+tracks/23/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 1,
+"values": [ false ]
+}
 
 [sub_resource type="Animation" id=3]
 
@@ -544,7 +556,7 @@ tracks/8/keys = {
 "values": [ Vector2( 2100, 1314 ), Vector2( 2100, 46 ) ]
 }
 
-[sub_resource type="Animation" id=13]
+[sub_resource type="Animation" id=5]
 
 resource_name = "level_confirm_to_level_select"
 length = 0.01
@@ -589,7 +601,7 @@ tracks/2/keys = {
 } ]
 }
 
-[sub_resource type="Animation" id=12]
+[sub_resource type="Animation" id=6]
 
 resource_name = "level_select_to_level_confirm"
 length = 0.01
@@ -634,7 +646,7 @@ tracks/2/keys = {
 } ]
 }
 
-[sub_resource type="Animation" id=10]
+[sub_resource type="Animation" id=7]
 
 resource_name = "level_select_to_main_menu"
 length = 0.5
@@ -797,7 +809,7 @@ tracks/12/keys = {
 "values": [ false ]
 }
 
-[sub_resource type="Animation" id=5]
+[sub_resource type="Animation" id=8]
 
 length = 5.0
 loop = true
@@ -923,9 +935,8 @@ tracks/9/keys = {
 "values": [ Vector2( 2100, 1314 ) ]
 }
 
-[sub_resource type="Animation" id=6]
+[sub_resource type="Animation" id=9]
 
-resource_name = "main_menu_to_config"
 length = 1.5
 loop = false
 step = 0.1
@@ -1088,7 +1099,7 @@ tracks/12/keys = {
 } ]
 }
 
-[sub_resource type="Animation" id=7]
+[sub_resource type="Animation" id=10]
 
 length = 1.0
 loop = false
@@ -1405,7 +1416,7 @@ tracks/15/keys = {
 } ]
 }
 
-[sub_resource type="Animation" id=8]
+[sub_resource type="Animation" id=12]
 
 length = 1.0
 loop = false
@@ -1453,10 +1464,10 @@ tracks/3/loop_wrap = true
 tracks/3/imported = false
 tracks/3/enabled = true
 tracks/3/keys = {
-"times": PoolRealArray( 0, 0.2, 1 ),
-"transitions": PoolRealArray( 0.347737, 0.25, 1 ),
+"times": PoolRealArray( 0, 0.7, 1 ),
+"transitions": PoolRealArray( 1, 0.25, 1 ),
 "update": 0,
-"values": [ Vector2( -1470, 485 ), Vector2( -1314, 520 ), Vector2( -2329, 795 ) ]
+"values": [ Vector2( 1155, -414 ), Vector2( -1314, 520 ), Vector2( -2329, 795 ) ]
 }
 tracks/4/type = "value"
 tracks/4/path = NodePath("CanvasLayer/Background/Pink Arrows:rect_position")
@@ -1465,10 +1476,10 @@ tracks/4/loop_wrap = true
 tracks/4/imported = false
 tracks/4/enabled = true
 tracks/4/keys = {
-"times": PoolRealArray( 0, 0.2, 1 ),
-"transitions": PoolRealArray( 0.173869, 0.25, 1 ),
+"times": PoolRealArray( 0, 0.5, 1 ),
+"transitions": PoolRealArray( 1, 0.25, 1 ),
 "update": 0,
-"values": [ Vector2( -1497, 508 ), Vector2( -1465, 516 ), Vector2( -2384, 488 ) ]
+"values": [ Vector2( -724, -988 ), Vector2( -1465, 516 ), Vector2( -2384, 488 ) ]
 }
 tracks/5/type = "value"
 tracks/5/path = NodePath("CanvasLayer/Background/BlueArrows:rect_position")
@@ -1477,10 +1488,10 @@ tracks/5/loop_wrap = true
 tracks/5/imported = false
 tracks/5/enabled = true
 tracks/5/keys = {
-"times": PoolRealArray( 0, 0.1, 1 ),
-"transitions": PoolRealArray( 0.25, 0.25, 1 ),
+"times": PoolRealArray( 0, 0.4, 1 ),
+"transitions": PoolRealArray( 1, 0.25, 1 ),
 "update": 0,
-"values": [ Vector2( -1507, 497 ), Vector2( -1409, 469 ), Vector2( -2282, 772 ) ]
+"values": [ Vector2( -2076, 67 ), Vector2( -1409, 469 ), Vector2( -2282, 772 ) ]
 }
 tracks/6/type = "value"
 tracks/6/path = NodePath("CanvasLayer/Background/BlackArrows:rect_position")
@@ -1490,12 +1501,60 @@ tracks/6/imported = false
 tracks/6/enabled = true
 tracks/6/keys = {
 "times": PoolRealArray( 0, 0.5, 1 ),
-"transitions": PoolRealArray( 0.25, 0.25, 1 ),
+"transitions": PoolRealArray( 1, 0.25, 1 ),
 "update": 0,
-"values": [ Vector2( -1475, 491 ), Vector2( -1887, 640 ), Vector2( -644, 221 ) ]
+"values": [ Vector2( -727, 880 ), Vector2( -1887, 640 ), Vector2( -644, 221 ) ]
+}
+tracks/7/type = "value"
+tracks/7/path = NodePath("CanvasLayer/Background/WhiteArrows:rect_rotation")
+tracks/7/interp = 1
+tracks/7/loop_wrap = true
+tracks/7/imported = false
+tracks/7/enabled = true
+tracks/7/keys = {
+"times": PoolRealArray( 0, 0.4 ),
+"transitions": PoolRealArray( 1, 1 ),
+"update": 0,
+"values": [ -8.11, -20.0 ]
+}
+tracks/8/type = "value"
+tracks/8/path = NodePath("CanvasLayer/Background/BlackArrows:rect_rotation")
+tracks/8/interp = 1
+tracks/8/loop_wrap = true
+tracks/8/imported = false
+tracks/8/enabled = true
+tracks/8/keys = {
+"times": PoolRealArray( 0, 0.4 ),
+"transitions": PoolRealArray( 1, 1 ),
+"update": 0,
+"values": [ -4.04, -20.0 ]
+}
+tracks/9/type = "value"
+tracks/9/path = NodePath("CanvasLayer/Background/Pink Arrows:rect_rotation")
+tracks/9/interp = 1
+tracks/9/loop_wrap = true
+tracks/9/imported = false
+tracks/9/enabled = true
+tracks/9/keys = {
+"times": PoolRealArray( 0, 0.4 ),
+"transitions": PoolRealArray( 1, 1 ),
+"update": 0,
+"values": [ -2.32, -20.0 ]
+}
+tracks/10/type = "value"
+tracks/10/path = NodePath("CanvasLayer/Background/BlueArrows:rect_rotation")
+tracks/10/interp = 1
+tracks/10/loop_wrap = true
+tracks/10/imported = false
+tracks/10/enabled = true
+tracks/10/keys = {
+"times": PoolRealArray( 0, 0.4 ),
+"transitions": PoolRealArray( 1, 1 ),
+"update": 0,
+"values": [ -2.99, -20.0 ]
 }
 
-[sub_resource type="Animation" id=9]
+[sub_resource type="Animation" id=13]
 
 length = 1.3
 loop = false
@@ -1862,6 +1921,7 @@ _sections_unfolded = [ "Rect", "custom_fonts" ]
 [node name="LevelSelect" type="Container" parent="CanvasLayer" index="2"]
 
 editor/display_folded = true
+visible = false
 anchor_left = 0.0
 anchor_top = 0.0
 anchor_right = 1.0
@@ -1955,11 +2015,11 @@ anchor_left = 0.0
 anchor_top = 0.0
 anchor_right = 0.0
 anchor_bottom = 0.0
-margin_left = 1155.0
-margin_top = -414.0
-margin_right = 3255.0
-margin_bottom = 900.0
-rect_rotation = -8.11
+margin_left = -1545.0
+margin_top = 424.0
+margin_right = 555.0
+margin_bottom = 504.0
+rect_rotation = -19.58
 rect_pivot_offset = Vector2( 0, 0 )
 rect_clip_content = false
 mouse_filter = 1
@@ -1977,11 +2037,11 @@ anchor_left = 0.0
 anchor_top = 0.0
 anchor_right = 0.0
 anchor_bottom = 0.0
-margin_left = -727.0
-margin_top = 880.0
-margin_right = 1373.0
-margin_bottom = 2194.0
-rect_rotation = -4.04
+margin_left = -1603.0
+margin_top = 446.0
+margin_right = 497.0
+margin_bottom = 526.0
+rect_rotation = -19.58
 rect_pivot_offset = Vector2( 0, 0 )
 rect_clip_content = false
 mouse_filter = 1
@@ -1999,11 +2059,11 @@ anchor_left = 0.0
 anchor_top = 0.0
 anchor_right = 0.0
 anchor_bottom = 0.0
-margin_left = -724.0
-margin_top = -988.0
-margin_right = 1376.0
-margin_bottom = 95.0
-rect_rotation = -2.32
+margin_left = -1650.0
+margin_top = 427.0
+margin_right = 450.0
+margin_bottom = 507.0
+rect_rotation = -19.58
 rect_pivot_offset = Vector2( 0, 0 )
 rect_clip_content = false
 mouse_filter = 1
@@ -2021,11 +2081,11 @@ anchor_left = 0.0
 anchor_top = 0.0
 anchor_right = 0.0
 anchor_bottom = 0.0
-margin_left = -2076.0
-margin_top = 67.0
-margin_right = 24.0
-margin_bottom = 1233.0
-rect_rotation = -2.99
+margin_left = -1630.0
+margin_top = 477.0
+margin_right = 470.0
+margin_bottom = 557.0
+rect_rotation = -19.58
 rect_pivot_offset = Vector2( 0, 0 )
 rect_clip_content = false
 mouse_filter = 1
@@ -2127,8 +2187,6 @@ _sections_unfolded = [ "Textures", "Theme", "custom_fonts" ]
 
 [node name="Config" type="Container" parent="CanvasLayer" index="5"]
 
-editor/display_folded = true
-visible = false
 anchor_left = 0.0
 anchor_top = 0.0
 anchor_right = 0.0
@@ -2165,7 +2223,6 @@ theme = ExtResource( 4 )
 custom_constants/vseparation = 22
 custom_constants/hseparation = 20
 columns = 2
-_sections_unfolded = [ "Margin", "Rect", "Theme", "custom_constants" ]
 
 [node name="UpLabel" type="Label" parent="CanvasLayer/Config/InputContainer" index="0"]
 
@@ -2912,6 +2969,237 @@ flat = false
 align = 1
 _sections_unfolded = [ "Rect", "Textures", "Theme", "custom_fonts" ]
 
+[node name="InputChange" type="Container" parent="CanvasLayer/Config" index="3"]
+
+visible = false
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+margin_left = 449.0
+margin_top = 233.0
+margin_right = 449.0
+margin_bottom = 233.0
+rect_pivot_offset = Vector2( 0, 0 )
+rect_clip_content = false
+mouse_filter = 0
+mouse_default_cursor_shape = 0
+size_flags_horizontal = 1
+size_flags_vertical = 1
+theme = ExtResource( 4 )
+_sections_unfolded = [ "Rect", "Theme" ]
+
+[node name="Panel" type="Panel" parent="CanvasLayer/Config/InputChange" index="0"]
+
+anchor_left = 0.0
+anchor_top = 0.0
+anchor_right = 0.0
+anchor_bottom = 0.0
+margin_left = -23.0
+margin_top = -21.0
+margin_right = 628.0
+margin_bottom = 244.0
+rect_pivot_offset = Vector2( 0, 0 )
+rect_clip_content = false
+mouse_filter = 0
+mouse_default_cursor_shape = 0
+size_flags_horizontal = 1
+size_flags_vertical = 1
+_sections_unfolded = [ "Rect", "Theme" ]
+
+[node name="VBoxContainer" type="VBoxContainer" parent="CanvasLayer/Config/InputChange" index="1"]
+
+anchor_left = 0.0
+anchor_top = 0.0
+anchor_right = 0.0
+anchor_bottom = 0.0
+rect_pivot_offset = Vector2( 0, 0 )
+rect_clip_content = false
+mouse_filter = 1
+mouse_default_cursor_shape = 0
+size_flags_horizontal = 1
+size_flags_vertical = 1
+custom_constants/separation = 10
+alignment = 1
+_sections_unfolded = [ "Margin", "Theme", "custom_constants" ]
+
+[node name="TitleLabel" type="Label" parent="CanvasLayer/Config/InputChange/VBoxContainer" index="0"]
+
+anchor_left = 0.0
+anchor_top = 0.0
+anchor_right = 0.0
+anchor_bottom = 0.0
+margin_right = 600.0
+margin_bottom = 27.0
+rect_pivot_offset = Vector2( 0, 0 )
+rect_clip_content = false
+mouse_filter = 2
+mouse_default_cursor_shape = 0
+size_flags_horizontal = 1
+size_flags_vertical = 4
+custom_colors/font_color = Color( 1, 1, 1, 1 )
+text = "Input to change:"
+align = 1
+percent_visible = 1.0
+lines_skipped = 0
+max_lines_visible = -1
+
+[node name="InputToChange" type="Label" parent="CanvasLayer/Config/InputChange/VBoxContainer" index="1"]
+
+anchor_left = 0.0
+anchor_top = 0.0
+anchor_right = 0.0
+anchor_bottom = 0.0
+margin_top = 37.0
+margin_right = 600.0
+margin_bottom = 64.0
+rect_pivot_offset = Vector2( 0, 0 )
+rect_clip_content = false
+mouse_filter = 2
+mouse_default_cursor_shape = 0
+size_flags_horizontal = 1
+size_flags_vertical = 4
+custom_colors/font_color = Color( 1, 1, 1, 1 )
+text = "input"
+align = 1
+percent_visible = 1.0
+lines_skipped = 0
+max_lines_visible = -1
+
+[node name="NewInputLabel" type="Label" parent="CanvasLayer/Config/InputChange/VBoxContainer" index="2"]
+
+anchor_left = 0.0
+anchor_top = 0.0
+anchor_right = 0.0
+anchor_bottom = 0.0
+margin_top = 74.0
+margin_right = 600.0
+margin_bottom = 101.0
+rect_pivot_offset = Vector2( 0, 0 )
+rect_clip_content = false
+mouse_filter = 2
+mouse_default_cursor_shape = 0
+size_flags_horizontal = 1
+size_flags_vertical = 4
+custom_colors/font_color = Color( 1, 1, 1, 1 )
+text = "New input:"
+align = 1
+percent_visible = 1.0
+lines_skipped = 0
+max_lines_visible = -1
+
+[node name="NewInput" type="Label" parent="CanvasLayer/Config/InputChange/VBoxContainer" index="3"]
+
+anchor_left = 0.0
+anchor_top = 0.0
+anchor_right = 0.0
+anchor_bottom = 0.0
+margin_top = 111.0
+margin_right = 600.0
+margin_bottom = 138.0
+rect_pivot_offset = Vector2( 0, 0 )
+rect_clip_content = false
+mouse_filter = 2
+mouse_default_cursor_shape = 0
+size_flags_horizontal = 1
+size_flags_vertical = 4
+custom_colors/font_color = Color( 1, 1, 1, 1 )
+text = "input"
+align = 1
+percent_visible = 1.0
+lines_skipped = 0
+max_lines_visible = -1
+
+[node name="InputStatusLabel" type="Label" parent="CanvasLayer/Config/InputChange/VBoxContainer" index="4"]
+
+anchor_left = 0.0
+anchor_top = 0.0
+anchor_right = 0.0
+anchor_bottom = 0.0
+margin_top = 148.0
+margin_right = 600.0
+margin_bottom = 175.0
+rect_min_size = Vector2( 600, 0 )
+rect_pivot_offset = Vector2( 0, 0 )
+rect_clip_content = false
+mouse_filter = 2
+mouse_default_cursor_shape = 0
+size_flags_horizontal = 1
+size_flags_vertical = 4
+custom_colors/font_color = Color( 1, 1, 1, 1 )
+text = "Choose a new input"
+align = 1
+percent_visible = 1.0
+lines_skipped = 0
+max_lines_visible = -1
+_sections_unfolded = [ "Margin", "Rect" ]
+
+[node name="Buttons" type="HBoxContainer" parent="CanvasLayer/Config/InputChange/VBoxContainer" index="5"]
+
+anchor_left = 0.0
+anchor_top = 0.0
+anchor_right = 0.0
+anchor_bottom = 0.0
+margin_top = 185.0
+margin_right = 600.0
+margin_bottom = 218.0
+rect_pivot_offset = Vector2( 0, 0 )
+rect_clip_content = false
+mouse_filter = 1
+mouse_default_cursor_shape = 0
+size_flags_horizontal = 1
+size_flags_vertical = 1
+custom_constants/separation = 325
+alignment = 0
+_sections_unfolded = [ "Grow Direction", "Margin", "Rect", "Theme", "custom_constants" ]
+
+[node name="AcceptButton" type="Button" parent="CanvasLayer/Config/InputChange/VBoxContainer/Buttons" index="0"]
+
+anchor_left = 0.0
+anchor_top = 0.0
+anchor_right = 0.0
+anchor_bottom = 0.0
+margin_right = 132.0
+margin_bottom = 33.0
+rect_pivot_offset = Vector2( 0, 0 )
+rect_clip_content = false
+focus_mode = 2
+mouse_filter = 0
+mouse_default_cursor_shape = 0
+size_flags_horizontal = 1
+size_flags_vertical = 1
+toggle_mode = false
+enabled_focus_mode = 2
+shortcut = null
+group = null
+text = "Accept"
+flat = false
+align = 1
+
+[node name="CancelButton" type="Button" parent="CanvasLayer/Config/InputChange/VBoxContainer/Buttons" index="1"]
+
+anchor_left = 0.0
+anchor_top = 0.0
+anchor_right = 0.0
+anchor_bottom = 0.0
+margin_left = 457.0
+margin_right = 589.0
+margin_bottom = 33.0
+rect_pivot_offset = Vector2( 0, 0 )
+rect_clip_content = false
+focus_mode = 2
+mouse_filter = 0
+mouse_default_cursor_shape = 0
+size_flags_horizontal = 1
+size_flags_vertical = 1
+toggle_mode = false
+enabled_focus_mode = 2
+shortcut = null
+group = null
+text = "cancel"
+flat = false
+align = 1
+
 [node name="StartMenu" type="Container" parent="CanvasLayer" index="6"]
 
 editor/display_folded = true
@@ -3175,15 +3463,15 @@ playback_speed = 1.0
 anims/SETUP = SubResource( 2 )
 anims/config_to_main_menu = SubResource( 3 )
 anims/credits_to_main_menu = SubResource( 4 )
-anims/level_confirm_to_level_select = SubResource( 13 )
-anims/level_select_to_level_confirm = SubResource( 12 )
-anims/level_select_to_main_menu = SubResource( 10 )
-anims/main_menu = SubResource( 5 )
-anims/main_menu_to_config = SubResource( 6 )
-anims/main_menu_to_credits = SubResource( 7 )
+anims/level_confirm_to_level_select = SubResource( 5 )
+anims/level_select_to_level_confirm = SubResource( 6 )
+anims/level_select_to_main_menu = SubResource( 7 )
+anims/main_menu = SubResource( 8 )
+anims/main_menu_to_config = SubResource( 9 )
+anims/main_menu_to_credits = SubResource( 10 )
 anims/main_menu_to_level_select = SubResource( 11 )
-anims/main_menu_transition_out = SubResource( 8 )
-anims/open_main_menu = SubResource( 9 )
+anims/main_menu_transition_out = SubResource( 12 )
+anims/open_main_menu = SubResource( 13 )
 blend_times = [  ]
 
 [node name="Tween" type="Tween" parent="." index="4"]

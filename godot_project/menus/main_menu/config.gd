@@ -6,8 +6,32 @@ var pointer_scene = null
 var pointer = null
 const POINTER_OFFSET = Vector2(-5.0, 0.0)
 
+var INPUT_ACTIONS = ["move_up", "move_down", "move_left", "move_right", "primary_attack", "secondary_attack", "special_attack", "lock_on", "dash"]
+var input_to_change = 0
+var input_selected = 0
+var input_index = 0 # For primary/secondary/more events for a single action
+var old_action = ""
+var old_action_name = ""
+var action_name = ""
+
+enum STATES { CONFIG, INPUT_CONFIG }
+var current_state = null
+
 func _ready():
 	$ReturnButton.connect("button_down", self, "_on_ReturnButton_button_down")
+	
+	# Input editing
+	$InputContainer/UpButton.connect("button_down", self, "_on_UpButton_button_down")
+	$InputContainer/DownButton.connect("button_down", self, "_on_DownButton_button_down")
+	$InputContainer/LeftButton.connect("button_down", self, "_on_LeftButton_button_down")
+	$InputContainer/RightButton.connect("button_down", self, "_on_RightButton_button_down")
+	$InputContainer/PrimaryAttackButton.connect("button_down", self, "_on_PrimaryAttackButton_button_down")
+	$InputContainer/SecondaryAttackButton.connect("button_down", self, "_on_SecondaryAttackButton_button_down")
+	$InputContainer/SpecialAttackButton.connect("button_down", self, "_on_SpecialAttackButton_button_down")
+	$InputContainer/LockOnButton.connect("button_down", self, "_on_LockOnButton_button_down")
+	$InputContainer/DashButton.connect("button_down", self, "_on_DashButton_button_down")
+	$InputChange/VBoxContainer/Buttons/AcceptButton.connect("button_down", self, "_on_InputAccept_button_down")
+	$InputChange/VBoxContainer/Buttons/CancelButton.connect("button_down", self, "_on_InputCancel_button_down")
 	
 	# Music/sound editing
 	$SoundPanel/SFXBar/VolumeBar.value = (AudioServer.get_bus_volume_db(1) + 60) / 60 * 100
@@ -32,13 +56,190 @@ func enter():
 	set_process_input(true)
 	pointer.visible = true
 	pointer.global_position = $ReturnButton.rect_global_position + POINTER_OFFSET
+	
+	current_state = CONFIG
 
 
 func _input(event):
-	if event.is_action_pressed("ui_select"):
-		$ReturnButton.emit_signal("button_down")
-	elif event.is_action_pressed("ui_cancel"):
-		$ReturnButton.emit_signal("button_down")
+	if current_state == CONFIG:
+		if event.is_action_pressed("ui_select"):
+			$ReturnButton.emit_signal("button_down")
+		elif event.is_action_pressed("ui_cancel"):
+			$ReturnButton.emit_signal("button_down")
+	elif current_state == INPUT_CONFIG:
+		if not event is InputEventKey:
+			return
+		if not event.is_pressed():
+			return
+		if event.scancode == KEY_ESCAPE:
+			$InputChange/VBoxContainer/Buttons/CancelButton.emit_signal("button_down")
+		_check_input(event)
+
+
+func _check_input(event):
+	var input_good = true
+	var conflicting_action = ""
+	for action in InputMap.get_actions():
+		if InputMap.action_has_event(action, event):
+			if input_to_change == action:
+				continue
+			if action == "ui_select" or action == "ui_cancel" or action == "ui_up" or action == "ui_down" or action == "ui_left" or action == "ui_right":
+				continue
+			
+			input_good = false
+			conflicting_action = action
+			break
+	
+	$InputChange/VBoxContainer/NewInput.text = event.as_text()
+	if input_good:
+		$InputChange/VBoxContainer/InputStatusLabel.text = "No conflicts"
+		$InputChange/VBoxContainer/InputStatusLabel.add_color_override("font_color", Color(0.0, 1.0, 0.0, 1.0))
+		$InputChange/VBoxContainer/Buttons/AcceptButton.disabled = false
+		input_selected = event
+	else:
+		match conflicting_action:
+			"primary_attack":
+				action_name = "Primary attack"
+			"secondary_attack":
+				action_name = "Secondary attack"
+			"move_up":
+				action_name = "Move up"
+			"move_down":
+				action_name = "Move down"
+			"move_left":
+				action_name = "Move left"
+			"move_right":
+				action_name = "Move right"
+			"special_attack":
+				action_name = "Special attack"
+			"lock_on":
+				action_name = "Lock on"
+			"dash":
+				action_name = "Dash"
+		$InputChange/VBoxContainer/InputStatusLabel.text = "Conflicts with " + action_name
+		$InputChange/VBoxContainer/InputStatusLabel.add_color_override("font_color", Color(1.0, 0.0, 0.0, 1.0))
+		$InputChange/VBoxContainer/Buttons/AcceptButton.disabled = true
+
+
+func _change_input(target_input):
+	current_state = INPUT_CONFIG
+	input_to_change = target_input
+	old_action = InputMap.get_action_list(target_input)
+	
+	match input_to_change:
+		"primary_attack":
+			old_action_name = "Primary attack"
+		"secondary_attack":
+			old_action_name = "Secondary attack"
+		"move_up":
+			old_action_name = "Move up"
+		"move_down":
+			old_action_name = "Move down"
+		"move_left":
+			old_action_name = "Move left"
+		"move_right":
+			old_action_name = "Move right"
+		"special_attack":
+			old_action_name = "Special attack"
+		"lock_on":
+			old_action_name = "Lock on"
+		"dash":
+			old_action_name = "Dash"
+	
+	$InputChange/VBoxContainer/InputToChange.text = old_action_name
+	$InputChange/VBoxContainer/NewInput.text = ""
+	$InputChange/VBoxContainer/InputStatusLabel.text = "Choose an input"
+	$InputChange/VBoxContainer/InputStatusLabel.add_color_override("font_color", Color(1.0, 1.0, 1.0, 1.0))
+	$InputChange/VBoxContainer/Buttons/AcceptButton.disabled = true
+	
+	$InputChange.visible = true
+	$InputContainer.visible = false
+	$SoundPanel.visible = false
+	$ReturnButton.visible = false
+	pointer.visible = false
+
+
+func _on_UpButton_button_down():
+	_change_input("move_up")
+
+
+func _on_DownButton_button_down():
+	_change_input("move_down")
+
+
+func _on_LeftButton_button_down():
+	_change_input("move_left")
+
+
+func _on_RightButton_button_down():
+	_change_input("move_right")
+
+
+func _on_PrimaryAttackButton_button_down():
+	_change_input("primary_attack")
+
+
+func _on_SecondaryAttackButton_button_down():
+	_change_input("secondary_attack")
+
+
+func _on_SpecialAttackButton_button_down():
+	_change_input("special_attack")
+
+
+func _on_LockOnButton_button_down():
+	_change_input("lock_on")
+
+
+func _on_DashButton_button_down():
+	_change_input("dash")
+
+
+func _on_InputAccept_button_down():
+	main_menu.get_node("ButtonPress").play()
+	current_state = CONFIG
+	$InputChange.visible = false
+	$InputContainer.visible = true
+	$SoundPanel.visible = true
+	$ReturnButton.visible = true
+	pointer.visible = true
+	
+	var event_to_delete = InputMap.get_action_list(input_to_change)[input_index]
+	InputMap.action_erase_event(input_to_change, event_to_delete)
+	InputMap.action_add_event(input_to_change, input_selected)
+	
+	match input_to_change:
+		"primary_attack":
+			input_to_change = "ui_select"
+		"secondary_attack":
+			input_to_change = "ui_cancel"
+		"move_up":
+			input_to_change = "ui_up"
+		"move_down":
+			input_to_change = "ui_down"
+		"move_left":
+			input_to_change = "ui_left"
+		"move_right":
+			input_to_change = "ui_right"
+		_:
+			return
+	
+	event_to_delete = InputMap.get_action_list(input_to_change)[input_index]
+	event_to_delete = InputMap.get_action_list(input_to_change)[input_index]
+	InputMap.action_erase_event(input_to_change, event_to_delete)
+	InputMap.action_add_event(input_to_change, input_selected)
+
+
+func _on_InputCancel_button_down():
+	main_menu.get_node("ButtonPress").play()
+	current_state = CONFIG
+	$InputChange.visible = false
+	$InputContainer.visible = true
+	$SoundPanel.visible = true
+	$ReturnButton.visible = true
+	pointer.visible = true
+
+
 
 
 func _on_ReturnButton_button_down():
@@ -46,6 +247,16 @@ func _on_ReturnButton_button_down():
 	pointer.visible = false
 	main_menu.get_node("ButtonPress").play()
 	main_menu.get_node("AnimationPlayer").play("config_to_main_menu")
+
+
+
+
+
+
+
+
+
+
 
 
 func _change_SFX_volume(volume):

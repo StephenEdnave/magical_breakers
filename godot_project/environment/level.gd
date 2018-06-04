@@ -11,8 +11,6 @@ var player_max_health = 0
 
 var current_wave = 0
 
-export (String) var name = "level"
-
 func _ready():
 	current_state = NORMAL
 	
