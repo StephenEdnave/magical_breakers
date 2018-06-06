@@ -1,0 +1,18 @@
+[remap]
+
+importer="ogg_vorbis"
+type="AudioStreamOGGVorbis"
+path="res://.import/EatMe_-_Jack_The_House.ogg-1cfe4d3232c49dba2abf9772f6efe177.oggstr"
+
+[deps]
+
+source_file="res://music/EatMe_-_Jack_The_House.ogg"
+source_md5="ccfbc789e2c624561f68a670ab019b6b"
+
+dest_files=[ "res://.import/EatMe_-_Jack_The_House.ogg-1cfe4d3232c49dba2abf9772f6efe177.oggstr" ]
+dest_md5="8bafe3c353572fcdcd626fcba45f6e44"
+
+[params]
+
+loop=true
+loop_offset=0

@@ -8,8 +8,8 @@ const POINTER_OFFSET = Vector2(-5.0, 0.0)
 
 var confirm_selected = true
 var level_paths = {
-	"Wonderland" : "res://environment/wonderland/Wonderland.tscn",
-	"In the Sky" : "res://environment/in_the_sky/InTheSky.tscn"
+	"Wonderland" : "res://levels/wonderland/Wonderland.tscn",
+	"In the Sky" : "res://levels/in_the_sky/InTheSky.tscn"
 	}
 
 

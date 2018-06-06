@@ -1,0 +1,24 @@
+[remap]
+
+importer="wav"
+type="AudioStreamSample"
+path="res://.import/inspectorj_wind-synthesized-a.wav-e7fe2aaabd6da92ced9bc91456afc4da.sample"
+
+[deps]
+
+source_file="res://levels/in_the_sky/inspectorj_wind-synthesized-a.wav"
+source_md5="eb7ed50f12a0f70c179e036cb2b47161"
+
+dest_files=[ "res://.import/inspectorj_wind-synthesized-a.wav-e7fe2aaabd6da92ced9bc91456afc4da.sample" ]
+dest_md5="f2cd96ffd4eae406f0f7b4b0dedb025f"
+
+[params]
+
+force/8_bit=false
+force/mono=false
+force/max_rate=false
+force/max_rate_hz=44100
+edit/trim=true
+edit/normalize=true
+edit/loop=false
+compress/mode=0

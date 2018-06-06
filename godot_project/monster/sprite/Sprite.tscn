@@ -10,7 +10,7 @@
 [ext_resource path="res://monster/sprite/states/stagger.gd" type="Script" id=8]
 [ext_resource path="res://monster/sprite/states/die.gd" type="Script" id=9]
 [ext_resource path="res://monster/sprite/states/motion/shoot.gd" type="Script" id=10]
-[ext_resource path="res://monster/sprite/states/motion/end_wave.gd" type="Script" id=11]
+[ext_resource path="res://monster/sprite/states/motion/end_phase.gd" type="Script" id=11]
 [ext_resource path="res://monster/sprite/sprites/sm_wisp00.png" type="Texture" id=12]
 [ext_resource path="res://monster/sprite/sprites/sm_wisp01.png" type="Texture" id=13]
 [ext_resource path="res://monster/sprite/sprites/sm_wisp02.png" type="Texture" id=14]
@@ -109,7 +109,7 @@ DEFAULT_MAX_SPEED = 300.0
 MASS = 8.0
 primary_weapon_path = "res://monster/sprite/weapons/SpriteGun.tscn"
 
-[node name="EndWave" type="Node" parent="States" index="8"]
+[node name="EndPhase" type="Node" parent="States" index="8"]
 
 script = ExtResource( 11 )
 ARRIVE_DISTANCE = 6.0

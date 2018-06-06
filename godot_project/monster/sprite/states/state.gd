@@ -2,7 +2,7 @@
 # Stores a ref to the Player node, and the STATE_IDS
 extends Node
 
-enum STATES { IDLE, ROAM, RETURN, SPOT, FOLLOW, STAGGER, DIE, DEAD, SHOOT, END_WAVE}
+enum STATES { IDLE, ROAM, RETURN, SPOT, FOLLOW, STAGGER, DIE, DEAD, SHOOT, END_PHASE}
 
 func _ready():
 	# In 3.0 alpha, these functions are on by default for every node

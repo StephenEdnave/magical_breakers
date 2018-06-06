@@ -1,0 +1,18 @@
+[remap]
+
+importer="ogg_vorbis"
+type="AudioStreamOGGVorbis"
+path="res://.import/EatMe_-_For_Good.ogg-9f977f562bcc4164781fdd64a0262837.oggstr"
+
+[deps]
+
+source_file="res://music/EatMe_-_For_Good.ogg"
+source_md5="60b037342dc1a7d40b432dbad5fde583"
+
+dest_files=[ "res://.import/EatMe_-_For_Good.ogg-9f977f562bcc4164781fdd64a0262837.oggstr" ]
+dest_md5="4a6ff028866443aef6b27a7d652ddb1f"
+
+[params]
+
+loop=true
+loop_offset=0

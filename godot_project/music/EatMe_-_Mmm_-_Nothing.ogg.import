@@ -1,0 +1,18 @@
+[remap]
+
+importer="ogg_vorbis"
+type="AudioStreamOGGVorbis"
+path="res://.import/EatMe_-_Mmm_-_Nothing.ogg-667858b16cfbbcd2989800d810a84110.oggstr"
+
+[deps]
+
+source_file="res://music/EatMe_-_Mmm_-_Nothing.ogg"
+source_md5="e35ae983b7dc725d6f7818baac5b213f"
+
+dest_files=[ "res://.import/EatMe_-_Mmm_-_Nothing.ogg-667858b16cfbbcd2989800d810a84110.oggstr" ]
+dest_md5="55a4c48d0a37a63a307ab246159a9989"
+
+[params]
+
+loop=true
+loop_offset=0

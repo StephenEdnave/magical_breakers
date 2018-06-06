@@ -1,0 +1,18 @@
+[remap]
+
+importer="ogg_vorbis"
+type="AudioStreamOGGVorbis"
+path="res://.import/EatMe_-_Sugar.ogg-2f9d05fdef4b742345a1946d098736eb.oggstr"
+
+[deps]
+
+source_file="res://music/EatMe_-_Sugar.ogg"
+source_md5="3deefcba7385088dd38b6c4986c41bf1"
+
+dest_files=[ "res://.import/EatMe_-_Sugar.ogg-2f9d05fdef4b742345a1946d098736eb.oggstr" ]
+dest_md5="b2923265f053fc46625034e7fd3bc852"
+
+[params]
+
+loop=true
+loop_offset=0

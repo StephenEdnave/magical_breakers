@@ -12,7 +12,7 @@
 [ext_resource path="res://monster/dwarf/states/charge_cooldown.gd" type="Script" id=10]
 [ext_resource path="res://monster/dwarf/states/die.gd" type="Script" id=11]
 [ext_resource path="res://monster/dwarf/states/motion/shoot.gd" type="Script" id=12]
-[ext_resource path="res://monster/dwarf/states/motion/end_wave.gd" type="Script" id=13]
+[ext_resource path="res://monster/dwarf/states/motion/end_phase.gd" type="Script" id=13]
 [ext_resource path="res://monster/dwarf/sprites/sm_dwarf03.png" type="Texture" id=14]
 [ext_resource path="res://monster/dwarf/sprites/sm_dwarf09.png" type="Texture" id=15]
 [ext_resource path="res://monster/dwarf/sprites/sm_dwarf06.png" type="Texture" id=16]
@@ -732,8 +732,6 @@ SPOT_RANGE = 6000.0
 
 [node name="States" type="Node" parent="." index="0"]
 
-editor/display_folded = true
-
 [node name="Idle" type="Node" parent="States" index="0"]
 
 script = ExtResource( 2 )
@@ -819,7 +817,7 @@ DEFAULT_MAX_SPEED = 300.0
 MASS = 8.0
 primary_weapon_path = "res://monster/dwarf/weapon/DwarfGun.tscn"
 
-[node name="EndWave" type="Node" parent="States" index="11"]
+[node name="EndPhase" type="Node" parent="States" index="11"]
 
 script = ExtResource( 13 )
 ARRIVE_DISTANCE = 6.0

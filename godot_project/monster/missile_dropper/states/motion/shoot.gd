@@ -31,8 +31,8 @@ func exit(host):
 
 func update(host, delta):
 	if finished:
-		host.STATES[END_WAVE].velocity = velocity
-		return END_WAVE
+		host.STATES[END_PHASE].velocity = velocity
+		return END_PHASE
 	
 	# Move if carrying momentum
 	move(host)

@@ -10,7 +10,7 @@
 [ext_resource path="res://monster/missile_dropper/states/stagger.gd" type="Script" id=8]
 [ext_resource path="res://monster/missile_dropper/states/die.gd" type="Script" id=9]
 [ext_resource path="res://monster/missile_dropper/states/motion/shoot.gd" type="Script" id=10]
-[ext_resource path="res://monster/missile_dropper/states/motion/end_wave.gd" type="Script" id=11]
+[ext_resource path="res://monster/missile_dropper/states/motion/end_phase.gd" type="Script" id=11]
 [ext_resource path="res://monster/basic_plushy/sprites/walk_0.png" type="Texture" id=12]
 [ext_resource path="res://monster/basic_plushy/sprites/walke_2.png" type="Texture" id=13]
 [ext_resource path="res://monster/basic_plushy/sprites/walk_1.png" type="Texture" id=14]
@@ -104,7 +104,7 @@ DEFAULT_MAX_SPEED = 300.0
 MASS = 16.0
 primary_weapon_path = "res://monster/missile_dropper/weapons/BasicPlushyGun.tscn"
 
-[node name="EndWave" type="Node" parent="States" index="8"]
+[node name="EndPhase" type="Node" parent="States" index="8"]
 
 script = ExtResource( 11 )
 ARRIVE_DISTANCE = 6.0

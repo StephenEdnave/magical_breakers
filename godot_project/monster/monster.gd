@@ -68,5 +68,5 @@ func _on_Health_status_changed(new_status):
 	$StatusPivot/StatusIcon.change_status(new_status)
 
 
-func end_wave():
+func end_phase():
 	pass

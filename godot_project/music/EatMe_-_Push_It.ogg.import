@@ -1,0 +1,18 @@
+[remap]
+
+importer="ogg_vorbis"
+type="AudioStreamOGGVorbis"
+path="res://.import/EatMe_-_Push_It.ogg-b34cd31c860f4e2144b76770294679fc.oggstr"
+
+[deps]
+
+source_file="res://music/EatMe_-_Push_It.ogg"
+source_md5="d5f6b39b1a45a80f835fb31e80df0842"
+
+dest_files=[ "res://.import/EatMe_-_Push_It.ogg-b34cd31c860f4e2144b76770294679fc.oggstr" ]
+dest_md5="b6ef296c9e8acdd02563fd31dee888a9"
+
+[params]
+
+loop=true
+loop_offset=0

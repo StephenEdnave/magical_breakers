@@ -10,7 +10,7 @@
 [ext_resource path="res://monster/basic_plushy/states/stagger.gd" type="Script" id=8]
 [ext_resource path="res://monster/basic_plushy/states/die.gd" type="Script" id=9]
 [ext_resource path="res://monster/basic_plushy/states/motion/shoot.gd" type="Script" id=10]
-[ext_resource path="res://monster/basic_plushy/states/motion/end_wave.gd" type="Script" id=11]
+[ext_resource path="res://monster/basic_plushy/states/motion/end_phase.gd" type="Script" id=11]
 [ext_resource path="res://monster/basic_plushy/sprites/walk_0.png" type="Texture" id=12]
 [ext_resource path="res://monster/basic_plushy/sprites/walke_2.png" type="Texture" id=13]
 [ext_resource path="res://monster/basic_plushy/sprites/walk_1.png" type="Texture" id=14]
@@ -43,10 +43,6 @@ radius = 34.7888
 
 script = ExtResource( 2 )
 SPOT_RANGE = 6000.0
-
-[node name="States" parent="." index="0"]
-
-editor/display_folded = true
 
 [node name="Idle" type="Node" parent="States" index="0"]
 
@@ -109,7 +105,7 @@ DEFAULT_MAX_SPEED = 300.0
 MASS = 8.0
 primary_weapon_path = "res://monster/basic_plushy/weapons/BasicPlushyGun.tscn"
 
-[node name="EndWave" type="Node" parent="States" index="8"]
+[node name="EndPhase" type="Node" parent="States" index="8"]
 
 script = ExtResource( 11 )
 ARRIVE_DISTANCE = 6.0
