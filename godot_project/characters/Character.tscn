@@ -246,8 +246,6 @@ _sections_unfolded = [ "Collision", "Visibility", "Z Index", "collision" ]
 
 [node name="States" type="Node" parent="." index="0"]
 
-editor/display_folded = true
-
 [node name="Idle" type="Node" parent="States" index="0"]
 
 script = ExtResource( 2 )
@@ -273,9 +271,7 @@ script = ExtResource( 5 )
 [node name="Attack" type="Node" parent="States" index="4"]
 
 script = ExtResource( 6 )
-primary_weapon_path = ""
-secondary_weapon_path = ""
-special_weapon_path = ""
+weapon_paths = [  ]
 
 [node name="Die" type="Node" parent="States" index="5"]
 
@@ -331,24 +327,8 @@ _sections_unfolded = [ "Visibility" ]
 
 [node name="WeaponPivot" type="Position2D" parent="." index="6"]
 
-editor/display_folded = true
 position = Vector2( 0, -44 )
 script = ExtResource( 10 )
-_sections_unfolded = [ "Transform" ]
-
-[node name="SpecialWeaponSpawn" type="Position2D" parent="WeaponPivot" index="0"]
-
-position = Vector2( 68, 0 )
-_sections_unfolded = [ "Transform" ]
-
-[node name="SecondaryWeaponSpawn" type="Position2D" parent="WeaponPivot" index="1"]
-
-position = Vector2( 68, 0 )
-_sections_unfolded = [ "Transform" ]
-
-[node name="PrimaryWeaponSpawn" type="Position2D" parent="WeaponPivot" index="2"]
-
-position = Vector2( 68, 0 )
 _sections_unfolded = [ "Transform" ]
 
 [node name="Shadow" type="Sprite" parent="." index="7"]

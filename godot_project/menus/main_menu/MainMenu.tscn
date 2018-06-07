@@ -1514,7 +1514,7 @@ tracks/13/keys = {
 } ]
 }
 
-[node name="MainMenu" type="Node2D" index="0"]
+[node name="MainMenu" type="Node2D"]
 
 script = ExtResource( 1 )
 

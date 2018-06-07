@@ -721,15 +721,9 @@ tracks/3/keys = {
 script = ExtResource( 2 )
 _sections_unfolded = [ "Collision", "Material", "Transform", "Visibility", "Z Index", "collision" ]
 
-[node name="States" parent="." index="0"]
-
-editor/display_folded = false
-
 [node name="Attack" parent="States" index="4"]
 
-primary_weapon_path = "res://characters/player/star_breaker/weapon/LaserSpawner.tscn"
-secondary_weapon_path = "res://characters/player/star_breaker/weapon/StickyBombLauncher.tscn"
-special_weapon_path = "res://characters/player/star_breaker/weapon/SpinWeapon.tscn"
+weapon_paths = [ "res://characters/player/star_breaker/weapon/StickyBombLauncher.tscn", "res://characters/player/star_breaker/weapon/SpinWeapon.tscn", "res://characters/player/star_breaker/weapon/LaserSpawner.tscn", "res://characters/player/star_breaker/weapon/LaserSpawner.tscn", "res://characters/player/star_breaker/weapon/LaserSpawner.tscn", "res://characters/player/star_breaker/weapon/LaserSpawner.tscn" ]
 
 [node name="Dead" parent="States" index="6"]
 
@@ -771,14 +765,6 @@ _sections_unfolded = [ "Offset", "Transform", "Visibility", "Z Index" ]
 
 position = Vector2( -3.67545, -53.7445 )
 script = ExtResource( 42 )
-
-[node name="SecondaryWeaponSpawn" parent="WeaponPivot" index="1"]
-
-position = Vector2( 0, 0 )
-
-[node name="PrimaryWeaponSpawn" parent="WeaponPivot" index="2"]
-
-position = Vector2( 0, 0 )
 
 [node name="Shadow" parent="." index="7"]
 

@@ -1,37 +1,28 @@
 extends 'on_ground.gd'
 
 var finished = false
-var primary_weapon_active = false
-var secondary_weapon_active = false
-var special_weapon_active = false
 
-var primary_weapon = null
-var secondary_weapon = null
-var special_weapon = null
-export(String) var primary_weapon_path = ""
-export(String) var secondary_weapon_path = ""
-export(String) var special_weapon_path = ""
+var weapons = []
+var weapon_active = []
+export(Array) var weapon_paths
+
+var primary_weapon = 0
+var secondary_weapon = 1
+var skill_1 = 2
+var skill_2 = 3
+var skill_3 = 4
+var skill_4 = 5
 
 
 func setup(host):
-	if primary_weapon_path:
-		primary_weapon = load(primary_weapon_path).instance()
-		primary_weapon.setup(host)
-		primary_weapon.connect("attack_started", self, "_on_Weapon_attack_started")
-		primary_weapon.connect("attack_finished", self, "_on_Weapon_attack_finished")
-		host.get_node("WeaponPivot").get_node("PrimaryWeaponSpawn").add_child(primary_weapon)
-	if secondary_weapon_path:
-		secondary_weapon = load(secondary_weapon_path).instance()
-		secondary_weapon.setup(host)
-		secondary_weapon.connect("attack_started", self, "_on_Weapon_attack_started")
-		secondary_weapon.connect("attack_finished", self, "_on_Weapon_attack_finished")
-		host.get_node("WeaponPivot").get_node("SecondaryWeaponSpawn").add_child(secondary_weapon)
-	if special_weapon_path:
-		special_weapon = load(special_weapon_path).instance()
-		special_weapon.setup(host)
-		special_weapon.connect("attack_started", self, "_on_Weapon_attack_started")
-		special_weapon.connect("attack_finished", self, "_on_Weapon_attack_finished")
-		host.get_node("WeaponPivot").get_node("SpecialWeaponSpawn").add_child(special_weapon)
+	for weapon_path in weapon_paths:
+		var weapon = load(weapon_path).instance()
+		weapon.setup(host)
+		weapon.connect("attack_started", self, "_on_Weapon_attack_started")
+		weapon.connect("attack_finished", self, "_on_Weapon_attack_finished")
+		host.get_node("WeaponPivot").add_child(weapon)
+		weapons.push_back(weapon)
+		weapon_active.push_back(false)
 
 
 func _ready():
@@ -42,29 +33,20 @@ func enter(host):
 	finished = false
 	
 	var current_weapon
-	if primary_weapon_active:
-		current_weapon = primary_weapon
-	elif secondary_weapon_active:
-		current_weapon = secondary_weapon
-	elif special_weapon_active:
-		current_weapon = special_weapon
+	for i in range(0, weapons.size()):
+		if weapon_active[i]:
+			current_weapon = weapons[i]
 	
 	current_weapon.attack()
 
 
 # Clean up the state. Reinitialize values like a timer
 func exit(host):
-	primary_weapon_active = false
-	secondary_weapon_active = false
-	special_weapon_active = false
+	for i in range(0, weapon_active.size()):
+		weapon_active[i] = false
+	for weapon in weapons:
+		weapon.stop_attack()
 	
-	if primary_weapon:
-		primary_weapon.stop_attack()
-	if secondary_weapon:
-		secondary_weapon.stop_attack()
-	if special_weapon:
-		special_weapon.stop_attack()
-		
 	host.get_node("BodyPivot").rotation_degrees = 0
 	host.get_node("WeaponPivot").rotation_degrees = 0
 	host.get_node("WeaponPivot").scale = Vector2(host.look_direction.x, 1)
@@ -77,12 +59,18 @@ func handle_input(host, event):
 	if not host.is_player:
 		return
 	
-	if event.is_action_pressed("primary_attack") and primary_weapon_active:
-		primary_weapon.register_attack()
-	elif event.is_action_pressed("secondary_attack") and secondary_weapon_active:
-		secondary_weapon.register_attack()
-	elif event.is_action_pressed("special_attack") and special_weapon_active:
-		special_weapon.register_attack()
+	if event.is_action_pressed("primary_attack") and weapon_active[primary_weapon]:
+		weapons[primary_weapon].register_attack()
+	elif event.is_action_pressed("secondary_attack") and weapon_active[secondary_weapon]:
+		weapons[secondary_weapon].register_attack()
+	elif event.is_action_pressed("skill_1") and weapon_active[skill_1]:
+		weapons[skill_1].register_attack()
+	elif event.is_action_pressed("skill_2") and weapon_active[skill_2]:
+		weapons[skill_2].register_attack()
+	elif event.is_action_pressed("skill_3") and weapon_active[skill_3]:
+		weapons[skill_3].register_attack()
+	elif event.is_action_pressed("skill_4") and weapon_active[skill_4]:
+		weapons[skill_4].register_attack()
 
 
 func update(host, delta):
@@ -117,12 +105,10 @@ func _on_Weapon_attack_started(host):
 	host.get_node("WeaponPivot").rotation_degrees = angle
 	
 	var current_weapon
-	if primary_weapon_active:
-		current_weapon = primary_weapon
-	elif secondary_weapon_active:
-		current_weapon = secondary_weapon
-	elif special_weapon_active:
-		current_weapon = special_weapon
+	for i in range(0, weapon_active.size()):
+		if weapon_active[i]:
+			current_weapon = weapons[i]
+			break
 	
 	var attack_current = Attacks.attacks[current_weapon.attack_current]
 	if attack_current.has("move_force"):
@@ -142,8 +128,14 @@ func attack():
 func activate_weapon(weapon):
 	match weapon:
 		"primary_attack":
-			primary_weapon_active = true
+			weapon_active[primary_weapon] = true
 		"secondary_attack":
-			secondary_weapon_active = true
-		"special_attack":
-			special_weapon_active = true
+			weapon_active[secondary_weapon] = true
+		"skill_1":
+			weapon_active[skill_1] = true
+		"skill_2":
+			weapon_active[skill_2] = true
+		"skill_3":
+			weapon_active[skill_3] = true
+		"skill_4":
+			weapon_active[skill_4] = true
