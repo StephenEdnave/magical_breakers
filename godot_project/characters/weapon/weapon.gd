@@ -2,6 +2,8 @@ extends Area2D
 
 signal attack_started
 signal attack_finished
+signal attack_failed
+signal successful_hit
 
 var state = null
 enum STATES {IDLE, ATTACK}
@@ -19,12 +21,22 @@ var hit_objects = []
 
 var combo = ["SETUP"]
 var attack_current = ""
+var costs = []
+
+export (float) var cooldown = 0.01
+var CooldownTimer = null
 
 
 func setup(_host):
 	host = _host
 
+
 func _ready():
+	CooldownTimer = Timer.new()
+	add_child(CooldownTimer)
+	CooldownTimer.wait_time = cooldown
+	CooldownTimer.one_shot = true
+	
 	$AnimationPlayer.connect("animation_finished", self, "_on_AnimationPlayer_animation_finished")
 	$AnimationPlayer.play("SETUP")
 	_change_state(IDLE)
@@ -50,10 +62,21 @@ func _enter_state(new_state):
 			monitoring = false
 			$AnimationPlayer.play("idle")
 		ATTACK:
+			if not CooldownTimer.is_stopped():
+				emit_signal("attack_failed")
+				return
+			if host.has_node("Mana"):
+				if host.get_node("Mana").mana < costs[combo_count - 1]:
+					if not state == ATTACK: # If currently attacking, let animation finish, otherwise return
+						emit_signal("attack_failed")
+						return
+				else:
+					host.get_node("Mana").expend_mana(costs[combo_count - 1])
 			monitoring = true
 			attack_current = combo[combo_count - 1]
 			$AnimationPlayer.play(Attacks.attacks[attack_current].animation)
 			emit_signal("attack_started", host)
+			CooldownTimer.start()
 	state = new_state
 
 
@@ -98,3 +121,7 @@ func _on_AnimationPlayer_animation_finished(name):
 	
 	_change_state(IDLE)
 	emit_signal("attack_finished")
+
+
+func successful_hit(attack_name):
+	emit_signal("successful_hit", attack_name)

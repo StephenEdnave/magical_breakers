@@ -4,7 +4,7 @@ var current_status = null
 
 func _ready():
 	$AnimationPlayer.play("SETUP")
-	change_status(GlobalConstants.HEALTH_STATUS.NONE)
+	change_status(GlobalConstants.HEALTH_STATUS.NORMAL)
 
 
 func change_status(new_status):

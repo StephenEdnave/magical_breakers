@@ -1,5 +1,7 @@
 extends "res://objects/projectiles/projectile.gd"
 
+signal successful_hit
+
 const INITIAL_SPEED = 1000
 var stuck_body
 var weakref_stuck_body
@@ -9,6 +11,7 @@ var steering_acceleration = 40
 var target_position = Vector2()
 var stick_offset = Vector2()
 
+
 func _ready():
 	self.connect("body_entered", self, "_on_body_entered")
 	$AnimationPlayer.connect("animation_finished", self, "_on_animation_finished")
@@ -16,6 +19,7 @@ func _ready():
 	$VisibilityNotifier2D.connect("screen_exited", self, "_on_VisibilityNotifier2D_screen_exited")
 	$ExplosionTimer.connect("timeout", self, "_on_ExplosionTimer_timeout")
 	$AccelerationTimer.connect("timeout", self, "_on_AccelerationTimer_timeout")
+
 
 func _physics_process(delta):
 	if stuck_body:
@@ -69,6 +73,7 @@ func _on_stuck_body_died():
 func _on_animation_finished(name):
 	if name == "stick" and stuck_body:
 		stuck_body.take_damage(self, "star_b_sticky_bomb")
+		emit_signal("successful_hit", "star_b_sticky_bomb")
 		explode()
 
 

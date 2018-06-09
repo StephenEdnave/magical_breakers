@@ -3,6 +3,7 @@ extends KinematicBody2D
 signal state_changed
 signal direction_changed
 signal health_changed
+signal mana_changed
 signal position_changed
 signal died
 
@@ -33,6 +34,8 @@ func _ready():
 	current_state.enter(self)
 	$Health.connect("health_changed", self, "_on_Health_health_changed")
 	$Health.connect("status_changed", self, "_on_Health_status_changed")
+	$Mana.connect("mana_changed", self, "_on_Mana_changed")
+	$Mana.connect("status_changed", self, "_on_Mana_status_changed")
 	$AnimationPlayer.connect("animation_finished", self, "_on_animation_finished")
 	STATES[ATTACK].setup(self)
 
@@ -60,7 +63,7 @@ func go_to_state(state_id):
 
 func take_damage(source, attack_name):
 	if self.is_a_parent_of(source):
-		return
+		return true # Return if parent
 	var knockback_direction = (global_position - source.global_position).normalized()
 	STATES[STAGGER].setup(knockback_direction, Attacks.attacks[attack_name].knockback_force, Attacks.attacks[attack_name].knockback_duration)
 	$Health.take_damage(attack_name)
@@ -77,6 +80,14 @@ func _on_Health_health_changed(new_health, knockback):
 
 func _on_Health_status_changed(new_status):
 	$StatusPivot/StatusIcon.change_status(new_status)
+
+
+func _on_Mana_changed(new_mana):
+	emit_signal("mana_changed", new_mana)
+
+
+func _on_Mana_status_changed(new_status):
+	pass
 
 
 func _on_animation_finished(name):

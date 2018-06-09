@@ -132,6 +132,7 @@ audio_bus_override = false
 audio_bus_name = "Master"
 script = ExtResource( 1 )
 _sections_unfolded = [ "Collision" ]
+cooldown = 0.01
 
 [node name="Pivot" type="Position2D" parent="." index="0"]
 

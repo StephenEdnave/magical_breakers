@@ -1,0 +1,24 @@
+[gd_scene load_steps=2 format=2]
+
+[ext_resource path="res://characters/mana.gd" type="Script" id=1]
+
+[node name="Mana" type="Node"]
+
+script = ExtResource( 1 )
+max_mana = 300
+
+[node name="DrainTimer" type="Timer" parent="." index="0"]
+
+process_mode = 1
+wait_time = 1.0
+one_shot = false
+autostart = false
+
+[node name="ManaRegenTimer" type="Timer" parent="." index="1"]
+
+process_mode = 1
+wait_time = 0.5
+one_shot = false
+autostart = true
+
+

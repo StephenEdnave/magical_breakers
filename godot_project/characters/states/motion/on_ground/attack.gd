@@ -6,12 +6,15 @@ var weapons = []
 var weapon_active = []
 export(Array) var weapon_paths
 
-var primary_weapon = 0
-var secondary_weapon = 1
-var skill_1 = 2
-var skill_2 = 3
-var skill_3 = 4
-var skill_4 = 5
+var inputs = {
+	primary_weapon = 0, 
+	secondary_weapon = 1, 
+	skill_1 = 2, 
+	skill_2 = 3, 
+	skill_3 = 4, 
+	skill_4 = 5 }
+
+signal skill_used
 
 
 func setup(host):
@@ -20,6 +23,8 @@ func setup(host):
 		weapon.setup(host)
 		weapon.connect("attack_started", self, "_on_Weapon_attack_started")
 		weapon.connect("attack_finished", self, "_on_Weapon_attack_finished")
+		weapon.connect("successful_hit", self, "_on_successful_hit")
+		weapon.connect("attack_failed", self, "_on_Weapon_attack_failed")
 		host.get_node("WeaponPivot").add_child(weapon)
 		weapons.push_back(weapon)
 		weapon_active.push_back(false)
@@ -59,18 +64,18 @@ func handle_input(host, event):
 	if not host.is_player:
 		return
 	
-	if event.is_action_pressed("primary_attack") and weapon_active[primary_weapon]:
-		weapons[primary_weapon].register_attack()
-	elif event.is_action_pressed("secondary_attack") and weapon_active[secondary_weapon]:
-		weapons[secondary_weapon].register_attack()
-	elif event.is_action_pressed("skill_1") and weapon_active[skill_1]:
-		weapons[skill_1].register_attack()
-	elif event.is_action_pressed("skill_2") and weapon_active[skill_2]:
-		weapons[skill_2].register_attack()
-	elif event.is_action_pressed("skill_3") and weapon_active[skill_3]:
-		weapons[skill_3].register_attack()
-	elif event.is_action_pressed("skill_4") and weapon_active[skill_4]:
-		weapons[skill_4].register_attack()
+	if event.is_action_pressed("primary_attack") and weapon_active[inputs.primary_weapon]:
+		weapons[inputs.primary_weapon].register_attack()
+	elif event.is_action_pressed("secondary_attack") and weapon_active[inputs.secondary_weapon]:
+		weapons[inputs.secondary_weapon].register_attack()
+	elif event.is_action_pressed("skill_1") and weapon_active[inputs.skill_1]:
+		weapons[inputs.skill_1].register_attack()
+	elif event.is_action_pressed("skill_2") and weapon_active[inputs.skill_2]:
+		weapons[inputs.skill_2].register_attack()
+	elif event.is_action_pressed("skill_3") and weapon_active[inputs.skill_3]:
+		weapons[inputs.skill_3].register_attack()
+	elif event.is_action_pressed("skill_4") and weapon_active[inputs.skill_4]:
+		weapons[inputs.skill_4].register_attack()
 
 
 func update(host, delta):
@@ -98,7 +103,7 @@ func _on_Weapon_attack_started(host):
 		angle = rad2deg(vector.angle())
 	else:
 		angle = 90 - 90 * host.look_direction.x
-	if host.look_direction.x == -1: # host is facing left, requires input_direction so default doesn't face right
+	if host.look_direction.x == -1:
 		angle -= 180
 		host.get_node("WeaponPivot").scale = Vector2(-1, -1)
 	host.get_node("BodyPivot").rotation_degrees = angle
@@ -115,9 +120,23 @@ func _on_Weapon_attack_started(host):
 		velocity = attack_current.move_force * Vector2(sign(host.look_direction.x), 0).rotated(deg2rad(angle))
 	if attack_current.has("host_animation"):
 		host.Anim.play(attack_current.host_animation)
+	
+	# Skill
+	if weapon_active[inputs.skill_1]:
+		emit_signal("skill_used", 1, weapons[inputs.skill_1].cooldown)
+	if weapon_active[inputs.skill_2]:
+		emit_signal("skill_used", 2, weapons[inputs.skill_2].cooldown)
+	if weapon_active[inputs.skill_3]:
+		emit_signal("skill_used", 3, weapons[inputs.skill_3].cooldown)
+	if weapon_active[inputs.skill_4]:
+		emit_signal("skill_used", 4, weapons[inputs.skill_4].cooldown)
 
 
 func _on_Weapon_attack_finished():
+	finished = true
+
+
+func _on_Weapon_attack_failed():
 	finished = true
 
 
@@ -128,14 +147,19 @@ func attack():
 func activate_weapon(weapon):
 	match weapon:
 		"primary_attack":
-			weapon_active[primary_weapon] = true
+			weapon_active[inputs.primary_weapon] = true
 		"secondary_attack":
-			weapon_active[secondary_weapon] = true
+			weapon_active[inputs.secondary_weapon] = true
 		"skill_1":
-			weapon_active[skill_1] = true
+			weapon_active[inputs.skill_1] = true
 		"skill_2":
-			weapon_active[skill_2] = true
+			weapon_active[inputs.skill_2] = true
 		"skill_3":
-			weapon_active[skill_3] = true
+			weapon_active[inputs.skill_3] = true
 		"skill_4":
-			weapon_active[skill_4] = true
+			weapon_active[inputs.skill_4] = true
+
+
+func _on_successful_hit(attack_name):
+	var mana_gain = Attacks.attacks[attack_name].mana_gain
+	host.get_node("Mana").recover_mana(mana_gain)

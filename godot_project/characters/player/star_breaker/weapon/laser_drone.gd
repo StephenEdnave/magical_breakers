@@ -1,5 +1,7 @@
 extends Area2D
 
+signal successful_hit
+
 const DPS = 100
 const LASER_LENGTH = 4000
 var current_laser_length = 2000
@@ -57,6 +59,7 @@ func _on_LaserTick_timeout():
 	var collider_distance = (collider.global_position - global_position).length()
 	if collider.has_method("take_damage"):
 		collider.take_damage(self, "star_b_drone_laser")
+		emit_signal("successful_hit", "star_b_drone_laser")
 	
 	# Particles
 	current_laser_length = max(collider_distance, 1)

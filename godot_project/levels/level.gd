@@ -7,7 +7,6 @@ var MainMenu = "res://menus/main_menu/MainMenu.tscn"
 var WinMenu = "res://menus/win_menu/WinMenu.tscn"
 
 var player = null
-var player_max_health = 0
 
 var current_phase = 0
 
@@ -19,11 +18,8 @@ func _ready():
 	current_state = NORMAL
 	
 	player = $YSort/Player
-	player.connect("health_changed", self, "_on_player_health_changed")
 	player.connect("died", self, "_on_player_died")
-	player_max_health = player.get_node("Health").max_health
-	_on_player_health_changed(player.get_node("Health").health)
-	_on_player_hyper_changed(100.0) # Change upon hyper implementation
+	$UI/Interface.setup(player)
 	
 	camera = $YSort/Player/Camera2D
 	
@@ -49,18 +45,6 @@ func _process(delta):
 	
 	player.global_position.x = clamp(player.global_position.x, limit_left, limit_right)
 	player.global_position.y = clamp(player.global_position.y, limit_top, limit_bottom)
-	
-
-
-func _on_player_health_changed(health):
-	$UI/Interface/Bars/HealthBar/TextureProgress.value = float(health) / float(player_max_health) * 100
-	$UI/Interface/Bars/HealthBar/Counter/Label.text = str(float(health)) +" / " + str(float(player_max_health))
-
-
-func _on_player_hyper_changed(hyper):
-	var player_max_hyper = 100.0
-	$UI/Interface/Bars/HyperBar/TextureProgress.value = float(hyper) / float(player_max_hyper) * 100
-	$UI/Interface/Bars/HyperBar/Counter/Label.text = str(float(hyper)) +" / " + str(float(player_max_hyper))
 
 
 func _on_player_died():

@@ -22,7 +22,7 @@ func _ready():
 	$FireTimer.connect("timeout", self, "_on_FireTimer_timeout")
 	$HitPauseTimer.pause_mode = Node.PAUSE_MODE_PROCESS
 	$HitPauseTimer.connect("timeout", self, "_on_HitPauseTimer_timeout")
-	_change_status(GlobalConstants.HEALTH_STATUS.NONE)
+	_change_status(GlobalConstants.HEALTH_STATUS.NORMAL)
 
 
 func _change_status(new_status):
@@ -69,7 +69,7 @@ func take_damage(attack_name):
 	if Attacks.attacks[attack_name].damage_type == GlobalConstants.HEALTH_DAMAGE_TYPE.FIRE:
 		knockback = false
 	emit_signal("health_changed", health, knockback)
-	print("%s took %s damage. Health: %s/%s" %[get_path(), Attacks.attacks[attack_name].damage, health, max_health])
+	#print("%s took %s damage. Health: %s/%s" %[get_path(), Attacks.attacks[attack_name].damage, health, max_health])
 	
 	if health == 0:
 		_change_status(GlobalConstants.HEALTH_STATUS.DEAD)
@@ -78,12 +78,16 @@ func take_damage(attack_name):
 	var new_status
 	match Attacks.attacks[attack_name].effect:
 		GlobalConstants.HEALTH_EFFECT.NONE:
-			new_status = GlobalConstants.HEALTH_STATUS.NONE
+			new_status = GlobalConstants.HEALTH_STATUS.NORMAL
 		GlobalConstants.HEALTH_EFFECT.FIRE:
 			new_status = GlobalConstants.HEALTH_STATUS.FIRE
 		GlobalConstants.HEALTH_EFFECT.POISON:
 			new_status = GlobalConstants.HEALTH_STATUS.POISON
 	_change_status(new_status)
+	
+	# Mana
+	if get_parent().has_node("Mana"):
+		get_parent().get_node("Mana").check_effect(Attacks.attacks[attack_name].mana_effect)
 	
 	# Hit pause
 	if not Attacks.attacks[attack_name].has("hit_pause"):
@@ -99,13 +103,13 @@ func recover_health(attack_name):
 	if health > max_health:
 		health = max_health
 	emit_signal("health_changed", health)
-	print("%s recovered %s health. Health: %s/%s" %[get_path(), Attacks.attacks[attack_name].damage, health, max_health])
+	#print("%s recovered %s health. Health: %s/%s" %[get_path(), Attacks.attacks[attack_name].damage, health, max_health])
 
 
 func _on_PoisonTimer_timeout():
 	if poison_cycles >= max_poison_cycles:
 		$PoisonTimer.stop()
-		_change_status(GlobalConstants.HEALTH_STATUS.NONE)
+		_change_status(GlobalConstants.HEALTH_STATUS.NORMAL)
 		return
 	
 	take_damage("poison")
@@ -115,7 +119,7 @@ func _on_PoisonTimer_timeout():
 func _on_FireTimer_timeout():
 	if fire_cycles >= max_fire_cycles:
 		$FireTimer.stop()
-		_change_status(GlobalConstants.HEALTH_STATUS.NONE)
+		_change_status(GlobalConstants.HEALTH_STATUS.NORMAL)
 		return
 	
 	take_damage("burn")

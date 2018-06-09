@@ -393,6 +393,7 @@ _sections_unfolded = [ "Collision", "Transform", "Visibility" ]
 __meta__ = {
 "_edit_group_": true
 }
+cooldown = 0.01
 
 [node name="AnimationPlayer" type="AnimationPlayer" parent="." index="0"]
 

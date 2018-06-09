@@ -14,6 +14,7 @@ var weapon_combo = ["dwarf_gun",
 	"dwarf_gun",
 	"dwarf_gun",
 	"dwarf_gun", ]
+var weapon_costs = [0, 0, 0, 0, 0, 0, 0, 0, 0, 0]
 
 
 var max_angle = 10
@@ -26,6 +27,7 @@ func setup(_host):
 func _ready():
 	MAX_COMBO_COUNT = max_combo_count
 	combo = weapon_combo
+	costs = weapon_costs
 
 
 func _change_state(new_state):

@@ -126,6 +126,7 @@ angular_damp = 1.0
 audio_bus_override = false
 audio_bus_name = "Master"
 script = ExtResource( 1 )
+cooldown = 5.0
 
 [node name="Pivot" type="Position2D" parent="." index="0"]
 

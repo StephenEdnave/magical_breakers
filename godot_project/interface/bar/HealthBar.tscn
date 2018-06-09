@@ -19,8 +19,8 @@ margin_left = -193.0
 [node name="TextureProgress" parent="." index="1"]
 
 margin_left = 0.0
-margin_right = 250.0
-rect_min_size = Vector2( 250, 25 )
+margin_right = 500.0
+rect_min_size = Vector2( 500, 25 )
 _sections_unfolded = [ "Margin", "Rect", "Textures" ]
 
 

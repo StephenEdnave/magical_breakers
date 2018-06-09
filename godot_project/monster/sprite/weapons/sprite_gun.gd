@@ -7,6 +7,7 @@ var max_combo_count = 3
 var weapon_combo = ["sprite_gun",
 	"sprite_gun",
 	"sprite_gun",]
+var weapon_costs = [0, 0, 0]
 
 
 var max_angle = 25
@@ -19,6 +20,7 @@ func setup(_host):
 func _ready():
 	MAX_COMBO_COUNT = max_combo_count
 	combo = weapon_combo
+	costs = weapon_costs
 
 
 func _change_state(new_state):

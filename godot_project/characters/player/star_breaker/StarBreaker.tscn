@@ -721,6 +721,10 @@ tracks/3/keys = {
 script = ExtResource( 2 )
 _sections_unfolded = [ "Collision", "Material", "Transform", "Visibility", "Z Index", "collision" ]
 
+[node name="States" parent="." index="0"]
+
+editor/display_folded = false
+
 [node name="Attack" parent="States" index="4"]
 
 weapon_paths = [ "res://characters/player/star_breaker/weapon/StickyBombLauncher.tscn", "res://characters/player/star_breaker/weapon/SpinWeapon.tscn", "res://characters/player/star_breaker/weapon/LaserSpawner.tscn", "res://characters/player/star_breaker/weapon/LaserSpawner.tscn", "res://characters/player/star_breaker/weapon/LaserSpawner.tscn", "res://characters/player/star_breaker/weapon/LaserSpawner.tscn" ]
@@ -749,7 +753,7 @@ anims/walk_forward = SubResource( 13 )
 
 max_health = 3000
 
-[node name="CollisionShape2D" parent="." index="4"]
+[node name="CollisionShape2D" parent="." index="5"]
 
 position = Vector2( 0, 0 )
 _sections_unfolded = [ "Transform" ]
@@ -761,14 +765,9 @@ offset = Vector2( 0, 0 )
 flip_h = true
 _sections_unfolded = [ "Offset", "Transform", "Visibility", "Z Index" ]
 
-[node name="WeaponPivot" parent="." index="6"]
+[node name="WeaponPivot" parent="." index="7"]
 
-position = Vector2( -3.67545, -53.7445 )
 script = ExtResource( 42 )
-
-[node name="Shadow" parent="." index="7"]
-
-visible = false
 
 [node name="DashSound" type="AudioStreamPlayer" parent="." index="8"]
 
@@ -785,5 +784,9 @@ volume_db = 0.0
 autoplay = false
 mix_target = 0
 bus = "SFX"
+
+[node name="Shadow" parent="." index="10"]
+
+visible = false
 
 

@@ -10,10 +10,14 @@ var target_reticle = null
 enum LOCK_ON_STATES { INACTIVE, ACTIVE }
 var lock_on_state = INACTIVE
 
+signal skill_used
+
+
 func _ready():
 	is_player = true
 	
-	$States/Dash.connect("projectile_grazed", self, "_on_projectile_grazed")
+	STATES[DASH].connect("projectile_grazed", self, "_on_projectile_grazed")
+	STATES[ATTACK].connect("skill_used", self, "skill_used")
 
 
 func _process(delta):
@@ -65,3 +69,7 @@ func _on_target_disconnect():
 
 func _on_projectile_grazed():
 	pass
+
+
+func skill_used(skill_id, cooldown):
+	emit_signal("skill_used", skill_id, cooldown)
