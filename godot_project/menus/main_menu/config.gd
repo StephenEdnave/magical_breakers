@@ -21,15 +21,18 @@ func _ready():
 	$ReturnButton.connect("button_down", self, "_on_ReturnButton_button_down")
 	
 	# Input editing
-	$InputContainer/UpButton.connect("button_down", self, "_on_UpButton_button_down")
-	$InputContainer/DownButton.connect("button_down", self, "_on_DownButton_button_down")
-	$InputContainer/LeftButton.connect("button_down", self, "_on_LeftButton_button_down")
-	$InputContainer/RightButton.connect("button_down", self, "_on_RightButton_button_down")
-	$InputContainer/PrimaryAttackButton.connect("button_down", self, "_on_PrimaryAttackButton_button_down")
-	$InputContainer/SecondaryAttackButton.connect("button_down", self, "_on_SecondaryAttackButton_button_down")
-	$InputContainer/SpecialAttackButton.connect("button_down", self, "_on_SpecialAttackButton_button_down")
-	$InputContainer/LockOnButton.connect("button_down", self, "_on_LockOnButton_button_down")
-	$InputContainer/DashButton.connect("button_down", self, "_on_DashButton_button_down")
+	$InputContainer/UpButton.connect("button_down", self, "_change_input", ["move_up"])
+	$InputContainer/DownButton.connect("button_down", self, "_change_input", ["move_down"])
+	$InputContainer/LeftButton.connect("button_down", self, "_change_input", ["move_left"])
+	$InputContainer/RightButton.connect("button_down", self, "_change_input", ["move_right"])
+	$InputContainer/PrimaryAttackButton.connect("button_down", self, "_change_input", ["primary_attack"])
+	$InputContainer/SecondaryAttackButton.connect("button_down", self, "_change_input", ["secondary_attack"])
+	$InputContainer/Skill1Button.connect("button_down", self, "_change_input", ["skill_1"])
+	$InputContainer/Skill2Button.connect("button_down", self, "_change_input", ["skill_2"])
+	$InputContainer/Skill3Button.connect("button_down", self, "_change_input", ["skill_3"])
+	$InputContainer/Skill4Button.connect("button_down", self, "_change_input", ["skill_4"])
+	$InputContainer/LockOnButton.connect("button_down", self, "_change_input", ["lock_on"])
+	$InputContainer/DashButton.connect("button_down", self, "_change_input", ["dash"])
 	$InputChange/VBoxContainer/Buttons/AcceptButton.connect("button_down", self, "_on_InputAccept_button_down")
 	$InputChange/VBoxContainer/Buttons/CancelButton.connect("button_down", self, "_on_InputCancel_button_down")
 	
@@ -159,42 +162,6 @@ func _change_input(target_input):
 	pointer.visible = false
 
 
-func _on_UpButton_button_down():
-	_change_input("move_up")
-
-
-func _on_DownButton_button_down():
-	_change_input("move_down")
-
-
-func _on_LeftButton_button_down():
-	_change_input("move_left")
-
-
-func _on_RightButton_button_down():
-	_change_input("move_right")
-
-
-func _on_PrimaryAttackButton_button_down():
-	_change_input("primary_attack")
-
-
-func _on_SecondaryAttackButton_button_down():
-	_change_input("secondary_attack")
-
-
-func _on_SpecialAttackButton_button_down():
-	_change_input("special_attack")
-
-
-func _on_LockOnButton_button_down():
-	_change_input("lock_on")
-
-
-func _on_DashButton_button_down():
-	_change_input("dash")
-
-
 func _on_InputAccept_button_down():
 	main_menu.get_node("ButtonPress").play()
 	current_state = CONFIG
@@ -209,21 +176,40 @@ func _on_InputAccept_button_down():
 	InputMap.action_add_event(input_to_change, input_selected)
 	
 	match input_to_change:
-		"primary_attack":
-			input_to_change = "ui_select"
-		"secondary_attack":
-			input_to_change = "ui_cancel"
 		"move_up":
+			$InputContainer/UpButton.text = input_selected.as_text()
 			input_to_change = "ui_up"
 		"move_down":
+			$InputContainer/DownButton.text = input_selected.as_text()
 			input_to_change = "ui_down"
 		"move_left":
+			$InputContainer/LeftButton.text = input_selected.as_text()
 			input_to_change = "ui_left"
 		"move_right":
+			$InputContainer/RightButton.text = input_selected.as_text()
 			input_to_change = "ui_right"
+		"primary_attack":
+			$InputContainer/PrimaryAttackButton.text = input_selected.as_text()
+			input_to_change = "ui_select"
+		"secondary_attack":
+			$InputContainer/SecondaryAttackButton.text = input_selected.as_text()
+			input_to_change = "ui_cancel"
+		"skill_1":
+			$InputContainer/Skill1Button.text = input_selected.as_text()
+		"skill_2":
+			$InputContainer/Skill2Button.text = input_selected.as_text()
+		"skill_3":
+			$InputContainer/Skill3Button.text = input_selected.as_text()
+		"skill_4":
+			$InputContainer/Skill4Button.text = input_selected.as_text()
+		"lock_on":
+			$InputContainer/LockOnButton.text = input_selected.as_text()
+		"dash":
+			$InputContainer/DashButton.text = input_selected.as_text()
 		_:
 			return
 	
+	# For if we're additionally changing a ui button (handled separately from gameplay
 	event_to_delete = InputMap.get_action_list(input_to_change)[input_index]
 	event_to_delete = InputMap.get_action_list(input_to_change)[input_index]
 	InputMap.action_erase_event(input_to_change, event_to_delete)
