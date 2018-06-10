@@ -8,12 +8,13 @@ const POINTER_OFFSET = Vector2(-5.0, 0.0)
 
 
 func _ready():
+	set_process_input(false)
+	
 	$ReturnButton.connect("button_down", self, "_on_ReturnButton_button_down")
 
 
 func setup(_main_menu, _pointer_scene):
 	main_menu = _main_menu
-	set_process_input(false)
 	
 	pointer_scene = _pointer_scene
 	pointer = pointer_scene.instance()

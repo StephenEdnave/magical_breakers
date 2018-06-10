@@ -16,6 +16,9 @@ func _ready():
 	$Buttons/ConfigButton.connect("button_down", self, "_on_ConfigButton_button_down")
 	$Buttons/ExitButton.connect("button_down", self, "_on_ExitButton_button_down")
 	$Buttons/CreditsButton.connect("button_down", self, "_on_CreditsButton_button_down")
+	
+	$Buttons.get_child(BUTTON_AMOUNT - 1).focus_neighbour_bottom = $Buttons.get_child(0).get_path()
+	$Buttons.get_child(0).focus_neighbour_top = $Buttons.get_child(BUTTON_AMOUNT - 1).get_path()
 
 
 func setup(_main_menu, _pointer_scene):
@@ -49,7 +52,6 @@ func _input(event):
 		$Buttons.get_child(current_selection).emit_signal("button_down")
 	elif event.is_action_pressed("ui_cancel"):
 		main_menu.get_node("ButtonPress").play()
-		current_selection = BUTTON_AMOUNT - 1
 	
 	pointer.global_position = $Buttons.get_child(current_selection).rect_global_position + POINTER_OFFSET
 

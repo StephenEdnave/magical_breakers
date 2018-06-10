@@ -1,4 +1,4 @@
-[gd_scene load_steps=30 format=2]
+[gd_scene load_steps=33 format=2]
 
 [ext_resource path="res://menus/main_menu/main_menu.gd" type="Script" id=1]
 [ext_resource path="res://menus/main_menu/skybox.PNG" type="Texture" id=2]
@@ -9,13 +9,16 @@
 [ext_resource path="res://menus/main_menu/arrow.png" type="Texture" id=7]
 [ext_resource path="res://menus/main_menu/credits.gd" type="Script" id=8]
 [ext_resource path="res://menus/main_menu/config.gd" type="Script" id=9]
-[ext_resource path="res://menus/main_menu/glossy_button.png" type="Texture" id=10]
-[ext_resource path="res://interface/sprites/grey_button00.png" type="Texture" id=11]
-[ext_resource path="res://interface/sprites/green_button00.png" type="Texture" id=12]
-[ext_resource path="res://menus/main_menu/start_menu.gd" type="Script" id=13]
-[ext_resource path="res://menus/main_menu/exit_panel.gd" type="Script" id=14]
-[ext_resource path="res://music/Rabi-Ribi Original Soundtrack - 02 Main Menu.ogg" type="AudioStream" id=15]
-[ext_resource path="res://sfx/lock_on.wav" type="AudioStream" id=16]
+[ext_resource path="res://menus/main_menu/display_config.gd" type="Script" id=10]
+[ext_resource path="res://menus/main_menu/audio_config.gd" type="Script" id=11]
+[ext_resource path="res://menus/main_menu/glossy_button.png" type="Texture" id=12]
+[ext_resource path="res://interface/sprites/grey_button00.png" type="Texture" id=13]
+[ext_resource path="res://interface/sprites/green_button00.png" type="Texture" id=14]
+[ext_resource path="res://sfx/lock_on.wav" type="AudioStream" id=15]
+[ext_resource path="res://menus/main_menu/input_config.gd" type="Script" id=16]
+[ext_resource path="res://menus/main_menu/start_menu.gd" type="Script" id=17]
+[ext_resource path="res://menus/main_menu/exit_panel.gd" type="Script" id=18]
+[ext_resource path="res://music/Rabi-Ribi Original Soundtrack - 02 Main Menu.ogg" type="AudioStream" id=19]
 
 [sub_resource type="ParticlesMaterial" id=1]
 
@@ -231,7 +234,7 @@ tracks/13/keys = {
 "values": [ false ]
 }
 tracks/14/type = "value"
-tracks/14/path = NodePath("CanvasLayer/Config/InputContainer:rect_position")
+tracks/14/path = NodePath("CanvasLayer/Config/Keybindings/GridContainer:rect_position")
 tracks/14/interp = 1
 tracks/14/loop_wrap = true
 tracks/14/imported = false
@@ -243,7 +246,7 @@ tracks/14/keys = {
 "values": [ Vector2( 116, 155 ) ]
 }
 tracks/15/type = "value"
-tracks/15/path = NodePath("CanvasLayer/Config/InputContainer:rect_scale")
+tracks/15/path = NodePath("CanvasLayer/Config/Keybindings/GridContainer:rect_scale")
 tracks/15/interp = 1
 tracks/15/loop_wrap = true
 tracks/15/imported = false
@@ -255,7 +258,7 @@ tracks/15/keys = {
 "values": [ Vector2( 1, 1 ) ]
 }
 tracks/16/type = "value"
-tracks/16/path = NodePath("CanvasLayer/Config/SoundPanel:rect_position")
+tracks/16/path = NodePath("CanvasLayer/Config/Audio/SoundPanel:rect_position")
 tracks/16/interp = 1
 tracks/16/loop_wrap = true
 tracks/16/imported = false
@@ -267,7 +270,7 @@ tracks/16/keys = {
 "values": [ Vector2( 585, 165 ) ]
 }
 tracks/17/type = "value"
-tracks/17/path = NodePath("CanvasLayer/Config/SoundPanel:rect_scale")
+tracks/17/path = NodePath("CanvasLayer/Config/Audio/SoundPanel:rect_scale")
 tracks/17/interp = 1
 tracks/17/loop_wrap = true
 tracks/17/imported = false
@@ -869,7 +872,7 @@ tracks/7/keys = {
 "values": [ Vector2( 2100, 2362 ) ]
 }
 tracks/8/type = "value"
-tracks/8/path = NodePath("CanvasLayer/Config/InputContainer:rect_position")
+tracks/8/path = NodePath("CanvasLayer/Config/Keybindings/GridContainer:rect_position")
 tracks/8/interp = 1
 tracks/8/loop_wrap = true
 tracks/8/imported = false
@@ -881,7 +884,7 @@ tracks/8/keys = {
 "values": [ Vector2( 116, -526 ), Vector2( 116, 155 ), Vector2( 116, 136 ) ]
 }
 tracks/9/type = "value"
-tracks/9/path = NodePath("CanvasLayer/Config/InputContainer:rect_scale")
+tracks/9/path = NodePath("CanvasLayer/Config/Keybindings/GridContainer:rect_scale")
 tracks/9/interp = 1
 tracks/9/loop_wrap = true
 tracks/9/imported = false
@@ -893,7 +896,7 @@ tracks/9/keys = {
 "values": [ Vector2( 1, 0 ), Vector2( 1, 0 ), Vector2( 1, 1 ) ]
 }
 tracks/10/type = "value"
-tracks/10/path = NodePath("CanvasLayer/Config/SoundPanel:rect_position")
+tracks/10/path = NodePath("CanvasLayer/Config/Audio/SoundPanel:rect_position")
 tracks/10/interp = 1
 tracks/10/loop_wrap = true
 tracks/10/imported = false
@@ -905,7 +908,7 @@ tracks/10/keys = {
 "values": [ Vector2( 585, -558 ), Vector2( 585, 252 ), Vector2( 585, 165 ) ]
 }
 tracks/11/type = "value"
-tracks/11/path = NodePath("CanvasLayer/Config/SoundPanel:rect_scale")
+tracks/11/path = NodePath("CanvasLayer/Config/Audio/SoundPanel:rect_scale")
 tracks/11/interp = 1
 tracks/11/loop_wrap = true
 tracks/11/imported = false
@@ -923,7 +926,7 @@ tracks/12/loop_wrap = true
 tracks/12/imported = false
 tracks/12/enabled = true
 tracks/12/keys = {
-"times": PoolRealArray( 1.5 ),
+"times": PoolRealArray( 0.6 ),
 "transitions": PoolRealArray( 1 ),
 "values": [ {
 "args": [  ],
@@ -1528,7 +1531,6 @@ transform = Transform2D( 1, 0, 0, 1, 0, 0 )
 
 [node name="Skybox" type="CenterContainer" parent="CanvasLayer" index="0"]
 
-editor/display_folded = true
 anchor_left = 0.0
 anchor_top = 0.0
 anchor_right = 1.0
@@ -1968,14 +1970,16 @@ flat = false
 align = 1
 _sections_unfolded = [ "Textures", "Theme", "custom_fonts" ]
 
-[node name="Config" type="Container" parent="CanvasLayer" index="5"]
+[node name="Config" type="PanelContainer" parent="CanvasLayer" index="5"]
 
-anchor_left = 0.0
-anchor_top = 0.0
-anchor_right = 0.0
-anchor_bottom = 0.0
-margin_right = 40.0
-margin_bottom = 40.0
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+margin_left = -472.0
+margin_top = -466.0
+margin_right = 488.0
+margin_bottom = 474.0
 rect_pivot_offset = Vector2( 0, 0 )
 rect_clip_content = false
 mouse_filter = 0
@@ -1985,16 +1989,544 @@ size_flags_vertical = 1
 script = ExtResource( 9 )
 _sections_unfolded = [ "Visibility" ]
 
-[node name="InputContainer" type="GridContainer" parent="CanvasLayer/Config" index="0"]
+[node name="Display" type="Container" parent="CanvasLayer/Config" index="0"]
+
+editor/display_folded = true
+visible = false
+anchor_left = 0.0
+anchor_top = 0.0
+anchor_right = 0.0
+anchor_bottom = 0.0
+margin_left = 7.0
+margin_top = 7.0
+margin_right = 953.0
+margin_bottom = 933.0
+rect_pivot_offset = Vector2( 0, 0 )
+rect_clip_content = false
+mouse_filter = 0
+mouse_default_cursor_shape = 0
+size_flags_horizontal = 1
+size_flags_vertical = 1
+script = ExtResource( 10 )
+
+[node name="Label" type="Label" parent="CanvasLayer/Config/Display" index="0"]
 
 anchor_left = 0.0
 anchor_top = 0.0
 anchor_right = 0.0
 anchor_bottom = 0.0
-margin_left = 116.0
-margin_top = 155.0
-margin_right = 643.0
-margin_bottom = 628.0
+margin_left = 375.0
+margin_top = 116.0
+margin_right = 571.0
+margin_bottom = 143.0
+rect_pivot_offset = Vector2( 0, 0 )
+rect_clip_content = false
+mouse_filter = 2
+mouse_default_cursor_shape = 0
+size_flags_horizontal = 1
+size_flags_vertical = 4
+theme = ExtResource( 4 )
+custom_colors/font_color = Color( 1, 1, 1, 1 )
+text = "Display"
+align = 1
+valign = 1
+percent_visible = 1.0
+lines_skipped = 0
+max_lines_visible = -1
+_sections_unfolded = [ "Theme", "custom_colors", "custom_fonts" ]
+
+[node name="Label2" type="Label" parent="CanvasLayer/Config/Display" index="1"]
+
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+margin_left = -149.0
+margin_top = -222.0
+margin_right = 162.0
+margin_bottom = -195.0
+rect_pivot_offset = Vector2( 0, 0 )
+rect_clip_content = false
+mouse_filter = 2
+mouse_default_cursor_shape = 0
+size_flags_horizontal = 1
+size_flags_vertical = 4
+theme = ExtResource( 4 )
+custom_colors/font_color = Color( 1, 1, 1, 1 )
+text = "Work in progress :)"
+align = 1
+valign = 1
+percent_visible = 1.0
+lines_skipped = 0
+max_lines_visible = -1
+_sections_unfolded = [ "Anchor", "Theme", "custom_colors", "custom_fonts" ]
+
+[node name="ReturnButton" type="Button" parent="CanvasLayer/Config/Display" index="2"]
+
+anchor_left = 0.0
+anchor_top = 0.0
+anchor_right = 0.0
+anchor_bottom = 0.0
+margin_left = 18.0
+margin_top = 837.0
+margin_right = 295.0
+margin_bottom = 903.0
+rect_min_size = Vector2( 250, 60 )
+rect_pivot_offset = Vector2( 0, 0 )
+rect_clip_content = false
+focus_mode = 2
+mouse_filter = 0
+mouse_default_cursor_shape = 0
+size_flags_horizontal = 1
+size_flags_vertical = 1
+theme = ExtResource( 4 )
+toggle_mode = false
+enabled_focus_mode = 2
+shortcut = null
+group = null
+text = "Return"
+flat = false
+align = 1
+_sections_unfolded = [ "Rect", "Textures", "Theme", "custom_fonts" ]
+
+[node name="Audio" type="Container" parent="CanvasLayer/Config" index="1"]
+
+editor/display_folded = true
+visible = false
+anchor_left = 0.0
+anchor_top = 0.0
+anchor_right = 0.0
+anchor_bottom = 0.0
+margin_left = 7.0
+margin_top = 7.0
+margin_right = 953.0
+margin_bottom = 933.0
+rect_pivot_offset = Vector2( 0, 0 )
+rect_clip_content = false
+mouse_filter = 0
+mouse_default_cursor_shape = 0
+size_flags_horizontal = 1
+size_flags_vertical = 1
+script = ExtResource( 11 )
+_sections_unfolded = [ "Grow Direction", "Margin" ]
+
+[node name="Label" type="Label" parent="CanvasLayer/Config/Audio" index="0"]
+
+anchor_left = 0.0
+anchor_top = 0.0
+anchor_right = 0.0
+anchor_bottom = 0.0
+margin_left = 375.0
+margin_top = 116.0
+margin_right = 571.0
+margin_bottom = 143.0
+rect_pivot_offset = Vector2( 0, 0 )
+rect_clip_content = false
+mouse_filter = 2
+mouse_default_cursor_shape = 0
+size_flags_horizontal = 1
+size_flags_vertical = 4
+theme = ExtResource( 4 )
+custom_colors/font_color = Color( 1, 1, 1, 1 )
+text = "Audio"
+align = 1
+valign = 1
+percent_visible = 1.0
+lines_skipped = 0
+max_lines_visible = -1
+_sections_unfolded = [ "Theme", "custom_colors", "custom_fonts" ]
+
+[node name="SoundPanel" type="VBoxContainer" parent="CanvasLayer/Config/Audio" index="1"]
+
+editor/display_folded = true
+self_modulate = Color( 1, 1, 1, 0 )
+anchor_left = 0.5
+anchor_top = 0.0
+anchor_right = 0.5
+anchor_bottom = 0.0
+margin_left = -215.0
+margin_top = 184.0
+margin_right = 215.0
+margin_bottom = 322.0
+rect_pivot_offset = Vector2( 0, 0 )
+rect_clip_content = false
+mouse_filter = 0
+mouse_default_cursor_shape = 0
+size_flags_horizontal = 1
+size_flags_vertical = 1
+theme = ExtResource( 4 )
+custom_constants/separation = 10
+alignment = 0
+
+[node name="SFXLabel" type="Label" parent="CanvasLayer/Config/Audio/SoundPanel" index="0"]
+
+anchor_left = 0.0
+anchor_top = 0.0
+anchor_right = 0.0
+anchor_bottom = 0.0
+margin_right = 430.0
+margin_bottom = 27.0
+rect_pivot_offset = Vector2( 0, 0 )
+rect_clip_content = false
+mouse_filter = 2
+mouse_default_cursor_shape = 0
+size_flags_horizontal = 1
+size_flags_vertical = 4
+text = "Sound Effect Volume"
+percent_visible = 1.0
+lines_skipped = 0
+max_lines_visible = -1
+
+[node name="SFXBar" type="HBoxContainer" parent="CanvasLayer/Config/Audio/SoundPanel" index="1"]
+
+anchor_left = 0.0
+anchor_top = 0.0
+anchor_right = 0.0
+anchor_bottom = 0.0
+margin_top = 37.0
+margin_right = 430.0
+margin_bottom = 64.0
+rect_min_size = Vector2( 0, 25 )
+rect_pivot_offset = Vector2( 0, 0 )
+rect_clip_content = false
+mouse_filter = 1
+mouse_default_cursor_shape = 0
+size_flags_horizontal = 1
+size_flags_vertical = 1
+alignment = 0
+_sections_unfolded = [ "Rect", "custom_constants" ]
+
+[node name="MinusButton" type="TextureButton" parent="CanvasLayer/Config/Audio/SoundPanel/SFXBar" index="0"]
+
+anchor_left = 0.0
+anchor_top = 0.0
+anchor_right = 0.0
+anchor_bottom = 0.0
+margin_right = 25.0
+margin_bottom = 27.0
+rect_min_size = Vector2( 25, 25 )
+rect_pivot_offset = Vector2( 0, 0 )
+rect_clip_content = false
+focus_mode = 2
+mouse_filter = 0
+mouse_default_cursor_shape = 0
+size_flags_horizontal = 1
+size_flags_vertical = 1
+toggle_mode = false
+enabled_focus_mode = 2
+shortcut = null
+group = null
+texture_normal = ExtResource( 12 )
+expand = true
+_sections_unfolded = [ "Rect", "Textures" ]
+
+[node name="VolumeBar" type="TextureProgress" parent="CanvasLayer/Config/Audio/SoundPanel/SFXBar" index="1"]
+
+anchor_left = 0.0
+anchor_top = 0.0
+anchor_right = 0.0
+anchor_bottom = 0.0
+margin_left = 29.0
+margin_right = 329.0
+margin_bottom = 27.0
+rect_min_size = Vector2( 300, 25 )
+rect_pivot_offset = Vector2( 0, 0 )
+rect_clip_content = false
+mouse_filter = 1
+mouse_default_cursor_shape = 0
+size_flags_horizontal = 1
+size_flags_vertical = 1
+min_value = 0.0
+max_value = 100.0
+step = 1.0
+page = 0.0
+value = 50.0
+exp_edit = false
+rounded = false
+texture_under = ExtResource( 13 )
+texture_over = null
+texture_progress = ExtResource( 14 )
+radial_fill_degrees = 360.0
+radial_center_offset = Vector2( 0, 0 )
+nine_patch_stretch = true
+_sections_unfolded = [ "Rect", "Textures" ]
+
+[node name="PlusButton" type="TextureButton" parent="CanvasLayer/Config/Audio/SoundPanel/SFXBar" index="2"]
+
+anchor_left = 0.0
+anchor_top = 0.0
+anchor_right = 0.0
+anchor_bottom = 0.0
+margin_left = 333.0
+margin_right = 358.0
+margin_bottom = 27.0
+rect_min_size = Vector2( 25, 25 )
+rect_pivot_offset = Vector2( 0, 0 )
+rect_clip_content = false
+focus_mode = 2
+mouse_filter = 0
+mouse_default_cursor_shape = 0
+size_flags_horizontal = 1
+size_flags_vertical = 1
+toggle_mode = false
+enabled_focus_mode = 2
+shortcut = null
+group = null
+texture_normal = ExtResource( 12 )
+expand = true
+_sections_unfolded = [ "Rect", "Textures" ]
+
+[node name="PercentLabel" type="Label" parent="CanvasLayer/Config/Audio/SoundPanel/SFXBar" index="3"]
+
+anchor_left = 0.0
+anchor_top = 0.0
+anchor_right = 0.0
+anchor_bottom = 0.0
+margin_left = 362.0
+margin_right = 430.0
+margin_bottom = 27.0
+rect_pivot_offset = Vector2( 0, 0 )
+rect_clip_content = false
+mouse_filter = 2
+mouse_default_cursor_shape = 0
+size_flags_horizontal = 1
+size_flags_vertical = 4
+text = "100%"
+percent_visible = 1.0
+lines_skipped = 0
+max_lines_visible = -1
+
+[node name="MusicLabel" type="Label" parent="CanvasLayer/Config/Audio/SoundPanel" index="2"]
+
+anchor_left = 0.0
+anchor_top = 0.0
+anchor_right = 0.0
+anchor_bottom = 0.0
+margin_top = 74.0
+margin_right = 430.0
+margin_bottom = 101.0
+rect_pivot_offset = Vector2( 0, 0 )
+rect_clip_content = false
+mouse_filter = 2
+mouse_default_cursor_shape = 0
+size_flags_horizontal = 1
+size_flags_vertical = 4
+text = "Music Volume"
+percent_visible = 1.0
+lines_skipped = 0
+max_lines_visible = -1
+
+[node name="MusicBar" type="HBoxContainer" parent="CanvasLayer/Config/Audio/SoundPanel" index="3"]
+
+editor/display_folded = true
+anchor_left = 0.0
+anchor_top = 0.0
+anchor_right = 0.0
+anchor_bottom = 0.0
+margin_top = 111.0
+margin_right = 430.0
+margin_bottom = 138.0
+rect_min_size = Vector2( 0, 25 )
+rect_pivot_offset = Vector2( 0, 0 )
+rect_clip_content = false
+mouse_filter = 1
+mouse_default_cursor_shape = 0
+size_flags_horizontal = 1
+size_flags_vertical = 1
+alignment = 0
+_sections_unfolded = [ "Rect" ]
+
+[node name="MinusButton" type="TextureButton" parent="CanvasLayer/Config/Audio/SoundPanel/MusicBar" index="0"]
+
+anchor_left = 0.0
+anchor_top = 0.0
+anchor_right = 0.0
+anchor_bottom = 0.0
+margin_right = 25.0
+margin_bottom = 27.0
+rect_min_size = Vector2( 25, 25 )
+rect_pivot_offset = Vector2( 0, 0 )
+rect_clip_content = false
+focus_mode = 2
+mouse_filter = 0
+mouse_default_cursor_shape = 0
+size_flags_horizontal = 1
+size_flags_vertical = 1
+toggle_mode = false
+enabled_focus_mode = 2
+shortcut = null
+group = null
+texture_normal = ExtResource( 12 )
+expand = true
+_sections_unfolded = [ "Rect", "Textures" ]
+
+[node name="VolumeBar" type="TextureProgress" parent="CanvasLayer/Config/Audio/SoundPanel/MusicBar" index="1"]
+
+anchor_left = 0.0
+anchor_top = 0.0
+anchor_right = 0.0
+anchor_bottom = 0.0
+margin_left = 29.0
+margin_right = 329.0
+margin_bottom = 27.0
+rect_min_size = Vector2( 300, 25 )
+rect_pivot_offset = Vector2( 0, 0 )
+rect_clip_content = false
+mouse_filter = 1
+mouse_default_cursor_shape = 0
+size_flags_horizontal = 1
+size_flags_vertical = 1
+min_value = 0.0
+max_value = 100.0
+step = 1.0
+page = 0.0
+value = 50.0
+exp_edit = false
+rounded = false
+texture_under = ExtResource( 13 )
+texture_over = null
+texture_progress = ExtResource( 14 )
+radial_fill_degrees = 360.0
+radial_center_offset = Vector2( 0, 0 )
+nine_patch_stretch = true
+_sections_unfolded = [ "Rect", "Textures" ]
+
+[node name="PlusButton" type="TextureButton" parent="CanvasLayer/Config/Audio/SoundPanel/MusicBar" index="2"]
+
+anchor_left = 0.0
+anchor_top = 0.0
+anchor_right = 0.0
+anchor_bottom = 0.0
+margin_left = 333.0
+margin_right = 358.0
+margin_bottom = 27.0
+rect_min_size = Vector2( 25, 25 )
+rect_pivot_offset = Vector2( 0, 0 )
+rect_clip_content = false
+focus_mode = 2
+mouse_filter = 0
+mouse_default_cursor_shape = 0
+size_flags_horizontal = 1
+size_flags_vertical = 1
+toggle_mode = false
+enabled_focus_mode = 2
+shortcut = null
+group = null
+texture_normal = ExtResource( 12 )
+expand = true
+_sections_unfolded = [ "Rect", "Textures" ]
+
+[node name="PercentLabel" type="Label" parent="CanvasLayer/Config/Audio/SoundPanel/MusicBar" index="3"]
+
+anchor_left = 0.0
+anchor_top = 0.0
+anchor_right = 0.0
+anchor_bottom = 0.0
+margin_left = 362.0
+margin_right = 430.0
+margin_bottom = 27.0
+rect_pivot_offset = Vector2( 0, 0 )
+rect_clip_content = false
+mouse_filter = 2
+mouse_default_cursor_shape = 0
+size_flags_horizontal = 1
+size_flags_vertical = 4
+text = "100%"
+percent_visible = 1.0
+lines_skipped = 0
+max_lines_visible = -1
+
+[node name="TestSFX" type="AudioStreamPlayer" parent="CanvasLayer/Config/Audio" index="2"]
+
+stream = ExtResource( 15 )
+volume_db = -4.0
+autoplay = false
+mix_target = 0
+bus = "SFX"
+
+[node name="ReturnButton" type="Button" parent="CanvasLayer/Config/Audio" index="3"]
+
+anchor_left = 0.0
+anchor_top = 0.0
+anchor_right = 0.0
+anchor_bottom = 0.0
+margin_left = 18.0
+margin_top = 837.0
+margin_right = 295.0
+margin_bottom = 903.0
+rect_min_size = Vector2( 250, 60 )
+rect_pivot_offset = Vector2( 0, 0 )
+rect_clip_content = false
+focus_mode = 2
+mouse_filter = 0
+mouse_default_cursor_shape = 0
+size_flags_horizontal = 1
+size_flags_vertical = 1
+theme = ExtResource( 4 )
+toggle_mode = false
+enabled_focus_mode = 2
+shortcut = null
+group = null
+text = "Return"
+flat = false
+align = 1
+_sections_unfolded = [ "Rect", "Textures", "Theme", "custom_fonts" ]
+
+[node name="Keybindings" type="Container" parent="CanvasLayer/Config" index="2"]
+
+anchor_left = 0.0
+anchor_top = 0.0
+anchor_right = 0.0
+anchor_bottom = 0.0
+margin_left = 7.0
+margin_top = 7.0
+margin_right = 953.0
+margin_bottom = 933.0
+rect_pivot_offset = Vector2( 0, 0 )
+rect_clip_content = false
+mouse_filter = 0
+mouse_default_cursor_shape = 0
+size_flags_horizontal = 1
+size_flags_vertical = 1
+script = ExtResource( 16 )
+
+[node name="Label" type="Label" parent="CanvasLayer/Config/Keybindings" index="0"]
+
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+margin_left = -98.0
+margin_top = -338.0
+margin_right = 98.0
+margin_bottom = -311.0
+rect_pivot_offset = Vector2( 0, 0 )
+rect_clip_content = false
+mouse_filter = 2
+mouse_default_cursor_shape = 0
+size_flags_horizontal = 1
+size_flags_vertical = 4
+theme = ExtResource( 4 )
+custom_colors/font_color = Color( 1, 1, 1, 1 )
+text = "Keybindings"
+align = 1
+valign = 1
+percent_visible = 1.0
+lines_skipped = 0
+max_lines_visible = -1
+_sections_unfolded = [ "Theme", "custom_colors", "custom_fonts" ]
+
+[node name="GridContainer" type="GridContainer" parent="CanvasLayer/Config/Keybindings" index="1"]
+
+editor/display_folded = true
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+margin_left = -226.0
+margin_top = -282.0
+margin_right = 225.0
+margin_bottom = 356.0
 rect_pivot_offset = Vector2( 0, 0 )
 rect_clip_content = false
 mouse_filter = 1
@@ -2006,7 +2538,7 @@ custom_constants/vseparation = 22
 custom_constants/hseparation = 20
 columns = 2
 
-[node name="UpLabel" type="Label" parent="CanvasLayer/Config/InputContainer" index="0"]
+[node name="UpLabel" type="Label" parent="CanvasLayer/Config/Keybindings/GridContainer" index="0"]
 
 anchor_left = 0.0
 anchor_top = 0.0
@@ -2026,7 +2558,7 @@ percent_visible = 1.0
 lines_skipped = 0
 max_lines_visible = -1
 
-[node name="UpButton" type="Button" parent="CanvasLayer/Config/InputContainer" index="1"]
+[node name="UpButton" type="Button" parent="CanvasLayer/Config/Keybindings/GridContainer" index="1"]
 
 anchor_left = 0.0
 anchor_top = 0.0
@@ -2052,7 +2584,7 @@ flat = false
 align = 1
 _sections_unfolded = [ "Margin", "Rect" ]
 
-[node name="DownLabel" type="Label" parent="CanvasLayer/Config/InputContainer" index="2"]
+[node name="DownLabel" type="Label" parent="CanvasLayer/Config/Keybindings/GridContainer" index="2"]
 
 anchor_left = 0.0
 anchor_top = 0.0
@@ -2072,7 +2604,7 @@ percent_visible = 1.0
 lines_skipped = 0
 max_lines_visible = -1
 
-[node name="DownButton" type="Button" parent="CanvasLayer/Config/InputContainer" index="3"]
+[node name="DownButton" type="Button" parent="CanvasLayer/Config/Keybindings/GridContainer" index="3"]
 
 anchor_left = 0.0
 anchor_top = 0.0
@@ -2099,7 +2631,7 @@ flat = false
 align = 1
 _sections_unfolded = [ "Margin" ]
 
-[node name="LeftLabel" type="Label" parent="CanvasLayer/Config/InputContainer" index="4"]
+[node name="LeftLabel" type="Label" parent="CanvasLayer/Config/Keybindings/GridContainer" index="4"]
 
 anchor_left = 0.0
 anchor_top = 0.0
@@ -2119,7 +2651,7 @@ percent_visible = 1.0
 lines_skipped = 0
 max_lines_visible = -1
 
-[node name="LeftButton" type="Button" parent="CanvasLayer/Config/InputContainer" index="5"]
+[node name="LeftButton" type="Button" parent="CanvasLayer/Config/Keybindings/GridContainer" index="5"]
 
 anchor_left = 0.0
 anchor_top = 0.0
@@ -2145,7 +2677,7 @@ text = "Left"
 flat = false
 align = 1
 
-[node name="RightLabel" type="Label" parent="CanvasLayer/Config/InputContainer" index="6"]
+[node name="RightLabel" type="Label" parent="CanvasLayer/Config/Keybindings/GridContainer" index="6"]
 
 anchor_left = 0.0
 anchor_top = 0.0
@@ -2165,7 +2697,7 @@ percent_visible = 1.0
 lines_skipped = 0
 max_lines_visible = -1
 
-[node name="RightButton" type="Button" parent="CanvasLayer/Config/InputContainer" index="7"]
+[node name="RightButton" type="Button" parent="CanvasLayer/Config/Keybindings/GridContainer" index="7"]
 
 anchor_left = 0.0
 anchor_top = 0.0
@@ -2192,7 +2724,7 @@ flat = false
 align = 1
 _sections_unfolded = [ "Rect" ]
 
-[node name="PrimaryAttackLabel" type="Label" parent="CanvasLayer/Config/InputContainer" index="8"]
+[node name="PrimaryAttackLabel" type="Label" parent="CanvasLayer/Config/Keybindings/GridContainer" index="8"]
 
 anchor_left = 0.0
 anchor_top = 0.0
@@ -2212,7 +2744,7 @@ percent_visible = 1.0
 lines_skipped = 0
 max_lines_visible = -1
 
-[node name="PrimaryAttackButton" type="Button" parent="CanvasLayer/Config/InputContainer" index="9"]
+[node name="PrimaryAttackButton" type="Button" parent="CanvasLayer/Config/Keybindings/GridContainer" index="9"]
 
 anchor_left = 0.0
 anchor_top = 0.0
@@ -2238,7 +2770,7 @@ text = "c"
 flat = false
 align = 1
 
-[node name="SecondaryAttackLabel" type="Label" parent="CanvasLayer/Config/InputContainer" index="10"]
+[node name="SecondaryAttackLabel" type="Label" parent="CanvasLayer/Config/Keybindings/GridContainer" index="10"]
 
 anchor_left = 0.0
 anchor_top = 0.0
@@ -2258,7 +2790,7 @@ percent_visible = 1.0
 lines_skipped = 0
 max_lines_visible = -1
 
-[node name="SecondaryAttackButton" type="Button" parent="CanvasLayer/Config/InputContainer" index="11"]
+[node name="SecondaryAttackButton" type="Button" parent="CanvasLayer/Config/Keybindings/GridContainer" index="11"]
 
 anchor_left = 0.0
 anchor_top = 0.0
@@ -2284,7 +2816,7 @@ text = "x"
 flat = false
 align = 1
 
-[node name="Skill1Label" type="Label" parent="CanvasLayer/Config/InputContainer" index="12"]
+[node name="Skill1Label" type="Label" parent="CanvasLayer/Config/Keybindings/GridContainer" index="12"]
 
 anchor_left = 0.0
 anchor_top = 0.0
@@ -2304,7 +2836,7 @@ percent_visible = 1.0
 lines_skipped = 0
 max_lines_visible = -1
 
-[node name="Skill1Button" type="Button" parent="CanvasLayer/Config/InputContainer" index="13"]
+[node name="Skill1Button" type="Button" parent="CanvasLayer/Config/Keybindings/GridContainer" index="13"]
 
 anchor_left = 0.0
 anchor_top = 0.0
@@ -2330,7 +2862,7 @@ text = "a"
 flat = false
 align = 1
 
-[node name="Skill2Label" type="Label" parent="CanvasLayer/Config/InputContainer" index="14"]
+[node name="Skill2Label" type="Label" parent="CanvasLayer/Config/Keybindings/GridContainer" index="14"]
 
 anchor_left = 0.0
 anchor_top = 0.0
@@ -2350,7 +2882,7 @@ percent_visible = 1.0
 lines_skipped = 0
 max_lines_visible = -1
 
-[node name="Skill2Button" type="Button" parent="CanvasLayer/Config/InputContainer" index="15"]
+[node name="Skill2Button" type="Button" parent="CanvasLayer/Config/Keybindings/GridContainer" index="15"]
 
 anchor_left = 0.0
 anchor_top = 0.0
@@ -2376,7 +2908,7 @@ text = "s"
 flat = false
 align = 1
 
-[node name="Skill3Label" type="Label" parent="CanvasLayer/Config/InputContainer" index="16"]
+[node name="Skill3Label" type="Label" parent="CanvasLayer/Config/Keybindings/GridContainer" index="16"]
 
 anchor_left = 0.0
 anchor_top = 0.0
@@ -2396,7 +2928,7 @@ percent_visible = 1.0
 lines_skipped = 0
 max_lines_visible = -1
 
-[node name="Skill3Button" type="Button" parent="CanvasLayer/Config/InputContainer" index="17"]
+[node name="Skill3Button" type="Button" parent="CanvasLayer/Config/Keybindings/GridContainer" index="17"]
 
 anchor_left = 0.0
 anchor_top = 0.0
@@ -2422,7 +2954,7 @@ text = "d"
 flat = false
 align = 1
 
-[node name="Skill4Label" type="Label" parent="CanvasLayer/Config/InputContainer" index="18"]
+[node name="Skill4Label" type="Label" parent="CanvasLayer/Config/Keybindings/GridContainer" index="18"]
 
 anchor_left = 0.0
 anchor_top = 0.0
@@ -2442,7 +2974,7 @@ percent_visible = 1.0
 lines_skipped = 0
 max_lines_visible = -1
 
-[node name="Skill4Button" type="Button" parent="CanvasLayer/Config/InputContainer" index="19"]
+[node name="Skill4Button" type="Button" parent="CanvasLayer/Config/Keybindings/GridContainer" index="19"]
 
 anchor_left = 0.0
 anchor_top = 0.0
@@ -2468,7 +3000,7 @@ text = "c"
 flat = false
 align = 1
 
-[node name="LockOnLabel" type="Label" parent="CanvasLayer/Config/InputContainer" index="20"]
+[node name="LockOnLabel" type="Label" parent="CanvasLayer/Config/Keybindings/GridContainer" index="20"]
 
 anchor_left = 0.0
 anchor_top = 0.0
@@ -2488,7 +3020,7 @@ percent_visible = 1.0
 lines_skipped = 0
 max_lines_visible = -1
 
-[node name="LockOnButton" type="Button" parent="CanvasLayer/Config/InputContainer" index="21"]
+[node name="LockOnButton" type="Button" parent="CanvasLayer/Config/Keybindings/GridContainer" index="21"]
 
 anchor_left = 0.0
 anchor_top = 0.0
@@ -2515,7 +3047,7 @@ flat = false
 align = 1
 _sections_unfolded = [ "Margin" ]
 
-[node name="DashLabel" type="Label" parent="CanvasLayer/Config/InputContainer" index="22"]
+[node name="DashLabel" type="Label" parent="CanvasLayer/Config/Keybindings/GridContainer" index="22"]
 
 anchor_left = 0.0
 anchor_top = 0.0
@@ -2535,7 +3067,7 @@ percent_visible = 1.0
 lines_skipped = 0
 max_lines_visible = -1
 
-[node name="DashButton" type="Button" parent="CanvasLayer/Config/InputContainer" index="23"]
+[node name="DashButton" type="Button" parent="CanvasLayer/Config/Keybindings/GridContainer" index="23"]
 
 anchor_left = 0.0
 anchor_top = 0.0
@@ -2562,334 +3094,7 @@ flat = false
 align = 1
 _sections_unfolded = [ "Rect" ]
 
-[node name="SoundPanel" type="VBoxContainer" parent="CanvasLayer/Config" index="1"]
-
-editor/display_folded = true
-self_modulate = Color( 1, 1, 1, 0 )
-anchor_left = 0.0
-anchor_top = 0.0
-anchor_right = 0.0
-anchor_bottom = 0.0
-margin_left = 585.0
-margin_top = 165.0
-margin_right = 1135.0
-margin_bottom = 285.0
-rect_pivot_offset = Vector2( 0, 0 )
-rect_clip_content = false
-mouse_filter = 0
-mouse_default_cursor_shape = 0
-size_flags_horizontal = 1
-size_flags_vertical = 1
-theme = ExtResource( 4 )
-alignment = 0
-_sections_unfolded = [ "Rect", "Theme", "Visibility" ]
-
-[node name="SFXLabel" type="Label" parent="CanvasLayer/Config/SoundPanel" index="0"]
-
-anchor_left = 0.0
-anchor_top = 0.0
-anchor_right = 0.0
-anchor_bottom = 0.0
-margin_right = 550.0
-margin_bottom = 27.0
-rect_pivot_offset = Vector2( 0, 0 )
-rect_clip_content = false
-mouse_filter = 2
-mouse_default_cursor_shape = 0
-size_flags_horizontal = 1
-size_flags_vertical = 4
-text = "Sound Effect Volume"
-percent_visible = 1.0
-lines_skipped = 0
-max_lines_visible = -1
-
-[node name="SFXBar" type="HBoxContainer" parent="CanvasLayer/Config/SoundPanel" index="1"]
-
-anchor_left = 0.0
-anchor_top = 0.0
-anchor_right = 0.0
-anchor_bottom = 0.0
-margin_top = 31.0
-margin_right = 550.0
-margin_bottom = 58.0
-rect_min_size = Vector2( 0, 25 )
-rect_pivot_offset = Vector2( 0, 0 )
-rect_clip_content = false
-mouse_filter = 1
-mouse_default_cursor_shape = 0
-size_flags_horizontal = 1
-size_flags_vertical = 1
-alignment = 0
-_sections_unfolded = [ "Rect" ]
-
-[node name="MinusButton" type="TextureButton" parent="CanvasLayer/Config/SoundPanel/SFXBar" index="0"]
-
-anchor_left = 0.0
-anchor_top = 0.0
-anchor_right = 0.0
-anchor_bottom = 0.0
-margin_right = 25.0
-margin_bottom = 27.0
-rect_min_size = Vector2( 25, 25 )
-rect_pivot_offset = Vector2( 0, 0 )
-rect_clip_content = false
-focus_mode = 2
-mouse_filter = 0
-mouse_default_cursor_shape = 0
-size_flags_horizontal = 1
-size_flags_vertical = 1
-toggle_mode = false
-enabled_focus_mode = 2
-shortcut = null
-group = null
-texture_normal = ExtResource( 10 )
-expand = true
-_sections_unfolded = [ "Rect", "Textures" ]
-
-[node name="VolumeBar" type="TextureProgress" parent="CanvasLayer/Config/SoundPanel/SFXBar" index="1"]
-
-anchor_left = 0.0
-anchor_top = 0.0
-anchor_right = 0.0
-anchor_bottom = 0.0
-margin_left = 29.0
-margin_right = 329.0
-margin_bottom = 27.0
-rect_min_size = Vector2( 300, 25 )
-rect_pivot_offset = Vector2( 0, 0 )
-rect_clip_content = false
-mouse_filter = 1
-mouse_default_cursor_shape = 0
-size_flags_horizontal = 1
-size_flags_vertical = 1
-min_value = 0.0
-max_value = 100.0
-step = 1.0
-page = 0.0
-value = 50.0
-exp_edit = false
-rounded = false
-texture_under = ExtResource( 11 )
-texture_over = null
-texture_progress = ExtResource( 12 )
-radial_fill_degrees = 360.0
-radial_center_offset = Vector2( 0, 0 )
-nine_patch_stretch = true
-_sections_unfolded = [ "Rect", "Textures" ]
-
-[node name="PlusButton" type="TextureButton" parent="CanvasLayer/Config/SoundPanel/SFXBar" index="2"]
-
-anchor_left = 0.0
-anchor_top = 0.0
-anchor_right = 0.0
-anchor_bottom = 0.0
-margin_left = 333.0
-margin_right = 358.0
-margin_bottom = 27.0
-rect_min_size = Vector2( 25, 25 )
-rect_pivot_offset = Vector2( 0, 0 )
-rect_clip_content = false
-focus_mode = 2
-mouse_filter = 0
-mouse_default_cursor_shape = 0
-size_flags_horizontal = 1
-size_flags_vertical = 1
-toggle_mode = false
-enabled_focus_mode = 2
-shortcut = null
-group = null
-texture_normal = ExtResource( 10 )
-expand = true
-_sections_unfolded = [ "Rect", "Textures" ]
-
-[node name="PercentLabel" type="Label" parent="CanvasLayer/Config/SoundPanel/SFXBar" index="3"]
-
-anchor_left = 0.0
-anchor_top = 0.0
-anchor_right = 0.0
-anchor_bottom = 0.0
-margin_left = 362.0
-margin_right = 430.0
-margin_bottom = 27.0
-rect_pivot_offset = Vector2( 0, 0 )
-rect_clip_content = false
-mouse_filter = 2
-mouse_default_cursor_shape = 0
-size_flags_horizontal = 1
-size_flags_vertical = 4
-text = "100%"
-percent_visible = 1.0
-lines_skipped = 0
-max_lines_visible = -1
-
-[node name="MusicLabel" type="Label" parent="CanvasLayer/Config/SoundPanel" index="2"]
-
-anchor_left = 0.0
-anchor_top = 0.0
-anchor_right = 0.0
-anchor_bottom = 0.0
-margin_top = 62.0
-margin_right = 550.0
-margin_bottom = 89.0
-rect_pivot_offset = Vector2( 0, 0 )
-rect_clip_content = false
-mouse_filter = 2
-mouse_default_cursor_shape = 0
-size_flags_horizontal = 1
-size_flags_vertical = 4
-text = "Music Volume"
-percent_visible = 1.0
-lines_skipped = 0
-max_lines_visible = -1
-
-[node name="MusicBar" type="HBoxContainer" parent="CanvasLayer/Config/SoundPanel" index="3"]
-
-anchor_left = 0.0
-anchor_top = 0.0
-anchor_right = 0.0
-anchor_bottom = 0.0
-margin_top = 93.0
-margin_right = 550.0
-margin_bottom = 120.0
-rect_min_size = Vector2( 0, 25 )
-rect_pivot_offset = Vector2( 0, 0 )
-rect_clip_content = false
-mouse_filter = 1
-mouse_default_cursor_shape = 0
-size_flags_horizontal = 1
-size_flags_vertical = 1
-alignment = 0
-_sections_unfolded = [ "Rect" ]
-
-[node name="MinusButton" type="TextureButton" parent="CanvasLayer/Config/SoundPanel/MusicBar" index="0"]
-
-anchor_left = 0.0
-anchor_top = 0.0
-anchor_right = 0.0
-anchor_bottom = 0.0
-margin_right = 25.0
-margin_bottom = 27.0
-rect_min_size = Vector2( 25, 25 )
-rect_pivot_offset = Vector2( 0, 0 )
-rect_clip_content = false
-focus_mode = 2
-mouse_filter = 0
-mouse_default_cursor_shape = 0
-size_flags_horizontal = 1
-size_flags_vertical = 1
-toggle_mode = false
-enabled_focus_mode = 2
-shortcut = null
-group = null
-texture_normal = ExtResource( 10 )
-expand = true
-_sections_unfolded = [ "Rect", "Textures" ]
-
-[node name="VolumeBar" type="TextureProgress" parent="CanvasLayer/Config/SoundPanel/MusicBar" index="1"]
-
-anchor_left = 0.0
-anchor_top = 0.0
-anchor_right = 0.0
-anchor_bottom = 0.0
-margin_left = 29.0
-margin_right = 329.0
-margin_bottom = 27.0
-rect_min_size = Vector2( 300, 25 )
-rect_pivot_offset = Vector2( 0, 0 )
-rect_clip_content = false
-mouse_filter = 1
-mouse_default_cursor_shape = 0
-size_flags_horizontal = 1
-size_flags_vertical = 1
-min_value = 0.0
-max_value = 100.0
-step = 1.0
-page = 0.0
-value = 50.0
-exp_edit = false
-rounded = false
-texture_under = ExtResource( 11 )
-texture_over = null
-texture_progress = ExtResource( 12 )
-radial_fill_degrees = 360.0
-radial_center_offset = Vector2( 0, 0 )
-nine_patch_stretch = true
-_sections_unfolded = [ "Rect", "Textures" ]
-
-[node name="PlusButton" type="TextureButton" parent="CanvasLayer/Config/SoundPanel/MusicBar" index="2"]
-
-anchor_left = 0.0
-anchor_top = 0.0
-anchor_right = 0.0
-anchor_bottom = 0.0
-margin_left = 333.0
-margin_right = 358.0
-margin_bottom = 27.0
-rect_min_size = Vector2( 25, 25 )
-rect_pivot_offset = Vector2( 0, 0 )
-rect_clip_content = false
-focus_mode = 2
-mouse_filter = 0
-mouse_default_cursor_shape = 0
-size_flags_horizontal = 1
-size_flags_vertical = 1
-toggle_mode = false
-enabled_focus_mode = 2
-shortcut = null
-group = null
-texture_normal = ExtResource( 10 )
-expand = true
-_sections_unfolded = [ "Rect", "Textures" ]
-
-[node name="PercentLabel" type="Label" parent="CanvasLayer/Config/SoundPanel/MusicBar" index="3"]
-
-anchor_left = 0.0
-anchor_top = 0.0
-anchor_right = 0.0
-anchor_bottom = 0.0
-margin_left = 362.0
-margin_right = 430.0
-margin_bottom = 27.0
-rect_pivot_offset = Vector2( 0, 0 )
-rect_clip_content = false
-mouse_filter = 2
-mouse_default_cursor_shape = 0
-size_flags_horizontal = 1
-size_flags_vertical = 4
-text = "100%"
-percent_visible = 1.0
-lines_skipped = 0
-max_lines_visible = -1
-
-[node name="ReturnButton" type="Button" parent="CanvasLayer/Config" index="2"]
-
-anchor_left = 0.0
-anchor_top = 0.0
-anchor_right = 0.0
-anchor_bottom = 0.0
-margin_left = 929.0
-margin_top = 557.0
-margin_right = 1430.0
-margin_bottom = 652.0
-rect_scale = Vector2( 0.6, 0.6 )
-rect_pivot_offset = Vector2( 0, 0 )
-rect_clip_content = false
-focus_mode = 2
-mouse_filter = 0
-mouse_default_cursor_shape = 0
-size_flags_horizontal = 1
-size_flags_vertical = 1
-theme = ExtResource( 4 )
-toggle_mode = false
-enabled_focus_mode = 2
-shortcut = null
-group = null
-text = "Return"
-flat = false
-align = 1
-_sections_unfolded = [ "Rect", "Textures", "Theme", "custom_fonts" ]
-
-[node name="InputChange" type="Container" parent="CanvasLayer/Config" index="3"]
+[node name="InputChange" type="Container" parent="CanvasLayer/Config/Keybindings" index="2"]
 
 editor/display_folded = true
 visible = false
@@ -2897,10 +3102,10 @@ anchor_left = 0.5
 anchor_top = 0.5
 anchor_right = 0.5
 anchor_bottom = 0.5
-margin_left = 449.0
-margin_top = 233.0
-margin_right = 449.0
-margin_bottom = 233.0
+margin_left = -473.0
+margin_top = -463.0
+margin_right = 473.0
+margin_bottom = 463.0
 rect_pivot_offset = Vector2( 0, 0 )
 rect_clip_content = false
 mouse_filter = 0
@@ -2910,16 +3115,16 @@ size_flags_vertical = 1
 theme = ExtResource( 4 )
 _sections_unfolded = [ "Rect", "Theme" ]
 
-[node name="Panel" type="Panel" parent="CanvasLayer/Config/InputChange" index="0"]
+[node name="Panel" type="Panel" parent="CanvasLayer/Config/Keybindings/InputChange" index="0"]
 
-anchor_left = 0.0
-anchor_top = 0.0
-anchor_right = 0.0
-anchor_bottom = 0.0
-margin_left = -23.0
-margin_top = -21.0
-margin_right = 628.0
-margin_bottom = 244.0
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+margin_left = -310.0
+margin_top = -249.0
+margin_right = 336.0
+margin_bottom = 71.0
 rect_pivot_offset = Vector2( 0, 0 )
 rect_clip_content = false
 mouse_filter = 0
@@ -2928,12 +3133,16 @@ size_flags_horizontal = 1
 size_flags_vertical = 1
 _sections_unfolded = [ "Rect", "Theme" ]
 
-[node name="VBoxContainer" type="VBoxContainer" parent="CanvasLayer/Config/InputChange" index="1"]
+[node name="VBoxContainer" type="VBoxContainer" parent="CanvasLayer/Config/Keybindings/InputChange" index="1"]
 
 anchor_left = 0.0
 anchor_top = 0.0
 anchor_right = 0.0
 anchor_bottom = 0.0
+margin_left = 191.0
+margin_top = 268.0
+margin_right = 791.0
+margin_bottom = 486.0
 rect_pivot_offset = Vector2( 0, 0 )
 rect_clip_content = false
 mouse_filter = 1
@@ -2944,7 +3153,7 @@ custom_constants/separation = 10
 alignment = 1
 _sections_unfolded = [ "Margin", "Theme", "custom_constants" ]
 
-[node name="TitleLabel" type="Label" parent="CanvasLayer/Config/InputChange/VBoxContainer" index="0"]
+[node name="TitleLabel" type="Label" parent="CanvasLayer/Config/Keybindings/InputChange/VBoxContainer" index="0"]
 
 anchor_left = 0.0
 anchor_top = 0.0
@@ -2965,7 +3174,7 @@ percent_visible = 1.0
 lines_skipped = 0
 max_lines_visible = -1
 
-[node name="InputToChange" type="Label" parent="CanvasLayer/Config/InputChange/VBoxContainer" index="1"]
+[node name="InputToChange" type="Label" parent="CanvasLayer/Config/Keybindings/InputChange/VBoxContainer" index="1"]
 
 anchor_left = 0.0
 anchor_top = 0.0
@@ -2987,7 +3196,7 @@ percent_visible = 1.0
 lines_skipped = 0
 max_lines_visible = -1
 
-[node name="NewInputLabel" type="Label" parent="CanvasLayer/Config/InputChange/VBoxContainer" index="2"]
+[node name="NewInputLabel" type="Label" parent="CanvasLayer/Config/Keybindings/InputChange/VBoxContainer" index="2"]
 
 anchor_left = 0.0
 anchor_top = 0.0
@@ -3009,7 +3218,7 @@ percent_visible = 1.0
 lines_skipped = 0
 max_lines_visible = -1
 
-[node name="NewInput" type="Label" parent="CanvasLayer/Config/InputChange/VBoxContainer" index="3"]
+[node name="NewInput" type="Label" parent="CanvasLayer/Config/Keybindings/InputChange/VBoxContainer" index="3"]
 
 anchor_left = 0.0
 anchor_top = 0.0
@@ -3031,7 +3240,7 @@ percent_visible = 1.0
 lines_skipped = 0
 max_lines_visible = -1
 
-[node name="InputStatusLabel" type="Label" parent="CanvasLayer/Config/InputChange/VBoxContainer" index="4"]
+[node name="InputStatusLabel" type="Label" parent="CanvasLayer/Config/Keybindings/InputChange/VBoxContainer" index="4"]
 
 anchor_left = 0.0
 anchor_top = 0.0
@@ -3055,7 +3264,7 @@ lines_skipped = 0
 max_lines_visible = -1
 _sections_unfolded = [ "Margin", "Rect" ]
 
-[node name="Buttons" type="HBoxContainer" parent="CanvasLayer/Config/InputChange/VBoxContainer" index="5"]
+[node name="Buttons" type="HBoxContainer" parent="CanvasLayer/Config/Keybindings/InputChange/VBoxContainer" index="5"]
 
 editor/display_folded = true
 anchor_left = 0.0
@@ -3075,7 +3284,7 @@ custom_constants/separation = 325
 alignment = 0
 _sections_unfolded = [ "Grow Direction", "Margin", "Rect", "Theme", "custom_constants" ]
 
-[node name="AcceptButton" type="Button" parent="CanvasLayer/Config/InputChange/VBoxContainer/Buttons" index="0"]
+[node name="AcceptButton" type="Button" parent="CanvasLayer/Config/Keybindings/InputChange/VBoxContainer/Buttons" index="0"]
 
 anchor_left = 0.0
 anchor_top = 0.0
@@ -3098,7 +3307,7 @@ text = "Accept"
 flat = false
 align = 1
 
-[node name="CancelButton" type="Button" parent="CanvasLayer/Config/InputChange/VBoxContainer/Buttons" index="1"]
+[node name="CancelButton" type="Button" parent="CanvasLayer/Config/Keybindings/InputChange/VBoxContainer/Buttons" index="1"]
 
 anchor_left = 0.0
 anchor_top = 0.0
@@ -3122,6 +3331,188 @@ text = "cancel"
 flat = false
 align = 1
 
+[node name="ButtonPress" type="AudioStreamPlayer" parent="CanvasLayer/Config/Keybindings" index="3"]
+
+stream = ExtResource( 15 )
+volume_db = -4.0
+autoplay = false
+mix_target = 0
+bus = "SFX"
+
+[node name="ReturnButton" type="Button" parent="CanvasLayer/Config/Keybindings" index="4"]
+
+anchor_left = 0.0
+anchor_top = 0.0
+anchor_right = 0.0
+anchor_bottom = 0.0
+margin_left = 18.0
+margin_top = 837.0
+margin_right = 295.0
+margin_bottom = 903.0
+rect_min_size = Vector2( 250, 60 )
+rect_pivot_offset = Vector2( 0, 0 )
+rect_clip_content = false
+focus_mode = 2
+mouse_filter = 0
+mouse_default_cursor_shape = 0
+size_flags_horizontal = 1
+size_flags_vertical = 1
+theme = ExtResource( 4 )
+toggle_mode = false
+enabled_focus_mode = 2
+shortcut = null
+group = null
+text = "Return"
+flat = false
+align = 1
+_sections_unfolded = [ "Rect", "Textures", "Theme", "custom_fonts" ]
+
+[node name="ConfigButtons" type="Container" parent="CanvasLayer/Config" index="3"]
+
+editor/display_folded = true
+anchor_left = 0.0
+anchor_top = 0.0
+anchor_right = 0.0
+anchor_bottom = 0.0
+margin_left = 7.0
+margin_top = 7.0
+margin_right = 953.0
+margin_bottom = 933.0
+rect_pivot_offset = Vector2( 0, 0 )
+rect_clip_content = false
+mouse_filter = 0
+mouse_default_cursor_shape = 0
+size_flags_horizontal = 1
+size_flags_vertical = 1
+
+[node name="PanelButtons" type="HBoxContainer" parent="CanvasLayer/Config/ConfigButtons" index="0"]
+
+editor/display_folded = true
+anchor_left = 0.5
+anchor_top = 0.0
+anchor_right = 0.5
+anchor_bottom = 0.0
+margin_left = -470.0
+margin_right = 470.0
+margin_bottom = 60.0
+rect_pivot_offset = Vector2( 0, 0 )
+rect_clip_content = false
+mouse_filter = 1
+mouse_default_cursor_shape = 0
+size_flags_horizontal = 1
+size_flags_vertical = 1
+custom_constants/separation = 90
+alignment = 0
+_sections_unfolded = [ "Rect", "custom_constants" ]
+
+[node name="DisplayButton" type="Button" parent="CanvasLayer/Config/ConfigButtons/PanelButtons" index="0"]
+
+anchor_left = 0.0
+anchor_top = 0.0
+anchor_right = 0.0
+anchor_bottom = 0.0
+margin_right = 250.0
+margin_bottom = 60.0
+rect_min_size = Vector2( 250, 60 )
+rect_pivot_offset = Vector2( 0, 0 )
+rect_clip_content = false
+focus_mode = 2
+mouse_filter = 0
+mouse_default_cursor_shape = 0
+size_flags_horizontal = 1
+size_flags_vertical = 1
+theme = ExtResource( 4 )
+toggle_mode = false
+enabled_focus_mode = 2
+shortcut = null
+group = null
+text = "Display"
+flat = false
+align = 1
+_sections_unfolded = [ "Rect", "Textures", "Theme", "custom_fonts" ]
+
+[node name="AudioButton" type="Button" parent="CanvasLayer/Config/ConfigButtons/PanelButtons" index="1"]
+
+anchor_left = 0.0
+anchor_top = 0.0
+anchor_right = 0.0
+anchor_bottom = 0.0
+margin_left = 340.0
+margin_right = 590.0
+margin_bottom = 60.0
+rect_min_size = Vector2( 250, 60 )
+rect_pivot_offset = Vector2( 0, 0 )
+rect_clip_content = false
+focus_mode = 2
+mouse_filter = 0
+mouse_default_cursor_shape = 0
+size_flags_horizontal = 1
+size_flags_vertical = 1
+theme = ExtResource( 4 )
+toggle_mode = false
+enabled_focus_mode = 2
+shortcut = null
+group = null
+text = "Audio"
+flat = false
+align = 1
+_sections_unfolded = [ "Rect", "Textures", "Theme", "custom_fonts" ]
+
+[node name="KeybindingsButton" type="Button" parent="CanvasLayer/Config/ConfigButtons/PanelButtons" index="2"]
+
+anchor_left = 0.0
+anchor_top = 0.0
+anchor_right = 0.0
+anchor_bottom = 0.0
+margin_left = 680.0
+margin_right = 930.0
+margin_bottom = 60.0
+rect_min_size = Vector2( 250, 60 )
+rect_pivot_offset = Vector2( 0, 0 )
+rect_clip_content = false
+focus_mode = 2
+mouse_filter = 0
+mouse_default_cursor_shape = 0
+size_flags_horizontal = 1
+size_flags_vertical = 1
+theme = ExtResource( 4 )
+toggle_mode = false
+enabled_focus_mode = 2
+shortcut = null
+group = null
+text = "Keybindings"
+flat = false
+align = 1
+_sections_unfolded = [ "Rect", "Textures", "Theme", "custom_fonts" ]
+
+[node name="ReturnButton" type="Button" parent="CanvasLayer/Config/ConfigButtons" index="1"]
+
+anchor_left = 0.0
+anchor_top = 1.0
+anchor_right = 0.0
+anchor_bottom = 1.0
+margin_left = 11.0
+margin_top = -75.0
+margin_right = 261.0
+margin_bottom = -15.0
+rect_min_size = Vector2( 250, 60 )
+rect_pivot_offset = Vector2( 0, 0 )
+rect_clip_content = false
+focus_mode = 2
+mouse_filter = 0
+mouse_default_cursor_shape = 0
+size_flags_horizontal = 1
+size_flags_vertical = 1
+theme = ExtResource( 4 )
+toggle_mode = false
+enabled_focus_mode = 2
+shortcut = null
+group = null
+text = "Return"
+flat = false
+align = 1
+_sections_unfolded = [ "Rect", "Textures", "Theme", "custom_fonts" ]
+
 [node name="StartMenu" type="Container" parent="CanvasLayer" index="6"]
 
 editor/display_folded = true
@@ -3139,7 +3530,7 @@ mouse_filter = 0
 mouse_default_cursor_shape = 0
 size_flags_horizontal = 1
 size_flags_vertical = 1
-script = ExtResource( 13 )
+script = ExtResource( 17 )
 _sections_unfolded = [ "Focus", "Grow Direction", "Rect", "Size Flags", "Visibility" ]
 
 [node name="Buttons" type="VBoxContainer" parent="CanvasLayer/StartMenu" index="0"]
@@ -3283,7 +3674,7 @@ mouse_default_cursor_shape = 0
 size_flags_horizontal = 1
 size_flags_vertical = 1
 theme = ExtResource( 4 )
-script = ExtResource( 14 )
+script = ExtResource( 18 )
 _sections_unfolded = [ "Theme" ]
 
 [node name="Label" type="Label" parent="CanvasLayer/ExitPanel" index="0"]
@@ -3361,7 +3752,7 @@ align = 1
 
 [node name="Music" type="AudioStreamPlayer" parent="." index="1"]
 
-stream = ExtResource( 15 )
+stream = ExtResource( 19 )
 volume_db = 0.0
 autoplay = true
 mix_target = 0
@@ -3369,7 +3760,7 @@ bus = "Music"
 
 [node name="ButtonPress" type="AudioStreamPlayer" parent="." index="2"]
 
-stream = ExtResource( 16 )
+stream = ExtResource( 15 )
 volume_db = -4.0
 autoplay = false
 mix_target = 0

@@ -12,13 +12,14 @@ var level_names = ["Wonderland", "In the Sky"]
 var confirm_selected = true
 
 func _ready():
+	set_process_input(false)
+	
 	$SelectButton.connect("button_down", self, "_select_level")
 	$ReturnButton.connect("button_down", self, "_return_to_start_menu")
 
 
 func setup(_main_menu, _pointer_scene):
 	main_menu = _main_menu
-	set_process_input(false)
 	
 	pointer_scene = _pointer_scene
 	pointer = pointer_scene.instance()

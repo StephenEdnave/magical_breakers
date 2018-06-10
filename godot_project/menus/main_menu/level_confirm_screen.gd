@@ -14,13 +14,14 @@ var level_paths = {
 
 
 func _ready():
+	set_process_input(false)
+	
 	$SelectButton.connect("button_down", self, "_confirm")
 	$ReturnButton.connect("button_down", self, "_return_to_level_select")
 
 
 func setup(_main_menu, _pointer_scene):
 	main_menu = _main_menu
-	set_process_input(false)
 	
 	pointer_scene = _pointer_scene
 	pointer = pointer_scene.instance()
