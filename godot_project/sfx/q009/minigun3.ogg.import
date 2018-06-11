@@ -1,0 +1,18 @@
+[remap]
+
+importer="ogg_vorbis"
+type="AudioStreamOGGVorbis"
+path="res://.import/minigun3.ogg-d2a267eb4320f8c020a25643c2087d54.oggstr"
+
+[deps]
+
+source_file="res://sfx/q009/minigun3.ogg"
+source_md5="8a0c108323f8afdccec728d23384be20"
+
+dest_files=[ "res://.import/minigun3.ogg-d2a267eb4320f8c020a25643c2087d54.oggstr" ]
+dest_md5="fad1dcd6f4eed054984988bf182fa677"
+
+[params]
+
+loop=false
+loop_offset=0

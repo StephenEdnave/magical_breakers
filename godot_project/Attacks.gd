@@ -90,7 +90,7 @@ var attacks = {
 		hit_pause = 0.01 },
 	"star_b_drone_laser": {
 		damage = 10 , # DPS tick every 0.1 seconds
-		mana_gain = 5,
+		mana_gain = 2,
 		effect = GlobalConstants.HEALTH_EFFECT.NONE,
 		damage_type = GlobalConstants.HEALTH_DAMAGE_TYPE.NONE,
 		mana_effect = GlobalConstants.MANA_EFFECT.NONE,
@@ -162,4 +162,18 @@ var attacks = {
 		knockback_force = 50 ,
 		knockback_duration = 0.5,
 		hit_pause = 0.02 },
+	
+	
+	# Missile Plushy
+	"missile_plushy_gun": {
+		animation = "attack",
+		host_animation = "walk" },
+	"missile_plushy_projectile": {
+		damage = 100 , 
+		effect = GlobalConstants.HEALTH_EFFECT.NONE,
+		damage_type = GlobalConstants.HEALTH_DAMAGE_TYPE.NONE,
+		mana_effect = GlobalConstants.MANA_EFFECT.NONE,
+		knockback_force = 100 ,
+		knockback_duration = 0.5,
+		hit_pause = 0.03 },
 }

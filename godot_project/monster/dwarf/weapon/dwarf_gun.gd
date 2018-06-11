@@ -3,18 +3,14 @@ extends "res://characters/weapon/weapon.gd"
 
 const Projectile = preload("DwarfProjectile.tscn")
 
-var max_combo_count = 10
+var max_combo_count = 6
 var weapon_combo = ["dwarf_gun",
 	"dwarf_gun",
 	"dwarf_gun",
 	"dwarf_gun",
 	"dwarf_gun",
-	"dwarf_gun",
-	"dwarf_gun",
-	"dwarf_gun",
-	"dwarf_gun",
-	"dwarf_gun", ]
-var weapon_costs = [0, 0, 0, 0, 0, 0, 0, 0, 0, 0]
+	"dwarf_gun" ]
+var weapon_costs = [0, 0, 0, 0, 0, 0]
 
 
 var max_angle = 10

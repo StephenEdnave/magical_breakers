@@ -1,9 +1,5 @@
 extends "res://objects/projectiles/projectile.gd"
 
-const INITIAL_SPEED = 1600
-var velocity = Vector2()
-var speed = 800
-var acceleration = -100
 var exploded = false
 
 func _ready():
@@ -18,11 +14,6 @@ func _physics_process(delta):
 	if velocity.length() < speed:
 		velocity = velocity.normalized() * speed
 	position += velocity * delta
-
-
-func set_direction(_direction):
-	direction = _direction
-	velocity = direction * INITIAL_SPEED
 
 
 func _on_body_entered(body):

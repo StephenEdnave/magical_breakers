@@ -1,0 +1,18 @@
+[remap]
+
+importer="ogg_vorbis"
+type="AudioStreamOGGVorbis"
+path="res://.import/shotgun3.ogg-565d6f79c04e2b0bbdbdbef8c3d049b6.oggstr"
+
+[deps]
+
+source_file="res://sfx/q009/shotgun3.ogg"
+source_md5="a124e975b99ba4127371cffe6448bd6e"
+
+dest_files=[ "res://.import/shotgun3.ogg-565d6f79c04e2b0bbdbdbef8c3d049b6.oggstr" ]
+dest_md5="341833d452a23b768566738deb6b33b4"
+
+[params]
+
+loop=false
+loop_offset=0

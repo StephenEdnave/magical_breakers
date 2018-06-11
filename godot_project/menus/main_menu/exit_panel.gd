@@ -30,6 +30,7 @@ func enter():
 	
 	pointer.visible = true
 	pointer.global_position = $NoButton.rect_global_position + POINTER_OFFSET
+	main_menu.get_node("AnimationPlayer").play("exit")
 
 
 func _input(event):

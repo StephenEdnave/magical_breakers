@@ -2,8 +2,6 @@
 
 [ext_resource path="res://characters/player/star_breaker/weapon/sticky_bomb_launcher.gd" type="Script" id=1]
 
-
-
 [sub_resource type="Animation" id=1]
 
 resource_name = "SETUP"
@@ -128,10 +126,10 @@ angular_damp = 1.0
 audio_bus_override = false
 audio_bus_name = "Master"
 script = ExtResource( 1 )
+cooldown = 0.01
 
 [node name="Pivot" type="Position2D" parent="." index="0"]
 
-editor/display_folded = true
 _sections_unfolded = [ "Transform" ]
 
 [node name="Spawn1" type="Position2D" parent="Pivot" index="0"]
@@ -144,10 +142,6 @@ _sections_unfolded = [ "Transform" ]
 
 position = Vector2( 0, 20 )
 rotation = 1.0472
-_sections_unfolded = [ "Transform" ]
-
-[node name="Spawn3" type="Position2D" parent="Pivot" index="2"]
-
 _sections_unfolded = [ "Transform" ]
 
 [node name="AnimationPlayer" type="AnimationPlayer" parent="." index="1"]

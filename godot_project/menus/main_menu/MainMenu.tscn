@@ -1,4 +1,4 @@
-[gd_scene load_steps=33 format=2]
+[gd_scene load_steps=34 format=2]
 
 [ext_resource path="res://menus/main_menu/main_menu.gd" type="Script" id=1]
 [ext_resource path="res://menus/main_menu/skybox.PNG" type="Texture" id=2]
@@ -487,6 +487,97 @@ tracks/5/keys = {
 "values": [ Vector2( 2100, 2633 ), Vector2( 2100, 46 ) ]
 }
 
+[sub_resource type="Animation" id=14]
+
+resource_name = "exit"
+length = 5.0
+loop = true
+step = 0.1
+tracks/0/type = "value"
+tracks/0/path = NodePath("CanvasLayer/StartMenu:modulate")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 0,
+"values": [ Color( 1, 1, 1, 1 ) ]
+}
+tracks/1/type = "value"
+tracks/1/path = NodePath("CanvasLayer/StartMenu:visible")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 1,
+"values": [ false ]
+}
+tracks/2/type = "value"
+tracks/2/path = NodePath("CanvasLayer/Background/BlueArrows:rect_position")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/keys = {
+"times": PoolRealArray( 0, 2, 5 ),
+"transitions": PoolRealArray( 0.25, 1, 1 ),
+"update": 0,
+"values": [ Vector2( -1240, 350 ), Vector2( -1255, 350 ), Vector2( -1240, 350 ) ]
+}
+tracks/3/type = "value"
+tracks/3/path = NodePath("CanvasLayer/Background/Pink Arrows:rect_position")
+tracks/3/interp = 1
+tracks/3/loop_wrap = true
+tracks/3/imported = false
+tracks/3/enabled = true
+tracks/3/keys = {
+"times": PoolRealArray( 0, 2.6, 5 ),
+"transitions": PoolRealArray( 0.25, 0.25, 1 ),
+"update": 0,
+"values": [ Vector2( -1249, 256 ), Vector2( -1246, 281 ), Vector2( -1249, 256 ) ]
+}
+tracks/4/type = "value"
+tracks/4/path = NodePath("CanvasLayer/Background/WhiteArrows:rect_position")
+tracks/4/interp = 1
+tracks/4/loop_wrap = true
+tracks/4/imported = false
+tracks/4/enabled = true
+tracks/4/keys = {
+"times": PoolRealArray( 0, 2.2, 5 ),
+"transitions": PoolRealArray( 0.25, 0.25, 1 ),
+"update": 0,
+"values": [ Vector2( -1210, 169 ), Vector2( -1222, 187 ), Vector2( -1210, 169 ) ]
+}
+tracks/5/type = "value"
+tracks/5/path = NodePath("CanvasLayer/Background/BlackArrows:rect_position")
+tracks/5/interp = 1
+tracks/5/loop_wrap = true
+tracks/5/imported = false
+tracks/5/enabled = true
+tracks/5/keys = {
+"times": PoolRealArray( 0, 2.5, 5 ),
+"transitions": PoolRealArray( 0.25, 0.25, 1 ),
+"update": 0,
+"values": [ Vector2( -1225, 193 ), Vector2( -1242, 183 ), Vector2( -1225, 193 ) ]
+}
+tracks/6/type = "value"
+tracks/6/path = NodePath("CanvasLayer/ExitPanel:visible")
+tracks/6/interp = 1
+tracks/6/loop_wrap = true
+tracks/6/imported = false
+tracks/6/enabled = true
+tracks/6/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 1,
+"values": [ true ]
+}
+
 [sub_resource type="Animation" id=5]
 
 resource_name = "level_confirm_to_level_select"
@@ -769,6 +860,18 @@ tracks/5/keys = {
 "update": 0,
 "values": [ Vector2( -1225, 193 ), Vector2( -1242, 183 ), Vector2( -1225, 193 ) ]
 }
+tracks/6/type = "value"
+tracks/6/path = NodePath("CanvasLayer/ExitPanel:visible")
+tracks/6/interp = 1
+tracks/6/loop_wrap = true
+tracks/6/imported = false
+tracks/6/enabled = true
+tracks/6/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 1,
+"values": [ false ]
+}
 
 [sub_resource type="Animation" id=9]
 
@@ -788,145 +891,133 @@ tracks/0/keys = {
 "values": [ false ]
 }
 tracks/1/type = "value"
-tracks/1/path = NodePath("CanvasLayer/Config:visible")
+tracks/1/path = NodePath("CanvasLayer/StartMenu/Buttons:visible")
 tracks/1/interp = 1
 tracks/1/loop_wrap = true
 tracks/1/imported = false
 tracks/1/enabled = true
 tracks/1/keys = {
-"times": PoolRealArray( 0, 0.5 ),
-"transitions": PoolRealArray( 1, 1 ),
-"update": 1,
-"values": [ false, true ]
-}
-tracks/2/type = "value"
-tracks/2/path = NodePath("CanvasLayer/StartMenu/Buttons:visible")
-tracks/2/interp = 1
-tracks/2/loop_wrap = true
-tracks/2/imported = false
-tracks/2/enabled = true
-tracks/2/keys = {
 "times": PoolRealArray( 0.5 ),
 "transitions": PoolRealArray( 1 ),
 "update": 1,
 "values": [ false ]
 }
-tracks/3/type = "value"
-tracks/3/path = NodePath("CanvasLayer/Background/WhiteArrows:rect_position")
-tracks/3/interp = 1
-tracks/3/loop_wrap = true
-tracks/3/imported = false
-tracks/3/enabled = true
-tracks/3/keys = {
+tracks/2/type = "value"
+tracks/2/path = NodePath("CanvasLayer/Background/WhiteArrows:rect_position")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/keys = {
 "times": PoolRealArray( 0, 0.5, 1 ),
 "transitions": PoolRealArray( 0.25, 0.25, 1 ),
 "update": 0,
 "values": [ Vector2( -1210, 169 ), Vector2( -1646, 610 ), Vector2( -453, 145 ) ]
 }
-tracks/4/type = "value"
-tracks/4/path = NodePath("CanvasLayer/Background/Pink Arrows:rect_position")
-tracks/4/interp = 1
-tracks/4/loop_wrap = true
-tracks/4/imported = false
-tracks/4/enabled = true
-tracks/4/keys = {
+tracks/3/type = "value"
+tracks/3/path = NodePath("CanvasLayer/Background/Pink Arrows:rect_position")
+tracks/3/interp = 1
+tracks/3/loop_wrap = true
+tracks/3/imported = false
+tracks/3/enabled = true
+tracks/3/keys = {
 "times": PoolRealArray( 0, 0.2, 1 ),
 "transitions": PoolRealArray( 0.25, 0.25, 1 ),
 "update": 0,
 "values": [ Vector2( -1249, 256 ), Vector2( -1465, 516 ), Vector2( -2699, 614 ) ]
 }
-tracks/5/type = "value"
-tracks/5/path = NodePath("CanvasLayer/Background/BlueArrows:rect_position")
-tracks/5/interp = 1
-tracks/5/loop_wrap = true
-tracks/5/imported = false
-tracks/5/enabled = true
-tracks/5/keys = {
+tracks/4/type = "value"
+tracks/4/path = NodePath("CanvasLayer/Background/BlueArrows:rect_position")
+tracks/4/interp = 1
+tracks/4/loop_wrap = true
+tracks/4/imported = false
+tracks/4/enabled = true
+tracks/4/keys = {
 "times": PoolRealArray( 0, 0.1, 1 ),
 "transitions": PoolRealArray( 0.25, 0.25, 1 ),
 "update": 0,
 "values": [ Vector2( -1240, 350 ), Vector2( -1409, 469 ), Vector2( -2583, 817 ) ]
 }
-tracks/6/type = "value"
-tracks/6/path = NodePath("CanvasLayer/Background/BlackArrows:rect_position")
-tracks/6/interp = 1
-tracks/6/loop_wrap = true
-tracks/6/imported = false
-tracks/6/enabled = true
-tracks/6/keys = {
+tracks/5/type = "value"
+tracks/5/path = NodePath("CanvasLayer/Background/BlackArrows:rect_position")
+tracks/5/interp = 1
+tracks/5/loop_wrap = true
+tracks/5/imported = false
+tracks/5/enabled = true
+tracks/5/keys = {
 "times": PoolRealArray( 0, 0.3, 1 ),
 "transitions": PoolRealArray( 1, 0.25, 1 ),
 "update": 0,
 "values": [ Vector2( -1225, 193 ), Vector2( -1387, 464 ), Vector2( -2437, 938 ) ]
 }
-tracks/7/type = "value"
-tracks/7/path = NodePath("CanvasLayer/Background/WhiteArrows:rect_size")
-tracks/7/interp = 1
-tracks/7/loop_wrap = true
-tracks/7/imported = false
-tracks/7/enabled = true
-tracks/7/keys = {
+tracks/6/type = "value"
+tracks/6/path = NodePath("CanvasLayer/Background/WhiteArrows:rect_size")
+tracks/6/interp = 1
+tracks/6/loop_wrap = true
+tracks/6/imported = false
+tracks/6/enabled = true
+tracks/6/keys = {
 "times": PoolRealArray( 0 ),
 "transitions": PoolRealArray( 1 ),
 "update": 0,
 "values": [ Vector2( 2100, 2362 ) ]
 }
-tracks/8/type = "value"
-tracks/8/path = NodePath("CanvasLayer/Config/Keybindings/GridContainer:rect_position")
-tracks/8/interp = 1
-tracks/8/loop_wrap = true
-tracks/8/imported = false
-tracks/8/enabled = true
-tracks/8/keys = {
+tracks/7/type = "value"
+tracks/7/path = NodePath("CanvasLayer/Config/Keybindings/GridContainer:rect_position")
+tracks/7/interp = 1
+tracks/7/loop_wrap = true
+tracks/7/imported = false
+tracks/7/enabled = true
+tracks/7/keys = {
 "times": PoolRealArray( 0.5, 1, 1.1 ),
 "transitions": PoolRealArray( 4, 0.25, 1 ),
 "update": 0,
 "values": [ Vector2( 116, -526 ), Vector2( 116, 155 ), Vector2( 116, 136 ) ]
 }
-tracks/9/type = "value"
-tracks/9/path = NodePath("CanvasLayer/Config/Keybindings/GridContainer:rect_scale")
-tracks/9/interp = 1
-tracks/9/loop_wrap = true
-tracks/9/imported = false
-tracks/9/enabled = true
-tracks/9/keys = {
+tracks/8/type = "value"
+tracks/8/path = NodePath("CanvasLayer/Config/Keybindings/GridContainer:rect_scale")
+tracks/8/interp = 1
+tracks/8/loop_wrap = true
+tracks/8/imported = false
+tracks/8/enabled = true
+tracks/8/keys = {
 "times": PoolRealArray( 0, 0.8, 1.3 ),
 "transitions": PoolRealArray( 0.25, 0.25, 1 ),
 "update": 0,
 "values": [ Vector2( 1, 0 ), Vector2( 1, 0 ), Vector2( 1, 1 ) ]
 }
-tracks/10/type = "value"
-tracks/10/path = NodePath("CanvasLayer/Config/Audio/SoundPanel:rect_position")
-tracks/10/interp = 1
-tracks/10/loop_wrap = true
-tracks/10/imported = false
-tracks/10/enabled = true
-tracks/10/keys = {
+tracks/9/type = "value"
+tracks/9/path = NodePath("CanvasLayer/Config/Audio/SoundPanel:rect_position")
+tracks/9/interp = 1
+tracks/9/loop_wrap = true
+tracks/9/imported = false
+tracks/9/enabled = true
+tracks/9/keys = {
 "times": PoolRealArray( 0, 0.9, 1 ),
 "transitions": PoolRealArray( 4, 1, 1 ),
 "update": 0,
 "values": [ Vector2( 585, -558 ), Vector2( 585, 252 ), Vector2( 585, 165 ) ]
 }
-tracks/11/type = "value"
-tracks/11/path = NodePath("CanvasLayer/Config/Audio/SoundPanel:rect_scale")
-tracks/11/interp = 1
-tracks/11/loop_wrap = true
-tracks/11/imported = false
-tracks/11/enabled = true
-tracks/11/keys = {
+tracks/10/type = "value"
+tracks/10/path = NodePath("CanvasLayer/Config/Audio/SoundPanel:rect_scale")
+tracks/10/interp = 1
+tracks/10/loop_wrap = true
+tracks/10/imported = false
+tracks/10/enabled = true
+tracks/10/keys = {
 "times": PoolRealArray( 0, 1 ),
 "transitions": PoolRealArray( 4, 1 ),
 "update": 0,
 "values": [ Vector2( 1, 0 ), Vector2( 1, 1 ) ]
 }
-tracks/12/type = "method"
-tracks/12/path = NodePath("CanvasLayer/Config")
-tracks/12/interp = 1
-tracks/12/loop_wrap = true
-tracks/12/imported = false
-tracks/12/enabled = true
-tracks/12/keys = {
-"times": PoolRealArray( 0.6 ),
+tracks/11/type = "method"
+tracks/11/path = NodePath("CanvasLayer/Config")
+tracks/11/interp = 1
+tracks/11/loop_wrap = true
+tracks/11/imported = false
+tracks/11/enabled = true
+tracks/11/keys = {
+"times": PoolRealArray( 0.5 ),
 "transitions": PoolRealArray( 1 ),
 "values": [ {
 "args": [  ],
@@ -1531,6 +1622,7 @@ transform = Transform2D( 1, 0, 0, 1, 0, 0 )
 
 [node name="Skybox" type="CenterContainer" parent="CanvasLayer" index="0"]
 
+editor/display_folded = true
 anchor_left = 0.0
 anchor_top = 0.0
 anchor_right = 1.0
@@ -1972,6 +2064,8 @@ _sections_unfolded = [ "Textures", "Theme", "custom_fonts" ]
 
 [node name="Config" type="PanelContainer" parent="CanvasLayer" index="5"]
 
+editor/display_folded = true
+visible = false
 anchor_left = 0.5
 anchor_top = 0.5
 anchor_right = 0.5
@@ -2144,10 +2238,10 @@ anchor_left = 0.5
 anchor_top = 0.0
 anchor_right = 0.5
 anchor_bottom = 0.0
-margin_left = -215.0
-margin_top = 184.0
-margin_right = 215.0
-margin_bottom = 322.0
+margin_left = 112.0
+margin_top = 165.0
+margin_right = 542.0
+margin_bottom = 303.0
 rect_pivot_offset = Vector2( 0, 0 )
 rect_clip_content = false
 mouse_filter = 0
@@ -2523,10 +2617,10 @@ anchor_left = 0.5
 anchor_top = 0.5
 anchor_right = 0.5
 anchor_bottom = 0.5
-margin_left = -226.0
-margin_top = -282.0
-margin_right = 225.0
-margin_bottom = 356.0
+margin_left = -357.0
+margin_top = -308.0
+margin_right = 94.0
+margin_bottom = 330.0
 rect_pivot_offset = Vector2( 0, 0 )
 rect_clip_content = false
 mouse_filter = 1
@@ -3675,7 +3769,7 @@ size_flags_horizontal = 1
 size_flags_vertical = 1
 theme = ExtResource( 4 )
 script = ExtResource( 18 )
-_sections_unfolded = [ "Theme" ]
+_sections_unfolded = [ "Theme", "Visibility" ]
 
 [node name="Label" type="Label" parent="CanvasLayer/ExitPanel" index="0"]
 
@@ -3776,6 +3870,7 @@ playback_speed = 1.0
 anims/SETUP = SubResource( 2 )
 anims/config_to_main_menu = SubResource( 3 )
 anims/credits_to_main_menu = SubResource( 4 )
+anims/exit = SubResource( 14 )
 anims/level_confirm_to_level_select = SubResource( 5 )
 anims/level_select_to_level_confirm = SubResource( 6 )
 anims/level_select_to_main_menu = SubResource( 7 )

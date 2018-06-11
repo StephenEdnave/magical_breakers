@@ -1,0 +1,18 @@
+[remap]
+
+importer="ogg_vorbis"
+type="AudioStreamOGGVorbis"
+path="res://.import/_rlauncher.ogg-73b11f0cc019929299e7746d4e48a751.oggstr"
+
+[deps]
+
+source_file="res://levels/wonderland/monsters/missile_plushy/sfx/_rlauncher.ogg"
+source_md5="28840178fc89075ed18ac22b0cb17f69"
+
+dest_files=[ "res://.import/_rlauncher.ogg-73b11f0cc019929299e7746d4e48a751.oggstr" ]
+dest_md5="27ea035648efe2008298c14ab8b49c17"
+
+[params]
+
+loop=false
+loop_offset=0

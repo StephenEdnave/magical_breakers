@@ -17,4 +17,8 @@ visible = false
 
 editor/display_folded = true
 
+[node name="CooldownAudio" parent="." index="6"]
+
+volume_db = -8.0
+
 

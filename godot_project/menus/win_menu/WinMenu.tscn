@@ -27,7 +27,7 @@ tracks/0/keys = {
 "times": PoolRealArray( 0 ),
 "transitions": PoolRealArray( 1 ),
 "update": 0,
-"values": [ Vector2( -1396, 430 ) ]
+"values": [ Vector2( -1578, 593 ) ]
 }
 tracks/1/type = "value"
 tracks/1/path = NodePath("Container/WhiteArrows:rect_size")
@@ -51,7 +51,7 @@ tracks/2/keys = {
 "times": PoolRealArray( 0 ),
 "transitions": PoolRealArray( 1 ),
 "update": 0,
-"values": [ Vector2( 3703, 473 ) ]
+"values": [ Vector2( 4246, 553 ) ]
 }
 tracks/3/type = "value"
 tracks/3/path = NodePath("Container/BlackArrowsBottom:rect_size")
@@ -99,7 +99,7 @@ tracks/6/keys = {
 "times": PoolRealArray( 0 ),
 "transitions": PoolRealArray( 1 ),
 "update": 0,
-"values": [ Vector2( 1370, -218 ) ]
+"values": [ Vector2( 1943, -199 ) ]
 }
 tracks/7/type = "value"
 tracks/7/path = NodePath("Container/MenuItems:visible")
@@ -142,7 +142,7 @@ tracks/0/keys = {
 "times": PoolRealArray( 0, 1.5 ),
 "transitions": PoolRealArray( 0.25, 1 ),
 "update": 0,
-"values": [ Vector2( -1396, 430 ), Vector2( -311, -832 ) ]
+"values": [ Vector2( -1578, 593 ), Vector2( 148, -684 ) ]
 }
 tracks/1/type = "value"
 tracks/1/path = NodePath("Container/WhiteArrows:rect_size")
@@ -154,7 +154,7 @@ tracks/1/keys = {
 "times": PoolRealArray( 0, 1.5 ),
 "transitions": PoolRealArray( 0.25, 1 ),
 "update": 0,
-"values": [ Vector2( 2100, 46 ), Vector2( 2100, 1482 ) ]
+"values": [ Vector2( 2100, 46 ), Vector2( 2100, 2220 ) ]
 }
 tracks/2/type = "value"
 tracks/2/path = NodePath("Container/BlackArrowsBottom:rect_position")
@@ -166,7 +166,7 @@ tracks/2/keys = {
 "times": PoolRealArray( 0, 1.1 ),
 "transitions": PoolRealArray( 0.25, 1 ),
 "update": 0,
-"values": [ Vector2( 3703, 473 ), Vector2( 2052, 958 ) ]
+"values": [ Vector2( 3703, 473 ), Vector2( 2025, 1235 ) ]
 }
 tracks/3/type = "value"
 tracks/3/path = NodePath("Container/BlackArrowsBottom:rect_size")
@@ -190,7 +190,7 @@ tracks/4/keys = {
 "times": PoolRealArray( 0, 0.8 ),
 "transitions": PoolRealArray( 0.25, 1 ),
 "update": 0,
-"values": [ Vector2( -2474, 284 ), Vector2( -690, -174 ) ]
+"values": [ Vector2( -2474, 284 ), Vector2( -124, -219 ) ]
 }
 tracks/5/type = "value"
 tracks/5/path = NodePath("Container/BlackArrowsTop:rect_size")
@@ -211,10 +211,10 @@ tracks/6/loop_wrap = true
 tracks/6/imported = false
 tracks/6/enabled = true
 tracks/6/keys = {
-"times": PoolRealArray( 0, 0.7 ),
+"times": PoolRealArray( 0, 1 ),
 "transitions": PoolRealArray( 0.25, 1 ),
 "update": 0,
-"values": [ Vector2( 1370, -218 ), Vector2( 348, -164 ) ]
+"values": [ Vector2( 1943, -199 ), Vector2( 997, -149 ) ]
 }
 tracks/7/type = "value"
 tracks/7/path = NodePath("Container/MenuItems:visible")
@@ -229,12 +229,12 @@ tracks/7/keys = {
 "values": [ false, true ]
 }
 
-[sub_resource type="Animation" id=3]
+[sub_resource type="Animation" id=5]
 
 resource_name = "exit"
 length = 1.0
 loop = false
-step = 0.1
+step = 0.5
 tracks/0/type = "value"
 tracks/0/path = NodePath("Container/WhiteArrows:rect_position")
 tracks/0/interp = 1
@@ -242,117 +242,91 @@ tracks/0/loop_wrap = true
 tracks/0/imported = false
 tracks/0/enabled = true
 tracks/0/keys = {
-"times": PoolRealArray( 0, 0.7 ),
+"times": PoolRealArray( 0, 0.5 ),
 "transitions": PoolRealArray( 0, 1 ),
 "update": 0,
-"values": [ Vector2( -311, -832 ), Vector2( -2010, -825 ) ]
+"values": [ Vector2( 148, -684 ), Vector2( -2202, -1070 ) ]
 }
 tracks/1/type = "value"
-tracks/1/path = NodePath("Container/WhiteArrows:rect_size")
+tracks/1/path = NodePath("Container/BlackArrowsBottom:rect_position")
 tracks/1/interp = 1
 tracks/1/loop_wrap = true
 tracks/1/imported = false
 tracks/1/enabled = true
 tracks/1/keys = {
-"times": PoolRealArray( 0 ),
-"transitions": PoolRealArray( 1 ),
+"times": PoolRealArray( 0, 0.5, 1 ),
+"transitions": PoolRealArray( 0.25, 0.25, 1 ),
 "update": 0,
-"values": [ Vector2( 2100, 1482 ) ]
+"values": [ Vector2( 2025, 1235 ), Vector2( 3217, 1879 ), Vector2( 3068, -367 ) ]
 }
 tracks/2/type = "value"
-tracks/2/path = NodePath("Container/BlackArrowsBottom:rect_position")
+tracks/2/path = NodePath("Container/BlackArrowsBottom:rect_size")
 tracks/2/interp = 1
 tracks/2/loop_wrap = true
 tracks/2/imported = false
 tracks/2/enabled = true
 tracks/2/keys = {
-"times": PoolRealArray( 0, 0.7, 1 ),
-"transitions": PoolRealArray( 0.25, 0.25, 1 ),
+"times": PoolRealArray( 0, 0.5 ),
+"transitions": PoolRealArray( 0.25, 1 ),
 "update": 0,
-"values": [ Vector2( 2052, 958 ), Vector2( 2607, 701 ), Vector2( 3312, -253 ) ]
+"values": [ Vector2( 2100, 337 ), Vector2( 2100, 2245 ) ]
 }
 tracks/3/type = "value"
-tracks/3/path = NodePath("Container/BlackArrowsBottom:rect_size")
+tracks/3/path = NodePath("Container/BlackArrowsTop:rect_position")
 tracks/3/interp = 1
 tracks/3/loop_wrap = true
 tracks/3/imported = false
 tracks/3/enabled = true
 tracks/3/keys = {
-"times": PoolRealArray( 0, 0.7, 1 ),
+"times": PoolRealArray( 0, 0.5, 1 ),
 "transitions": PoolRealArray( 0.25, 0.25, 1 ),
 "update": 0,
-"values": [ Vector2( 2100, 337 ), Vector2( 2100, 928 ), Vector2( 2100, 46 ) ]
+"values": [ Vector2( -124, -219 ), Vector2( -939, -5 ), Vector2( -743, 1458 ) ]
 }
 tracks/4/type = "value"
-tracks/4/path = NodePath("Container/BlackArrowsTop:rect_position")
+tracks/4/path = NodePath("Container/BlackArrowsTop:rect_size")
 tracks/4/interp = 1
 tracks/4/loop_wrap = true
 tracks/4/imported = false
 tracks/4/enabled = true
 tracks/4/keys = {
-"times": PoolRealArray( 0, 0.7, 1 ),
-"transitions": PoolRealArray( 0.25, 0.25, 1 ),
+"times": PoolRealArray( 0, 0.5 ),
+"transitions": PoolRealArray( 0.25, 1 ),
 "update": 0,
-"values": [ Vector2( -690, -174 ), Vector2( -1399, 58 ), Vector2( -1932, 1210 ) ]
+"values": [ Vector2( 2100, 319 ), Vector2( 2100, 2114 ) ]
 }
 tracks/5/type = "value"
-tracks/5/path = NodePath("Container/BlackArrowsTop:rect_size")
+tracks/5/path = NodePath("CharacterImage:rect_position")
 tracks/5/interp = 1
 tracks/5/loop_wrap = true
 tracks/5/imported = false
 tracks/5/enabled = true
 tracks/5/keys = {
-"times": PoolRealArray( 0, 0.7, 1 ),
-"transitions": PoolRealArray( 0.25, 0.25, 1 ),
+"times": PoolRealArray( 0, 1 ),
+"transitions": PoolRealArray( 0.25, 1 ),
 "update": 0,
-"values": [ Vector2( 2100, 319 ), Vector2( 2100, 997 ), Vector2( 2100, 46 ) ]
+"values": [ Vector2( 997, -149 ), Vector2( 1750, -128 ) ]
 }
 tracks/6/type = "value"
-tracks/6/path = NodePath("CharacterImage:rect_position")
+tracks/6/path = NodePath("Container/MenuItems:visible")
 tracks/6/interp = 1
 tracks/6/loop_wrap = true
 tracks/6/imported = false
 tracks/6/enabled = true
 tracks/6/keys = {
-"times": PoolRealArray( 0, 0.7 ),
-"transitions": PoolRealArray( 0.25, 1 ),
-"update": 0,
-"values": [ Vector2( 348, -164 ), Vector2( 1112, -158 ) ]
+"times": PoolRealArray( 0.5 ),
+"transitions": PoolRealArray( 1 ),
+"update": 1,
+"values": [ false ]
 }
 tracks/7/type = "value"
-tracks/7/path = NodePath("Container/MenuItems:visible")
+tracks/7/path = NodePath("BlackBox:visible")
 tracks/7/interp = 1
 tracks/7/loop_wrap = true
 tracks/7/imported = false
 tracks/7/enabled = true
 tracks/7/keys = {
-"times": PoolRealArray( 0, 0.7 ),
-"transitions": PoolRealArray( 1, 1 ),
-"update": 1,
-"values": [ true, false ]
-}
-tracks/8/type = "method"
-tracks/8/path = NodePath(".")
-tracks/8/interp = 1
-tracks/8/loop_wrap = true
-tracks/8/imported = false
-tracks/8/enabled = true
-tracks/8/keys = {
-"times": PoolRealArray( 0.9 ),
-"transitions": PoolRealArray( 1 ),
-"values": [ {
-"args": [  ],
-"method": "change_main_menu"
-} ]
-}
-tracks/9/type = "value"
-tracks/9/path = NodePath("BlackBox:visible")
-tracks/9/interp = 1
-tracks/9/loop_wrap = true
-tracks/9/imported = false
-tracks/9/enabled = true
-tracks/9/keys = {
-"times": PoolRealArray( 0.7 ),
+"times": PoolRealArray( 0.5 ),
 "transitions": PoolRealArray( 1 ),
 "update": 1,
 "values": [ false ]
@@ -373,7 +347,7 @@ tracks/0/keys = {
 "times": PoolRealArray( 0 ),
 "transitions": PoolRealArray( 1 ),
 "update": 0,
-"values": [ Vector2( -311, -832 ) ]
+"values": [ Vector2( 148, -684 ) ]
 }
 tracks/1/type = "value"
 tracks/1/path = NodePath("Container/WhiteArrows:rect_size")
@@ -385,7 +359,7 @@ tracks/1/keys = {
 "times": PoolRealArray( 0 ),
 "transitions": PoolRealArray( 1 ),
 "update": 0,
-"values": [ Vector2( 2100, 1482 ) ]
+"values": [ Vector2( 2100, 2220 ) ]
 }
 tracks/2/type = "value"
 tracks/2/path = NodePath("Container/BlackArrowsBottom:rect_position")
@@ -397,7 +371,7 @@ tracks/2/keys = {
 "times": PoolRealArray( 0 ),
 "transitions": PoolRealArray( 1 ),
 "update": 0,
-"values": [ Vector2( 2052, 958 ) ]
+"values": [ Vector2( 2025, 1235 ) ]
 }
 tracks/3/type = "value"
 tracks/3/path = NodePath("Container/BlackArrowsBottom:rect_size")
@@ -421,7 +395,7 @@ tracks/4/keys = {
 "times": PoolRealArray( 0 ),
 "transitions": PoolRealArray( 1 ),
 "update": 0,
-"values": [ Vector2( -690, -174 ) ]
+"values": [ Vector2( -124, -219 ) ]
 }
 tracks/5/type = "value"
 tracks/5/path = NodePath("Container/BlackArrowsTop:rect_size")
@@ -442,10 +416,10 @@ tracks/6/loop_wrap = true
 tracks/6/imported = false
 tracks/6/enabled = true
 tracks/6/keys = {
-"times": PoolRealArray( 0, 2, 4, 6.1 ),
-"transitions": PoolRealArray( -1.56482, 1, 1, 1 ),
+"times": PoolRealArray( 0, 2, 4, 6 ),
+"transitions": PoolRealArray( 1, 1, 1, 1 ),
 "update": 0,
-"values": [ Vector2( 348, -164 ), Vector2( 348, -170 ), Vector2( 346, -158 ), Vector2( 348, -164 ) ]
+"values": [ Vector2( 997, -149 ), Vector2( 1002, -154 ), Vector2( 997, -144 ), Vector2( 997, -149 ) ]
 }
 
 [node name="WinMenu" type="Node2D"]
@@ -458,8 +432,8 @@ anchor_left = 0.0
 anchor_top = 0.0
 anchor_right = 1.0
 anchor_bottom = 1.0
-margin_right = 1307.0
-margin_bottom = 707.0
+margin_right = 1864.0
+margin_bottom = 1020.0
 rect_pivot_offset = Vector2( 0, 0 )
 rect_clip_content = false
 mouse_filter = 1
@@ -472,13 +446,16 @@ stretch_mode = 0
 
 [node name="BlackBox" type="TextureRect" parent="." index="1"]
 
+visible = false
 modulate = Color( 0, 0, 0, 1 )
-anchor_left = 0.0
-anchor_top = 0.0
-anchor_right = 1.0
-anchor_bottom = 1.0
-margin_right = 1307.0
-margin_bottom = 707.0
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+margin_left = -32.0
+margin_top = -32.0
+margin_right = 1896.0
+margin_bottom = 1052.0
 rect_pivot_offset = Vector2( 0, 0 )
 rect_clip_content = false
 mouse_filter = 1
@@ -499,13 +476,13 @@ playback_default_blend_time = 0.0
 playback_speed = 1.0
 anims/SETUP = SubResource( 1 )
 anims/enter = SubResource( 2 )
-anims/exit = SubResource( 3 )
+anims/exit = SubResource( 5 )
 anims/idle = SubResource( 4 )
 blend_times = [  ]
 
 [node name="Container" type="Container" parent="." index="3"]
 
-visible = false
+editor/display_folded = true
 anchor_left = 0.0
 anchor_top = 0.0
 anchor_right = 1.0
@@ -523,10 +500,10 @@ anchor_left = 0.0
 anchor_top = 0.0
 anchor_right = 0.0
 anchor_bottom = 0.0
-margin_left = -1396.0
-margin_top = 430.0
-margin_right = 704.0
-margin_bottom = 476.0
+margin_left = -2202.0
+margin_top = -1070.0
+margin_right = -102.0
+margin_bottom = -1024.0
 rect_rotation = 20.0
 rect_pivot_offset = Vector2( 0, 0 )
 rect_clip_content = false
@@ -541,6 +518,7 @@ _sections_unfolded = [ "Rect" ]
 [node name="MenuItems" type="VBoxContainer" parent="Container" index="1"]
 
 editor/display_folded = true
+visible = false
 anchor_left = 0.0
 anchor_top = 0.0
 anchor_right = 0.0
@@ -655,10 +633,10 @@ anchor_left = 0.0
 anchor_top = 0.0
 anchor_right = 0.0
 anchor_bottom = 0.0
-margin_left = 3703.0
-margin_top = 473.0
-margin_right = 5803.0
-margin_bottom = 519.0
+margin_left = 3068.0
+margin_top = -367.0
+margin_right = 5168.0
+margin_bottom = 1878.0
 rect_rotation = 175.0
 rect_pivot_offset = Vector2( 0, 0 )
 rect_clip_content = false
@@ -677,10 +655,10 @@ anchor_left = 0.0
 anchor_top = 0.0
 anchor_right = 0.0
 anchor_bottom = 0.0
-margin_left = -2474.0
-margin_top = 284.0
-margin_right = -374.0
-margin_bottom = 330.0
+margin_left = -743.0
+margin_top = 1458.0
+margin_right = 1357.0
+margin_bottom = 3572.0
 rect_rotation = -5.0
 rect_pivot_offset = Vector2( 0, 0 )
 rect_clip_content = false
@@ -698,10 +676,10 @@ anchor_left = 1.0
 anchor_top = 0.5
 anchor_right = 1.0
 anchor_bottom = 0.5
-margin_left = 1306.0
-margin_top = -250.0
-margin_right = 3362.0
-margin_bottom = 1839.0
+margin_left = 1686.0
+margin_top = -160.0
+margin_right = 3745.0
+margin_bottom = 1949.0
 rect_scale = Vector2( 0.8, 0.8 )
 rect_pivot_offset = Vector2( 0, 0 )
 rect_clip_content = false

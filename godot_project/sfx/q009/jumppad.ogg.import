@@ -1,0 +1,18 @@
+[remap]
+
+importer="ogg_vorbis"
+type="AudioStreamOGGVorbis"
+path="res://.import/jumppad.ogg-e02ddad49229ae4a18f677514d3e4a8d.oggstr"
+
+[deps]
+
+source_file="res://sfx/q009/jumppad.ogg"
+source_md5="d78c85d08f9265f795bbebba2a0c047f"
+
+dest_files=[ "res://.import/jumppad.ogg-e02ddad49229ae4a18f677514d3e4a8d.oggstr" ]
+dest_md5="590700b7e0900f1a6aea8c183fb370af"
+
+[params]
+
+loop=false
+loop_offset=0

@@ -6,3 +6,5 @@ Orange_Juice for the initial game idea + assets from Acceleration of Suguri 2
 GDQuest for Godot tutorials
 Godot Engine
 Godot community
+
+Q009 - Missile/explosion/gun sound effects

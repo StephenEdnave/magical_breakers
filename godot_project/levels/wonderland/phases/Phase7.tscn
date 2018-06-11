@@ -1,0 +1,30 @@
+[gd_scene load_steps=5 format=2]
+
+[ext_resource path="res://levels/Phase.tscn" type="PackedScene" id=1]
+[ext_resource path="res://levels/SpawnPosition.tscn" type="PackedScene" id=2]
+[ext_resource path="res://levels/wonderland/monsters/missile_plushy/MissilePlushy.tscn" type="PackedScene" id=3]
+[ext_resource path="res://levels/wonderland/monsters/basic_plushy/BasicPlushy.tscn" type="PackedScene" id=4]
+
+[node name="Phase" instance=ExtResource( 1 )]
+
+[node name="SpawnPosition" parent="SpawnPositions" index="0" instance=ExtResource( 2 )]
+
+position = Vector2( 1030.32, 1626.52 )
+object = ExtResource( 3 )
+
+[node name="SpawnPosition2" parent="SpawnPositions" index="1" instance=ExtResource( 2 )]
+
+position = Vector2( 2595.58, 523.709 )
+object = ExtResource( 4 )
+
+[node name="SpawnPosition4" parent="SpawnPositions" index="2" instance=ExtResource( 2 )]
+
+position = Vector2( -269.177, 498.357 )
+object = ExtResource( 4 )
+
+[node name="SpawnPosition3" parent="SpawnPositions" index="3" instance=ExtResource( 2 )]
+
+position = Vector2( 1511.79, -306.565 )
+object = ExtResource( 3 )
+
+

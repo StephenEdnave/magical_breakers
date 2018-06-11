@@ -41,7 +41,7 @@ func setup(_main_menu, _pointer_scene):
 func enter():
 	set_process_input(true)
 	$ConfigButtons.visible = true
-	pointer.visible = true
+	visible = true
 	panel_selection = PANELS.DISPLAY
 	state = STATES.PANEL_SELECTION
 	update_pointer()

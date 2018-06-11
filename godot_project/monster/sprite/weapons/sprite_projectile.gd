@@ -1,10 +1,5 @@
 extends "res://objects/projectiles/projectile.gd"
 
-const INITIAL_SPEED = 1600
-var velocity = Vector2()
-var speed = 800
-var acceleration = -100
-
 
 func _ready():
 	self.connect("body_entered", self, "_on_body_entered")

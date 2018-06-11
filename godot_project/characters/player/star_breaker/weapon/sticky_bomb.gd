@@ -2,14 +2,13 @@ extends "res://objects/projectiles/projectile.gd"
 
 signal successful_hit
 
-const INITIAL_SPEED = 1000
 var stuck_body
 var weakref_stuck_body
-var velocity = Vector2()
-var acceleration = 0
-var steering_acceleration = 40
+var steering_acceleration = 60
 var target_position = Vector2()
 var stick_offset = Vector2()
+var accelerating = false
+var off_screen = false
 
 
 func _ready():
@@ -29,7 +28,7 @@ func _physics_process(delta):
 		return
 	
 	rotation_degrees = rad2deg(velocity.angle())
-	if target_position:
+	if target_position and accelerating and not off_screen:
 		direction = (target_position - global_position).normalized()
 		var desired_velocity = direction * velocity.length()
 		var steering_velocity = (desired_velocity - velocity).normalized() * steering_acceleration
@@ -40,11 +39,6 @@ func _physics_process(delta):
 
 func set_target(_target_position):
 	target_position = _target_position
-
-
-func set_direction(_direction):
-	direction = _direction
-	velocity = direction * INITIAL_SPEED
 
 
 func _on_body_entered(body):
@@ -77,16 +71,17 @@ func _on_animation_finished(name):
 		explode()
 
 
-func _on_VisibilityNotifier2D_screen_exited():
-	explode()
-
-
 func _on_AccelerationTimer_timeout():
-	acceleration = 120
+	accelerating = true
 
 
 func _on_ExplosionTimer_timeout():
 	queue_free()
+
+
+func _on_VisibilityNotifier2D_screen_exited():
+	off_screen = true
+	explode()
 
 
 func explode():

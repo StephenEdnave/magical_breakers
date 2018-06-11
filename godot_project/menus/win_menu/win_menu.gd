@@ -17,6 +17,11 @@ func setup():
 	$Container/MenuItems/LevelLabel.text = GameManager.level_name
 
 
+func _input(event):
+	if event.is_action_pressed("ui_select"):
+		$Container/MenuItems/MainMenuButton.emit_signal("button_down")
+
+
 func _on_MainMenuButton_button_down():
 	$Tween.interpolate_property($Music, "volume_db", $Music.volume_db, -100.0, 0.5, Tween.TRANS_QUAD, Tween.EASE_IN)
 	$Tween.start()

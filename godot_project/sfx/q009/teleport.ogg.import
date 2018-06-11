@@ -1,0 +1,18 @@
+[remap]
+
+importer="ogg_vorbis"
+type="AudioStreamOGGVorbis"
+path="res://.import/teleport.ogg-4900e1b8b1191940aa4e5edd026ce47f.oggstr"
+
+[deps]
+
+source_file="res://sfx/q009/teleport.ogg"
+source_md5="6d44e78fb597cb567d206d16aa6dd23d"
+
+dest_files=[ "res://.import/teleport.ogg-4900e1b8b1191940aa4e5edd026ce47f.oggstr" ]
+dest_md5="a78ab2e02d4c88fc4dbf4df48c61b15a"
+
+[params]
+
+loop=false
+loop_offset=0

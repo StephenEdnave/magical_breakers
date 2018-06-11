@@ -1,0 +1,159 @@
+[gd_scene load_steps=18 format=2]
+
+[ext_resource path="res://monster/Monster.tscn" type="PackedScene" id=1]
+[ext_resource path="res://levels/wonderland/monsters/missile_dropper/missile_dropper.gd" type="Script" id=2]
+[ext_resource path="res://levels/wonderland/monsters/missile_dropper/states/idle.gd" type="Script" id=3]
+[ext_resource path="res://levels/wonderland/monsters/missile_dropper/states/motion/roam.gd" type="Script" id=4]
+[ext_resource path="res://levels/wonderland/monsters/missile_dropper/states/motion/return.gd" type="Script" id=5]
+[ext_resource path="res://levels/wonderland/monsters/missile_dropper/states/motion/spot.gd" type="Script" id=6]
+[ext_resource path="res://levels/wonderland/monsters/missile_dropper/states/motion/follow.gd" type="Script" id=7]
+[ext_resource path="res://levels/wonderland/monsters/missile_dropper/states/stagger.gd" type="Script" id=8]
+[ext_resource path="res://levels/wonderland/monsters/missile_dropper/states/die.gd" type="Script" id=9]
+[ext_resource path="res://levels/wonderland/monsters/missile_dropper/states/motion/shoot.gd" type="Script" id=10]
+[ext_resource path="res://levels/wonderland/monsters/missile_dropper/weapons/Gun.tscn" type="PackedScene" id=11]
+[ext_resource path="res://levels/wonderland/monsters/missile_dropper/states/motion/end_phase.gd" type="Script" id=12]
+[ext_resource path="res://levels/wonderland/monsters/basic_plushy/sprites/walk_0.png" type="Texture" id=13]
+[ext_resource path="res://levels/wonderland/monsters/basic_plushy/sprites/walke_2.png" type="Texture" id=14]
+[ext_resource path="res://levels/wonderland/monsters/basic_plushy/sprites/walk_1.png" type="Texture" id=15]
+
+[sub_resource type="Animation" id=1]
+
+resource_name = "walk"
+length = 0.4
+loop = true
+step = 0.1
+tracks/0/type = "value"
+tracks/0/path = NodePath("BodyPivot/Sprite:texture")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0, 0.2, 0.4 ),
+"transitions": PoolRealArray( 1, 1, 1 ),
+"update": 1,
+"values": [ ExtResource( 13 ), ExtResource( 14 ), ExtResource( 15 ) ]
+}
+
+[sub_resource type="CircleShape2D" id=2]
+
+custom_solver_bias = 0.0
+radius = 34.7888
+
+[node name="MissileDropper" instance=ExtResource( 1 )]
+
+script = ExtResource( 2 )
+SPOT_RANGE = 6000.0
+
+[node name="Idle" type="Node" parent="States" index="0"]
+
+script = ExtResource( 3 )
+
+[node name="Roam" type="Node" parent="States" index="1"]
+
+script = ExtResource( 4 )
+ARRIVE_DISTANCE = 6.0
+DEFAULT_SLOW_RADIUS = 200.0
+DEFAULT_MAX_SPEED = 300.0
+MASS = 8.0
+max_roam_speed = 200.0
+ROAM_RADIUS = 140.0
+
+[node name="Return" type="Node" parent="States" index="2"]
+
+script = ExtResource( 5 )
+ARRIVE_DISTANCE = 6.0
+DEFAULT_SLOW_RADIUS = 200.0
+DEFAULT_MAX_SPEED = 300.0
+MASS = 8.0
+max_return_speed = 200.0
+
+[node name="Spot" type="Node" parent="States" index="3"]
+
+script = ExtResource( 6 )
+ARRIVE_DISTANCE = 6.0
+DEFAULT_SLOW_RADIUS = 200.0
+DEFAULT_MAX_SPEED = 300.0
+MASS = 8.0
+
+[node name="Follow" type="Node" parent="States" index="4"]
+
+script = ExtResource( 7 )
+ARRIVE_DISTANCE = 6.0
+DEFAULT_SLOW_RADIUS = 200.0
+DEFAULT_MAX_SPEED = 300.0
+MASS = 8.0
+FOLLOW_RANGE = 6000.0
+max_follow_speed = 320.0
+TARGET_RADIUS = 500.0
+DROP_RADIUS = 200.0
+
+[node name="Stagger" type="Node" parent="States" index="5"]
+
+script = ExtResource( 8 )
+
+[node name="Die" type="Node" parent="States" index="6"]
+
+script = ExtResource( 9 )
+
+[node name="Shoot" type="Node" parent="States" index="7"]
+
+script = ExtResource( 10 )
+ARRIVE_DISTANCE = 6.0
+DEFAULT_SLOW_RADIUS = 200.0
+DEFAULT_MAX_SPEED = 300.0
+MASS = 16.0
+primary_weapon_path = ExtResource( 11 )
+
+[node name="EndPhase" type="Node" parent="States" index="8"]
+
+script = ExtResource( 12 )
+ARRIVE_DISTANCE = 6.0
+DEFAULT_SLOW_RADIUS = 200.0
+DEFAULT_MAX_SPEED = 300.0
+MASS = 16.0
+max_return_speed = 600.0
+
+[node name="Health" parent="." index="1"]
+
+max_health = 100
+
+[node name="AnimationPlayer" parent="." index="2"]
+
+anims/walk = SubResource( 1 )
+
+[node name="CollisionPolygon2D" parent="." index="4"]
+
+visible = false
+polygon = PoolVector2Array( -25.9885, -52.5346, -18.6579, -84.3003, 16.3659, -85.1149, 21.2529, -50.0911, 16.3659, -8.55122, -16.2144, -9.36573 )
+disabled = true
+
+[node name="CollisionShape2D" parent="." index="5"]
+
+shape = SubResource( 2 )
+disabled = false
+
+[node name="Sprite" type="Sprite" parent="BodyPivot" index="0"]
+
+modulate = Color( 0.148438, 1, 0, 1 )
+texture = ExtResource( 13 )
+_sections_unfolded = [ "Transform", "Visibility" ]
+
+[node name="StatusPivot" parent="." index="7"]
+
+_sections_unfolded = [ "Transform", "Visibility" ]
+
+[node name="WeaponPivot" parent="." index="8"]
+
+editor/display_folded = true
+
+[node name="PrimaryWeaponSpawn" type="Position2D" parent="WeaponPivot" index="0"]
+
+[node name="RoamTimer" type="Timer" parent="." index="10"]
+
+process_mode = 1
+wait_time = 1.0
+one_shot = false
+autostart = false
+
+

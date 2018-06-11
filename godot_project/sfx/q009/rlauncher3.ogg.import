@@ -1,0 +1,18 @@
+[remap]
+
+importer="ogg_vorbis"
+type="AudioStreamOGGVorbis"
+path="res://.import/rlauncher3.ogg-36aa26b18b73816ff6e9c5ceabedd7cb.oggstr"
+
+[deps]
+
+source_file="res://sfx/q009/rlauncher3.ogg"
+source_md5="599f9c0bb28e190251c6cc7f05f6bf0f"
+
+dest_files=[ "res://.import/rlauncher3.ogg-36aa26b18b73816ff6e9c5ceabedd7cb.oggstr" ]
+dest_md5="0eb26b94e79c878efa4fbdd85105b74d"
+
+[params]
+
+loop=false
+loop_offset=0

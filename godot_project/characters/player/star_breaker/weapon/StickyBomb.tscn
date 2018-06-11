@@ -1,4 +1,4 @@
-[gd_scene load_steps=23 format=2]
+[gd_scene load_steps=18 format=2]
 
 [ext_resource path="res://characters/player/star_breaker/weapon/sticky_bomb.gd" type="Script" id=1]
 [ext_resource path="res://characters/player/star_breaker/sprites/sb_missile00.png" type="Texture" id=2]
@@ -6,7 +6,7 @@
 [ext_resource path="res://characters/player/star_breaker/sprites/sb_missile06.png" type="Texture" id=4]
 [ext_resource path="res://characters/player/star_breaker/sprites/sb_missile10.png" type="Texture" id=5]
 [ext_resource path="res://characters/player/star_breaker/sprites/sb_missile11.png" type="Texture" id=6]
-[ext_resource path="res://characters/player/star_breaker/weapon/black_smoke_12.png" type="Texture" id=7]
+[ext_resource path="res://particles/SmokeParticles.tscn" type="PackedScene" id=7]
 [ext_resource path="res://characters/player/star_breaker/sprites/sb_impct00.png" type="Texture" id=8]
 [ext_resource path="res://characters/player/star_breaker/sfx/missile_launch.ogg" type="AudioStream" id=9]
 [ext_resource path="res://characters/player/star_breaker/sfx/missile_explode.ogg" type="AudioStream" id=10]
@@ -157,70 +157,6 @@ tracks/3/keys = {
 "values": [ true ]
 }
 
-[sub_resource type="Gradient" id=5]
-
-offsets = PoolRealArray( 0, 0.621302, 0.970213, 1 )
-colors = PoolColorArray( 0.0577087, 0, 0.238281, 0.442, 0.937624, 0.786774, 0.992188, 0.138118, 0.5625, 0.5625, 0.5625, 0.0434374, 1, 1, 1, 0 )
-
-[sub_resource type="GradientTexture" id=6]
-
-flags = 4
-gradient = SubResource( 5 )
-width = 2048
-
-[sub_resource type="Curve" id=7]
-
-min_value = 0.0
-max_value = 1.0
-bake_resolution = 100
-_data = [ Vector2( 0, 0 ), 0.0, 0.0, 0, 0, Vector2( 0.263046, 0.0380859 ), 0.66788, 0.66788, 0, 0, Vector2( 1, 1 ), 0.0, 0.0, 0, 0 ]
-
-[sub_resource type="CurveTexture" id=8]
-
-flags = 4
-width = 2048
-curve = SubResource( 7 )
-
-[sub_resource type="ParticlesMaterial" id=9]
-
-render_priority = 0
-trail_divisor = 1
-emission_shape = 0
-flag_align_y = false
-flag_rotate_y = true
-flag_disable_z = true
-spread = 15.0
-flatness = 0.0
-gravity = Vector3( 0, 0, 0 )
-initial_velocity = 100.0
-initial_velocity_random = 0.4
-angular_velocity = 45.0
-angular_velocity_random = 1.0
-orbit_velocity = 0.0
-orbit_velocity_random = 0.0
-linear_accel = 50.0
-linear_accel_random = 1.0
-radial_accel = 0.0
-radial_accel_random = 0.0
-tangential_accel = 0.0
-tangential_accel_random = 0.0
-damping = 0.0
-damping_random = 0.0
-angle = 0.0
-angle_random = 0.0
-scale = 0.1
-scale_random = 0.2
-scale_curve = SubResource( 8 )
-color_ramp = SubResource( 6 )
-hue_variation = 0.0
-hue_variation_random = 0.0
-anim_speed = 0.0
-anim_speed_random = 0.0
-anim_offset = 0.0
-anim_offset_random = 0.0
-anim_loop = false
-_sections_unfolded = [ "Angular Velocity", "Color", "Emission Shape", "Flags", "Gravity", "Initial Velocity", "Linear Accel", "Scale", "Spread", "Trail" ]
-
 [sub_resource type="Curve" id=10]
 
 min_value = 0.0
@@ -287,6 +223,8 @@ audio_bus_override = false
 audio_bus_name = "Master"
 script = ExtResource( 1 )
 _sections_unfolded = [ "Collision" ]
+initial_speed = 200.0
+acceleration = 40.0
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="." index="0"]
 
@@ -305,28 +243,7 @@ anims/stick = SubResource( 4 )
 blend_times = [  ]
 _sections_unfolded = [ "Playback Options" ]
 
-[node name="SmokeParticles" type="Particles2D" parent="." index="2"]
-
-rotation = -3.14159
-emitting = true
-amount = 200
-lifetime = 2.0
-one_shot = false
-preprocess = 0.0
-speed_scale = 1.0
-explosiveness = 0.0
-randomness = 0.0
-fixed_fps = 0
-fract_delta = true
-visibility_rect = Rect2( -50000, -50000, 100000, 100000 )
-local_coords = false
-draw_order = 0
-process_material = SubResource( 9 )
-texture = ExtResource( 7 )
-normal_map = null
-h_frames = 1
-v_frames = 1
-_sections_unfolded = [ "Drawing", "Process Material", "Textures", "Time", "Transform" ]
+[node name="SmokeParticles" parent="." index="2" instance=ExtResource( 7 )]
 
 [node name="Pivot" type="Position2D" parent="." index="3"]
 

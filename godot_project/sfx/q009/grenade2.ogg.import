@@ -1,0 +1,18 @@
+[remap]
+
+importer="ogg_vorbis"
+type="AudioStreamOGGVorbis"
+path="res://.import/grenade2.ogg-34960dc8bf64fcfb6063cf69bf892b6d.oggstr"
+
+[deps]
+
+source_file="res://sfx/q009/grenade2.ogg"
+source_md5="7319b8f6021bc14c99b333060bc82b87"
+
+dest_files=[ "res://.import/grenade2.ogg-34960dc8bf64fcfb6063cf69bf892b6d.oggstr" ]
+dest_md5="8c1232e6f3cd1390237f5069f4348afd"
+
+[params]
+
+loop=false
+loop_offset=0

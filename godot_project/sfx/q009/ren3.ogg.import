@@ -1,0 +1,18 @@
+[remap]
+
+importer="ogg_vorbis"
+type="AudioStreamOGGVorbis"
+path="res://.import/ren3.ogg-0de7b1da6f61dabd1f0c69253fc14df5.oggstr"
+
+[deps]
+
+source_file="res://sfx/q009/ren3.ogg"
+source_md5="df04ede14fc6c56513867d895b3b897f"
+
+dest_files=[ "res://.import/ren3.ogg-0de7b1da6f61dabd1f0c69253fc14df5.oggstr" ]
+dest_md5="290c4ef6c4c30e866acf496dbedd718c"
+
+[params]
+
+loop=false
+loop_offset=0
