@@ -487,7 +487,7 @@ tracks/5/keys = {
 "values": [ Vector2( 2100, 2633 ), Vector2( 2100, 46 ) ]
 }
 
-[sub_resource type="Animation" id=14]
+[sub_resource type="Animation" id=5]
 
 resource_name = "exit"
 length = 5.0
@@ -578,9 +578,8 @@ tracks/6/keys = {
 "values": [ true ]
 }
 
-[sub_resource type="Animation" id=5]
+[sub_resource type="Animation" id=6]
 
-resource_name = "level_confirm_to_level_select"
 length = 0.01
 loop = false
 step = 0.1
@@ -623,9 +622,8 @@ tracks/2/keys = {
 } ]
 }
 
-[sub_resource type="Animation" id=6]
+[sub_resource type="Animation" id=7]
 
-resource_name = "level_select_to_level_confirm"
 length = 0.01
 loop = false
 step = 0.1
@@ -668,9 +666,8 @@ tracks/2/keys = {
 } ]
 }
 
-[sub_resource type="Animation" id=7]
+[sub_resource type="Animation" id=8]
 
-resource_name = "level_select_to_main_menu"
 length = 0.5
 loop = false
 step = 0.1
@@ -783,7 +780,7 @@ tracks/8/keys = {
 "values": [ false ]
 }
 
-[sub_resource type="Animation" id=8]
+[sub_resource type="Animation" id=9]
 
 length = 5.0
 loop = true
@@ -873,7 +870,7 @@ tracks/6/keys = {
 "values": [ false ]
 }
 
-[sub_resource type="Animation" id=9]
+[sub_resource type="Animation" id=10]
 
 length = 1.5
 loop = false
@@ -1025,7 +1022,7 @@ tracks/11/keys = {
 } ]
 }
 
-[sub_resource type="Animation" id=10]
+[sub_resource type="Animation" id=11]
 
 length = 1.0
 loop = false
@@ -1141,9 +1138,8 @@ tracks/8/keys = {
 } ]
 }
 
-[sub_resource type="Animation" id=11]
+[sub_resource type="Animation" id=12]
 
-resource_name = "main_menu_to_level_select"
 length = 1.0
 loop = false
 step = 0.1
@@ -1294,7 +1290,7 @@ tracks/11/keys = {
 } ]
 }
 
-[sub_resource type="Animation" id=12]
+[sub_resource type="Animation" id=13]
 
 length = 1.0
 loop = false
@@ -1432,7 +1428,7 @@ tracks/10/keys = {
 "values": [ -2.99, -20.0 ]
 }
 
-[sub_resource type="Animation" id=13]
+[sub_resource type="Animation" id=14]
 
 length = 1.3
 loop = false
@@ -1608,7 +1604,7 @@ tracks/13/keys = {
 } ]
 }
 
-[node name="MainMenu" type="Node2D" index="0"]
+[node name="MainMenu" type="Node2D"]
 
 script = ExtResource( 1 )
 
@@ -3870,16 +3866,16 @@ playback_speed = 1.0
 anims/SETUP = SubResource( 2 )
 anims/config_to_main_menu = SubResource( 3 )
 anims/credits_to_main_menu = SubResource( 4 )
-anims/exit = SubResource( 14 )
-anims/level_confirm_to_level_select = SubResource( 5 )
-anims/level_select_to_level_confirm = SubResource( 6 )
-anims/level_select_to_main_menu = SubResource( 7 )
-anims/main_menu = SubResource( 8 )
-anims/main_menu_to_config = SubResource( 9 )
-anims/main_menu_to_credits = SubResource( 10 )
-anims/main_menu_to_level_select = SubResource( 11 )
-anims/main_menu_transition_out = SubResource( 12 )
-anims/open_main_menu = SubResource( 13 )
+anims/exit = SubResource( 5 )
+anims/level_confirm_to_level_select = SubResource( 6 )
+anims/level_select_to_level_confirm = SubResource( 7 )
+anims/level_select_to_main_menu = SubResource( 8 )
+anims/main_menu = SubResource( 9 )
+anims/main_menu_to_config = SubResource( 10 )
+anims/main_menu_to_credits = SubResource( 11 )
+anims/main_menu_to_level_select = SubResource( 12 )
+anims/main_menu_transition_out = SubResource( 13 )
+anims/open_main_menu = SubResource( 14 )
 blend_times = [  ]
 
 [node name="Tween" type="Tween" parent="." index="4"]

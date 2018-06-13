@@ -2,7 +2,7 @@ extends '_state.gd'
 
 var died = false
 
-func enter(host):
+func enter():
 #	host.set_process_input(false) # Stops input so player/AI can't control entity
 	host.get_node("CollisionShape2D").disabled = true
 	host.Anim.play("die")
@@ -11,18 +11,18 @@ func enter(host):
 	died = false
 
 
-func exit(host):
+func exit():
 	pass
 
 
-func handle_input(host, event):
+func handle_input(event):
 	pass
 
 
-func update(host, delta):
+func update(delta):
 	if died:
 		return DEAD
 
 
-func _on_animation_finished(host, name):
+func _on_animation_finished(name):
 	died = true

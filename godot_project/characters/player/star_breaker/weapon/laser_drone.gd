@@ -2,10 +2,10 @@ extends Area2D
 
 signal successful_hit
 
-const DPS = 100
+const DPS = 200
 const LASER_LENGTH = 4000
 var current_laser_length = 2000
-var max_rotation_angle = 17
+var max_rotation_angle = 10
 var clockwise = false
 var laser_tick_Time = 0.1
 

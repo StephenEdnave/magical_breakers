@@ -1,8 +1,8 @@
-extends '_state.gd'
+extends 'state.gd'
 
 var knockback_direction = Vector2()
 var knockback_force = 10.0
-var knockback_duration = 0.4
+var knockback_duration = 0.02
 
 func setup(_knockback_direction, _knockback_force, _knockback_duration):
 	knockback_direction = _knockback_direction
@@ -17,11 +17,7 @@ func enter():
 
 
 func exit():
-	pass
-
-
-func handle_input(event):
-	pass
+	host.get_node("Tween").stop(host, "position")
 
 
 func update(delta):
@@ -29,4 +25,5 @@ func update(delta):
 
 
 func _on_animation_finished(name):
-	return IDLE
+	if name == "stagger":
+		return host.STATE_IDS.IDLE

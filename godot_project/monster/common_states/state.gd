@@ -2,14 +2,11 @@
 # Stores a ref to the Player node, and the STATE_IDS
 extends Node
 
-enum STATES { IDLE, WALK, DASH, ATTACK, DIE, DEAD, STAGGER }
 var host = null
 
-
 func _ready():
-	# Store a reference to the FSM
 	host = $'../..'
-
+	
 	# In 3.0 alpha, these functions are on by default for every node
 	set_process(false)
 	set_physics_process(false)
@@ -17,18 +14,18 @@ func _ready():
 
 
 # Initialize the state. E.g. change the animation
-func enter():
+func enter(host):
 	pass
 
 
 # Clean up the state. Reinitialize values like a timer
-func exit():
+func exit(host):
 	pass
 
 
-func handle_input(event):
+func handle_input(host, event):
 	pass
 
 
-func update(delta):
+func update(host, delta):
 	pass

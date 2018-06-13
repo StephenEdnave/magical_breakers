@@ -16,31 +16,23 @@ onready var STATES = {
 #	DEAD:$'States/Dead'
 }
 
-export(float) var SPOT_RANGE = 6000.0
-
 
 func _ready():
-	STATES[IDLE].setup(self, SPOT_RANGE)
-	STATES[ROAM].setup(SPOT_RANGE)
-	STATES[RETURN].setup(SPOT_RANGE)
-	STATES[SPOT].setup(SPOT_RANGE)
-	STATES[SHOOT].setup(self)
-	
 	current_state = STATES[IDLE]
-	current_state.enter(self)
+	current_state.enter()
 
 
 func _physics_process(delta):
-	var new_state = current_state.update(self, delta)
+	var new_state = current_state.update(delta)
 	if new_state or new_state == 0:
 		go_to_state(new_state)
 
 
 # Exit the current state, change it and enter the new one
 func go_to_state(state_id):
-	current_state.exit(self)
+	current_state.exit()
 	var new_state = STATES[state_id]
-	new_state.enter(self)
+	new_state.enter()
 	current_state = new_state
 	emit_signal('state_changed', new_state)
 
@@ -48,7 +40,7 @@ func go_to_state(state_id):
 func _on_animation_finished(name):
 	if not current_state.has_method("_on_animation_finished"):
 		return
-	var new_state = current_state._on_animation_finished(self, name)
+	var new_state = current_state._on_animation_finished(name)
 	if new_state or new_state == 0:
 		go_to_state(new_state)
 

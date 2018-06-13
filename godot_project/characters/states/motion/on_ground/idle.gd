@@ -1,21 +1,21 @@
 extends 'on_ground.gd'
 
 
-func enter(host):
+func enter():
 	host.Anim.play("idle")
 
 
-func exit(host):
+func exit():
 	host.STATES[WALK].velocity = velocity
 
 
-func handle_input(host, event):
-	return .handle_input(host, event)
+func handle_input(event):
+	return .handle_input(event)
 
 
-func update(host, delta):
-	get_input_direction(host)
-	steering(host, 0, 50)
-	move(host)
+func update(delta):
+	get_input_direction()
+	steering(0, 50)
+	move()
 	if input_direction:
 		return WALK

@@ -17,7 +17,7 @@ var inputs = {
 signal skill_used
 
 
-func setup(host):
+func _ready():
 	for weapon_path in weapon_paths:
 		var weapon = load(weapon_path).instance()
 		weapon.setup(host)
@@ -30,11 +30,7 @@ func setup(host):
 		weapon_active.push_back(false)
 
 
-func _ready():
-	pass
-
-
-func enter(host):
+func enter():
 	finished = false
 	
 	var current_weapon
@@ -46,7 +42,7 @@ func enter(host):
 
 
 # Clean up the state. Reinitialize values like a timer
-func exit(host):
+func exit():
 	for i in range(0, weapon_active.size()):
 		weapon_active[i] = false
 	for weapon in weapons:
@@ -60,7 +56,7 @@ func exit(host):
 	host.STATES[IDLE].velocity = velocity
 
 
-func handle_input(host, event):
+func handle_input(event):
 	if not host.is_player:
 		return
 	
@@ -78,26 +74,30 @@ func handle_input(host, event):
 		weapons[inputs.skill_4].register_attack()
 
 
-func update(host, delta):
+func update(delta):
 	if finished:
 		return IDLE
 	
 	# Move if carrying momentum
-	steering(host, 0, 35)
-	move(host)
+	steering(0, 35)
+	move()
 
 
-func _on_Weapon_attack_started(host):
+func _on_Weapon_attack_started():
 	finished = false
-	
+	var angle = _rotate()
+	_attack(angle)
+
+
+func _rotate():
 	var angle = 0
 	var vector = Vector2()
 	if host.target:
 		vector = host.target.global_position - host.global_position
 	else:
-		vector = get_input_direction(host)
+		vector = get_input_direction()
 	
-	move(host) # Get the correct direction to face
+	move() # Get the correct direction to face
 	
 	if vector:
 		angle = rad2deg(vector.angle())
@@ -109,6 +109,10 @@ func _on_Weapon_attack_started(host):
 	host.get_node("BodyPivot").rotation_degrees = angle
 	host.get_node("WeaponPivot").rotation_degrees = angle
 	
+	return angle
+
+
+func _attack(angle):
 	var current_weapon
 	for i in range(0, weapon_active.size()):
 		if weapon_active[i]:
@@ -138,10 +142,6 @@ func _on_Weapon_attack_finished():
 
 func _on_Weapon_attack_failed():
 	finished = true
-
-
-func attack():
-	pass
 
 
 func activate_weapon(weapon):

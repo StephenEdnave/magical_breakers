@@ -1,7 +1,7 @@
 extends "../motion.gd"
 
 
-func handle_input(host, event):
+func handle_input(event):
 	if not host.is_player:
 		return
 	

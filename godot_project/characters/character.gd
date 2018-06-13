@@ -31,32 +31,31 @@ var is_player = false
 func _ready():
 	$AnimationPlayer.play("SETUP")
 	current_state = STATES[IDLE]
-	current_state.enter(self)
+	current_state.enter()
 	$Health.connect("health_changed", self, "_on_Health_health_changed")
 	$Health.connect("status_changed", self, "_on_Health_status_changed")
 	$Mana.connect("mana_changed", self, "_on_Mana_changed")
 	$Mana.connect("status_changed", self, "_on_Mana_status_changed")
 	$AnimationPlayer.connect("animation_finished", self, "_on_animation_finished")
-	STATES[ATTACK].setup(self)
 
 
 func _physics_process(delta):
-	var new_state = current_state.update(self, delta)
+	var new_state = current_state.update(delta)
 	if new_state or new_state == 0:
 		go_to_state(new_state)
 
 
 func _input(event):
-	var new_state = current_state.handle_input(self, event)
+	var new_state = current_state.handle_input(event)
 	if new_state or new_state == 0:
 		go_to_state(new_state)
 
 
 # Exit the current state, change it and enter the new one
 func go_to_state(state_id):
-	current_state.exit(self)
+	current_state.exit()
 	var new_state = STATES[state_id]
-	new_state.enter(self)
+	new_state.enter()
 	current_state = new_state
 	emit_signal('state_changed', new_state)
 
@@ -93,7 +92,7 @@ func _on_Mana_status_changed(new_status):
 func _on_animation_finished(name):
 	if not current_state.has_method("_on_animation_finished"):
 		return
-	var new_state = current_state._on_animation_finished(self, name)
+	var new_state = current_state._on_animation_finished(name)
 	if new_state or new_state == 0:
 		go_to_state(new_state)
 

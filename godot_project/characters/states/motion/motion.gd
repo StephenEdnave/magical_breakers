@@ -4,7 +4,7 @@ var input_direction = Vector2()
 var last_move_direction = Vector2(1, 0)
 var velocity = Vector2()
 
-func get_input_direction(host):
+func get_input_direction():
 	if not host.is_player:
 		return Vector2()
 	
@@ -14,7 +14,7 @@ func get_input_direction(host):
 	return input_direction
 
 
-func steering(host, speed, acceleration):
+func steering(speed, acceleration):
 	var target_velocity = input_direction.normalized() * speed
 	var steering_velocity = (target_velocity - velocity).normalized() * acceleration 
 	velocity += steering_velocity
@@ -24,15 +24,15 @@ func steering(host, speed, acceleration):
 		velocity = target_velocity
 
 
-func move(host):
+func move():
 	last_move_direction = input_direction
 	host.move_and_slide(velocity, Vector2(), 5, 2)
 	if velocity:
 		host.position_changed()
-	update_look_direction(host)
+	update_look_direction()
 
 
-func update_look_direction(host):
+func update_look_direction():
 	if host.target:
 		var vector_to_target = host.target.global_position - host.global_position
 		host.look_direction.x = sign(vector_to_target.x)

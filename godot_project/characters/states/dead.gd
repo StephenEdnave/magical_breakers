@@ -1,17 +1,17 @@
 extends '_state.gd'
 
 
-func enter(host):
+func enter():
 	pass
 
 
-func exit(host):
+func exit():
 	pass
 
 
-func handle_input(host, event):
+func handle_input(event):
 	pass
 
 
-func update(host, delta):
+func update(delta):
 	pass

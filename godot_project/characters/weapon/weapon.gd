@@ -75,7 +75,7 @@ func _enter_state(new_state):
 			monitoring = true
 			attack_current = combo[combo_count - 1]
 			$AnimationPlayer.play(Attacks.attacks[attack_current].animation)
-			emit_signal("attack_started", host)
+			emit_signal("attack_started")
 			CooldownTimer.start()
 	state = new_state
 

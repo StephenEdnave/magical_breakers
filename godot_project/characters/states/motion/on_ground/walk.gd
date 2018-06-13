@@ -5,30 +5,30 @@ var speed = 0.0
 var acceleration = 75
 
 
-func enter(host):
+func enter():
 	speed = MAX_WALK_SPEED
 	host.Anim.play("walk_forward")
 
 
-func exit(host):
+func exit():
 	host.STATES[IDLE].velocity = velocity
 
 
-func handle_input(host, event):
-	return .handle_input(host, event)
+func handle_input(event):
+	return .handle_input(event)
 
 
-func update(host, delta):
+func update(delta):
 	# Input
 	if host.is_player and Input.is_action_pressed("dash"):
 		return DASH
 	
-	get_input_direction(host)
+	get_input_direction()
 	if not input_direction:
 		return IDLE
 	
-	steering(host, speed, acceleration)
-	move(host)
+	steering(speed, acceleration)
+	move()
 	
 	if host.target:
 		var vector_to_target = host.target_position - host.global_position

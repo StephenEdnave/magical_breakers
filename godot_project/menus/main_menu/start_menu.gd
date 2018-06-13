@@ -51,6 +51,7 @@ func _input(event):
 	elif event.is_action_pressed("ui_select"):
 		$Buttons.get_child(current_selection).emit_signal("button_down")
 	elif event.is_action_pressed("ui_cancel"):
+		current_selection = BUTTON_AMOUNT - 1
 		main_menu.get_node("ButtonPress").play()
 	
 	pointer.global_position = $Buttons.get_child(current_selection).rect_global_position + POINTER_OFFSET

@@ -33,10 +33,10 @@ func _ready():
 	begin_timer.connect("timeout", self, "_on_begin_timer_timeout")
 
 
-func enter(host):
+func enter():
 	host.Anim.play("dash_forward")
 	
-	get_input_direction(host)
+	get_input_direction()
 	velocity = input_direction * speed
 	
 	particle_timer.start()
@@ -46,7 +46,7 @@ func enter(host):
 	begin_timer.start()
 	
 	# Initialize dash
-	get_input_direction(host)
+	get_input_direction()
 	var angle = rad2deg(input_direction.angle())
 	if angle < -90 or 90 < angle: # host facing left
 		angle -= 180
@@ -57,31 +57,31 @@ func enter(host):
 	_on_particle_timer_timeout()
 
 
-func exit(host):
+func exit():
 	host.get_node("BodyPivot").rotation_degrees = 0
 	host.STATES[WALK].velocity = velocity
 	particle_timer.stop()
 	begin_timer.stop()
 
 
-func handle_input(host, event):
-	return .handle_input(host, event)
+func handle_input(event):
+	return .handle_input(event)
 
 
-func update(host, delta):
+func update(delta):
 	# Input
 	if not begin and (host.is_player and not Input.is_action_pressed("dash")):
 		return WALK
 	
-	get_input_direction(host)
+	get_input_direction()
 	if not input_direction:
 		input_direction = last_move_direction
 	
 	# Steering
-	steering(host, speed, acceleration)
+	steering(speed, acceleration)
 	if velocity.length() < MAX_DASH_SPEED:
 		velocity = velocity.normalized() * MAX_DASH_SPEED
-	move(host)
+	move()
 	
 	
 	var angle = rad2deg(velocity.angle())
