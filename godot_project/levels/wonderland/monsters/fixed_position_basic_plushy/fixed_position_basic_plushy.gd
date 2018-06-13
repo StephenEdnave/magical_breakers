@@ -2,7 +2,7 @@ extends "res://monster/monster.gd"
 
 signal state_changed
 
-enum STATE_IDS { IDLE, ROAM, RETURN, SPOT, FOLLOW, STAGGER, DIE, DEAD, SHOOT, END_PHASE}
+enum STATE_IDS { IDLE, ROAM, RETURN, SPOT, FOLLOW, STAGGER, DIE, ATTACK, END_PHASE, DEAD, PREVIOUS_STATE }
 onready var STATES = {
 	IDLE:$'States/Idle',
 	ROAM:$'States/Roam',
@@ -11,36 +11,42 @@ onready var STATES = {
 	FOLLOW:$'States/Follow',
 	STAGGER:$'States/Stagger',
 	DIE:$'States/Die',
-	SHOOT:$'States/Shoot',
-	END_PHASE:$'States/EndPhase'
-#	DEAD:$'States/Dead'
+	ATTACK:$'States/Attack',
+	END_PHASE:$'States/EndPhase',
+	DEAD:$'States/Dead'
 }
 
 
 func _ready():
-	current_state = STATES[IDLE]
-	current_state.enter()
+	states_stack.push_front(STATES[IDLE])
+	states_stack[0].enter()
 
 
 func _physics_process(delta):
-	var new_state = current_state.update(delta)
+	var new_state = states_stack[0].update(delta)
 	if new_state or new_state == 0:
 		go_to_state(new_state)
 
 
 # Exit the current state, change it and enter the new one
-func go_to_state(state_id):
-	current_state.exit()
-	var new_state = STATES[state_id]
-	new_state.enter()
-	current_state = new_state
-	emit_signal('state_changed', new_state)
+func go_to_state(new_state):
+	states_stack[0].exit()
+	
+	match new_state:
+		PREVIOUS_STATE:
+			states_stack.pop_front()
+		ATTACK, STAGGER:
+			states_stack.push_front(STATES[new_state])
+		_:
+			states_stack[0] = STATES[new_state]
+	states_stack[0].enter()
+	emit_signal('state_changed', states_stack[0])
 
 
 func _on_animation_finished(name):
-	if not current_state.has_method("_on_animation_finished"):
+	if not states_stack[0].has_method("_on_animation_finished"):
 		return
-	var new_state = current_state._on_animation_finished(name)
+	var new_state = states_stack[0]._on_animation_finished(name)
 	if new_state or new_state == 0:
 		go_to_state(new_state)
 

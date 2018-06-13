@@ -1,4 +1,4 @@
-extends "../_state.gd"
+extends "../state.gd"
 
 var input_direction = Vector2()
 var last_move_direction = Vector2(1, 0)

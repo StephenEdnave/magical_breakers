@@ -1,4 +1,4 @@
-extends '_state.gd'
+extends 'state.gd'
 
 var knockback_direction = Vector2()
 var knockback_force = 10.0
@@ -29,4 +29,5 @@ func update(delta):
 
 
 func _on_animation_finished(name):
-	return IDLE
+	assert name == "stagger"
+	return host.STATE_IDS.PREVIOUS_STATE

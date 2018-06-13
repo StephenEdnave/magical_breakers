@@ -25,5 +25,5 @@ func update(delta):
 
 
 func _on_animation_finished(name):
-	if name == "stagger":
-		return host.STATE_IDS.IDLE
+	assert name == "stagger"
+	return host.STATE_IDS.PREVIOUS_STATE

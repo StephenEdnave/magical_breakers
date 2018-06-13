@@ -1,4 +1,4 @@
-extends "res://monster/common_states/motion/shoot.gd"
+extends "res://monster/common_states/motion/attack.gd"
 
 
 func update(delta):

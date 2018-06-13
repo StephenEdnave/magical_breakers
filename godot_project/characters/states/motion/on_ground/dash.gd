@@ -18,6 +18,7 @@ var begin_timer = null
 export (float) var BEGIN_DURATION = 0.1
 export (float) var BEGIN_SPEED = 1400
 
+var successful_dash = true # Check for if player is holding down dash button when this state is entered
 
 func _ready():
 	particle_timer = Timer.new()
@@ -34,6 +35,11 @@ func _ready():
 
 
 func enter():
+	successful_dash = true
+	if not Input.is_action_pressed("dash"):
+		successful_dash = false
+		exit()
+	
 	host.Anim.play("dash_forward")
 	
 	get_input_direction()
@@ -70,6 +76,8 @@ func handle_input(event):
 
 func update(delta):
 	# Input
+	if not successful_dash:
+		return WALK
 	if not begin and (host.is_player and not Input.is_action_pressed("dash")):
 		return WALK
 	

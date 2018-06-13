@@ -4,7 +4,7 @@ extends KinematicBody2D
 signal health_changed
 signal died
 
-var current_state = null
+var states_stack = []
 
 onready var Anim = $AnimationPlayer
 onready var Tween = $Tween

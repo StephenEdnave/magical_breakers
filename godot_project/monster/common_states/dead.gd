@@ -2,7 +2,7 @@ extends 'state.gd'
 
 
 func enter():
-	pass
+	host.queue_free()
 
 
 func exit():

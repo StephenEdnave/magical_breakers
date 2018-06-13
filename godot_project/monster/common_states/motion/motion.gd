@@ -41,7 +41,7 @@ func arrive_to(velocity, target_position, slow_radius=DEFAULT_SLOW_RADIUS, max_s
 	if distance_to_target < slow_radius:
 		desired_velocity *= (distance_to_target / slow_radius) * .75 + .25
 
-	var push = calculate_avoid_force(host, desired_velocity) if avoid else Vector2()
+	var push = calculate_avoid_force(desired_velocity) if avoid else Vector2()
 	var steering = (desired_velocity - velocity + push) / MASS
 
 	return velocity + steering

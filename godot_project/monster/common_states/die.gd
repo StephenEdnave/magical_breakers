@@ -24,4 +24,5 @@ func update(delta):
 
 
 func _on_animation_finished(name):
-	host.queue_free()
+	assert name == "die"
+	return host.STATE_IDS.DEAD

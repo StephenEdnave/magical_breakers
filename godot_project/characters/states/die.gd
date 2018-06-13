@@ -1,4 +1,4 @@
-extends '_state.gd'
+extends 'state.gd'
 
 var died = false
 
@@ -20,9 +20,9 @@ func handle_input(event):
 
 
 func update(delta):
-	if died:
-		return DEAD
+	pass
 
 
 func _on_animation_finished(name):
-	died = true
+	assert name == "die"
+	return host.STATE_IDS.DEAD

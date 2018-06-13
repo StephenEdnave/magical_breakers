@@ -7,7 +7,7 @@ signal mana_changed
 signal position_changed
 signal died
 
-enum STATE_IDS { IDLE, WALK, DASH, ATTACK, DIE, DEAD, STAGGER }
+enum STATE_IDS { IDLE, WALK, DASH, ATTACK, DIE, DEAD, STAGGER, PREVIOUS_STATE }
 # Don't forget the onready keyword: we can only get the State nodes
 # after they were added to the scene tree
 onready var STATES = {
@@ -19,7 +19,7 @@ onready var STATES = {
 	DEAD:$'States/Dead',
 	STAGGER:$'States/Stagger'
 }
-var current_state = null
+var states_stack = []
 
 onready var Anim = $AnimationPlayer
 onready var Tween = $Tween
@@ -30,8 +30,8 @@ var is_player = false
 
 func _ready():
 	$AnimationPlayer.play("SETUP")
-	current_state = STATES[IDLE]
-	current_state.enter()
+	states_stack.push_front(STATES[IDLE])
+	states_stack[0].enter()
 	$Health.connect("health_changed", self, "_on_Health_health_changed")
 	$Health.connect("status_changed", self, "_on_Health_status_changed")
 	$Mana.connect("mana_changed", self, "_on_Mana_changed")
@@ -40,24 +40,30 @@ func _ready():
 
 
 func _physics_process(delta):
-	var new_state = current_state.update(delta)
+	var new_state = states_stack[0].update(delta)
 	if new_state or new_state == 0:
 		go_to_state(new_state)
 
 
 func _input(event):
-	var new_state = current_state.handle_input(event)
+	var new_state = states_stack[0].handle_input(event)
 	if new_state or new_state == 0:
 		go_to_state(new_state)
 
 
 # Exit the current state, change it and enter the new one
-func go_to_state(state_id):
-	current_state.exit()
-	var new_state = STATES[state_id]
-	new_state.enter()
-	current_state = new_state
-	emit_signal('state_changed', new_state)
+func go_to_state(new_state):
+	states_stack[0].exit()
+	
+	match new_state:
+		PREVIOUS_STATE:
+			states_stack.pop_front()
+		ATTACK, STAGGER:
+			states_stack.push_front(STATES[new_state])
+		_:
+			states_stack[0] = STATES[new_state]
+	states_stack[0].enter()
+	emit_signal('state_changed', states_stack[0])
 
 
 func take_damage(source, attack_name):
@@ -90,9 +96,9 @@ func _on_Mana_status_changed(new_status):
 
 
 func _on_animation_finished(name):
-	if not current_state.has_method("_on_animation_finished"):
+	if not states_stack[0].has_method("_on_animation_finished"):
 		return
-	var new_state = current_state._on_animation_finished(name)
+	var new_state = states_stack[0]._on_animation_finished(name)
 	if new_state or new_state == 0:
 		go_to_state(new_state)
 

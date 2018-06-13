@@ -33,12 +33,12 @@ func _ready():
 func enter():
 	finished = false
 	
-	var current_weapon
 	for i in range(0, weapons.size()):
 		if weapon_active[i]:
-			current_weapon = weapons[i]
+			weapons[i].attack()
+			return
 	
-	current_weapon.attack()
+	finished = true
 
 
 # Clean up the state. Reinitialize values like a timer
@@ -57,9 +57,6 @@ func exit():
 
 
 func handle_input(event):
-	if not host.is_player:
-		return
-	
 	if event.is_action_pressed("primary_attack") and weapon_active[inputs.primary_weapon]:
 		weapons[inputs.primary_weapon].register_attack()
 	elif event.is_action_pressed("secondary_attack") and weapon_active[inputs.secondary_weapon]:
@@ -76,7 +73,7 @@ func handle_input(event):
 
 func update(delta):
 	if finished:
-		return IDLE
+		return host.STATE_IDS.PREVIOUS_STATE
 	
 	# Move if carrying momentum
 	steering(0, 35)

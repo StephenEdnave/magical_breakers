@@ -18,7 +18,11 @@ func enter():
 	finished = false
 	
 	var current_weapon = primary_weapon
-	current_weapon.attack()
+	if current_weapon:
+		current_weapon.attack()
+		return
+	
+	finished = true
 
 
 # Clean up the state. Reinitialize values like a timer
@@ -33,7 +37,7 @@ func exit():
 
 func update(delta):
 	if finished:
-		return host.STATE_IDS.FOLLOW
+		return host.STATE_IDS.PREVIOUS_STATE
 	
 	# Move if carrying momentum
 	move()

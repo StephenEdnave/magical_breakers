@@ -1,4 +1,4 @@
-[gd_scene load_steps=20 format=2]
+[gd_scene load_steps=21 format=2]
 
 [ext_resource path="res://characters/character.gd" type="Script" id=1]
 [ext_resource path="res://characters/states/motion/on_ground/idle.gd" type="Script" id=2]
@@ -7,12 +7,13 @@
 [ext_resource path="res://characters/states/stagger.gd" type="Script" id=5]
 [ext_resource path="res://characters/states/motion/on_ground/attack.gd" type="Script" id=6]
 [ext_resource path="res://characters/states/die.gd" type="Script" id=7]
-[ext_resource path="res://characters/Health.tscn" type="PackedScene" id=8]
-[ext_resource path="res://characters/Mana.tscn" type="PackedScene" id=9]
-[ext_resource path="res://characters/body.png" type="Texture" id=10]
-[ext_resource path="res://characters/weapon/weapon_pivot.gd" type="Script" id=11]
-[ext_resource path="res://characters/shadow.png" type="Texture" id=12]
-[ext_resource path="res://objects/StatusIcon.tscn" type="PackedScene" id=13]
+[ext_resource path="res://characters/states/dead.gd" type="Script" id=8]
+[ext_resource path="res://characters/Health.tscn" type="PackedScene" id=9]
+[ext_resource path="res://characters/Mana.tscn" type="PackedScene" id=10]
+[ext_resource path="res://characters/body.png" type="Texture" id=11]
+[ext_resource path="res://characters/weapon/weapon_pivot.gd" type="Script" id=12]
+[ext_resource path="res://characters/shadow.png" type="Texture" id=13]
+[ext_resource path="res://objects/StatusIcon.tscn" type="PackedScene" id=14]
 
 [sub_resource type="Animation" id=1]
 
@@ -234,7 +235,7 @@ tracks/1/keys = {
 custom_solver_bias = 0.0
 extents = Vector2( 33.9994, 59.3485 )
 
-[node name="Character" type="KinematicBody2D" groups=[
+[node name="Character" type="KinematicBody2D" index="0" groups=[
 "characters",
 ]]
 
@@ -280,7 +281,7 @@ script = ExtResource( 7 )
 
 [node name="Dead" type="Node" parent="States" index="6"]
 
-script = ExtResource( 7 )
+script = ExtResource( 8 )
 
 [node name="AnimationPlayer" type="AnimationPlayer" parent="." index="1"]
 
@@ -305,11 +306,11 @@ playback/active = false
 playback/repeat = false
 playback/speed = 1.0
 
-[node name="Health" parent="." index="3" instance=ExtResource( 8 )]
+[node name="Health" parent="." index="3" instance=ExtResource( 9 )]
 
 max_health = 1000
 
-[node name="Mana" parent="." index="4" instance=ExtResource( 9 )]
+[node name="Mana" parent="." index="4" instance=ExtResource( 10 )]
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="." index="5"]
 
@@ -324,13 +325,13 @@ _sections_unfolded = [ "Transform", "Visibility", "Z Index" ]
 
 [node name="Body" type="Sprite" parent="BodyPivot" index="0"]
 
-texture = ExtResource( 10 )
+texture = ExtResource( 11 )
 offset = Vector2( 0.335912, -58.7778 )
 _sections_unfolded = [ "Visibility" ]
 
 [node name="WeaponPivot" type="Position2D" parent="." index="7"]
 
-script = ExtResource( 11 )
+script = ExtResource( 12 )
 _sections_unfolded = [ "Transform" ]
 
 [node name="Shadow" type="Sprite" parent="." index="8"]
@@ -338,7 +339,7 @@ _sections_unfolded = [ "Transform" ]
 self_modulate = Color( 1, 1, 1, 0.313726 )
 show_behind_parent = true
 position = Vector2( -0.32052, -4.20115 )
-texture = ExtResource( 12 )
+texture = ExtResource( 13 )
 _sections_unfolded = [ "Visibility" ]
 
 [node name="StatusPivot" type="Position2D" parent="." index="9"]
@@ -346,7 +347,7 @@ _sections_unfolded = [ "Visibility" ]
 editor/display_folded = true
 _sections_unfolded = [ "Transform" ]
 
-[node name="StatusIcon" parent="StatusPivot" index="0" instance=ExtResource( 13 )]
+[node name="StatusIcon" parent="StatusPivot" index="0" instance=ExtResource( 14 )]
 
 visible = false
 

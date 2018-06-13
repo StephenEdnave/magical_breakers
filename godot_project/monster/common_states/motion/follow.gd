@@ -35,7 +35,7 @@ func update(delta):
 		return host.STATE_IDS.RETURN
 	
 	if go_to_shoot:
-		return host.STATE_IDS.SHOOT
+		return host.STATE_IDS.ATTACK
 	
 	target_position = host.target_position + (host.global_position - host.target_position).normalized() * DISTANCE_FROM_TARGET
 	velocity = follow(velocity, target_position, max_follow_speed)
