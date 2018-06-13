@@ -6,9 +6,9 @@ func update(delta):
 		return host.STATE_IDS.RETURN
 	
 	if go_to_shoot:
-		return host.STATE_IDS.SHOOT
+		return host.STATE_IDS.ATTTACK
 	
-	target_position = host.target_position + Vector2(0, 1) * DISTANCE_FROM_TARGET
+	target_position = host.target_position + Vector2(0, -1) * DISTANCE_FROM_TARGET
 	velocity = follow(velocity, target_position, max_follow_speed)
 	move()
 	host.get_node("BodyPivot").scale.x = look_direction.x

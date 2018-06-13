@@ -10,7 +10,6 @@
 [ext_resource path="res://characters/player/star_breaker/weapon/laser_end_particle.png" type="Texture" id=8]
 [ext_resource path="res://characters/player/star_breaker/weapon/laser_particle_tex.PNG" type="Texture" id=9]
 
-
 [sub_resource type="CircleShape2D" id=1]
 
 custom_solver_bias = 0.0

@@ -24,6 +24,7 @@ func _ready():
 		return
 	
 	Anim.connect('animation_finished', self, '_on_animation_finished')
+	Anim.play("SETUP")
 	
 	start_position = global_position
 	original_scale = scale

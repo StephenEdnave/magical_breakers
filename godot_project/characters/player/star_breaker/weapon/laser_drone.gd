@@ -15,7 +15,7 @@ func _ready():
 	$LaserTick.wait_time = laser_tick_Time
 	$Timer.connect("timeout", self, "_on_Timer_timeout")
 	$AnimationPlayer.connect("animation_finished", self, "_on_animation_finished")
-	$AnimationPlayer.play("spawn")
+	$AnimationPlayer.play("SETUP")
 	$HitParticles.emitting = false
 	$LaserStart.emitting = false
 	$LaserStart2.emitting = false
@@ -88,10 +88,14 @@ func _on_Timer_timeout():
 
 
 func _on_animation_finished(name):
-	if name == "spawn":
-		$Timer.start()
-	if name == "die":
-		queue_free()
+	match name:
+		"SETUP":
+			$AnimationPlayer.play("spawn")
+		"spawn":
+			$Timer.start()
+		"die":
+			queue_free()
+
 
 func _on_SpawnAudio_finished():
 	$SpawnAudio.stop()

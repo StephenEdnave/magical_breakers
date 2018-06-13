@@ -14,7 +14,7 @@ var off_screen = false
 func _ready():
 	self.connect("body_entered", self, "_on_body_entered")
 	$AnimationPlayer.connect("animation_finished", self, "_on_animation_finished")
-	$AnimationPlayer.play("movement")
+	$AnimationPlayer.play("SETUP")
 	$VisibilityNotifier2D.connect("screen_exited", self, "_on_VisibilityNotifier2D_screen_exited")
 	$ExplosionTimer.connect("timeout", self, "_on_ExplosionTimer_timeout")
 	$AccelerationTimer.connect("timeout", self, "_on_AccelerationTimer_timeout")
@@ -65,6 +65,8 @@ func _on_stuck_body_died():
 
 
 func _on_animation_finished(name):
+	if name == "SETUP":
+		$AnimationPlayer.play("movement")
 	if name == "stick" and stuck_body:
 		stuck_body.take_damage(self, "star_b_sticky_bomb")
 		emit_signal("successful_hit", "star_b_sticky_bomb")
