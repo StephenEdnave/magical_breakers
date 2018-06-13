@@ -24,7 +24,7 @@ func exit():
 
 
 func update(delta):
-	velocity = arrive_to(velocity, roam_target_position, roam_slow_radius, max_roam_speed)
+	velocity = Steering.arrive_to(velocity, host.global_position, roam_target_position, host, roam_slow_radius, max_roam_speed)
 	move()
 	host.get_node("BodyPivot").scale.x = look_direction.x
 	if host.global_position.distance_to(roam_target_position) < ARRIVE_DISTANCE:

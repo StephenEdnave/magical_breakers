@@ -1,4 +1,4 @@
-extends 'state.gd'
+extends "res://utils/state.gd"
 
 var knockback_direction = Vector2()
 var knockback_force = 10.0

@@ -8,8 +8,8 @@
 [ext_resource path="res://characters/states/motion/on_ground/attack.gd" type="Script" id=6]
 [ext_resource path="res://characters/states/die.gd" type="Script" id=7]
 [ext_resource path="res://characters/states/dead.gd" type="Script" id=8]
-[ext_resource path="res://characters/Health.tscn" type="PackedScene" id=9]
-[ext_resource path="res://characters/Mana.tscn" type="PackedScene" id=10]
+[ext_resource path="res://utils/Health.tscn" type="PackedScene" id=9]
+[ext_resource path="res://utils/Mana.tscn" type="PackedScene" id=10]
 [ext_resource path="res://characters/body.png" type="Texture" id=11]
 [ext_resource path="res://characters/weapon/weapon_pivot.gd" type="Script" id=12]
 [ext_resource path="res://characters/shadow.png" type="Texture" id=13]
@@ -235,7 +235,7 @@ tracks/1/keys = {
 custom_solver_bias = 0.0
 extents = Vector2( 33.9994, 59.3485 )
 
-[node name="Character" type="KinematicBody2D" index="0" groups=[
+[node name="Character" type="KinematicBody2D" groups=[
 "characters",
 ]]
 

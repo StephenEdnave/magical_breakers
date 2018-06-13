@@ -32,3 +32,7 @@ func handle_input(event):
 
 func update(delta):
 	pass
+
+
+func _on_animation_finished(name):
+	return

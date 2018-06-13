@@ -44,8 +44,6 @@ func go_to_state(new_state):
 
 
 func _on_animation_finished(name):
-	if not states_stack[0].has_method("_on_animation_finished"):
-		return
 	var new_state = states_stack[0]._on_animation_finished(name)
 	if new_state or new_state == 0:
 		go_to_state(new_state)

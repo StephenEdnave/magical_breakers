@@ -1,6 +1,6 @@
 [gd_scene load_steps=17 format=2]
 
-[ext_resource path="res://characters/Health.tscn" type="PackedScene" id=1]
+[ext_resource path="res://utils/Health.tscn" type="PackedScene" id=1]
 [ext_resource path="res://monster/sham/textures/sm_wisp00.png" type="Texture" id=2]
 [ext_resource path="res://monster/sprite/sprites/sm_impact3.png" type="Texture" id=3]
 [ext_resource path="res://monster/sprite/sprites/sm_impact4.png" type="Texture" id=4]
@@ -9,6 +9,7 @@
 [ext_resource path="res://monster/sprite/sprites/sm_wisp02.png" type="Texture" id=7]
 [ext_resource path="res://monster/sprite/sprites/sm_wisp03.png" type="Texture" id=8]
 [ext_resource path="res://objects/StatusIcon.tscn" type="PackedScene" id=9]
+
 
 [sub_resource type="Animation" id=1]
 

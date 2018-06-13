@@ -1,4 +1,4 @@
-extends 'state.gd'
+extends "res://utils/state.gd"
 
 export (float) var SPOT_RANGE = 3000.0
 var start_roaming = false

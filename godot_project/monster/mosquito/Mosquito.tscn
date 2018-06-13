@@ -6,7 +6,8 @@
 [ext_resource path="res://monster/mosquito/states/follow.gd" type="Script" id=4]
 [ext_resource path="res://monster/mosquito/states/die.gd" type="Script" id=5]
 [ext_resource path="res://monster/mosquito/mosquito.png" type="Texture" id=6]
-[ext_resource path="res://characters/Health.tscn" type="PackedScene" id=7]
+[ext_resource path="res://utils/Health.tscn" type="PackedScene" id=7]
+
 
 [sub_resource type="Animation" id=1]
 

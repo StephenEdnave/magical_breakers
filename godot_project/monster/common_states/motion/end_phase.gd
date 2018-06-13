@@ -8,7 +8,7 @@ export(float) var max_return_speed = 800.0
 
 # Initialize the state. E.g. change the animation
 func enter():
-	target_position = host.global_position
+	target_position = host.start_position
 	return_slow_radius = host.position.distance_to(host.start_position) / 2
 	host.get_node("RayCast2D").visible = true
 
@@ -19,7 +19,7 @@ func exit():
 
 
 func update(delta):
-	velocity = arrive_to(velocity, target_position, return_slow_radius, max_return_speed, true)
+	velocity = Steering.arrive_to(velocity, host.global_position, target_position, host, MASS, return_slow_radius, max_return_speed, true)
 	move()
 	host.get_node("BodyPivot").scale.x = look_direction.x
 	if host.global_position.distance_to(host.start_position) < ARRIVE_DISTANCE:

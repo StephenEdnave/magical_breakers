@@ -1,4 +1,4 @@
-extends "res://characters/weapon/weapon.gd"
+extends "res://utils/weapon.gd"
 
 
 

@@ -20,10 +20,11 @@
 [ext_resource path="res://monster/dwarf/sprites/sm_dwarf13.png" type="Texture" id=18]
 [ext_resource path="res://monster/exclamation-mark.png" type="Texture" id=19]
 [ext_resource path="res://objects/StatusIcon.tscn" type="PackedScene" id=20]
-[ext_resource path="res://characters/Health.tscn" type="PackedScene" id=21]
+[ext_resource path="res://utils/Health.tscn" type="PackedScene" id=21]
 [ext_resource path="res://sfx/dash.ogg" type="AudioStream" id=22]
 [ext_resource path="res://sfx/dwarf_punch.ogg" type="AudioStream" id=23]
 [ext_resource path="res://sfx/dwarf_punch_impact.ogg" type="AudioStream" id=24]
+
 
 [sub_resource type="Animation" id=1]
 
