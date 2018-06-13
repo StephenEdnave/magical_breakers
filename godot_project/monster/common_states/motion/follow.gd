@@ -9,6 +9,8 @@ export(float) var DISTANCE_FROM_TARGET = 500.0
 var shoot_timer = null
 var go_to_shoot = false
 
+var target_position = Vector2()
+
 func _ready():
 	shoot_timer = Timer.new()
 	shoot_timer.one_shot = true
@@ -35,7 +37,8 @@ func update(delta):
 	if go_to_shoot:
 		return host.STATE_IDS.SHOOT
 	
-	velocity = follow(velocity, host.target_position + (host.global_position - host.target_position).normalized() * DISTANCE_FROM_TARGET, max_follow_speed)
+	target_position = host.target_position + (host.global_position - host.target_position).normalized() * DISTANCE_FROM_TARGET
+	velocity = follow(velocity, target_position, max_follow_speed)
 	move()
 	host.get_node("BodyPivot").scale.x = look_direction.x
 	if host.global_position.distance_to(host.target_position) > FOLLOW_RANGE:
@@ -43,4 +46,7 @@ func update(delta):
 
 
 func _on_shoot_timer_timeout():
-	go_to_shoot = true
+	if host.global_position.distance_to(target_position) < SHOOT_RANGE:
+		go_to_shoot = true
+	else:
+		shoot_timer.start()

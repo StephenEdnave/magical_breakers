@@ -39,7 +39,7 @@ tracks/0/keys = {
 custom_solver_bias = 0.0
 radius = 34.7888
 
-[node name="MissilePlushy" index="0" instance=ExtResource( 1 )]
+[node name="MissilePlushy" instance=ExtResource( 1 )]
 
 script = ExtResource( 2 )
 
@@ -88,7 +88,7 @@ FOLLOW_RANGE = 3000.0
 max_follow_speed = 320.0
 SHOOT_RANGE = 800.0
 SHOOT_TIME = 3.0
-DISTANCE_FROM_TARGET = 500.0
+DISTANCE_FROM_TARGET = 800.0
 
 [node name="Stagger" type="Node" parent="States" index="5"]
 

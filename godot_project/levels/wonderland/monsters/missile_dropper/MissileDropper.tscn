@@ -6,7 +6,7 @@
 [ext_resource path="res://monster/common_states/motion/roam.gd" type="Script" id=4]
 [ext_resource path="res://monster/common_states/motion/return.gd" type="Script" id=5]
 [ext_resource path="res://monster/common_states/motion/spot.gd" type="Script" id=6]
-[ext_resource path="res://monster/common_states/motion/follow.gd" type="Script" id=7]
+[ext_resource path="res://levels/wonderland/monsters/missile_dropper/states/follow.gd" type="Script" id=7]
 [ext_resource path="res://monster/common_states/stagger.gd" type="Script" id=8]
 [ext_resource path="res://monster/common_states/die.gd" type="Script" id=9]
 [ext_resource path="res://levels/wonderland/monsters/missile_dropper/states/shoot.gd" type="Script" id=10]
@@ -86,8 +86,8 @@ DEFAULT_MAX_SPEED = 300.0
 MASS = 8.0
 FOLLOW_RANGE = 3000.0
 max_follow_speed = 320.0
-SHOOT_RANGE = 800.0
-SHOOT_TIME = 0.0
+SHOOT_RANGE = 200.0
+SHOOT_TIME = 2.0
 DISTANCE_FROM_TARGET = 500.0
 
 [node name="Stagger" type="Node" parent="States" index="5"]
