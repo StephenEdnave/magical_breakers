@@ -7,10 +7,7 @@ path="res://.import/Silent Rhythm (Stage 4) - SUGURI.ogg-41d6fb1f80aca931849e836
 [deps]
 
 source_file="res://music/Silent Rhythm (Stage 4) - SUGURI.ogg"
-source_md5="742270bb478d8e8259f022dbfb6b45f1"
-
 dest_files=[ "res://.import/Silent Rhythm (Stage 4) - SUGURI.ogg-41d6fb1f80aca931849e83612b57d006.oggstr" ]
-dest_md5="a58461b84aa3303d29d69bd1dc81e929"
 
 [params]
 

@@ -7,10 +7,7 @@ path="res://.import/cloud_1.png-2480bd728825fac6f3071f756ee06693.stex"
 [deps]
 
 source_file="res://levels/in_the_sky/cloud_1.png"
-source_md5="198daeda14097d45e417e62ff283f10e"
-
 dest_files=[ "res://.import/cloud_1.png-2480bd728825fac6f3071f756ee06693.stex" ]
-dest_md5="fa0be7559ca74ffae1307a43aaa1a5f4"
 
 [params]
 

@@ -7,10 +7,7 @@ path="res://.import/grenade.ogg-1e63c0ca202cb5715754582530695f90.oggstr"
 [deps]
 
 source_file="res://sfx/q009/grenade.ogg"
-source_md5="edbd2212ecb3d7f77ecce387e0078537"
-
 dest_files=[ "res://.import/grenade.ogg-1e63c0ca202cb5715754582530695f90.oggstr" ]
-dest_md5="e40dc54844a78b2ae5160a86223f20df"
 
 [params]
 

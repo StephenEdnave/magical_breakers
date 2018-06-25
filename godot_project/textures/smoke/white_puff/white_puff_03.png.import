@@ -7,10 +7,7 @@ path="res://.import/white_puff_03.png-4b9236babb5c396ccecc9573535251ff.stex"
 [deps]
 
 source_file="res://textures/smoke/white_puff/white_puff_03.png"
-source_md5="a97dfa51260c60efc4902b4694762e30"
-
 dest_files=[ "res://.import/white_puff_03.png-4b9236babb5c396ccecc9573535251ff.stex" ]
-dest_md5="d64368f592970c65f3a087aafd0439e4"
 
 [params]
 

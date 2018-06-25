@@ -7,10 +7,7 @@ path="res://.import/outofammo.ogg-8727b16eba2f33d078e1fc319e0a9f53.oggstr"
 [deps]
 
 source_file="res://sfx/q009/outofammo.ogg"
-source_md5="51cb4fdc4f29a9084d2a91ceac6e695a"
-
 dest_files=[ "res://.import/outofammo.ogg-8727b16eba2f33d078e1fc319e0a9f53.oggstr" ]
-dest_md5="027d5073e9430b4f8dadcbfb8c15b9c3"
 
 [params]
 

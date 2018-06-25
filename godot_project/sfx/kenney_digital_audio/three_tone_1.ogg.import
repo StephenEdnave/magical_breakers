@@ -7,10 +7,7 @@ path="res://.import/three_tone_1.ogg-c41b1df59ebf91264aab25f63d46e722.oggstr"
 [deps]
 
 source_file="res://sfx/kenney_digital_audio/three_tone_1.ogg"
-source_md5="ed0d60f4affade1362295b7c706ec682"
-
 dest_files=[ "res://.import/three_tone_1.ogg-c41b1df59ebf91264aab25f63d46e722.oggstr" ]
-dest_md5="dd1a8edef7c19cccf1a85ea138ddabc7"
 
 [params]
 

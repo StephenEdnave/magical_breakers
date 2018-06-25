@@ -7,10 +7,7 @@ path="res://.import/sb_whip0.png-8fa22979f5218cad00282f654a62b4bd.stex"
 [deps]
 
 source_file="res://characters/player/star_breaker/sprites/sb_whip0.png"
-source_md5="228d79a83b6aee1fe84dc4a932af3ba9"
-
 dest_files=[ "res://.import/sb_whip0.png-8fa22979f5218cad00282f654a62b4bd.stex" ]
-dest_md5="b6b91c39850552bc25418c08191c2170"
 
 [params]
 

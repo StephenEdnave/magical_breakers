@@ -7,10 +7,7 @@ path="res://.import/walke_2.png-d8f0a5c4ca0bcecf9651b4bc75f08103.stex"
 [deps]
 
 source_file="res://levels/wonderland/monsters/missile_dropper/sprites/walke_2.png"
-source_md5="465e7d242bb58ae8f2b24bbb854af027"
-
 dest_files=[ "res://.import/walke_2.png-d8f0a5c4ca0bcecf9651b4bc75f08103.stex" ]
-dest_md5="391a7fe5dfcbb40277d481167b80f08f"
 
 [params]
 

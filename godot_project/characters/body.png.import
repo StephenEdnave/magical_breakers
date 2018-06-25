@@ -7,10 +7,7 @@ path="res://.import/body.png-3819376a1b1049297cbc9db0e48c88d1.stex"
 [deps]
 
 source_file="res://characters/body.png"
-source_md5="b7d0f15a75329ac65137611d9cc52db6"
-
 dest_files=[ "res://.import/body.png-3819376a1b1049297cbc9db0e48c88d1.stex" ]
-dest_md5="f535a845161d6537c3fbbaaa0679e4fa"
 
 [params]
 

@@ -7,10 +7,7 @@ path="res://.import/EatMe_-_By_The_Night.ogg-b69ff11247b098e85c8094b788df2f19.og
 [deps]
 
 source_file="res://music/EatMe_-_By_The_Night.ogg"
-source_md5="bcfbe969fed20012a1f083fefd5b61b8"
-
 dest_files=[ "res://.import/EatMe_-_By_The_Night.ogg-b69ff11247b098e85c8094b788df2f19.oggstr" ]
-dest_md5="517b67055da362dcfc617e36798837fd"
 
 [params]
 

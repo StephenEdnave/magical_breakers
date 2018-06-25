@@ -56,10 +56,10 @@ func go_to_state(new_state):
 	states_stack[0].exit()
 	
 	match new_state:
-		PREVIOUS_STATE:
-			states_stack.pop_front()
-		ATTACK, STAGGER:
-			states_stack.push_front(STATES[new_state])
+#		PREVIOUS_STATE:
+#			states_stack.pop_front()
+#		ATTACK, STAGGER:
+#			states_stack.push_front(STATES[new_state])
 		_:
 			states_stack[0] = STATES[new_state]
 	states_stack[0].enter()
@@ -70,7 +70,7 @@ func take_damage(source, attack_name):
 	if self.is_a_parent_of(source):
 		return true # Return if parent
 	var knockback_direction = (global_position - source.global_position).normalized()
-	STATES[STAGGER].setup(knockback_direction, Attacks.attacks[attack_name].knockback_force, Attacks.attacks[attack_name].knockback_duration)
+	STATES[STAGGER].setup(knockback_direction, attack_name)
 	$Health.take_damage(attack_name)
 
 

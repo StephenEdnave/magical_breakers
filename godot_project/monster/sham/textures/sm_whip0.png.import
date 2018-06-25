@@ -7,10 +7,7 @@ path="res://.import/sm_whip0.png-b6d3c4ef560d715e4e238e302454ffdb.stex"
 [deps]
 
 source_file="res://monster/sham/textures/sm_whip0.png"
-source_md5="d9a832ea53cc9d9da076b0c974dba849"
-
 dest_files=[ "res://.import/sm_whip0.png-b6d3c4ef560d715e4e238e302454ffdb.stex" ]
-dest_md5="1f57c49232400d0fd86a44690cb9b253"
 
 [params]
 

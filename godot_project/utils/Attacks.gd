@@ -6,7 +6,7 @@ var attacks = {
 	# Setup
 	"SETUP": {
 		animation = "SETUP",
-		host_animation = "SETUP" },
+		owner_animation = "SETUP" },
 	
 	
 	# Status effects
@@ -40,7 +40,7 @@ var attacks = {
 		knockback_force = 10 ,
 		knockback_duration = 0.4,
 		hit_pause = 0.001,
-		host_animation = "melee_1",
+		owner_animation = "melee_1",
 		move_force = 800 },
 	"star_b_melee_2": { 
 		damage = 100 , 
@@ -52,7 +52,7 @@ var attacks = {
 		knockback_force = 10 ,
 		knockback_duration = 0.4,
 		hit_pause = 0.001, 
-		host_animation = "melee_1",
+		owner_animation = "melee_1",
 		move_force =  800 },
 	"star_b_melee_3": { 
 		damage = 75 , 
@@ -64,7 +64,7 @@ var attacks = {
 		knockback_force = 10 ,
 		knockback_duration = 0.4, 
 		hit_pause = 0.004,
-		host_animation = "melee_2",
+		owner_animation = "melee_2",
 		move_force = -1200 },
 	"star_b_melee_4": {
 		damage = 200,
@@ -76,7 +76,7 @@ var attacks = {
 		knockback_force = 50,
 		knockback_duration = 0.6, 
 		hit_pause = 0.03,
-		host_animation = "melee_3",
+		owner_animation = "melee_3",
 		move_force = 1600 },
 	#Projectiles
 	"star_b_sticky_bomb": { 
@@ -99,10 +99,10 @@ var attacks = {
 	# Projectiles - visuals
 	"star_b_laser_spawn": {
 		animation = "attack",
-		host_animation = "primary_attack" },
+		owner_animation = "primary_attack" },
 	"star_b_sticky_bomb_launch": {
 		animation = "attack",
-		host_animation = "secondary_attack" },
+		owner_animation = "secondary_attack" },
 	
 	
 	# Dwarf
@@ -132,14 +132,14 @@ var attacks = {
 		hit_pause = 0.01 },
 	"dwarf_gun": {
 		animation = "attack",
-		host_animation = "shoot"
+		owner_animation = "shoot"
 		},
 	
 	
 	# Sprite
 	"sprite_gun": {
 		animation = "attack",
-		host_animation = "walk" },
+		owner_animation = "walk" },
 	"sprite_projectile": { 
 		damage = 50 , 
 		effect = GlobalConstants.HEALTH_EFFECT.NONE,
@@ -153,7 +153,7 @@ var attacks = {
 	# Basic Plushy
 	"basic_plushy_gun": {
 		animation = "attack",
-		host_animation = "walk" },
+		owner_animation = "walk" },
 	"basic_plushy_projectile": {
 		damage = 50 , 
 		effect = GlobalConstants.HEALTH_EFFECT.NONE,
@@ -167,7 +167,7 @@ var attacks = {
 	# Missile Plushy
 	"missile_plushy_gun": {
 		animation = "attack",
-		host_animation = "walk" },
+		owner_animation = "walk" },
 	"missile_plushy_projectile": {
 		damage = 100 , 
 		effect = GlobalConstants.HEALTH_EFFECT.NONE,
@@ -176,4 +176,21 @@ var attacks = {
 		knockback_force = 100 ,
 		knockback_duration = 0.5,
 		hit_pause = 0.03 },
+	
+	
+	# Krila
+	"krila_gun": {
+		animation = "attack",
+		owner_animation = "attack" },
+	
+	
+	# Charge Plushy
+	"charge_plushy_charge": {
+		damage = 300,
+		effect = GlobalConstants.HEALTH_EFFECT.NONE, 
+		damage_type = GlobalConstants.HEALTH_DAMAGE_TYPE.NONE,
+		mana_effect = GlobalConstants.MANA_EFFECT.NONE,
+		knockback_force = 200.0 ,
+		knockback_duration = 0.5,
+		hit_pause = 0.01, },
 }

@@ -7,10 +7,7 @@ path="res://.import/quaddamage_out.ogg-0ae772ff76569c04cc6fb636c866017f.oggstr"
 [deps]
 
 source_file="res://sfx/q009/quaddamage_out.ogg"
-source_md5="3e91e0da2a7efcb1c20b25511fa20813"
-
 dest_files=[ "res://.import/quaddamage_out.ogg-0ae772ff76569c04cc6fb636c866017f.oggstr" ]
-dest_md5="1be87803cf449a0f36e7bc049ec23e9e"
 
 [params]
 

@@ -7,10 +7,7 @@ path="res://.import/green_sliderLeft.png-534e7edcfe3b4f46861464f2b8ccaa78.stex"
 [deps]
 
 source_file="res://interface/sprites/green_sliderLeft.png"
-source_md5="edd55628a3cafb414b08c0d8650121b6"
-
 dest_files=[ "res://.import/green_sliderLeft.png-534e7edcfe3b4f46861464f2b8ccaa78.stex" ]
-dest_md5="0f6b40015783f28bc9c7922def13a71f"
 
 [params]
 

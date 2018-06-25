@@ -7,10 +7,7 @@ path="res://.import/green_boxCheckmark.png-e31b107e40ff0b91549045942399db23.stex
 [deps]
 
 source_file="res://interface/sprites/green_boxCheckmark.png"
-source_md5="4f6b825ac3039cd30c954907276a882b"
-
 dest_files=[ "res://.import/green_boxCheckmark.png-e31b107e40ff0b91549045942399db23.stex" ]
-dest_md5="ab2414ca36e577e87ff8faa975eca5b9"
 
 [params]
 

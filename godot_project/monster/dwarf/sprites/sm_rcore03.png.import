@@ -7,10 +7,7 @@ path="res://.import/sm_rcore03.png-c39800adaa805e9b352d5dfb1f2af6da.stex"
 [deps]
 
 source_file="res://monster/dwarf/sprites/sm_rcore03.png"
-source_md5="6d3c7b31697473d512d5a321bba1776a"
-
 dest_files=[ "res://.import/sm_rcore03.png-c39800adaa805e9b352d5dfb1f2af6da.stex" ]
-dest_md5="f64717f9e0cf293428696bd51f8e6ad3"
 
 [params]
 

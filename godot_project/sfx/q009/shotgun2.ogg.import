@@ -7,10 +7,7 @@ path="res://.import/shotgun2.ogg-74bbec789a8584c3da007272e26fd521.oggstr"
 [deps]
 
 source_file="res://sfx/q009/shotgun2.ogg"
-source_md5="2a5a2b7a516e829a20d9cdf81ef176ca"
-
 dest_files=[ "res://.import/shotgun2.ogg-74bbec789a8584c3da007272e26fd521.oggstr" ]
-dest_md5="4e53259c266468a5ea4c0efe7538c025"
 
 [params]
 

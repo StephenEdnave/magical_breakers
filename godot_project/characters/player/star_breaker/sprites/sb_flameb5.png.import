@@ -7,10 +7,7 @@ path="res://.import/sb_flameb5.png-ec671b435a9a301cfb960839ec374584.stex"
 [deps]
 
 source_file="res://characters/player/star_breaker/sprites/sb_flameb5.png"
-source_md5="a6cf6c74ac4f7b352373f2c6d8d04b74"
-
 dest_files=[ "res://.import/sb_flameb5.png-ec671b435a9a301cfb960839ec374584.stex" ]
-dest_md5="8bd8484ac6db4db6e5f99b471bf18b99"
 
 [params]
 

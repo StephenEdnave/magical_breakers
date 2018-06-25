@@ -7,10 +7,7 @@ path="res://.import/zap_three_tone_up.ogg-358599148d130801e6a5d7d9aa044c16.oggst
 [deps]
 
 source_file="res://sfx/kenney_digital_audio/zap_three_tone_up.ogg"
-source_md5="263370e19591b2ca967f6a57c0d49809"
-
 dest_files=[ "res://.import/zap_three_tone_up.ogg-358599148d130801e6a5d7d9aa044c16.oggstr" ]
-dest_md5="fd2d04ad67ebfe894f501e77f99f9f39"
 
 [params]
 

@@ -7,10 +7,7 @@ path="res://.import/sm_bck02.png-dc90404740d64cf9e6e3cd171fbf1530.stex"
 [deps]
 
 source_file="res://monster/sham/textures/sm_bck02.png"
-source_md5="9e96cc97516b3d2f4250b20c3621969a"
-
 dest_files=[ "res://.import/sm_bck02.png-dc90404740d64cf9e6e3cd171fbf1530.stex" ]
-dest_md5="5ed48a5b9744ce77d324dea76dabe50b"
 
 [params]
 

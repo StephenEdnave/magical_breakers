@@ -7,10 +7,7 @@ path="res://.import/space_trash_5.ogg-68e15e439ca9e71b6190a1f75e1a20fb.oggstr"
 [deps]
 
 source_file="res://sfx/kenney_digital_audio/space_trash_5.ogg"
-source_md5="142cbc9bc7acdd2da02fa3620542bac2"
-
 dest_files=[ "res://.import/space_trash_5.ogg-68e15e439ca9e71b6190a1f75e1a20fb.oggstr" ]
-dest_md5="368f808f88ba15bff44bb22cebfccc01"
 
 [params]
 

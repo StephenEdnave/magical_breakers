@@ -15,8 +15,6 @@ var ready_for_next_attack = false
 var MAX_COMBO_COUNT = 1
 var combo_count = 0
 
-var host = null
-
 var hit_objects = []
 
 var combo = ["SETUP"]
@@ -27,8 +25,8 @@ export (float) var cooldown = 0.01
 var CooldownTimer = null
 
 
-func setup(_host):
-	host = _host
+func setup(_owner):
+	set_owner(_owner)
 
 
 func _ready():
@@ -65,16 +63,17 @@ func _enter_state(new_state):
 			if not CooldownTimer.is_stopped():
 				emit_signal("attack_failed")
 				return
-			if host.has_node("Mana"):
-				if host.get_node("Mana").mana < costs[combo_count - 1]:
+			if owner.has_node("Mana"):
+				if owner.get_node("Mana").mana < costs[combo_count - 1]:
 					if not state == ATTACK: # If currently attacking, let animation finish, otherwise return
 						emit_signal("attack_failed")
 						return
 				else:
-					host.get_node("Mana").expend_mana(costs[combo_count - 1])
+					owner.get_node("Mana").expend_mana(costs[combo_count - 1])
 			monitoring = true
 			attack_current = combo[combo_count - 1]
 			$AnimationPlayer.play(Attacks.attacks[attack_current].animation)
+			owner.get_node("AnimationPlayer").play(Attacks.attacks[attack_current].owner_animation)
 			emit_signal("attack_started")
 			CooldownTimer.start()
 	state = new_state

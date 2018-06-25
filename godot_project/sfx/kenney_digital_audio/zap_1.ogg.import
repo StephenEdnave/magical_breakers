@@ -7,10 +7,7 @@ path="res://.import/zap_1.ogg-fa544913c592971dfff4c69030f569ba.oggstr"
 [deps]
 
 source_file="res://sfx/kenney_digital_audio/zap_1.ogg"
-source_md5="b8666172656a0b51302dd6af2e450d1e"
-
 dest_files=[ "res://.import/zap_1.ogg-fa544913c592971dfff4c69030f569ba.oggstr" ]
-dest_md5="1e4c97d63272173f3a4cea2212c706f2"
 
 [params]
 

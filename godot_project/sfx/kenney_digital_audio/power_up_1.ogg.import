@@ -7,10 +7,7 @@ path="res://.import/power_up_1.ogg-c4e6151ec6b36841aa74f2c5bf4a1ea4.oggstr"
 [deps]
 
 source_file="res://sfx/kenney_digital_audio/power_up_1.ogg"
-source_md5="05b9796d5f7b0908590b6980d78b498c"
-
 dest_files=[ "res://.import/power_up_1.ogg-c4e6151ec6b36841aa74f2c5bf4a1ea4.oggstr" ]
-dest_md5="adcf87ca702652a817b96024991cb64c"
 
 [params]
 

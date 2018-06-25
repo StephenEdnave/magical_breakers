@@ -7,10 +7,7 @@ path="res://.import/sm_cubeb01.png-3ee98642eb17de4433338c41e3965f5c.stex"
 [deps]
 
 source_file="res://monster/sham/textures/sm_cubeb01.png"
-source_md5="a0d7cbc83ff346a11fc7739e2421dcaa"
-
 dest_files=[ "res://.import/sm_cubeb01.png-3ee98642eb17de4433338c41e3965f5c.stex" ]
-dest_md5="180ebe7939241612d5da030367479788"
 
 [params]
 

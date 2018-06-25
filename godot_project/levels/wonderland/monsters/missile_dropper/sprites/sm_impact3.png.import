@@ -7,10 +7,7 @@ path="res://.import/sm_impact3.png-bf9e5965c1f09129813a63ff52fa6c65.stex"
 [deps]
 
 source_file="res://levels/wonderland/monsters/missile_dropper/sprites/sm_impact3.png"
-source_md5="5b8db3cc82d5e8b953fe456ed58407f3"
-
 dest_files=[ "res://.import/sm_impact3.png-bf9e5965c1f09129813a63ff52fa6c65.stex" ]
-dest_md5="e3bf59bf4efe97a1b90da164c2e0ef5c"
 
 [params]
 

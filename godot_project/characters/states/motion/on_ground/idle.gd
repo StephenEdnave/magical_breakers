@@ -2,11 +2,11 @@ extends 'on_ground.gd'
 
 
 func enter():
-	host.Anim.play("idle")
+	owner.Anim.play("idle")
 
 
 func exit():
-	host.STATES[WALK].velocity = velocity
+	owner.STATES[WALK].velocity = velocity
 
 
 func handle_input(event):

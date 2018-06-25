@@ -7,10 +7,7 @@ path="res://.import/exclamation-mark.png-52acde3b78e1a6c62b5b552aa5446e48.stex"
 [deps]
 
 source_file="res://monster/exclamation-mark.png"
-source_md5="a71fbd41a696edecbdb5afc5670cad47"
-
 dest_files=[ "res://.import/exclamation-mark.png-52acde3b78e1a6c62b5b552aa5446e48.stex" ]
-dest_md5="6a8043f578f9d8d799a1d266f0f8204f"
 
 [params]
 

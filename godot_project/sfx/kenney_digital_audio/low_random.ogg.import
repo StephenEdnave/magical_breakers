@@ -7,10 +7,7 @@ path="res://.import/low_random.ogg-966af70ccc8b244e91efc87d32c76b10.oggstr"
 [deps]
 
 source_file="res://sfx/kenney_digital_audio/low_random.ogg"
-source_md5="26a339ee4bbb6fdbf77aa82875389cd3"
-
 dest_files=[ "res://.import/low_random.ogg-966af70ccc8b244e91efc87d32c76b10.oggstr" ]
-dest_md5="52ac6041489a8a9bf1b778a59c3ef0fc"
 
 [params]
 

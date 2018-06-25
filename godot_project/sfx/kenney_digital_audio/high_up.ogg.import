@@ -7,10 +7,7 @@ path="res://.import/high_up.ogg-51254a59dc9487caff4f66da80972ec5.oggstr"
 [deps]
 
 source_file="res://sfx/kenney_digital_audio/high_up.ogg"
-source_md5="4bff8398fb1e2eb3b30b49a76c8cbbc6"
-
 dest_files=[ "res://.import/high_up.ogg-51254a59dc9487caff4f66da80972ec5.oggstr" ]
-dest_md5="90f9d29a88c7b57f44ba75d19dd11094"
 
 [params]
 

@@ -7,10 +7,7 @@ path="res://.import/fart_06.png-7499d20d5fc6015c2345801f1a4a025c.stex"
 [deps]
 
 source_file="res://textures/smoke/fart/fart_06.png"
-source_md5="ebce4e11256df4d5dd1e26c7757a9017"
-
 dest_files=[ "res://.import/fart_06.png-7499d20d5fc6015c2345801f1a4a025c.stex" ]
-dest_md5="5f4787e1f8c4a941be5c0c0b969ecc5d"
 
 [params]
 

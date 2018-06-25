@@ -7,10 +7,7 @@ path="res://.import/_explosion.ogg-6b89d80b602d90e44e883adfe25a0789.oggstr"
 [deps]
 
 source_file="res://levels/wonderland/monsters/missile_plushy/sfx/_explosion.ogg"
-source_md5="ac834c8e4be54d4162f9f89a8ffb6b28"
-
 dest_files=[ "res://.import/_explosion.ogg-6b89d80b602d90e44e883adfe25a0789.oggstr" ]
-dest_md5="8ce394a6a174ebe9e881cc3008b3cc35"
 
 [params]
 

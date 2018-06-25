@@ -7,10 +7,7 @@ path="res://.import/laser.ogg-94e6631169f1ea4d7a53454f4b8ec841.oggstr"
 [deps]
 
 source_file="res://characters/player/star_breaker/sfx/laser.ogg"
-source_md5="36001d02e358fe9ab2dad3b2340e94e1"
-
 dest_files=[ "res://.import/laser.ogg-94e6631169f1ea4d7a53454f4b8ec841.oggstr" ]
-dest_md5="a8934a0b61a49f9af35550900427c44e"
 
 [params]
 

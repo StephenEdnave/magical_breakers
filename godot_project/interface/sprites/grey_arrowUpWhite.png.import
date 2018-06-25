@@ -7,10 +7,7 @@ path="res://.import/grey_arrowUpWhite.png-79a29f588820eec117c785911923dc41.stex"
 [deps]
 
 source_file="res://interface/sprites/grey_arrowUpWhite.png"
-source_md5="e1ba0ecc90b622055c025e0d477249a3"
-
 dest_files=[ "res://.import/grey_arrowUpWhite.png-79a29f588820eec117c785911923dc41.stex" ]
-dest_md5="257b827d7c47435fe93e417f6d74cd4b"
 
 [params]
 

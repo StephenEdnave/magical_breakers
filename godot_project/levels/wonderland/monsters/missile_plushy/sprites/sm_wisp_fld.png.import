@@ -7,10 +7,7 @@ path="res://.import/sm_wisp_fld.png-7eba65b3ac9b1f795343382426266785.stex"
 [deps]
 
 source_file="res://levels/wonderland/monsters/missile_plushy/sprites/sm_wisp_fld.png"
-source_md5="19be7a9eed9458b606aab0d1d997a2d0"
-
 dest_files=[ "res://.import/sm_wisp_fld.png-7eba65b3ac9b1f795343382426266785.stex" ]
-dest_md5="403e6625898177bae29d289a1de6c802"
 
 [params]
 

@@ -7,10 +7,7 @@ path="res://.import/black_smoke_13.png-2f8b62f5fb47e147118bd8baa8a7eacc.stex"
 [deps]
 
 source_file="res://textures/smoke/black_smoke/black_smoke_13.png"
-source_md5="ec51f8e185008da3ffca301c01da4581"
-
 dest_files=[ "res://.import/black_smoke_13.png-2f8b62f5fb47e147118bd8baa8a7eacc.stex" ]
-dest_md5="1c2333c0b0ebde368997c0c5585b5b38"
 
 [params]
 

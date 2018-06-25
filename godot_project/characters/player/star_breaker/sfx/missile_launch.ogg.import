@@ -7,10 +7,7 @@ path="res://.import/missile_launch.ogg-36abcd5ebca2e730c74400fffd4c7dd8.oggstr"
 [deps]
 
 source_file="res://characters/player/star_breaker/sfx/missile_launch.ogg"
-source_md5="7c358dadaa629d164ede1479184afddb"
-
 dest_files=[ "res://.import/missile_launch.ogg-36abcd5ebca2e730c74400fffd4c7dd8.oggstr" ]
-dest_md5="abbad1086c21cd25dade13560e7743bf"
 
 [params]
 

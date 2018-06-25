@@ -1,0 +1,305 @@
+[gd_scene load_steps=28 format=2]
+
+[ext_resource path="res://monster/Monster.tscn" type="PackedScene" id=1]
+[ext_resource path="res://levels/wonderland/monsters/charge_plushy/charge_plushy.gd" type="Script" id=2]
+[ext_resource path="res://levels/wonderland/monsters/charge_plushy/states/spawn.gd" type="Script" id=3]
+[ext_resource path="res://levels/wonderland/monsters/charge_plushy/states/roam_sequence.gd" type="Script" id=4]
+[ext_resource path="res://monster/common_states/idle.gd" type="Script" id=5]
+[ext_resource path="res://monster/common_states/motion/roam.gd" type="Script" id=6]
+[ext_resource path="res://levels/wonderland/monsters/charge_plushy/states/charge_sequence.gd" type="Script" id=7]
+[ext_resource path="res://monster/common_states/charge/prepare.gd" type="Script" id=8]
+[ext_resource path="res://monster/common_states/charge/charge.gd" type="Script" id=9]
+[ext_resource path="res://monster/common_states/charge/bump.gd" type="Script" id=10]
+[ext_resource path="res://monster/common_states/stagger.gd" type="Script" id=11]
+[ext_resource path="res://monster/common_states/die.gd" type="Script" id=12]
+[ext_resource path="res://monster/common_states/motion/end_phase.gd" type="Script" id=13]
+[ext_resource path="res://monster/common_states/dead.gd" type="Script" id=14]
+[ext_resource path="res://levels/wonderland/monsters/krila/sprites/100oj/krila_00_01.png" type="Texture" id=15]
+[ext_resource path="res://levels/wonderland/monsters/charge_plushy/sprites/100oj/krila_00_05.png" type="Texture" id=16]
+[ext_resource path="res://levels/wonderland/monsters/krila/sprites/100oj/krila_00_00.png" type="Texture" id=17]
+[ext_resource path="res://levels/wonderland/monsters/krila/sprites/100oj/krila_00_05.png" type="Texture" id=18]
+[ext_resource path="res://levels/wonderland/monsters/charge_plushy/sprites/100oj/krila_01_00.png" type="Texture" id=19]
+
+[sub_resource type="Animation" id=1]
+
+resource_name = "attack"
+length = 0.4
+loop = false
+step = 0.1
+tracks/0/type = "value"
+tracks/0/path = NodePath("BodyPivot/Sprite:texture")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 1,
+"values": [ ExtResource( 15 ) ]
+}
+
+[sub_resource type="Animation" id=8]
+
+resource_name = "bump"
+length = 0.4
+loop = false
+step = 0.1
+tracks/0/type = "value"
+tracks/0/path = NodePath("BodyPivot/Sprite:texture")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 1,
+"values": [ ExtResource( 16 ) ]
+}
+
+[sub_resource type="Animation" id=6]
+
+resource_name = "charge"
+length = 0.4
+loop = false
+step = 0.1
+tracks/0/type = "value"
+tracks/0/path = NodePath("BodyPivot/Sprite:texture")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 1,
+"values": [ ExtResource( 15 ) ]
+}
+
+[sub_resource type="Animation" id=7]
+
+resource_name = "charge_prepare"
+length = 0.4
+loop = false
+step = 0.1
+tracks/0/type = "value"
+tracks/0/path = NodePath("BodyPivot/Sprite:texture")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 1,
+"values": [ ExtResource( 16 ) ]
+}
+
+[sub_resource type="Animation" id=2]
+
+resource_name = "draw_weapon"
+length = 1.0
+loop = false
+step = 0.1
+tracks/0/type = "value"
+tracks/0/path = NodePath("BodyPivot/Sprite:texture")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0, 0.5 ),
+"transitions": PoolRealArray( 1, 1 ),
+"update": 1,
+"values": [ ExtResource( 17 ), ExtResource( 18 ) ]
+}
+
+[sub_resource type="Animation" id=3]
+
+resource_name = "spawn"
+length = 3.0
+loop = false
+step = 0.1
+tracks/0/type = "value"
+tracks/0/path = NodePath("BodyPivot/Sprite:texture")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 1,
+"values": [ ExtResource( 17 ) ]
+}
+tracks/1/type = "value"
+tracks/1/path = NodePath("BodyPivot/Sprite:position")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/keys = {
+"times": PoolRealArray( 0, 3 ),
+"transitions": PoolRealArray( 0.25, 1 ),
+"update": 0,
+"values": [ Vector2( 0, -1231.99 ), Vector2( 0, 0 ) ]
+}
+
+[sub_resource type="Animation" id=4]
+
+length = 0.4
+loop = true
+step = 0.1
+tracks/0/type = "value"
+tracks/0/path = NodePath("BodyPivot/Sprite:texture")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 1,
+"values": [ ExtResource( 17 ) ]
+}
+
+[sub_resource type="CircleShape2D" id=5]
+
+custom_solver_bias = 0.0
+radius = 34.7888
+
+[node name="ChargePlushy" index="0" instance=ExtResource( 1 )]
+
+script = ExtResource( 2 )
+_phase = null
+
+[node name="Spawn" type="Node" parent="States" index="0"]
+
+script = ExtResource( 3 )
+
+[node name="RoamSequence" type="Node" parent="States" index="1"]
+
+script = ExtResource( 4 )
+SPOT_RANGE = 0.0
+
+[node name="Idle" type="Node" parent="States/RoamSequence" index="0"]
+
+script = ExtResource( 5 )
+roam = true
+duration = 1.5
+
+[node name="Roam" type="Node" parent="States/RoamSequence" index="1"]
+
+script = ExtResource( 6 )
+ARRIVE_DISTANCE = 6.0
+DEFAULT_SLOW_RADIUS = 200.0
+DEFAULT_MAX_SPEED = 300.0
+MASS = 8.0
+MAX_SPEED = 800.0
+ROAM_RADIUS = 200.0
+SLOW_RADIUS = 0.0
+
+[node name="Roam2" type="Node" parent="States/RoamSequence" index="2"]
+
+script = ExtResource( 6 )
+ARRIVE_DISTANCE = 6.0
+DEFAULT_SLOW_RADIUS = 200.0
+DEFAULT_MAX_SPEED = 300.0
+MASS = 8.0
+MAX_SPEED = 800.0
+ROAM_RADIUS = 200.0
+SLOW_RADIUS = 0.0
+
+[node name="Roam3" type="Node" parent="States/RoamSequence" index="3"]
+
+script = ExtResource( 6 )
+ARRIVE_DISTANCE = 6.0
+DEFAULT_SLOW_RADIUS = 200.0
+DEFAULT_MAX_SPEED = 300.0
+MASS = 8.0
+MAX_SPEED = 800.0
+ROAM_RADIUS = 200.0
+SLOW_RADIUS = 0.0
+
+[node name="ChargeSequence" type="Node" parent="States" index="2"]
+
+script = ExtResource( 7 )
+
+[node name="Prepare" type="Node" parent="States/ChargeSequence" index="0"]
+
+script = ExtResource( 8 )
+
+[node name="Charge" type="Node" parent="States/ChargeSequence" index="1"]
+
+script = ExtResource( 9 )
+SPEED = 1000.0
+DISTANCE = 1000.0
+
+[node name="Bump" type="Node" parent="States/ChargeSequence" index="2"]
+
+script = ExtResource( 10 )
+SPEED = 60.0
+
+[node name="Stagger" type="Node" parent="States" index="3"]
+
+script = ExtResource( 11 )
+
+[node name="Die" type="Node" parent="States" index="4"]
+
+script = ExtResource( 12 )
+
+[node name="EndPhase" type="Node" parent="States" index="5"]
+
+script = ExtResource( 13 )
+ARRIVE_DISTANCE = 6.0
+DEFAULT_SLOW_RADIUS = 200.0
+DEFAULT_MAX_SPEED = 300.0
+MASS = 8.0
+max_return_speed = 800.0
+
+[node name="Dead" type="Node" parent="States" index="6"]
+
+script = ExtResource( 14 )
+
+[node name="Health" parent="." index="1"]
+
+max_health = 300
+
+[node name="AnimationPlayer" parent="." index="2"]
+
+anims/attack = SubResource( 1 )
+anims/bump = SubResource( 8 )
+anims/charge = SubResource( 6 )
+anims/charge_prepare = SubResource( 7 )
+anims/draw_weapon = SubResource( 2 )
+anims/spawn = SubResource( 3 )
+anims/walk = SubResource( 4 )
+
+[node name="CollisionPolygon2D" parent="." index="4"]
+
+visible = false
+polygon = PoolVector2Array( -25.9885, -52.5346, -18.6579, -84.3003, 16.3659, -85.1149, 21.2529, -50.0911, 16.3659, -8.55122, -16.2144, -9.36573 )
+disabled = true
+
+[node name="CollisionShape2D" parent="." index="5"]
+
+shape = SubResource( 5 )
+disabled = false
+
+[node name="Sprite" type="Sprite" parent="BodyPivot" index="0"]
+
+texture = ExtResource( 19 )
+_sections_unfolded = [ "Transform", "Visibility" ]
+
+[node name="StatusPivot" parent="." index="7"]
+
+_sections_unfolded = [ "Transform", "Visibility" ]
+
+[node name="WeaponPivot" parent="." index="8"]
+
+editor/display_folded = true
+
+[node name="PrimaryWeaponSpawn" type="Position2D" parent="WeaponPivot" index="0"]
+
+

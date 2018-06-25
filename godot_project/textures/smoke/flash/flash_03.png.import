@@ -7,10 +7,7 @@ path="res://.import/flash_03.png-ef4021b5247a83045c04e1d3988d88c9.stex"
 [deps]
 
 source_file="res://textures/smoke/flash/flash_03.png"
-source_md5="103fa8727d6460a527251ca58bc73b9a"
-
 dest_files=[ "res://.import/flash_03.png-ef4021b5247a83045c04e1d3988d88c9.stex" ]
-dest_md5="4e82f3832ba5e23fe8b49d5ee51bfbb5"
 
 [params]
 

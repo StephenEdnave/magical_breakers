@@ -7,10 +7,7 @@ path="res://.import/sb_los01.png-2a47d192ef6fa29ba84298fd6a4c9b5f.stex"
 [deps]
 
 source_file="res://characters/player/star_breaker/sprites/sb_los01.png"
-source_md5="e0020e94fbbe874f34b3f1ba34c00c7a"
-
 dest_files=[ "res://.import/sb_los01.png-2a47d192ef6fa29ba84298fd6a4c9b5f.stex" ]
-dest_md5="ddbf40bddaaa4d2c4942596585d6d826"
 
 [params]
 

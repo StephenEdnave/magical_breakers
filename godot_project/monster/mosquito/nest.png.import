@@ -7,10 +7,7 @@ path="res://.import/nest.png-9683a4c5b442e6ad1149cd6c9c1c9209.stex"
 [deps]
 
 source_file="res://monster/mosquito/nest.png"
-source_md5="e784f194a8b4d2f35a5bf71906df7ea6"
-
 dest_files=[ "res://.import/nest.png-9683a4c5b442e6ad1149cd6c9c1c9209.stex" ]
-dest_md5="1c85d58849bed275da54a0c3449f75eb"
 
 [params]
 

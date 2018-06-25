@@ -7,10 +7,7 @@ path="res://.import/grey_sliderHorizontal.png-2880eb506cf8e2b0abd775fdd728c519.s
 [deps]
 
 source_file="res://interface/sprites/grey_sliderHorizontal.png"
-source_md5="60aefe4d46fb55b55b61565fb173ca10"
-
 dest_files=[ "res://.import/grey_sliderHorizontal.png-2880eb506cf8e2b0abd775fdd728c519.stex" ]
-dest_md5="82df1e4eb944c8d484b87d2267369f71"
 
 [params]
 

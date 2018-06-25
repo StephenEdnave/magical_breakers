@@ -7,10 +7,7 @@ path="res://.import/status_burning.png-5c34b7b96c2cf76c4ac948c3912909b6.stex"
 [deps]
 
 source_file="res://objects/miscellaneous/status_burning.png"
-source_md5="4be74843dc8bc49eca8d8841f034baa5"
-
 dest_files=[ "res://.import/status_burning.png-5c34b7b96c2cf76c4ac948c3912909b6.stex" ]
-dest_md5="079389dba486ef96fe296adbc7ec2695"
 
 [params]
 

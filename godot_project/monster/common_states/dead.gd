@@ -1,8 +1,8 @@
-extends "res://utils/state.gd"
+extends "res://utils/states/state.gd"
 
 
 func enter():
-	host.queue_free()
+	owner.queue_free()
 
 
 func exit():

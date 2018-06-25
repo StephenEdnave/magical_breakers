@@ -1,49 +1,48 @@
-[gd_scene load_steps=58 format=2]
+[gd_scene load_steps=57 format=2]
 
 [ext_resource path="res://characters/Character.tscn" type="PackedScene" id=1]
 [ext_resource path="res://characters/player/player.gd" type="Script" id=2]
-[ext_resource path="res://characters/states/dead.gd" type="Script" id=3]
-[ext_resource path="res://characters/player/star_breaker/sprites/sb_std00.png" type="Texture" id=4]
-[ext_resource path="res://characters/player/star_breaker/sprites/sb_dsh03.png" type="Texture" id=5]
-[ext_resource path="res://characters/player/star_breaker/sprites/sb_dsh04.png" type="Texture" id=6]
-[ext_resource path="res://characters/player/star_breaker/sprites/sb_dsh05.png" type="Texture" id=7]
-[ext_resource path="res://characters/player/star_breaker/sprites/sb_dsh00.png" type="Texture" id=8]
-[ext_resource path="res://characters/player/star_breaker/sprites/sb_dsh01.png" type="Texture" id=9]
-[ext_resource path="res://characters/player/star_breaker/sprites/sb_dsh02.png" type="Texture" id=10]
-[ext_resource path="res://characters/player/star_breaker/sprites/sb_los00.png" type="Texture" id=11]
-[ext_resource path="res://characters/player/star_breaker/sprites/sb_los01.png" type="Texture" id=12]
-[ext_resource path="res://characters/player/star_breaker/sprites/sb_los02.png" type="Texture" id=13]
-[ext_resource path="res://characters/player/star_breaker/sprites/sb_los03.png" type="Texture" id=14]
-[ext_resource path="res://characters/player/star_breaker/sprites/sb_los04.png" type="Texture" id=15]
-[ext_resource path="res://characters/player/star_breaker/sprites/sb_los05.png" type="Texture" id=16]
-[ext_resource path="res://characters/player/star_breaker/sprites/sb_std01.png" type="Texture" id=17]
-[ext_resource path="res://characters/player/star_breaker/sprites/sb_std02.png" type="Texture" id=18]
-[ext_resource path="res://characters/player/star_breaker/sprites/sb_atkb00.png" type="Texture" id=19]
-[ext_resource path="res://characters/player/star_breaker/sprites/sb_atkb01.png" type="Texture" id=20]
-[ext_resource path="res://characters/player/star_breaker/sprites/sb_atkb02.png" type="Texture" id=21]
-[ext_resource path="res://characters/player/star_breaker/sprites/sb_atkb03.png" type="Texture" id=22]
-[ext_resource path="res://characters/player/star_breaker/sprites/sb_atkb04.png" type="Texture" id=23]
-[ext_resource path="res://characters/player/star_breaker/sprites/sb_atkb05.png" type="Texture" id=24]
-[ext_resource path="res://characters/player/star_breaker/sprites/sb_atkb06.png" type="Texture" id=25]
-[ext_resource path="res://characters/player/star_breaker/sprites/sb_atkb07.png" type="Texture" id=26]
-[ext_resource path="res://characters/player/star_breaker/sprites/sb_sld00.png" type="Texture" id=27]
-[ext_resource path="res://characters/player/star_breaker/sprites/sb_sld01.png" type="Texture" id=28]
-[ext_resource path="res://characters/player/star_breaker/sprites/sb_sld02.png" type="Texture" id=29]
-[ext_resource path="res://characters/player/star_breaker/sprites/sb_sld03.png" type="Texture" id=30]
-[ext_resource path="res://characters/player/star_breaker/sprites/sb_atka00.png" type="Texture" id=31]
-[ext_resource path="res://characters/player/star_breaker/sprites/sb_atka01.png" type="Texture" id=32]
-[ext_resource path="res://characters/player/star_breaker/sprites/sb_atka02.png" type="Texture" id=33]
-[ext_resource path="res://characters/player/star_breaker/sprites/sb_atka03.png" type="Texture" id=34]
-[ext_resource path="res://characters/player/star_breaker/sprites/sb_atka04.png" type="Texture" id=35]
-[ext_resource path="res://characters/player/star_breaker/sprites/sb_bck00.png" type="Texture" id=36]
-[ext_resource path="res://characters/player/star_breaker/sprites/sb_bck01.png" type="Texture" id=37]
-[ext_resource path="res://characters/player/star_breaker/sprites/sb_bck02.png" type="Texture" id=38]
-[ext_resource path="res://characters/player/star_breaker/sprites/sb_fwd00.png" type="Texture" id=39]
-[ext_resource path="res://characters/player/star_breaker/sprites/sb_fwd01.png" type="Texture" id=40]
-[ext_resource path="res://characters/player/star_breaker/sprites/sb_fwd02.png" type="Texture" id=41]
-[ext_resource path="res://characters/player/star_breaker/weapon/weapon_pivot.gd" type="Script" id=42]
-[ext_resource path="res://sfx/dash.ogg" type="AudioStream" id=43]
-[ext_resource path="res://sfx/sprite_explode.ogg" type="AudioStream" id=44]
+[ext_resource path="res://characters/player/star_breaker/sprites/sb_std00.png" type="Texture" id=3]
+[ext_resource path="res://characters/player/star_breaker/sprites/sb_dsh03.png" type="Texture" id=4]
+[ext_resource path="res://characters/player/star_breaker/sprites/sb_dsh04.png" type="Texture" id=5]
+[ext_resource path="res://characters/player/star_breaker/sprites/sb_dsh05.png" type="Texture" id=6]
+[ext_resource path="res://characters/player/star_breaker/sprites/sb_dsh00.png" type="Texture" id=7]
+[ext_resource path="res://characters/player/star_breaker/sprites/sb_dsh01.png" type="Texture" id=8]
+[ext_resource path="res://characters/player/star_breaker/sprites/sb_dsh02.png" type="Texture" id=9]
+[ext_resource path="res://characters/player/star_breaker/sprites/sb_los00.png" type="Texture" id=10]
+[ext_resource path="res://characters/player/star_breaker/sprites/sb_los01.png" type="Texture" id=11]
+[ext_resource path="res://characters/player/star_breaker/sprites/sb_los02.png" type="Texture" id=12]
+[ext_resource path="res://characters/player/star_breaker/sprites/sb_los03.png" type="Texture" id=13]
+[ext_resource path="res://characters/player/star_breaker/sprites/sb_los04.png" type="Texture" id=14]
+[ext_resource path="res://characters/player/star_breaker/sprites/sb_los05.png" type="Texture" id=15]
+[ext_resource path="res://characters/player/star_breaker/sprites/sb_std01.png" type="Texture" id=16]
+[ext_resource path="res://characters/player/star_breaker/sprites/sb_std02.png" type="Texture" id=17]
+[ext_resource path="res://characters/player/star_breaker/sprites/sb_atkb00.png" type="Texture" id=18]
+[ext_resource path="res://characters/player/star_breaker/sprites/sb_atkb01.png" type="Texture" id=19]
+[ext_resource path="res://characters/player/star_breaker/sprites/sb_atkb02.png" type="Texture" id=20]
+[ext_resource path="res://characters/player/star_breaker/sprites/sb_atkb03.png" type="Texture" id=21]
+[ext_resource path="res://characters/player/star_breaker/sprites/sb_atkb04.png" type="Texture" id=22]
+[ext_resource path="res://characters/player/star_breaker/sprites/sb_atkb05.png" type="Texture" id=23]
+[ext_resource path="res://characters/player/star_breaker/sprites/sb_atkb06.png" type="Texture" id=24]
+[ext_resource path="res://characters/player/star_breaker/sprites/sb_atkb07.png" type="Texture" id=25]
+[ext_resource path="res://characters/player/star_breaker/sprites/sb_sld00.png" type="Texture" id=26]
+[ext_resource path="res://characters/player/star_breaker/sprites/sb_sld01.png" type="Texture" id=27]
+[ext_resource path="res://characters/player/star_breaker/sprites/sb_sld02.png" type="Texture" id=28]
+[ext_resource path="res://characters/player/star_breaker/sprites/sb_sld03.png" type="Texture" id=29]
+[ext_resource path="res://characters/player/star_breaker/sprites/sb_atka00.png" type="Texture" id=30]
+[ext_resource path="res://characters/player/star_breaker/sprites/sb_atka01.png" type="Texture" id=31]
+[ext_resource path="res://characters/player/star_breaker/sprites/sb_atka02.png" type="Texture" id=32]
+[ext_resource path="res://characters/player/star_breaker/sprites/sb_atka03.png" type="Texture" id=33]
+[ext_resource path="res://characters/player/star_breaker/sprites/sb_atka04.png" type="Texture" id=34]
+[ext_resource path="res://characters/player/star_breaker/sprites/sb_bck00.png" type="Texture" id=35]
+[ext_resource path="res://characters/player/star_breaker/sprites/sb_bck01.png" type="Texture" id=36]
+[ext_resource path="res://characters/player/star_breaker/sprites/sb_bck02.png" type="Texture" id=37]
+[ext_resource path="res://characters/player/star_breaker/sprites/sb_fwd00.png" type="Texture" id=38]
+[ext_resource path="res://characters/player/star_breaker/sprites/sb_fwd01.png" type="Texture" id=39]
+[ext_resource path="res://characters/player/star_breaker/sprites/sb_fwd02.png" type="Texture" id=40]
+[ext_resource path="res://characters/player/star_breaker/weapon/weapon_pivot.gd" type="Script" id=41]
+[ext_resource path="res://sfx/dash.ogg" type="AudioStream" id=42]
+[ext_resource path="res://sfx/sprite_explode.ogg" type="AudioStream" id=43]
 
 [sub_resource type="Animation" id=1]
 
@@ -157,7 +156,7 @@ tracks/8/keys = {
 "times": PoolRealArray( 0 ),
 "transitions": PoolRealArray( 1 ),
 "update": 1,
-"values": [ ExtResource( 4 ) ]
+"values": [ ExtResource( 3 ) ]
 }
 
 [sub_resource type="Animation" id=2]
@@ -200,7 +199,7 @@ tracks/2/keys = {
 "times": PoolRealArray( 0, 0.15, 0.3, 0.4 ),
 "transitions": PoolRealArray( 1, 1, 1, 1 ),
 "update": 1,
-"values": [ ExtResource( 5 ), ExtResource( 6 ), ExtResource( 7 ), ExtResource( 6 ) ]
+"values": [ ExtResource( 4 ), ExtResource( 5 ), ExtResource( 6 ), ExtResource( 5 ) ]
 }
 tracks/3/type = "value"
 tracks/3/path = NodePath("BodyPivot/Body:modulate")
@@ -254,7 +253,7 @@ tracks/2/keys = {
 "times": PoolRealArray( 0, 0.15, 0.3, 0.4 ),
 "transitions": PoolRealArray( 1, 1, 1, 1 ),
 "update": 1,
-"values": [ ExtResource( 8 ), ExtResource( 9 ), ExtResource( 10 ), ExtResource( 9 ) ]
+"values": [ ExtResource( 7 ), ExtResource( 8 ), ExtResource( 9 ), ExtResource( 8 ) ]
 }
 tracks/3/type = "value"
 tracks/3/path = NodePath("BodyPivot/Body:modulate")
@@ -320,7 +319,7 @@ tracks/3/keys = {
 "times": PoolRealArray( 0, 0.1, 0.2, 0.3, 0.4, 0.5 ),
 "transitions": PoolRealArray( 1, 1, 1, 1, 1, 1 ),
 "update": 1,
-"values": [ ExtResource( 11 ), ExtResource( 12 ), ExtResource( 13 ), ExtResource( 14 ), ExtResource( 15 ), ExtResource( 16 ) ]
+"values": [ ExtResource( 10 ), ExtResource( 11 ), ExtResource( 12 ), ExtResource( 13 ), ExtResource( 14 ), ExtResource( 15 ) ]
 }
 tracks/4/type = "value"
 tracks/4/path = NodePath("DeathSound:playing")
@@ -362,7 +361,7 @@ tracks/1/keys = {
 "times": PoolRealArray( 0, 0.2, 0.4, 0.6 ),
 "transitions": PoolRealArray( 1, 1, 1, 1 ),
 "update": 1,
-"values": [ ExtResource( 4 ), ExtResource( 17 ), ExtResource( 18 ), ExtResource( 17 ) ]
+"values": [ ExtResource( 3 ), ExtResource( 16 ), ExtResource( 17 ), ExtResource( 16 ) ]
 }
 tracks/2/type = "value"
 tracks/2/path = NodePath("BodyPivot/Body:modulate")
@@ -404,7 +403,7 @@ tracks/1/keys = {
 "times": PoolRealArray( 0, 0.05, 0.06, 0.08, 0.1, 0.16, 0.22, 0.28 ),
 "transitions": PoolRealArray( 1, 1, 1, 1, 1, 1, 1, 1 ),
 "update": 1,
-"values": [ ExtResource( 19 ), ExtResource( 20 ), ExtResource( 21 ), ExtResource( 22 ), ExtResource( 23 ), ExtResource( 24 ), ExtResource( 25 ), ExtResource( 26 ) ]
+"values": [ ExtResource( 18 ), ExtResource( 19 ), ExtResource( 20 ), ExtResource( 21 ), ExtResource( 22 ), ExtResource( 23 ), ExtResource( 24 ), ExtResource( 25 ) ]
 }
 tracks/2/type = "value"
 tracks/2/path = NodePath("BodyPivot/Body:modulate")
@@ -446,7 +445,7 @@ tracks/1/keys = {
 "times": PoolRealArray( 0, 0.1, 0.2, 0.3, 0.4 ),
 "transitions": PoolRealArray( 1, 1, 1, 1, 1 ),
 "update": 1,
-"values": [ ExtResource( 27 ), ExtResource( 28 ), ExtResource( 29 ), ExtResource( 30 ), ExtResource( 27 ) ]
+"values": [ ExtResource( 26 ), ExtResource( 27 ), ExtResource( 28 ), ExtResource( 29 ), ExtResource( 26 ) ]
 }
 tracks/2/type = "value"
 tracks/2/path = NodePath("BodyPivot/Body:modulate")
@@ -488,7 +487,7 @@ tracks/1/keys = {
 "times": PoolRealArray( 0, 0.05, 0.1, 0.15, 0.2, 0.25, 0.3, 0.35 ),
 "transitions": PoolRealArray( 1, 1, 1, 1, 1, 1, 1, 1 ),
 "update": 1,
-"values": [ ExtResource( 19 ), ExtResource( 20 ), ExtResource( 21 ), ExtResource( 22 ), ExtResource( 23 ), ExtResource( 24 ), ExtResource( 25 ), ExtResource( 26 ) ]
+"values": [ ExtResource( 18 ), ExtResource( 19 ), ExtResource( 20 ), ExtResource( 21 ), ExtResource( 22 ), ExtResource( 23 ), ExtResource( 24 ), ExtResource( 25 ) ]
 }
 tracks/2/type = "value"
 tracks/2/path = NodePath("BodyPivot/Body:modulate")
@@ -530,7 +529,7 @@ tracks/1/keys = {
 "times": PoolRealArray( 0, 0.05, 0.1, 0.2, 0.3 ),
 "transitions": PoolRealArray( 1, 1, 1, 1, 1 ),
 "update": 1,
-"values": [ ExtResource( 31 ), ExtResource( 32 ), ExtResource( 33 ), ExtResource( 34 ), ExtResource( 35 ) ]
+"values": [ ExtResource( 30 ), ExtResource( 31 ), ExtResource( 32 ), ExtResource( 33 ), ExtResource( 34 ) ]
 }
 tracks/2/type = "value"
 tracks/2/path = NodePath("BodyPivot/Body:modulate")
@@ -572,7 +571,7 @@ tracks/1/keys = {
 "times": PoolRealArray( 0, 0.1, 0.15, 0.3 ),
 "transitions": PoolRealArray( 1, 1, 1, 1 ),
 "update": 1,
-"values": [ ExtResource( 27 ), ExtResource( 28 ), ExtResource( 29 ), ExtResource( 30 ) ]
+"values": [ ExtResource( 26 ), ExtResource( 27 ), ExtResource( 28 ), ExtResource( 29 ) ]
 }
 tracks/2/type = "value"
 tracks/2/path = NodePath("BodyPivot/Body:modulate")
@@ -614,7 +613,7 @@ tracks/1/keys = {
 "times": PoolRealArray( 0, 0.1, 0.2, 0.3 ),
 "transitions": PoolRealArray( 1, 1, 1, 1 ),
 "update": 1,
-"values": [ ExtResource( 11 ), ExtResource( 12 ), ExtResource( 13 ), ExtResource( 12 ) ]
+"values": [ ExtResource( 10 ), ExtResource( 11 ), ExtResource( 12 ), ExtResource( 11 ) ]
 }
 
 [sub_resource type="Animation" id=12]
@@ -657,7 +656,7 @@ tracks/2/keys = {
 "times": PoolRealArray( 0, 0.15, 0.3, 0.4 ),
 "transitions": PoolRealArray( 1, 1, 1, 1 ),
 "update": 1,
-"values": [ ExtResource( 36 ), ExtResource( 37 ), ExtResource( 38 ), ExtResource( 37 ) ]
+"values": [ ExtResource( 35 ), ExtResource( 36 ), ExtResource( 37 ), ExtResource( 36 ) ]
 }
 
 [sub_resource type="Animation" id=13]
@@ -699,7 +698,7 @@ tracks/2/keys = {
 "times": PoolRealArray( 0, 0.15, 0.3, 0.382302 ),
 "transitions": PoolRealArray( 1, 1, 1, 1 ),
 "update": 1,
-"values": [ ExtResource( 39 ), ExtResource( 40 ), ExtResource( 41 ), ExtResource( 40 ) ]
+"values": [ ExtResource( 38 ), ExtResource( 39 ), ExtResource( 40 ), ExtResource( 39 ) ]
 }
 tracks/3/type = "value"
 tracks/3/path = NodePath("BodyPivot/Body:modulate")
@@ -714,24 +713,16 @@ tracks/3/keys = {
 "values": [ Color( 1, 1, 1, 1 ) ]
 }
 
-[node name="StarBreaker" groups=[
+[node name="StarBreaker" index="0" groups=[
 "player",
 ] instance=ExtResource( 1 )]
 
 script = ExtResource( 2 )
 _sections_unfolded = [ "Collision", "Material", "Transform", "Visibility", "Z Index", "collision" ]
 
-[node name="States" parent="." index="0"]
-
-editor/display_folded = false
-
 [node name="Attack" parent="States" index="4"]
 
 weapon_paths = [ "res://characters/player/star_breaker/weapon/StickyBombLauncher.tscn", "res://characters/player/star_breaker/weapon/SpinWeapon.tscn", "res://characters/player/star_breaker/weapon/LaserSpawner.tscn", "res://characters/player/star_breaker/weapon/LaserSpawner.tscn", "res://characters/player/star_breaker/weapon/LaserSpawner.tscn", "res://characters/player/star_breaker/weapon/LaserSpawner.tscn" ]
-
-[node name="Dead" parent="States" index="6"]
-
-script = ExtResource( 3 )
 
 [node name="AnimationPlayer" parent="." index="1"]
 
@@ -760,27 +751,29 @@ _sections_unfolded = [ "Transform" ]
 
 [node name="Body" parent="BodyPivot" index="0"]
 
-texture = ExtResource( 4 )
+texture = ExtResource( 11 )
 offset = Vector2( 0, 0 )
 flip_h = true
 _sections_unfolded = [ "Offset", "Transform", "Visibility", "Z Index" ]
 
 [node name="WeaponPivot" parent="." index="7"]
 
-script = ExtResource( 42 )
+script = ExtResource( 41 )
 
 [node name="DashSound" type="AudioStreamPlayer" parent="." index="8"]
 
-stream = ExtResource( 43 )
+stream = ExtResource( 42 )
 volume_db = 0.0
+pitch_scale = 1.0
 autoplay = false
 mix_target = 0
 bus = "SFX"
 
 [node name="DeathSound" type="AudioStreamPlayer" parent="." index="9"]
 
-stream = ExtResource( 44 )
+stream = ExtResource( 43 )
 volume_db = 0.0
+pitch_scale = 1.0
 autoplay = false
 mix_target = 0
 bus = "SFX"

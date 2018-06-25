@@ -1,6 +1,9 @@
 extends Node2D
 
-enum STATES { NORMAL, GAME_OVER }
+signal cutscene_started
+signal cutscene_finished
+
+enum STATES { NORMAL, CUTSCENE, PLAYER_DIED, WIN }
 var current_state
 
 var MainMenu = "res://menus/main_menu/MainMenu.tscn"
@@ -18,7 +21,7 @@ func _ready():
 	current_state = NORMAL
 	
 	player = $YSort/Player
-	player.connect("died", self, "_on_player_died")
+	player.connect("died", self, "_change_state", [PLAYER_DIED])
 	$UI/Interface.setup(player)
 	
 	camera = $YSort/Player/Camera2D
@@ -29,11 +32,13 @@ func _ready():
 	for phase in $YSort/Phases.get_children():
 		phase.connect("phase_ended", self, "phase_ended")
 	
-	print(current_phase)
 	$YSort/Phases.get_child(current_phase).start_phase()
+	
+	GameManager.level = self
 
 
 func _process(delta):
+	# Camera limits
 	var limit_left = ($YSort.global_position.x - GameManager.window_size.x / 2)
 	var limit_right = ($YSort.global_position.x + GameManager.window_size.x / 2) * camera.zoom.x + extra_h_space
 	var limit_top = ($YSort.global_position.y - GameManager.window_size.y / 2)
@@ -43,33 +48,40 @@ func _process(delta):
 	camera.limit_right = limit_right
 	camera.limit_bottom = limit_bottom
 	
+	# Bound player to screen
 	player.global_position.x = clamp(player.global_position.x, limit_left, limit_right)
 	player.global_position.y = clamp(player.global_position.y, limit_top, limit_bottom)
 
 
-func _on_player_died():
-	current_state = GAME_OVER
-	yield (get_tree().create_timer(2.0), "timeout")
-	$UI/AnimationPlayer.play("exit")
+func _change_state(new_state):
+	match current_state:
+		CUTSCENE:
+			emit_signal("cutscene_finished")
+	
+	match new_state:
+		CUTSCENE:
+			emit_signal("cutscene_started")
+		PLAYER_DIED:
+			yield (get_tree().create_timer(2.0), "timeout")
+			$UI/AnimationPlayer.play("exit")
+		WIN:
+			$Tween.interpolate_property(Engine, "time_scale", 0.5, 1, 2, Tween.TRANS_QUAD, Tween.EASE_IN)
+			$Tween.start()
+			player.set_process(false)
+			yield(get_tree().create_timer(1), "timeout")
+			Engine.time_scale = 1
+			yield(get_tree().create_timer(5), "timeout")
+			$Tween.interpolate_property($Music, "volume_db", $Music.volume_db, -100.0, 1, Tween.TRANS_QUAD, Tween.EASE_IN)
+			$Tween.start()
+			$UI/AnimationPlayer.play("exit")
+	
+	current_state = new_state
 
 
 func change_scene(scene):
 	$Music.stop()
 	$Ambience.stop()
 	get_tree().change_scene(scene)
-
-
-func win():
-	$Tween.interpolate_property(Engine, "time_scale", 0.5, 1, 2, Tween.TRANS_QUAD, Tween.EASE_IN)
-	$Tween.start()
-	player.set_process(false)
-	yield(get_tree().create_timer(1), "timeout")
-	Engine.time_scale = 1
-	$Tween.interpolate_property($Music, "volume_db", $Music.volume_db, -100.0, 5, Tween.TRANS_QUAD, Tween.EASE_IN)
-	$Tween.start()
-	yield(get_tree().create_timer(5), "timeout")
-	Engine.time_scale = 1
-	$UI/AnimationPlayer.play("exit")
 
 
 func phase_ended():
@@ -80,12 +92,16 @@ func phase_ended():
 		$YSort/Phases.get_child(current_phase).start_phase()
 
 
+func win():
+	_change_state(WIN)
+
+
 func _on_ui_animation_finished(name):
 	match name:
 		"SETUP":
 			$UI/AnimationPlayer.play("enter")
 		"exit":
-			if current_state == NORMAL:
+			if current_state == WIN:
 				change_scene(WinMenu)
-			else:
+			elif current_state == PLAYER_DIED:
 				change_scene(MainMenu)

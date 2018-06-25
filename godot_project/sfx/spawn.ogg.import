@@ -7,10 +7,7 @@ path="res://.import/spawn.ogg-8c7ea5d536856674990606d2a8749d5c.oggstr"
 [deps]
 
 source_file="res://sfx/spawn.ogg"
-source_md5="c164c41737909f48a21ce67445320d31"
-
 dest_files=[ "res://.import/spawn.ogg-8c7ea5d536856674990606d2a8749d5c.oggstr" ]
-dest_md5="214f50575b248a4aacb069161b97f998"
 
 [params]
 

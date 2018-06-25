@@ -7,10 +7,7 @@ path="res://.import/sm_dsh02.png-310d7f0225c5f24eb04341c197f05552.stex"
 [deps]
 
 source_file="res://monster/sham/textures/sm_dsh02.png"
-source_md5="3bf66fcb66a98b04f7b20cbbe01a771a"
-
 dest_files=[ "res://.import/sm_dsh02.png-310d7f0225c5f24eb04341c197f05552.stex" ]
-dest_md5="19d3afffa5ed30e540ceb378bb456349"
 
 [params]
 

@@ -7,10 +7,7 @@ path="res://.import/rifle2.ogg-802dbde82a8ead6c6028625bb4872035.oggstr"
 [deps]
 
 source_file="res://sfx/q009/rifle2.ogg"
-source_md5="614778fb61cc3e74866a975601b47774"
-
 dest_files=[ "res://.import/rifle2.ogg-802dbde82a8ead6c6028625bb4872035.oggstr" ]
-dest_md5="8264b0abede02d3d42c0e19f03fca0a2"
 
 [params]
 

@@ -3,13 +3,9 @@
 extends Node
 
 enum STATES { IDLE, WALK, DASH, ATTACK, DIE, DEAD, STAGGER }
-var host = null
 
 
 func _ready():
-	# Store a reference to the FSM
-	host = $'../..'
-
 	# In 3.0 alpha, these functions are on by default for every node
 	set_process(false)
 	set_physics_process(false)

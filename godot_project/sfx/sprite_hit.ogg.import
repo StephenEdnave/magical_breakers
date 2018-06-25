@@ -7,10 +7,7 @@ path="res://.import/sprite_hit.ogg-07173317ee329e8e5c10ad114811b3de.oggstr"
 [deps]
 
 source_file="res://sfx/sprite_hit.ogg"
-source_md5="db9240ee0b9a1e1be2dd39a3db9667e9"
-
 dest_files=[ "res://.import/sprite_hit.ogg-07173317ee329e8e5c10ad114811b3de.oggstr" ]
-dest_md5="e76ca309824707d06efba6c5f77a9a84"
 
 [params]
 

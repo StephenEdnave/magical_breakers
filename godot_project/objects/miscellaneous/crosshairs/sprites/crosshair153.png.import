@@ -7,10 +7,7 @@ path="res://.import/crosshair153.png-124bb7043dd8d68af94e7f38596ea5f7.stex"
 [deps]
 
 source_file="res://objects/miscellaneous/crosshairs/sprites/crosshair153.png"
-source_md5="0875aacc0420587fbb72cbc4417fd83b"
-
 dest_files=[ "res://.import/crosshair153.png-124bb7043dd8d68af94e7f38596ea5f7.stex" ]
-dest_md5="2ecee71cddece7593bbc6ade5f208909"
 
 [params]
 

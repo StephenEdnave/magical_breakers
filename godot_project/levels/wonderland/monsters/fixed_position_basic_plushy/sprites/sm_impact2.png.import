@@ -7,10 +7,7 @@ path="res://.import/sm_impact2.png-8165d64711c1d9abb5e459513aaa2734.stex"
 [deps]
 
 source_file="res://levels/wonderland/monsters/fixed_position_basic_plushy/sprites/sm_impact2.png"
-source_md5="9ea36b4ce91d35e52bf09995162723c4"
-
 dest_files=[ "res://.import/sm_impact2.png-8165d64711c1d9abb5e459513aaa2734.stex" ]
-dest_md5="2325429ddb85a723146fee0c4fde5bc5"
 
 [params]
 

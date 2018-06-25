@@ -7,10 +7,7 @@ path="res://.import/explosion.ogg-4b7e1a2b57f2afdb160d140fcd30be3a.oggstr"
 [deps]
 
 source_file="res://sfx/q009/explosion.ogg"
-source_md5="ac834c8e4be54d4162f9f89a8ffb6b28"
-
 dest_files=[ "res://.import/explosion.ogg-4b7e1a2b57f2afdb160d140fcd30be3a.oggstr" ]
-dest_md5="8ce394a6a174ebe9e881cc3008b3cc35"
 
 [params]
 

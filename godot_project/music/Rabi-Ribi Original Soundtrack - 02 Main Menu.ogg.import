@@ -7,10 +7,7 @@ path="res://.import/Rabi-Ribi Original Soundtrack - 02 Main Menu.ogg-4ae68531665
 [deps]
 
 source_file="res://music/Rabi-Ribi Original Soundtrack - 02 Main Menu.ogg"
-source_md5="3ce045e6539aa239ac8a6b08a43d6e3d"
-
 dest_files=[ "res://.import/Rabi-Ribi Original Soundtrack - 02 Main Menu.ogg-4ae68531665a0b75cf3e4ca7e622a872.oggstr" ]
-dest_md5="cd73ba20277dd0bfa3325b4546b7f762"
 
 [params]
 

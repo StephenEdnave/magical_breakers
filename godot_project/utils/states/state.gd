@@ -7,11 +7,6 @@ extends Node
 
 signal finished
 
-# A reference to the character or entity the states control
-var host = null
-
-func _ready():
-	host = $'../..' # A state is typically held in a node-path such as "host/States/State"
 
 # Initialize the state. E.g. change the animation
 func enter():

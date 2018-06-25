@@ -7,10 +7,7 @@ path="res://.import/phase_jump_2.ogg-401a28ed5a2a074b42cda04780e4a05f.oggstr"
 [deps]
 
 source_file="res://sfx/kenney_digital_audio/phase_jump_2.ogg"
-source_md5="70016cbebf0d6fc1007750016303e588"
-
 dest_files=[ "res://.import/phase_jump_2.ogg-401a28ed5a2a074b42cda04780e4a05f.oggstr" ]
-dest_md5="523eb306d021dfea8200cf1ec331e173"
 
 [params]
 

@@ -7,10 +7,7 @@ path="res://.import/explosion_08.png-19e43d51b0542b020d0c558c742ae559.stex"
 [deps]
 
 source_file="res://textures/smoke/explosion/explosion_08.png"
-source_md5="ddb4f1ce99f68cd7193d09e57991e26d"
-
 dest_files=[ "res://.import/explosion_08.png-19e43d51b0542b020d0c558c742ae559.stex" ]
-dest_md5="91ab7d4ab28e61d255fb50374c22ef77"
 
 [params]
 

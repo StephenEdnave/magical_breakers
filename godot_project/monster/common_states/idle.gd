@@ -1,36 +1,29 @@
-extends "res://utils/state.gd"
+# 1 of sequence: RoamSequence
+extends "res://utils/states/state.gd"
 
-export (float) var SPOT_RANGE = 3000.0
-var start_roaming = false
+export (bool) var roam = true
+export (float) var duration = 1.5
+var timer
+
 
 func _ready():
-	host.get_node("RoamTimer").connect("timeout", self, "_on_RoamTimer_timeout")
+	timer = Timer.new()
+	timer.one_shot = true
+	timer.wait_time = duration
+	add_child(timer)
 
 
-# Initialize the state. E.g. change the animation
 func enter():
-	start_roaming = false
-	host.Anim.play("idle")
-	randomize()
-	host.get_node("RoamTimer").wait_time = randf() * 2 + 1.0
-	host.get_node("RoamTimer").start()
+	owner.Anim.play("idle")
+	
+	if roam:
+		timer.start()
 
 
-# Clean up the state. Reinitialize values like a timer
 func exit():
-	host.get_node("RoamTimer").stop()
-	start_roaming = false
+	timer.stop()
 
 
 func update(delta):
-	if host.global_position.distance_to(host.target_position) < SPOT_RANGE:
-		if not host.has_target:
-			return
-		return host.STATE_IDS.SPOT
-	
-	if start_roaming:
-		return host.STATE_IDS.ROAM
-
-
-func _on_RoamTimer_timeout():
-	start_roaming = true
+	if roam and timer.time_left <= 0:
+		emit_signal("finished")

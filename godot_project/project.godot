@@ -17,7 +17,7 @@ config/icon="res://characters/player/star_breaker/sprites/sb_starb02.png"
 
 [autoload]
 
-GameManager="*res://utils/GameManager.gd"
+GameManager="*res://utils/GameManager.tscn"
 GlobalConstants="*res://utils/GlobalConstants.gd"
 Attacks="*res://utils/Attacks.gd"
 Steering="*res://utils/steering.gd"

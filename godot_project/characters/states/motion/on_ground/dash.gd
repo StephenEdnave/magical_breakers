@@ -40,7 +40,7 @@ func enter():
 		successful_dash = false
 		exit()
 	
-	host.Anim.play("dash_forward")
+	owner.Anim.play("dash_forward")
 	
 	get_input_direction()
 	velocity = input_direction * speed
@@ -54,18 +54,18 @@ func enter():
 	# Initialize dash
 	get_input_direction()
 	var angle = rad2deg(input_direction.angle())
-	if angle < -90 or 90 < angle: # host facing left
+	if angle < -90 or 90 < angle: # owner facing left
 		angle -= 180
 	spawn_angle = angle
-	spawn_position = host.global_position
-	host.get_node("BodyPivot").rotation_degrees = angle
-	host.get_node("DashSound").play()
+	spawn_position = owner.global_position
+	owner.get_node("BodyPivot").rotation_degrees = angle
+	owner.get_node("DashSound").play()
 	_on_particle_timer_timeout()
 
 
 func exit():
-	host.get_node("BodyPivot").rotation_degrees = 0
-	host.STATES[WALK].velocity = velocity
+	owner.get_node("BodyPivot").rotation_degrees = 0
+	owner.STATES[WALK].velocity = velocity
 	particle_timer.stop()
 	begin_timer.stop()
 
@@ -78,7 +78,7 @@ func update(delta):
 	# Input
 	if not successful_dash:
 		return WALK
-	if not begin and (host.is_player and not Input.is_action_pressed("dash")):
+	if not begin and (owner.is_player and not Input.is_action_pressed("dash")):
 		return WALK
 	
 	get_input_direction()
@@ -93,23 +93,23 @@ func update(delta):
 	
 	
 	var angle = rad2deg(velocity.angle())
-	if angle < -90 or 90 < angle: # host facing left
+	if angle < -90 or 90 < angle: # owner facing left
 		angle -= 180
 	spawn_angle = angle
-	spawn_position = host.global_position
-	host.get_node("BodyPivot").rotation_degrees = angle
+	spawn_position = owner.global_position
+	owner.get_node("BodyPivot").rotation_degrees = angle
 	
-	if host.target:
-		var vector_to_target = host.target_position - host.global_position
+	if owner.target:
+		var vector_to_target = owner.target_position - owner.global_position
 		if sign(vector_to_target.x) == sign(velocity.x):
-			if host.Anim.assigned_animation != "dash_forward":
-				host.Anim.play("dash_forward")
+			if owner.Anim.assigned_animation != "dash_forward":
+				owner.Anim.play("dash_forward")
 		elif sign(vector_to_target.x) != sign(velocity.x):
-			if host.Anim.assigned_animation != "dash_backward":
-				host.Anim.play("dash_backward")
+			if owner.Anim.assigned_animation != "dash_backward":
+				owner.Anim.play("dash_backward")
 	else:
-		if host.Anim.assigned_animation != "dash_forward":
-			host.Anim.play("dash_forward")
+		if owner.Anim.assigned_animation != "dash_forward":
+			owner.Anim.play("dash_forward")
 
 
 func _on_particle_timer_timeout():

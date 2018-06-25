@@ -7,10 +7,7 @@ path="res://.import/NUNS_Space_Cruiser.png-8eda69259f79eb3e37a5b9c82c96908a.stex
 [deps]
 
 source_file="res://levels/in_the_sky/NUNS_Space_Cruiser.png"
-source_md5="2c0621e3c18a8592910b1dd13c8e2160"
-
 dest_files=[ "res://.import/NUNS_Space_Cruiser.png-8eda69259f79eb3e37a5b9c82c96908a.stex" ]
-dest_md5="0e1bf213c796fb0aa6fbd09ab7db294b"
 
 [params]
 

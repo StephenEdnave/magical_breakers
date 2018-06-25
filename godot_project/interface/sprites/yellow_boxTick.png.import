@@ -7,10 +7,7 @@ path="res://.import/yellow_boxTick.png-94d5daca68be9da3bd41acb8c898fa5e.stex"
 [deps]
 
 source_file="res://interface/sprites/yellow_boxTick.png"
-source_md5="857814ce0935cbdac687cccd226eda4e"
-
 dest_files=[ "res://.import/yellow_boxTick.png-94d5daca68be9da3bd41acb8c898fa5e.stex" ]
-dest_md5="a685353df5999255ce013df4be30b07f"
 
 [params]
 

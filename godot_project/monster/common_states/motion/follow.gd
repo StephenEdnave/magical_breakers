@@ -9,8 +9,6 @@ export(float) var DISTANCE_FROM_TARGET = 500.0
 var shoot_timer = null
 var go_to_shoot = false
 
-var target_position = Vector2()
-
 func _ready():
 	shoot_timer = Timer.new()
 	shoot_timer.one_shot = true
@@ -20,7 +18,7 @@ func _ready():
 
 # Initialize the state. E.g. change the animation
 func enter():
-	host.Anim.play("walk")
+	owner.Anim.play("walk")
 	go_to_shoot = false
 	shoot_timer.start()
 
@@ -31,22 +29,22 @@ func exit():
 
 
 func update(delta):
-	if not host.has_target:
-		return host.STATE_IDS.RETURN
+	if not owner.has_target:
+		return owner.STATE_IDS.RETURN
 	
 	if go_to_shoot:
-		return host.STATE_IDS.ATTACK
+		return owner.STATE_IDS.ATTACK
 	
-	target_position = host.target_position + (host.global_position - host.target_position).normalized() * DISTANCE_FROM_TARGET
+	target_position = owner.target_position + (owner.global_position - owner.target_position).normalized() * DISTANCE_FROM_TARGET
 	velocity = follow(velocity, target_position, max_follow_speed)
 	move()
-	host.get_node("BodyPivot").scale.x = look_direction.x
-	if host.global_position.distance_to(host.target_position) > FOLLOW_RANGE:
-		return host.STATE_IDS.RETURN
+	owner.get_node("BodyPivot").scale.x = look_direction.x
+	if owner.global_position.distance_to(owner.target_position) > FOLLOW_RANGE:
+		return owner.STATE_IDS.RETURN
 
 
 func _on_shoot_timer_timeout():
-	if host.global_position.distance_to(target_position) < SHOOT_RANGE:
+	if owner.global_position.distance_to(target_position) < SHOOT_RANGE:
 		go_to_shoot = true
 	else:
 		shoot_timer.start()

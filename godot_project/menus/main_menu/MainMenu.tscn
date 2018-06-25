@@ -1604,7 +1604,7 @@ tracks/13/keys = {
 } ]
 }
 
-[node name="MainMenu" type="Node2D"]
+[node name="MainMenu" type="Node2D" index="0"]
 
 script = ExtResource( 1 )
 
@@ -2530,6 +2530,7 @@ max_lines_visible = -1
 
 stream = ExtResource( 15 )
 volume_db = -4.0
+pitch_scale = 1.0
 autoplay = false
 mix_target = 0
 bus = "SFX"
@@ -3425,6 +3426,7 @@ align = 1
 
 stream = ExtResource( 15 )
 volume_db = -4.0
+pitch_scale = 1.0
 autoplay = false
 mix_target = 0
 bus = "SFX"
@@ -3844,6 +3846,7 @@ align = 1
 
 stream = ExtResource( 19 )
 volume_db = 0.0
+pitch_scale = 1.0
 autoplay = true
 mix_target = 0
 bus = "Music"
@@ -3852,6 +3855,7 @@ bus = "Music"
 
 stream = ExtResource( 15 )
 volume_db = -4.0
+pitch_scale = 1.0
 autoplay = false
 mix_target = 0
 bus = "SFX"

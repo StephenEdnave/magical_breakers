@@ -6,26 +6,10 @@ var weapon_combo = ["star_b_melee_1", "star_b_melee_2", "star_b_melee_3", "star_
 var weapon_costs = [0, 0, 0, 0]
 
 
-func setup(_host):
-	.setup(_host)
-
-
 func _ready():
 	MAX_COMBO_COUNT = max_combo_count
 	combo = weapon_combo
 	costs = weapon_costs
-
-
-func _change_state(new_state):
-	._change_state(new_state)
-
-
-func _exit_state(old_state):
-	._exit_state(old_state)
-
-
-func _enter_state(new_state):
-	._enter_state(new_state)
 
 
 func _physics_process(delta):

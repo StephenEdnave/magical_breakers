@@ -2,10 +2,9 @@ extends "res://monster/monster.gd"
 
 signal state_changed
 
-enum STATE_IDS { IDLE, ROAM, RETURN, SPOT, FOLLOW, STAGGER, DIE, ATTACK, END_PHASE, DEAD, PREVIOUS_STATE }
+enum STATE_IDS { ROAM_SEQUENCE, RETURN, SPOT, FOLLOW, STAGGER, DIE, ATTACK, END_PHASE, DEAD, PREVIOUS_STATE }
 onready var STATES = {
-	IDLE:$'States/Idle',
-	ROAM:$'States/Roam',
+	ROAM_SEQUENCE:$"States/RoamSequence",
 	RETURN:$'States/Return',
 	SPOT:$'States/Spot',
 	FOLLOW:$'States/Follow',
@@ -18,7 +17,10 @@ onready var STATES = {
 
 
 func _ready():
-	states_stack.push_front(STATES[IDLE])
+	for state_node in $States.get_children():
+		state_node.connect("finished", self, "_on_state_finished")
+	
+	states_stack.push_front(STATES[ROAM_SEQUENCE])
 	states_stack[0].enter()
 
 
@@ -52,8 +54,8 @@ func _on_animation_finished(name):
 func take_damage(source, attack_name):
 	if self.is_a_parent_of(source):
 		return
-	var knockback_direction = (global_position - source.global_position).normalized()
-#	STATES[STAGGER].setup(knockback_direction, Attacks.attacks[attack_name].knockback_force, Attacks.attacks[attack_name].knockback_duration)
+#	var knockback_direction = (global_position - source.global_position).normalized()
+#	STATES[STAGGER].setup(knockback_direction, attack_name)
 	.take_damage(source, attack_name)
 
 

@@ -7,10 +7,7 @@ path="res://.import/laser_8.ogg-835ec012850493192c7ecb9bd6766e58.oggstr"
 [deps]
 
 source_file="res://sfx/kenney_digital_audio/laser_8.ogg"
-source_md5="42fba8aad03b16fe6fe6e2793ce298b3"
-
 dest_files=[ "res://.import/laser_8.ogg-835ec012850493192c7ecb9bd6766e58.oggstr" ]
-dest_md5="fcbe11858819216b32d90c19c0ddec1d"
 
 [params]
 

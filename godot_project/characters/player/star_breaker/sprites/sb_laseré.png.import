@@ -7,10 +7,7 @@ path="res://.import/sb_laseré.png-f295c46bbecbe5e8ebcaa410ef3dba71.stex"
 [deps]
 
 source_file="res://characters/player/star_breaker/sprites/sb_laseré.png"
-source_md5="91c9ff18d6c72e8b819e26bf33b1fbd0"
-
 dest_files=[ "res://.import/sb_laseré.png-f295c46bbecbe5e8ebcaa410ef3dba71.stex" ]
-dest_md5="f800d8660ade6be4cf3ad71a40ca0354"
 
 [params]
 

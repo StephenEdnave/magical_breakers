@@ -7,10 +7,7 @@ path="res://.import/Chillin.ogg-e2b513c31a42c12d4d7f695b481c8d5b.oggstr"
 [deps]
 
 source_file="res://music/Chillin.ogg"
-source_md5="99fb1c89791ee24617caf7e5bb17082d"
-
 dest_files=[ "res://.import/Chillin.ogg-e2b513c31a42c12d4d7f695b481c8d5b.oggstr" ]
-dest_md5="11a4704d3dcdd194c14364b4a47785c5"
 
 [params]
 

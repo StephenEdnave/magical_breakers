@@ -7,10 +7,7 @@ path="res://.import/phaser_up_5.ogg-0441951bf6aacf7d3808e5e826bbf4bf.oggstr"
 [deps]
 
 source_file="res://sfx/kenney_digital_audio/phaser_up_5.ogg"
-source_md5="43e3b0ce3d8f6eef767852e8479b2d3a"
-
 dest_files=[ "res://.import/phaser_up_5.ogg-0441951bf6aacf7d3808e5e826bbf4bf.oggstr" ]
-dest_md5="951807062ac76ab95b79b071cb0e8102"
 
 [params]
 

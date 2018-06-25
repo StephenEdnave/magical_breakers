@@ -7,10 +7,7 @@ path="res://.import/glauncher2.ogg-43a9a04bf5aa1fea6e5569b34e05b7da.oggstr"
 [deps]
 
 source_file="res://sfx/q009/glauncher2.ogg"
-source_md5="56a6763def0933b7eceeec44f1f63e0b"
-
 dest_files=[ "res://.import/glauncher2.ogg-43a9a04bf5aa1fea6e5569b34e05b7da.oggstr" ]
-dest_md5="b16221226735bd10d295e678e1c424ee"
 
 [params]
 

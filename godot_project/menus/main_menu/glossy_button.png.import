@@ -7,10 +7,7 @@ path="res://.import/glossy_button.png-6eab4c4f61a46f328c22e37849fc377c.stex"
 [deps]
 
 source_file="res://menus/main_menu/glossy_button.png"
-source_md5="3a04d8ee5349dc5236ce5c0c1cde258f"
-
 dest_files=[ "res://.import/glossy_button.png-6eab4c4f61a46f328c22e37849fc377c.stex" ]
-dest_md5="8b797c28d003eab2ed0204288143781e"
 
 [params]
 

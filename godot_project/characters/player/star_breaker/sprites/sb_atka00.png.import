@@ -7,10 +7,7 @@ path="res://.import/sb_atka00.png-a2ba3857bd12ae51bec71f128dbb6e5b.stex"
 [deps]
 
 source_file="res://characters/player/star_breaker/sprites/sb_atka00.png"
-source_md5="2f19d2dc70dfef925aff0652c065695b"
-
 dest_files=[ "res://.import/sb_atka00.png-a2ba3857bd12ae51bec71f128dbb6e5b.stex" ]
-dest_md5="f4adadf351538f36abc8904cb0c4a72b"
 
 [params]
 

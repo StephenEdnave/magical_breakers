@@ -7,10 +7,7 @@ path="res://.import/_rlauncher.ogg-1da679724ee62857aeee0f50ab775872.oggstr"
 [deps]
 
 source_file="res://levels/wonderland/monsters/missile_dropper/sfx/_rlauncher.ogg"
-source_md5="28840178fc89075ed18ac22b0cb17f69"
-
 dest_files=[ "res://.import/_rlauncher.ogg-1da679724ee62857aeee0f50ab775872.oggstr" ]
-dest_md5="27ea035648efe2008298c14ab8b49c17"
 
 [params]
 

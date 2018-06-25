@@ -7,10 +7,7 @@ path="res://.import/sm_wisp10.png-c7aacbf3bf31fd82624c549a13fab6f4.stex"
 [deps]
 
 source_file="res://monster/sprite/sprites/sm_wisp10.png"
-source_md5="04db1a0ec3b9da8f2353dbd246505371"
-
 dest_files=[ "res://.import/sm_wisp10.png-c7aacbf3bf31fd82624c549a13fab6f4.stex" ]
-dest_md5="f48803c06874874a5ee3ad49196fae35"
 
 [params]
 

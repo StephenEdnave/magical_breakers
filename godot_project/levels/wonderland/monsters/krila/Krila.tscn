@@ -1,0 +1,245 @@
+[gd_scene load_steps=22 format=2]
+
+[ext_resource path="res://monster/Monster.tscn" type="PackedScene" id=1]
+[ext_resource path="res://levels/wonderland/monsters/krila/krila.gd" type="Script" id=2]
+[ext_resource path="res://levels/wonderland/monsters/krila/states/spawn.gd" type="Script" id=3]
+[ext_resource path="res://levels/wonderland/monsters/krila/states/cutscene.gd" type="Script" id=4]
+[ext_resource path="res://levels/wonderland/monsters/krila/states/roam_sequence.gd" type="Script" id=5]
+[ext_resource path="res://monster/common_states/idle.gd" type="Script" id=6]
+[ext_resource path="res://monster/common_states/motion/roam.gd" type="Script" id=7]
+[ext_resource path="res://monster/common_states/stagger.gd" type="Script" id=8]
+[ext_resource path="res://monster/common_states/die.gd" type="Script" id=9]
+[ext_resource path="res://levels/wonderland/monsters/krila/states/attack.gd" type="Script" id=10]
+[ext_resource path="res://monster/common_states/motion/end_phase.gd" type="Script" id=11]
+[ext_resource path="res://monster/common_states/dead.gd" type="Script" id=12]
+[ext_resource path="res://levels/wonderland/monsters/krila/sprites/100oj/krila_00_01.png" type="Texture" id=13]
+[ext_resource path="res://levels/wonderland/monsters/krila/sprites/100oj/krila_00_00.png" type="Texture" id=14]
+[ext_resource path="res://levels/wonderland/monsters/krila/sprites/100oj/krila_00_05.png" type="Texture" id=15]
+
+[sub_resource type="Animation" id=1]
+
+resource_name = "attack"
+length = 0.4
+loop = false
+step = 0.1
+tracks/0/type = "value"
+tracks/0/path = NodePath("BodyPivot/Sprite:texture")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 1,
+"values": [ ExtResource( 13 ) ]
+}
+
+[sub_resource type="Animation" id=2]
+
+resource_name = "draw_weapon"
+length = 1.0
+loop = false
+step = 0.1
+tracks/0/type = "value"
+tracks/0/path = NodePath("BodyPivot/Sprite:texture")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0, 0.5 ),
+"transitions": PoolRealArray( 1, 1 ),
+"update": 1,
+"values": [ ExtResource( 14 ), ExtResource( 15 ) ]
+}
+
+[sub_resource type="Animation" id=3]
+
+resource_name = "spawn"
+length = 3.0
+loop = false
+step = 0.1
+tracks/0/type = "value"
+tracks/0/path = NodePath("BodyPivot/Sprite:texture")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 1,
+"values": [ ExtResource( 14 ) ]
+}
+tracks/1/type = "value"
+tracks/1/path = NodePath("BodyPivot/Sprite:position")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/keys = {
+"times": PoolRealArray( 0, 3 ),
+"transitions": PoolRealArray( 0.25, 1 ),
+"update": 0,
+"values": [ Vector2( 0, -1231.99 ), Vector2( 0, 0 ) ]
+}
+
+[sub_resource type="Animation" id=6]
+
+resource_name = "spawn_plushy"
+length = 0.4
+loop = false
+step = 0.1
+tracks/0/type = "value"
+tracks/0/path = NodePath("BodyPivot/Sprite:texture")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 1,
+"values": [ ExtResource( 15 ) ]
+}
+
+[sub_resource type="Animation" id=4]
+
+length = 0.4
+loop = true
+step = 0.1
+tracks/0/type = "value"
+tracks/0/path = NodePath("BodyPivot/Sprite:texture")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 1,
+"values": [ ExtResource( 14 ) ]
+}
+
+[sub_resource type="CircleShape2D" id=5]
+
+custom_solver_bias = 0.0
+radius = 34.7888
+
+[node name="Krila" index="0" instance=ExtResource( 1 )]
+
+script = ExtResource( 2 )
+
+[node name="Spawn" type="Node" parent="States" index="0"]
+
+script = ExtResource( 3 )
+
+[node name="Cutscene" type="Node" parent="States" index="1"]
+
+script = ExtResource( 4 )
+
+[node name="RoamSequence" type="Node" parent="States" index="2"]
+
+script = ExtResource( 5 )
+SPOT_RANGE = 0.0
+
+[node name="Idle" type="Node" parent="States/RoamSequence" index="0"]
+
+script = ExtResource( 6 )
+roam = true
+duration = 0.1
+
+[node name="Roam" type="Node" parent="States/RoamSequence" index="1"]
+
+script = ExtResource( 7 )
+ARRIVE_DISTANCE = 6.0
+DEFAULT_SLOW_RADIUS = 200.0
+DEFAULT_MAX_SPEED = 300.0
+MASS = 1.0
+MAX_SPEED = 600.0
+ROAM_RADIUS = 600.0
+SLOW_RADIUS = 300.0
+
+[node name="Roam2" type="Node" parent="States/RoamSequence" index="2"]
+
+script = ExtResource( 7 )
+ARRIVE_DISTANCE = 6.0
+DEFAULT_SLOW_RADIUS = 200.0
+DEFAULT_MAX_SPEED = 300.0
+MASS = 1.0
+MAX_SPEED = 600.0
+ROAM_RADIUS = 600.0
+SLOW_RADIUS = 300.0
+
+[node name="Stagger" type="Node" parent="States" index="3"]
+
+script = ExtResource( 8 )
+
+[node name="Die" type="Node" parent="States" index="4"]
+
+script = ExtResource( 9 )
+
+[node name="Attack" type="Node" parent="States" index="5"]
+
+script = ExtResource( 10 )
+ARRIVE_DISTANCE = 6.0
+DEFAULT_SLOW_RADIUS = 200.0
+DEFAULT_MAX_SPEED = 300.0
+MASS = 8.0
+primary_weapon_path = "res://levels/wonderland/monsters/krila/weapons/Gun.tscn"
+first_plushy_path = "res://levels/wonderland/monsters/charge_plushy/ChargePlushy.tscn"
+second_plushy_path = "res://levels/wonderland/monsters/charge_plushy/ChargePlushy.tscn"
+
+[node name="EndPhase" type="Node" parent="States" index="6"]
+
+script = ExtResource( 11 )
+ARRIVE_DISTANCE = 6.0
+DEFAULT_SLOW_RADIUS = 200.0
+DEFAULT_MAX_SPEED = 300.0
+MASS = 8.0
+max_return_speed = 800.0
+
+[node name="Dead" type="Node" parent="States" index="7"]
+
+script = ExtResource( 12 )
+
+[node name="Health" parent="." index="1"]
+
+max_health = 3000
+
+[node name="AnimationPlayer" parent="." index="2"]
+
+anims/attack = SubResource( 1 )
+anims/draw_weapon = SubResource( 2 )
+anims/spawn = SubResource( 3 )
+anims/spawn_plushy = SubResource( 6 )
+anims/walk = SubResource( 4 )
+
+[node name="CollisionPolygon2D" parent="." index="4"]
+
+visible = false
+polygon = PoolVector2Array( -25.9885, -52.5346, -18.6579, -84.3003, 16.3659, -85.1149, 21.2529, -50.0911, 16.3659, -8.55122, -16.2144, -9.36573 )
+disabled = true
+
+[node name="CollisionShape2D" parent="." index="5"]
+
+shape = SubResource( 5 )
+disabled = false
+
+[node name="Sprite" type="Sprite" parent="BodyPivot" index="0"]
+
+texture = ExtResource( 15 )
+_sections_unfolded = [ "Transform", "Visibility" ]
+
+[node name="StatusPivot" parent="." index="7"]
+
+_sections_unfolded = [ "Transform", "Visibility" ]
+
+[node name="WeaponPivot" parent="." index="8"]
+
+editor/display_folded = true
+
+[node name="PrimaryWeaponSpawn" type="Position2D" parent="WeaponPivot" index="0"]
+
+

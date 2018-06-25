@@ -7,10 +7,7 @@ path="res://.import/minigun2.ogg-de95ef843cf5f5e28764168df042333a.oggstr"
 [deps]
 
 source_file="res://sfx/q009/minigun2.ogg"
-source_md5="12ac05ff2ed6337273ff6e6cdf652750"
-
 dest_files=[ "res://.import/minigun2.ogg-de95ef843cf5f5e28764168df042333a.oggstr" ]
-dest_md5="d3d551e326540f79ca4fd09be367cde9"
 
 [params]
 

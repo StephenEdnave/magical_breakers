@@ -7,10 +7,7 @@ path="res://.import/black_smoke_12.png-bb68398248737efce289cd1eae1f0f10.stex"
 [deps]
 
 source_file="res://characters/player/star_breaker/weapon/black_smoke_12.png"
-source_md5="3504d5d72edff7b5fbbfda5d5225fa96"
-
 dest_files=[ "res://.import/black_smoke_12.png-bb68398248737efce289cd1eae1f0f10.stex" ]
-dest_md5="49ee6b5e1f9cadd70167324ac569d2e7"
 
 [params]
 

@@ -7,10 +7,7 @@ path="res://.import/dwarf_punch_impact.ogg-a02c823afc78ac2c1fc01a1652007b04.oggs
 [deps]
 
 source_file="res://sfx/dwarf_punch_impact.ogg"
-source_md5="87c5f41e4362632e05cc779f73dff09b"
-
 dest_files=[ "res://.import/dwarf_punch_impact.ogg-a02c823afc78ac2c1fc01a1652007b04.oggstr" ]
-dest_md5="70ffe76322d3aa35c35227a8868e8169"
 
 [params]
 

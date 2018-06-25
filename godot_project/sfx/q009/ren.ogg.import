@@ -7,10 +7,7 @@ path="res://.import/ren.ogg-5be72aef89114391743eff00cd4be10c.oggstr"
 [deps]
 
 source_file="res://sfx/q009/ren.ogg"
-source_md5="8c5b629bad30a562a4c45f736b309aa9"
-
 dest_files=[ "res://.import/ren.ogg-5be72aef89114391743eff00cd4be10c.oggstr" ]
-dest_md5="30996fdfd3d91804de30d6a1e621029b"
 
 [params]
 

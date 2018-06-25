@@ -7,10 +7,7 @@ path="res://.import/sb_bomb13.png-319f5dbe596ef9a91d8f3ada1b3500cc.stex"
 [deps]
 
 source_file="res://characters/player/star_breaker/sprites/sb_bomb13.png"
-source_md5="db751001d5566ab8ab2c9b921b26ce8c"
-
 dest_files=[ "res://.import/sb_bomb13.png-319f5dbe596ef9a91d8f3ada1b3500cc.stex" ]
-dest_md5="0751952a210d86c18eee392873668ccd"
 
 [params]
 

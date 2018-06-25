@@ -7,10 +7,7 @@ path="res://.import/sm_exp00.png-1cfbb5b97f247f78e89743753f03029a.stex"
 [deps]
 
 source_file="res://levels/wonderland/monsters/basic_plushy/sprites/sm_exp00.png"
-source_md5="6e64455a33a68ea69a7bf5b35775adfb"
-
 dest_files=[ "res://.import/sm_exp00.png-1cfbb5b97f247f78e89743753f03029a.stex" ]
-dest_md5="402273dee06f22d009e130149e8ec481"
 
 [params]
 

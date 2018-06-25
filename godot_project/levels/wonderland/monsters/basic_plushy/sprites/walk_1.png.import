@@ -7,10 +7,7 @@ path="res://.import/walk_1.png-b35858855b60f8be4972e0b5c32fccb8.stex"
 [deps]
 
 source_file="res://levels/wonderland/monsters/basic_plushy/sprites/walk_1.png"
-source_md5="215f15c55674e40a60097d9f0280eab7"
-
 dest_files=[ "res://.import/walk_1.png-b35858855b60f8be4972e0b5c32fccb8.stex" ]
-dest_md5="b3b39e4aa40632edf1b154175e91a10c"
 
 [params]
 

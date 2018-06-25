@@ -7,10 +7,7 @@ path="res://.import/gradient_1.PNG-28536d1bb351be99d311c21d8fc7f01c.stex"
 [deps]
 
 source_file="res://textures/gradient_1.PNG"
-source_md5="b5a72e77a42d06dd324ea59eaa2fd481"
-
 dest_files=[ "res://.import/gradient_1.PNG-28536d1bb351be99d311c21d8fc7f01c.stex" ]
-dest_md5="a2b47e76a49a4f7efd7b1f1bbdeb21fb"
 
 [params]
 

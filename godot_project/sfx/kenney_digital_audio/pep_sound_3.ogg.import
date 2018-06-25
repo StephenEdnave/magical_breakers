@@ -7,10 +7,7 @@ path="res://.import/pep_sound_3.ogg-dd2e28188c9728cb15335ff5a7c77d1d.oggstr"
 [deps]
 
 source_file="res://sfx/kenney_digital_audio/pep_sound_3.ogg"
-source_md5="2938b7b0af3bbeb42a1014e090ef248b"
-
 dest_files=[ "res://.import/pep_sound_3.ogg-dd2e28188c9728cb15335ff5a7c77d1d.oggstr" ]
-dest_md5="a8c6314e621dadb4b554be82760c37b3"
 
 [params]
 

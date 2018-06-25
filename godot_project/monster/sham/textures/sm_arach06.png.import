@@ -7,10 +7,7 @@ path="res://.import/sm_arach06.png-c10ff7a262f260df9463f2cd25c2d064.stex"
 [deps]
 
 source_file="res://monster/sham/textures/sm_arach06.png"
-source_md5="aca304396a046ef3664e1fb2f7f47f2a"
-
 dest_files=[ "res://.import/sm_arach06.png-c10ff7a262f260df9463f2cd25c2d064.stex" ]
-dest_md5="a50d7d1374d4dce0ebf27b7d6849246e"
 
 [params]
 

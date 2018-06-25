@@ -7,10 +7,7 @@ path="res://.import/sm_wisp06.png-a111cbfb0f28012c991786ca0397c276.stex"
 [deps]
 
 source_file="res://monster/sham/textures/sm_wisp06.png"
-source_md5="624d7fd96f398dc43c0b9f9a4452d835"
-
 dest_files=[ "res://.import/sm_wisp06.png-a111cbfb0f28012c991786ca0397c276.stex" ]
-dest_md5="5453b2fbd2c8ba8c9ebf68eedcc77b4e"
 
 [params]
 

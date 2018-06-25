@@ -7,10 +7,7 @@ path="res://.import/weapswitch.ogg-680b0511790a51d401eb5443b41c90a9.oggstr"
 [deps]
 
 source_file="res://sfx/q009/weapswitch.ogg"
-source_md5="1ab229b094ed60413d44193d36ac4658"
-
 dest_files=[ "res://.import/weapswitch.ogg-680b0511790a51d401eb5443b41c90a9.oggstr" ]
-dest_md5="10f181ebc258ffbd180e5c321fcf94fe"
 
 [params]
 

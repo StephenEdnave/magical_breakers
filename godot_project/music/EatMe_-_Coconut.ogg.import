@@ -7,10 +7,7 @@ path="res://.import/EatMe_-_Coconut.ogg-172155db9744dc818f811b24ade5cb20.oggstr"
 [deps]
 
 source_file="res://music/EatMe_-_Coconut.ogg"
-source_md5="81d5fc776037f2b850cd70f0eb9658d4"
-
 dest_files=[ "res://.import/EatMe_-_Coconut.ogg-172155db9744dc818f811b24ade5cb20.oggstr" ]
-dest_md5="f0ee88c0694f66fc42bdad36605f7f71"
 
 [params]
 

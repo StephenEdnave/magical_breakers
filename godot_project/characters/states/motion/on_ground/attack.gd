@@ -20,12 +20,12 @@ signal skill_used
 func _ready():
 	for weapon_path in weapon_paths:
 		var weapon = load(weapon_path).instance()
-		weapon.setup(host)
 		weapon.connect("attack_started", self, "_on_Weapon_attack_started")
 		weapon.connect("attack_finished", self, "_on_Weapon_attack_finished")
 		weapon.connect("successful_hit", self, "_on_successful_hit")
 		weapon.connect("attack_failed", self, "_on_Weapon_attack_failed")
-		host.get_node("WeaponPivot").add_child(weapon)
+		owner.get_node("WeaponPivot").add_child(weapon)
+		weapon.setup(owner)
 		weapons.push_back(weapon)
 		weapon_active.push_back(false)
 
@@ -48,12 +48,12 @@ func exit():
 	for weapon in weapons:
 		weapon.stop_attack()
 	
-	host.get_node("BodyPivot").rotation_degrees = 0
-	host.get_node("WeaponPivot").rotation_degrees = 0
-	host.get_node("WeaponPivot").scale = Vector2(host.look_direction.x, 1)
+	owner.get_node("BodyPivot").rotation_degrees = 0
+	owner.get_node("WeaponPivot").rotation_degrees = 0
+	owner.get_node("WeaponPivot").scale = Vector2(owner.look_direction.x, 1)
 	
 	velocity = Vector2()
-	host.STATES[IDLE].velocity = velocity
+	owner.STATES[IDLE].velocity = velocity
 
 
 func handle_input(event):
@@ -73,7 +73,7 @@ func handle_input(event):
 
 func update(delta):
 	if finished:
-		return host.STATE_IDS.PREVIOUS_STATE
+		return owner.STATE_IDS.PREVIOUS_STATE
 	
 	# Move if carrying momentum
 	steering(0, 35)
@@ -89,8 +89,8 @@ func _on_Weapon_attack_started():
 func _rotate():
 	var angle = 0
 	var vector = Vector2()
-	if host.target:
-		vector = host.target.global_position - host.global_position
+	if owner.target:
+		vector = owner.target.global_position - owner.global_position
 	else:
 		vector = get_input_direction()
 	
@@ -99,12 +99,12 @@ func _rotate():
 	if vector:
 		angle = rad2deg(vector.angle())
 	else:
-		angle = 90 - 90 * host.look_direction.x
-	if host.look_direction.x == -1:
+		angle = 90 - 90 * owner.look_direction.x
+	if owner.look_direction.x == -1:
 		angle -= 180
-		host.get_node("WeaponPivot").scale = Vector2(-1, -1)
-	host.get_node("BodyPivot").rotation_degrees = angle
-	host.get_node("WeaponPivot").rotation_degrees = angle
+		owner.get_node("WeaponPivot").scale = Vector2(-1, -1)
+	owner.get_node("BodyPivot").rotation_degrees = angle
+	owner.get_node("WeaponPivot").rotation_degrees = angle
 	
 	return angle
 
@@ -118,9 +118,9 @@ func _attack(angle):
 	
 	var attack_current = Attacks.attacks[current_weapon.attack_current]
 	if attack_current.has("move_force"):
-		velocity = attack_current.move_force * Vector2(sign(host.look_direction.x), 0).rotated(deg2rad(angle))
-	if attack_current.has("host_animation"):
-		host.Anim.play(attack_current.host_animation)
+		velocity = attack_current.move_force * Vector2(sign(owner.look_direction.x), 0).rotated(deg2rad(angle))
+	if attack_current.has("owner_animation"):
+		owner.Anim.play(attack_current.owner_animation)
 	
 	# Skill
 	if weapon_active[inputs.skill_1]:
@@ -159,4 +159,4 @@ func activate_weapon(weapon):
 
 func _on_successful_hit(attack_name):
 	var mana_gain = Attacks.attacks[attack_name].mana_gain
-	host.get_node("Mana").recover_mana(mana_gain)
+	owner.get_node("Mana").recover_mana(mana_gain)

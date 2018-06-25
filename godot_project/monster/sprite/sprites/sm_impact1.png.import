@@ -7,10 +7,7 @@ path="res://.import/sm_impact1.png-3b6d5cb2dba88b57bb3de03881bf679d.stex"
 [deps]
 
 source_file="res://monster/sprite/sprites/sm_impact1.png"
-source_md5="807908de957d0a45fc22c0b9a17d62c5"
-
 dest_files=[ "res://.import/sm_impact1.png-3b6d5cb2dba88b57bb3de03881bf679d.stex" ]
-dest_md5="737abbc5062536823ffbcd7381b1a940"
 
 [params]
 

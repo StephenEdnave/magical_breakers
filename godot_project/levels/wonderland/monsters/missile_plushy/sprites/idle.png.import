@@ -7,10 +7,7 @@ path="res://.import/idle.png-6c970397d6f427af26f799f806174340.stex"
 [deps]
 
 source_file="res://levels/wonderland/monsters/missile_plushy/sprites/idle.png"
-source_md5="34943dd6d32a60cce863bf92dce6539f"
-
 dest_files=[ "res://.import/idle.png-6c970397d6f427af26f799f806174340.stex" ]
-dest_md5="5e029f508aed3c6427a7b4c984c726b3"
 
 [params]
 

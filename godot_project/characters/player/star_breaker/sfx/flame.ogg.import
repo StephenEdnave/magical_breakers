@@ -7,10 +7,7 @@ path="res://.import/flame.ogg-e475080d5d90ba40b90bb555586225b4.oggstr"
 [deps]
 
 source_file="res://characters/player/star_breaker/sfx/flame.ogg"
-source_md5="32ff588213dd62b511a743f2ffef2357"
-
 dest_files=[ "res://.import/flame.ogg-e475080d5d90ba40b90bb555586225b4.oggstr" ]
-dest_md5="0e373b881e4f8cf2b17bf2d8973f00ca"
 
 [params]
 

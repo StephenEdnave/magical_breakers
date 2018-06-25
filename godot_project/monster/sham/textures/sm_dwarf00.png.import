@@ -7,10 +7,7 @@ path="res://.import/sm_dwarf00.png-9193ab4c539c9b8f0988dbc9fba27dfd.stex"
 [deps]
 
 source_file="res://monster/sham/textures/sm_dwarf00.png"
-source_md5="00e66f9199ce9cffe9d18d9472da0c35"
-
 dest_files=[ "res://.import/sm_dwarf00.png-9193ab4c539c9b8f0988dbc9fba27dfd.stex" ]
-dest_md5="55fb2916a9173152b23959f01153f7bc"
 
 [params]
 

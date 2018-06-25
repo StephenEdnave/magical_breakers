@@ -7,10 +7,7 @@ path="res://.import/sb_missile03.png-bf704729212f8e956e251399c44e1654.stex"
 [deps]
 
 source_file="res://levels/wonderland/monsters/missile_dropper/weapons/sprites/sb_missile03.png"
-source_md5="d8eb40bc5e4d493628db30db62d30ef3"
-
 dest_files=[ "res://.import/sb_missile03.png-bf704729212f8e956e251399c44e1654.stex" ]
-dest_md5="f4794c1916a441a71154490de1355091"
 
 [params]
 

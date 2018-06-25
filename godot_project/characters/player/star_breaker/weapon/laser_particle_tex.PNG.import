@@ -7,10 +7,7 @@ path="res://.import/laser_particle_tex.PNG-6654a0bb12bdabe16ee0874e5af21bbf.stex
 [deps]
 
 source_file="res://characters/player/star_breaker/weapon/laser_particle_tex.PNG"
-source_md5="82ed085c362b617933179d8c24c39958"
-
 dest_files=[ "res://.import/laser_particle_tex.PNG-6654a0bb12bdabe16ee0874e5af21bbf.stex" ]
-dest_md5="1f93d0cc7569bb2546296497bd97676e"
 
 [params]
 

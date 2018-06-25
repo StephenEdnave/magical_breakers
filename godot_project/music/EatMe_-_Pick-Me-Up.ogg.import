@@ -7,10 +7,7 @@ path="res://.import/EatMe_-_Pick-Me-Up.ogg-7777f8a7744d931520a41934328dc6da.oggs
 [deps]
 
 source_file="res://music/EatMe_-_Pick-Me-Up.ogg"
-source_md5="78257b796eaf9bc4a76d4e9819950771"
-
 dest_files=[ "res://.import/EatMe_-_Pick-Me-Up.ogg-7777f8a7744d931520a41934328dc6da.oggstr" ]
-dest_md5="29e44e688e3985d1cdfea4b58812116a"
 
 [params]
 

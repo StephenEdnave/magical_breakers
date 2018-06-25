@@ -64,9 +64,7 @@ func take_damage(attack_name):
 	if health < 0:
 		health = 0
 	var knockback = true
-	if Attacks.attacks[attack_name].damage_type == GlobalConstants.HEALTH_DAMAGE_TYPE.POISON:
-		knockback = false
-	if Attacks.attacks[attack_name].damage_type == GlobalConstants.HEALTH_DAMAGE_TYPE.FIRE:
+	if not Attacks.attacks[attack_name].has("knockback_force") and not Attacks.attacks[attack_name].has("knockback_duration"):
 		knockback = false
 	emit_signal("health_changed", health, knockback)
 	#print("%s took %s damage. Health: %s/%s" %[get_path(), Attacks.attacks[attack_name].damage, health, max_health])

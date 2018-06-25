@@ -7,10 +7,7 @@ path="res://.import/digital.png-3205a5b3fdca275b116c5c55682d4da2.stex"
 [deps]
 
 source_file="res://menus/main_menu/digital.png"
-source_md5="92f8c518171368c3566ab08c2e1417af"
-
 dest_files=[ "res://.import/digital.png-3205a5b3fdca275b116c5c55682d4da2.stex" ]
-dest_md5="5ae36e551a513c02a15ca088d1e95fdc"
 
 [params]
 

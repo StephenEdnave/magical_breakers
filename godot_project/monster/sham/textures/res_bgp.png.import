@@ -7,10 +7,7 @@ path="res://.import/res_bgp.png-5cf5741d4c437e8f8df021ada71e1457.stex"
 [deps]
 
 source_file="res://monster/sham/textures/res_bgp.png"
-source_md5="ff717004833c4f8c1f63ba35446bbc10"
-
 dest_files=[ "res://.import/res_bgp.png-5cf5741d4c437e8f8df021ada71e1457.stex" ]
-dest_md5="3225e186b6e16c4258ebce4b8b2c855f"
 
 [params]
 

@@ -7,10 +7,7 @@ path="res://.import/sm_exp00.png-8171af51cda3d1831c17a1ab0b214cd1.stex"
 [deps]
 
 source_file="res://monster/sprite/sprites/sm_exp00.png"
-source_md5="6e64455a33a68ea69a7bf5b35775adfb"
-
 dest_files=[ "res://.import/sm_exp00.png-8171af51cda3d1831c17a1ab0b214cd1.stex" ]
-dest_md5="402273dee06f22d009e130149e8ec481"
 
 [params]
 

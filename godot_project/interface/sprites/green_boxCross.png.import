@@ -7,10 +7,7 @@ path="res://.import/green_boxCross.png-05cc3550f34778c019ed4fa3f26d03b5.stex"
 [deps]
 
 source_file="res://interface/sprites/green_boxCross.png"
-source_md5="b001fe2ce68c4db1d0f93b29b9d3591f"
-
 dest_files=[ "res://.import/green_boxCross.png-05cc3550f34778c019ed4fa3f26d03b5.stex" ]
-dest_md5="180301f595362962174579e9a2b86d94"
 
 [params]
 

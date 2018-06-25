@@ -7,10 +7,7 @@ path="res://.import/Viceroy - In The Sky [Funk].ogg-2ee22621368b61d05665ff9a359a
 [deps]
 
 source_file="res://music/Viceroy - In The Sky [Funk].ogg"
-source_md5="15c0e315f4f7ea402fa8797071596387"
-
 dest_files=[ "res://.import/Viceroy - In The Sky [Funk].ogg-2ee22621368b61d05665ff9a359ad239.oggstr" ]
-dest_md5="4081aaf637075fe5548c5eb3575b3af4"
 
 [params]
 

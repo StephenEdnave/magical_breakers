@@ -3,11 +3,11 @@ extends 'state.gd'
 var died = false
 
 func enter():
-#	host.set_process_input(false) # Stops input so player/AI can't control entity
-	host.get_node("CollisionShape2D").disabled = true
-	host.Anim.play("die")
-	host.remove_from_group("characters")
-	host.emit_signal("died")
+#	owner.set_process_input(false) # Stops input so player/AI can't control entity
+	owner.get_node("CollisionShape2D").disabled = true
+	owner.Anim.play("die")
+	owner.remove_from_group("characters")
+	owner.emit_signal("died")
 	died = false
 
 
@@ -25,4 +25,4 @@ func update(delta):
 
 func _on_animation_finished(name):
 	assert name == "die"
-	return host.STATE_IDS.DEAD
+	return owner.STATE_IDS.DEAD

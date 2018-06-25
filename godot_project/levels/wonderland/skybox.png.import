@@ -7,10 +7,7 @@ path="res://.import/skybox.png-1bcc2fbc4d322fba622a5666b9258320.stex"
 [deps]
 
 source_file="res://levels/wonderland/skybox.png"
-source_md5="dfa6afd86b0cebe0b72a22b8eecb7675"
-
 dest_files=[ "res://.import/skybox.png-1bcc2fbc4d322fba622a5666b9258320.stex" ]
-dest_md5="ef3b0731d2892e6e692e74d7546285f8"
 
 [params]
 

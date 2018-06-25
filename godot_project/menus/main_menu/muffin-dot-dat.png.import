@@ -7,10 +7,7 @@ path="res://.import/muffin-dot-dat.png-b544ac4db8c3ce96803ccab01ca8bc5a.stex"
 [deps]
 
 source_file="res://menus/main_menu/muffin-dot-dat.png"
-source_md5="9938ee66e56cda1aa353f1a86e27fc4b"
-
 dest_files=[ "res://.import/muffin-dot-dat.png-b544ac4db8c3ce96803ccab01ca8bc5a.stex" ]
-dest_md5="ffb8eca6c7a61e2e7523b2424dff815c"
 
 [params]
 

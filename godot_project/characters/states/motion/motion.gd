@@ -5,7 +5,7 @@ var last_move_direction = Vector2(1, 0)
 var velocity = Vector2()
 
 func get_input_direction():
-	if not host.is_player:
+	if not owner.is_player:
 		return Vector2()
 	
 	input_direction = Vector2()
@@ -26,17 +26,17 @@ func steering(speed, acceleration):
 
 func move():
 	last_move_direction = input_direction
-	host.move_and_slide(velocity, Vector2(), 5, 2)
+	owner.move_and_slide(velocity, Vector2(), 5, 2)
 	if velocity:
-		host.position_changed()
+		owner.position_changed()
 	update_look_direction()
 
 
 func update_look_direction():
-	if host.target:
-		var vector_to_target = host.target.global_position - host.global_position
-		host.look_direction.x = sign(vector_to_target.x)
+	if owner.target:
+		var vector_to_target = owner.target.global_position - owner.global_position
+		owner.look_direction.x = sign(vector_to_target.x)
 	elif last_move_direction.x != 0:
-		host.look_direction.x = last_move_direction.x
-	host.get_node("BodyPivot").scale = Vector2(host.look_direction.x, 1)
-	host.get_node("WeaponPivot").scale = Vector2(host.look_direction.x, 1)
+		owner.look_direction.x = last_move_direction.x
+	owner.get_node("BodyPivot").scale = Vector2(owner.look_direction.x, 1)
+	owner.get_node("WeaponPivot").scale = Vector2(owner.look_direction.x, 1)

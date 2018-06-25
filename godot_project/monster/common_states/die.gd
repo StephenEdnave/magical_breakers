@@ -1,14 +1,14 @@
-extends "res://utils/state.gd"
+extends "res://utils/states/state.gd"
 
 
 func enter():
-	if host.is_in_group("monsters"):
-		host.remove_from_group("monsters")
-	host.emit_signal("died")
-	host.get_node("CollisionShape2D").disabled = true
-	host.get_node("CollisionPolygon2D").disabled = true
-	host.Anim.play("die")
-	host.set_process_input(false) # Stops input so player/AI can't control entity
+	if owner.is_in_group("monsters"):
+		owner.remove_from_group("monsters")
+	owner.emit_signal("died")
+	owner.get_node("CollisionShape2D").disabled = true
+	owner.get_node("CollisionPolygon2D").disabled = true
+	owner.Anim.play("die")
+	owner.set_process_input(false) # Stops input so player/AI can't control entity
 
 
 func exit():
@@ -25,4 +25,4 @@ func update(delta):
 
 func _on_animation_finished(name):
 	assert name == "die"
-	return host.STATE_IDS.DEAD
+	return owner.STATE_IDS.DEAD

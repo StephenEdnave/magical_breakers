@@ -7,10 +7,7 @@ path="res://.import/fragile-soft-machine.png-5b2a4b13c9e9f29ea7e0251abd324bd3.st
 [deps]
 
 source_file="res://menus/main_menu/fragile-soft-machine.png"
-source_md5="6990fe08e27652508e091f8db6f264a9"
-
 dest_files=[ "res://.import/fragile-soft-machine.png-5b2a4b13c9e9f29ea7e0251abd324bd3.stex" ]
-dest_md5="6745b1c479c9c4e245ec5d7e72165678"
 
 [params]
 

@@ -1,29 +1,39 @@
-extends "res://utils/state.gd"
+extends "res://utils/states/state.gd"
 
-var knockback_direction = Vector2()
-var knockback_force = 10.0
-var knockback_duration = 0.02
+var direction = Vector2()
+var force = 10.0
+var duration = 0.4
 
-func setup(_knockback_direction, _knockback_force, _knockback_duration):
-	knockback_direction = _knockback_direction
-	knockback_force = _knockback_force
-	knockback_duration = _knockback_duration
+var timer = null
+var finished = false
+
+
+func _ready():
+	timer = Timer.new()
+	timer.one_shot = true
+	timer.connect("timeout", self, "_on_timeout")
+	add_child(timer)
+
+
+func setup(_direction, attack_name):
+	direction = _direction
+	force = Attacks.attacks[attack_name].knockback_force
+	duration = Attacks.attacks[attack_name].knockback_duration
+	timer.wait_time = duration
 
 
 func enter():
-	host.Anim.play("stagger")
-	host.Tween.interpolate_property(host, "position", host.position, host.position + knockback_direction * knockback_force, knockback_duration, Tween.TRANS_QUART, Tween.EASE_OUT)
-	host.Tween.start()
-
-
-func exit():
-	host.get_node("Tween").stop(host, "position")
+	owner.Anim.play("stagger")
+	owner.Tween.interpolate_property(owner, "position", owner.position, owner.position + direction * force, duration, Tween.TRANS_QUART, Tween.EASE_OUT)
+	owner.Tween.start()
+	finished = false
+	timer.start()
 
 
 func update(delta):
-	pass
+	if finished:
+		return owner.STATE_IDS.PREVIOUS_STATE
 
 
-func _on_animation_finished(name):
-	assert name == "stagger"
-	return host.STATE_IDS.PREVIOUS_STATE
+func _on_timeout():
+	finished = true

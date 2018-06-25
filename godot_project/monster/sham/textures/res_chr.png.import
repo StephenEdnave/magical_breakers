@@ -7,10 +7,7 @@ path="res://.import/res_chr.png-17dfde0de03b928a6b4af0c2c3e00df1.stex"
 [deps]
 
 source_file="res://monster/sham/textures/res_chr.png"
-source_md5="71f672c5b8286b012482829ae9cc4909"
-
 dest_files=[ "res://.import/res_chr.png-17dfde0de03b928a6b4af0c2c3e00df1.stex" ]
-dest_md5="b07f7c92c866b105bf5402b9887a99f2"
 
 [params]
 

@@ -7,10 +7,7 @@ path="res://.import/cloud_stream.png-ba3427e4270d6a6f86b055ddcd2dbf7b.stex"
 [deps]
 
 source_file="res://menus/main_menu/cloud_stream.png"
-source_md5="7995759ab6c295e114f67e1c7aaabf71"
-
 dest_files=[ "res://.import/cloud_stream.png-ba3427e4270d6a6f86b055ddcd2dbf7b.stex" ]
-dest_md5="2d5556c340a02a2db6147562eec61a49"
 
 [params]
 
