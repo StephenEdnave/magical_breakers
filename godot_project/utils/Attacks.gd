@@ -153,7 +153,7 @@ var attacks = {
 	# Basic Plushy
 	"basic_plushy_gun": {
 		animation = "attack",
-		owner_animation = "walk" },
+		owner_animation = "attack" },
 	"basic_plushy_projectile": {
 		damage = 50 , 
 		effect = GlobalConstants.HEALTH_EFFECT.NONE,

@@ -35,10 +35,10 @@ func go_to_state(new_state):
 	states_stack[0].exit()
 	
 	match new_state:
-#		PREVIOUS_STATE:
-#			states_stack.pop_front()
-#		ATTACK, STAGGER:
-#			states_stack.push_front(STATES[new_state])
+		PREVIOUS_STATE:
+			states_stack.pop_front()
+		ATTACK, STAGGER:
+			states_stack.push_front(STATES[new_state])
 		_:
 			states_stack[0] = STATES[new_state]
 	states_stack[0].enter()
@@ -63,7 +63,7 @@ func _on_Health_health_changed(new_health, knockback):
 	if new_health == 0:
 		go_to_state(DIE)
 	else:
-		if knockback == true:
+		if knockback == true and states_stack[0] != STATES[ATTACK]:
 			go_to_state(STAGGER)
 	._on_Health_health_changed(new_health, knockback)
 

@@ -1,25 +1,23 @@
-[gd_scene load_steps=5 format=2]
+[gd_scene load_steps=3 format=2]
 
 [ext_resource path="res://levels/Phase.tscn" type="PackedScene" id=1]
 [ext_resource path="res://levels/SpawnPosition.tscn" type="PackedScene" id=2]
-[ext_resource path="res://levels/wonderland/monsters/missile_dropper/MissileDropper.tscn" type="PackedScene" id=3]
-[ext_resource path="res://levels/wonderland/monsters/missile_plushy/MissilePlushy.tscn" type="PackedScene" id=4]
 
 [node name="Phase" index="0" instance=ExtResource( 1 )]
 
 [node name="SpawnPosition2" parent="SpawnPositions" index="0" instance=ExtResource( 2 )]
 
 position = Vector2( 1822.35, -296.692 )
-object = ExtResource( 3 )
+object_path = "res://levels/wonderland/monsters/missile_dropper/MissileDropper.tscn"
 
 [node name="SpawnPosition3" parent="SpawnPositions" index="1" instance=ExtResource( 2 )]
 
 position = Vector2( 269.548, -296.692 )
-object = ExtResource( 3 )
+object_path = "res://levels/wonderland/monsters/missile_dropper/MissileDropper.tscn"
 
 [node name="SpawnPosition4" parent="SpawnPositions" index="2" instance=ExtResource( 2 )]
 
 position = Vector2( 985.739, 1718.78 )
-object = ExtResource( 4 )
+object_path = "res://levels/wonderland/monsters/missile_plushy/MissilePlushy.tscn"
 
 

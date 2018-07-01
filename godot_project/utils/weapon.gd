@@ -72,8 +72,8 @@ func _enter_state(new_state):
 					owner.get_node("Mana").expend_mana(costs[combo_count - 1])
 			monitoring = true
 			attack_current = combo[combo_count - 1]
-			$AnimationPlayer.play(Attacks.attacks[attack_current].animation)
-			owner.get_node("AnimationPlayer").play(Attacks.attacks[attack_current].owner_animation)
+			var attack = Attacks.attacks[attack_current]
+			$AnimationPlayer.play(attack.animation)
 			emit_signal("attack_started")
 			CooldownTimer.start()
 	state = new_state

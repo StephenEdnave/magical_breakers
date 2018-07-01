@@ -1,4 +1,4 @@
-[gd_scene load_steps=22 format=2]
+[gd_scene load_steps=25 format=2]
 
 [ext_resource path="res://monster/Monster.tscn" type="PackedScene" id=1]
 [ext_resource path="res://levels/wonderland/monsters/krila/krila.gd" type="Script" id=2]
@@ -12,14 +12,14 @@
 [ext_resource path="res://levels/wonderland/monsters/krila/states/attack.gd" type="Script" id=10]
 [ext_resource path="res://monster/common_states/motion/end_phase.gd" type="Script" id=11]
 [ext_resource path="res://monster/common_states/dead.gd" type="Script" id=12]
-[ext_resource path="res://levels/wonderland/monsters/krila/sprites/100oj/krila_00_01.png" type="Texture" id=13]
-[ext_resource path="res://levels/wonderland/monsters/krila/sprites/100oj/krila_00_00.png" type="Texture" id=14]
+[ext_resource path="res://levels/wonderland/monsters/krila/sprites/100oj/krila_00_00.png" type="Texture" id=13]
+[ext_resource path="res://levels/wonderland/monsters/krila/sprites/100oj/krila_00_01.png" type="Texture" id=14]
 [ext_resource path="res://levels/wonderland/monsters/krila/sprites/100oj/krila_00_05.png" type="Texture" id=15]
 
 [sub_resource type="Animation" id=1]
 
-resource_name = "attack"
-length = 0.4
+resource_name = "SETUP"
+length = 0.01
 loop = false
 step = 0.1
 tracks/0/type = "value"
@@ -34,30 +34,22 @@ tracks/0/keys = {
 "update": 1,
 "values": [ ExtResource( 13 ) ]
 }
+tracks/1/type = "value"
+tracks/1/path = NodePath("BodyPivot/Sprite:position")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 0,
+"values": [ Vector2( 0, 0 ) ]
+}
 
 [sub_resource type="Animation" id=2]
 
-resource_name = "draw_weapon"
-length = 1.0
-loop = false
-step = 0.1
-tracks/0/type = "value"
-tracks/0/path = NodePath("BodyPivot/Sprite:texture")
-tracks/0/interp = 1
-tracks/0/loop_wrap = true
-tracks/0/imported = false
-tracks/0/enabled = true
-tracks/0/keys = {
-"times": PoolRealArray( 0, 0.5 ),
-"transitions": PoolRealArray( 1, 1 ),
-"update": 1,
-"values": [ ExtResource( 14 ), ExtResource( 15 ) ]
-}
-
-[sub_resource type="Animation" id=3]
-
-resource_name = "spawn"
-length = 3.0
+length = 0.4
 loop = false
 step = 0.1
 tracks/0/type = "value"
@@ -72,6 +64,99 @@ tracks/0/keys = {
 "update": 1,
 "values": [ ExtResource( 14 ) ]
 }
+
+[sub_resource type="Animation" id=3]
+
+length = 1.0
+loop = false
+step = 0.1
+tracks/0/type = "value"
+tracks/0/path = NodePath("BodyPivot/Sprite:texture")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0, 0.5 ),
+"transitions": PoolRealArray( 1, 1 ),
+"update": 1,
+"values": [ ExtResource( 13 ), ExtResource( 15 ) ]
+}
+
+[sub_resource type="Animation" id=9]
+
+resource_name = "idle"
+length = 0.4
+loop = true
+step = 0.1
+tracks/0/type = "value"
+tracks/0/path = NodePath("BodyPivot/Sprite:texture")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 1,
+"values": [ ExtResource( 13 ) ]
+}
+
+[sub_resource type="Animation" id=4]
+
+resource_name = "move_backward"
+length = 0.4
+loop = true
+step = 0.1
+tracks/0/type = "value"
+tracks/0/path = NodePath("BodyPivot/Sprite:texture")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 1,
+"values": [ ExtResource( 13 ) ]
+}
+
+[sub_resource type="Animation" id=5]
+
+resource_name = "move_forward"
+length = 0.4
+loop = true
+step = 0.1
+tracks/0/type = "value"
+tracks/0/path = NodePath("BodyPivot/Sprite:texture")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 1,
+"values": [ ExtResource( 13 ) ]
+}
+
+[sub_resource type="Animation" id=6]
+
+length = 3.0
+loop = false
+step = 0.1
+tracks/0/type = "value"
+tracks/0/path = NodePath("BodyPivot/Sprite:texture")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 1,
+"values": [ ExtResource( 13 ) ]
+}
 tracks/1/type = "value"
 tracks/1/path = NodePath("BodyPivot/Sprite:position")
 tracks/1/interp = 1
@@ -85,9 +170,8 @@ tracks/1/keys = {
 "values": [ Vector2( 0, -1231.99 ), Vector2( 0, 0 ) ]
 }
 
-[sub_resource type="Animation" id=6]
+[sub_resource type="Animation" id=7]
 
-resource_name = "spawn_plushy"
 length = 0.4
 loop = false
 step = 0.1
@@ -104,25 +188,7 @@ tracks/0/keys = {
 "values": [ ExtResource( 15 ) ]
 }
 
-[sub_resource type="Animation" id=4]
-
-length = 0.4
-loop = true
-step = 0.1
-tracks/0/type = "value"
-tracks/0/path = NodePath("BodyPivot/Sprite:texture")
-tracks/0/interp = 1
-tracks/0/loop_wrap = true
-tracks/0/imported = false
-tracks/0/enabled = true
-tracks/0/keys = {
-"times": PoolRealArray( 0 ),
-"transitions": PoolRealArray( 1 ),
-"update": 1,
-"values": [ ExtResource( 14 ) ]
-}
-
-[sub_resource type="CircleShape2D" id=5]
+[sub_resource type="CircleShape2D" id=8]
 
 custom_solver_bias = 0.0
 radius = 34.7888
@@ -154,23 +220,21 @@ duration = 0.1
 
 script = ExtResource( 7 )
 ARRIVE_DISTANCE = 6.0
-DEFAULT_SLOW_RADIUS = 200.0
-DEFAULT_MAX_SPEED = 300.0
-MASS = 1.0
-MAX_SPEED = 600.0
-ROAM_RADIUS = 600.0
 SLOW_RADIUS = 300.0
+MAX_SPEED = 600.0
+MASS = 1.0
+ALWAYS_FACE_PLAYER = true
+ROAM_RADIUS = 600.0
 
 [node name="Roam2" type="Node" parent="States/RoamSequence" index="2"]
 
 script = ExtResource( 7 )
 ARRIVE_DISTANCE = 6.0
-DEFAULT_SLOW_RADIUS = 200.0
-DEFAULT_MAX_SPEED = 300.0
-MASS = 1.0
-MAX_SPEED = 600.0
-ROAM_RADIUS = 600.0
 SLOW_RADIUS = 300.0
+MAX_SPEED = 600.0
+MASS = 1.0
+ALWAYS_FACE_PLAYER = true
+ROAM_RADIUS = 600.0
 
 [node name="Stagger" type="Node" parent="States" index="3"]
 
@@ -184,9 +248,10 @@ script = ExtResource( 9 )
 
 script = ExtResource( 10 )
 ARRIVE_DISTANCE = 6.0
-DEFAULT_SLOW_RADIUS = 200.0
-DEFAULT_MAX_SPEED = 300.0
+SLOW_RADIUS = 200.0
+MAX_SPEED = 300.0
 MASS = 8.0
+ALWAYS_FACE_PLAYER = true
 primary_weapon_path = "res://levels/wonderland/monsters/krila/weapons/Gun.tscn"
 first_plushy_path = "res://levels/wonderland/monsters/charge_plushy/ChargePlushy.tscn"
 second_plushy_path = "res://levels/wonderland/monsters/charge_plushy/ChargePlushy.tscn"
@@ -195,10 +260,10 @@ second_plushy_path = "res://levels/wonderland/monsters/charge_plushy/ChargePlush
 
 script = ExtResource( 11 )
 ARRIVE_DISTANCE = 6.0
-DEFAULT_SLOW_RADIUS = 200.0
-DEFAULT_MAX_SPEED = 300.0
+SLOW_RADIUS = 200.0
+MAX_SPEED = 300.0
 MASS = 8.0
-max_return_speed = 800.0
+ALWAYS_FACE_PLAYER = false
 
 [node name="Dead" type="Node" parent="States" index="7"]
 
@@ -210,11 +275,14 @@ max_health = 3000
 
 [node name="AnimationPlayer" parent="." index="2"]
 
-anims/attack = SubResource( 1 )
-anims/draw_weapon = SubResource( 2 )
-anims/spawn = SubResource( 3 )
-anims/spawn_plushy = SubResource( 6 )
-anims/walk = SubResource( 4 )
+anims/SETUP = SubResource( 1 )
+anims/attack = SubResource( 2 )
+anims/draw_weapon = SubResource( 3 )
+anims/idle = SubResource( 9 )
+anims/move_backward = SubResource( 4 )
+anims/move_forward = SubResource( 5 )
+anims/spawn = SubResource( 6 )
+anims/spawn_plushy = SubResource( 7 )
 
 [node name="CollisionPolygon2D" parent="." index="4"]
 
@@ -224,12 +292,12 @@ disabled = true
 
 [node name="CollisionShape2D" parent="." index="5"]
 
-shape = SubResource( 5 )
+shape = SubResource( 8 )
 disabled = false
 
 [node name="Sprite" type="Sprite" parent="BodyPivot" index="0"]
 
-texture = ExtResource( 15 )
+texture = ExtResource( 13 )
 _sections_unfolded = [ "Transform", "Visibility" ]
 
 [node name="StatusPivot" parent="." index="7"]

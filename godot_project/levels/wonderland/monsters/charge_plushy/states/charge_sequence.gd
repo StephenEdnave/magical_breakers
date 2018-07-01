@@ -1,5 +1,4 @@
 extends "res://utils/states/sequence.gd"
-# States in sequence: Idle --> Roam
 
 
 func update(delta):

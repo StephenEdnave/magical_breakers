@@ -1,4 +1,4 @@
-[gd_scene load_steps=28 format=2]
+[gd_scene load_steps=30 format=2]
 
 [ext_resource path="res://monster/Monster.tscn" type="PackedScene" id=1]
 [ext_resource path="res://levels/wonderland/monsters/charge_plushy/charge_plushy.gd" type="Script" id=2]
@@ -14,16 +14,16 @@
 [ext_resource path="res://monster/common_states/die.gd" type="Script" id=12]
 [ext_resource path="res://monster/common_states/motion/end_phase.gd" type="Script" id=13]
 [ext_resource path="res://monster/common_states/dead.gd" type="Script" id=14]
-[ext_resource path="res://levels/wonderland/monsters/krila/sprites/100oj/krila_00_01.png" type="Texture" id=15]
-[ext_resource path="res://levels/wonderland/monsters/charge_plushy/sprites/100oj/krila_00_05.png" type="Texture" id=16]
-[ext_resource path="res://levels/wonderland/monsters/krila/sprites/100oj/krila_00_00.png" type="Texture" id=17]
-[ext_resource path="res://levels/wonderland/monsters/krila/sprites/100oj/krila_00_05.png" type="Texture" id=18]
-[ext_resource path="res://levels/wonderland/monsters/charge_plushy/sprites/100oj/krila_01_00.png" type="Texture" id=19]
+[ext_resource path="res://levels/wonderland/monsters/charge_plushy/sprites/idle.png" type="Texture" id=15]
+[ext_resource path="res://levels/wonderland/monsters/charge_plushy/sprites/stagger.png" type="Texture" id=16]
+[ext_resource path="res://levels/wonderland/monsters/charge_plushy/sprites/charge_prepare.png" type="Texture" id=17]
+[ext_resource path="res://levels/wonderland/monsters/charge_plushy/sprites/charge_1.png" type="Texture" id=18]
+[ext_resource path="res://levels/wonderland/monsters/charge_plushy/sprites/charge_3.png" type="Texture" id=19]
 
-[sub_resource type="Animation" id=1]
+[sub_resource type="Animation" id=11]
 
-resource_name = "attack"
-length = 0.4
+resource_name = "SETUP"
+length = 0.01
 loop = false
 step = 0.1
 tracks/0/type = "value"
@@ -38,11 +38,23 @@ tracks/0/keys = {
 "update": 1,
 "values": [ ExtResource( 15 ) ]
 }
+tracks/1/type = "value"
+tracks/1/path = NodePath("BodyPivot/Sprite:rotation_degrees")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 0,
+"values": [ 0.0 ]
+}
 
-[sub_resource type="Animation" id=8]
+[sub_resource type="Animation" id=12]
 
 resource_name = "bump"
-length = 0.4
+length = 0.8
 loop = false
 step = 0.1
 tracks/0/type = "value"
@@ -52,13 +64,25 @@ tracks/0/loop_wrap = true
 tracks/0/imported = false
 tracks/0/enabled = true
 tracks/0/keys = {
-"times": PoolRealArray( 0 ),
-"transitions": PoolRealArray( 1 ),
+"times": PoolRealArray( 0, 0.3 ),
+"transitions": PoolRealArray( 1, 1 ),
 "update": 1,
-"values": [ ExtResource( 16 ) ]
+"values": [ ExtResource( 16 ), ExtResource( 17 ) ]
+}
+tracks/1/type = "value"
+tracks/1/path = NodePath("BodyPivot/Sprite:rotation_degrees")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/keys = {
+"times": PoolRealArray( 0, 0.8 ),
+"transitions": PoolRealArray( 0.25, 1 ),
+"update": 0,
+"values": [ 0.0, -720.0 ]
 }
 
-[sub_resource type="Animation" id=6]
+[sub_resource type="Animation" id=13]
 
 resource_name = "charge"
 length = 0.4
@@ -71,13 +95,13 @@ tracks/0/loop_wrap = true
 tracks/0/imported = false
 tracks/0/enabled = true
 tracks/0/keys = {
-"times": PoolRealArray( 0 ),
-"transitions": PoolRealArray( 1 ),
+"times": PoolRealArray( 0, 0.1 ),
+"transitions": PoolRealArray( 1, 1 ),
 "update": 1,
-"values": [ ExtResource( 15 ) ]
+"values": [ ExtResource( 18 ), ExtResource( 19 ) ]
 }
 
-[sub_resource type="Animation" id=7]
+[sub_resource type="Animation" id=14]
 
 resource_name = "charge_prepare"
 length = 0.4
@@ -93,14 +117,14 @@ tracks/0/keys = {
 "times": PoolRealArray( 0 ),
 "transitions": PoolRealArray( 1 ),
 "update": 1,
-"values": [ ExtResource( 16 ) ]
+"values": [ ExtResource( 15 ) ]
 }
 
-[sub_resource type="Animation" id=2]
+[sub_resource type="Animation" id=19]
 
-resource_name = "draw_weapon"
-length = 1.0
-loop = false
+resource_name = "idle"
+length = 0.4
+loop = true
 step = 0.1
 tracks/0/type = "value"
 tracks/0/path = NodePath("BodyPivot/Sprite:texture")
@@ -109,16 +133,53 @@ tracks/0/loop_wrap = true
 tracks/0/imported = false
 tracks/0/enabled = true
 tracks/0/keys = {
-"times": PoolRealArray( 0, 0.5 ),
-"transitions": PoolRealArray( 1, 1 ),
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
 "update": 1,
-"values": [ ExtResource( 17 ), ExtResource( 18 ) ]
+"values": [ ExtResource( 15 ) ]
 }
 
-[sub_resource type="Animation" id=3]
+[sub_resource type="Animation" id=15]
 
-resource_name = "spawn"
-length = 3.0
+resource_name = "move_backward"
+length = 0.4
+loop = true
+step = 0.1
+tracks/0/type = "value"
+tracks/0/path = NodePath("BodyPivot/Sprite:texture")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 1,
+"values": [ ExtResource( 17 ) ]
+}
+
+[sub_resource type="Animation" id=16]
+
+resource_name = "move_forward"
+length = 0.4
+loop = true
+step = 0.1
+tracks/0/type = "value"
+tracks/0/path = NodePath("BodyPivot/Sprite:texture")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 1,
+"values": [ ExtResource( 17 ) ]
+}
+
+[sub_resource type="Animation" id=17]
+
+length = 1.0
 loop = false
 step = 0.1
 tracks/0/type = "value"
@@ -140,14 +201,27 @@ tracks/1/loop_wrap = true
 tracks/1/imported = false
 tracks/1/enabled = true
 tracks/1/keys = {
-"times": PoolRealArray( 0, 3 ),
-"transitions": PoolRealArray( 0.25, 1 ),
+"times": PoolRealArray( 0, 0.3, 1 ),
+"transitions": PoolRealArray( 1, -2.8294, 1 ),
 "update": 0,
-"values": [ Vector2( 0, -1231.99 ), Vector2( 0, 0 ) ]
+"values": [ Vector2( 0, 0 ), Vector2( 0, -200 ), Vector2( 0, 0 ) ]
+}
+tracks/2/type = "value"
+tracks/2/path = NodePath("BodyPivot/Sprite:rotation_degrees")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/keys = {
+"times": PoolRealArray( 0, 1 ),
+"transitions": PoolRealArray( 0.25, 0.25 ),
+"update": 0,
+"values": [ 0.0, 1080.0 ]
 }
 
-[sub_resource type="Animation" id=4]
+[sub_resource type="Animation" id=18]
 
+resource_name = "stagger"
 length = 0.4
 loop = true
 step = 0.1
@@ -161,13 +235,14 @@ tracks/0/keys = {
 "times": PoolRealArray( 0 ),
 "transitions": PoolRealArray( 1 ),
 "update": 1,
-"values": [ ExtResource( 17 ) ]
+"values": [ ExtResource( 16 ) ]
 }
 
-[sub_resource type="CircleShape2D" id=5]
+[sub_resource type="CapsuleShape2D" id=10]
 
 custom_solver_bias = 0.0
-radius = 34.7888
+radius = 34.5064
+height = 56.6287
 
 [node name="ChargePlushy" index="0" instance=ExtResource( 1 )]
 
@@ -177,6 +252,12 @@ _phase = null
 [node name="Spawn" type="Node" parent="States" index="0"]
 
 script = ExtResource( 3 )
+ARRIVE_DISTANCE = 6.0
+SLOW_RADIUS = 50.0
+MAX_SPEED = 1600.0
+MASS = 8.0
+ALWAYS_FACE_PLAYER = true
+DISTANCE = 400.0
 
 [node name="RoamSequence" type="Node" parent="States" index="1"]
 
@@ -187,40 +268,37 @@ SPOT_RANGE = 0.0
 
 script = ExtResource( 5 )
 roam = true
-duration = 1.5
+duration = 0.2
 
 [node name="Roam" type="Node" parent="States/RoamSequence" index="1"]
 
 script = ExtResource( 6 )
 ARRIVE_DISTANCE = 6.0
-DEFAULT_SLOW_RADIUS = 200.0
-DEFAULT_MAX_SPEED = 300.0
-MASS = 8.0
+SLOW_RADIUS = 100.0
 MAX_SPEED = 800.0
-ROAM_RADIUS = 200.0
-SLOW_RADIUS = 0.0
+MASS = 8.0
+ALWAYS_FACE_PLAYER = true
+ROAM_RADIUS = 500.0
 
 [node name="Roam2" type="Node" parent="States/RoamSequence" index="2"]
 
 script = ExtResource( 6 )
 ARRIVE_DISTANCE = 6.0
-DEFAULT_SLOW_RADIUS = 200.0
-DEFAULT_MAX_SPEED = 300.0
-MASS = 8.0
+SLOW_RADIUS = 100.0
 MAX_SPEED = 800.0
-ROAM_RADIUS = 200.0
-SLOW_RADIUS = 0.0
+MASS = 8.0
+ALWAYS_FACE_PLAYER = true
+ROAM_RADIUS = 500.0
 
 [node name="Roam3" type="Node" parent="States/RoamSequence" index="3"]
 
 script = ExtResource( 6 )
 ARRIVE_DISTANCE = 6.0
-DEFAULT_SLOW_RADIUS = 200.0
-DEFAULT_MAX_SPEED = 300.0
-MASS = 8.0
+SLOW_RADIUS = 100.0
 MAX_SPEED = 800.0
-ROAM_RADIUS = 200.0
-SLOW_RADIUS = 0.0
+MASS = 8.0
+ALWAYS_FACE_PLAYER = true
+ROAM_RADIUS = 500.0
 
 [node name="ChargeSequence" type="Node" parent="States" index="2"]
 
@@ -233,8 +311,12 @@ script = ExtResource( 8 )
 [node name="Charge" type="Node" parent="States/ChargeSequence" index="1"]
 
 script = ExtResource( 9 )
-SPEED = 1000.0
-DISTANCE = 1000.0
+ARRIVE_DISTANCE = 6.0
+SLOW_RADIUS = 200.0
+MAX_SPEED = 1600.0
+MASS = 8.0
+ALWAYS_FACE_PLAYER = false
+DISTANCE = 600.0
 
 [node name="Bump" type="Node" parent="States/ChargeSequence" index="2"]
 
@@ -253,10 +335,10 @@ script = ExtResource( 12 )
 
 script = ExtResource( 13 )
 ARRIVE_DISTANCE = 6.0
-DEFAULT_SLOW_RADIUS = 200.0
-DEFAULT_MAX_SPEED = 300.0
+SLOW_RADIUS = 200.0
+MAX_SPEED = 300.0
 MASS = 8.0
-max_return_speed = 800.0
+ALWAYS_FACE_PLAYER = false
 
 [node name="Dead" type="Node" parent="States" index="6"]
 
@@ -268,13 +350,15 @@ max_health = 300
 
 [node name="AnimationPlayer" parent="." index="2"]
 
-anims/attack = SubResource( 1 )
-anims/bump = SubResource( 8 )
-anims/charge = SubResource( 6 )
-anims/charge_prepare = SubResource( 7 )
-anims/draw_weapon = SubResource( 2 )
-anims/spawn = SubResource( 3 )
-anims/walk = SubResource( 4 )
+anims/SETUP = SubResource( 11 )
+anims/bump = SubResource( 12 )
+anims/charge = SubResource( 13 )
+anims/charge_prepare = SubResource( 14 )
+anims/idle = SubResource( 19 )
+anims/move_backward = SubResource( 15 )
+anims/move_forward = SubResource( 16 )
+anims/spawn = SubResource( 17 )
+anims/stagger = SubResource( 18 )
 
 [node name="CollisionPolygon2D" parent="." index="4"]
 
@@ -284,12 +368,13 @@ disabled = true
 
 [node name="CollisionShape2D" parent="." index="5"]
 
-shape = SubResource( 5 )
+shape = SubResource( 10 )
 disabled = false
 
 [node name="Sprite" type="Sprite" parent="BodyPivot" index="0"]
 
-texture = ExtResource( 19 )
+rotation = 18.8496
+texture = ExtResource( 15 )
 _sections_unfolded = [ "Transform", "Visibility" ]
 
 [node name="StatusPivot" parent="." index="7"]

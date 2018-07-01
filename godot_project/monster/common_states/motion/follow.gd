@@ -1,10 +1,10 @@
 extends 'motion.gd'
 
 export(float) var FOLLOW_RANGE = 3000.0
-export(float) var max_follow_speed = 320.0
 export(float) var SHOOT_RANGE = 800.0
 export(float) var SHOOT_TIME = 2.0
 export(float) var DISTANCE_FROM_TARGET = 500.0
+export(float) var STOP_DISTANCE = 6.0
 
 var shoot_timer = null
 var go_to_shoot = false
@@ -18,7 +18,7 @@ func _ready():
 
 # Initialize the state. E.g. change the animation
 func enter():
-	owner.Anim.play("walk")
+	owner.Anim.play("move_forward")
 	go_to_shoot = false
 	shoot_timer.start()
 
@@ -36,9 +36,20 @@ func update(delta):
 		return owner.STATE_IDS.ATTACK
 	
 	target_position = owner.target_position + (owner.global_position - owner.target_position).normalized() * DISTANCE_FROM_TARGET
-	velocity = follow(velocity, target_position, max_follow_speed)
+	if owner.global_position.distance_to(target_position) < STOP_DISTANCE:
+		if not owner.Anim.current_animation == "idle":
+			owner.Anim.play("idle")
+		return
+	velocity = follow(velocity, target_position, MAX_SPEED)
 	move()
-	owner.get_node("BodyPivot").scale.x = look_direction.x
+	
+	if sign(look_direction.x) == sign(velocity.x):
+		if not owner.Anim.current_animation == "move_forward":
+			owner.Anim.play("move_forward")
+	else:
+		if not owner.Anim.current_animation == "move_backward":
+			owner.Anim.play("move_backward")
+	
 	if owner.global_position.distance_to(owner.target_position) > FOLLOW_RANGE:
 		return owner.STATE_IDS.RETURN
 

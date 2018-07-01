@@ -30,6 +30,10 @@ func enter():
 	timer.start()
 
 
+func exit():
+	owner.Anim.play("stagger_exit")
+
+
 func update(delta):
 	if finished:
 		return owner.STATE_IDS.PREVIOUS_STATE

@@ -17,6 +17,7 @@ enum PHASES { PHASE_ONE, PHASE_TWO, PHASE_THREE }
 export (PHASES) var _phase = PHASES.PHASE_ONE
 
 func _ready():
+	Anim.play("SETUP")
 	for state_node in $States.get_children():
 		state_node.connect("finished", self, "_on_state_finished")
 	
@@ -35,10 +36,10 @@ func go_to_state(new_state):
 	states_stack[0].exit()
 	
 	match new_state:
-#		PREVIOUS_STATE:
-#			states_stack.pop_front()
-#		ATTACK, STAGGER:
-#			states_stack.push_front(STATES[new_state])
+		PREVIOUS_STATE:
+			states_stack.pop_front()
+		CHARGE_SEQUENCE, STAGGER:
+			states_stack.push_front(STATES[new_state])
 		_:
 			states_stack[0] = STATES[new_state]
 	states_stack[0].enter()
@@ -63,7 +64,7 @@ func _on_Health_health_changed(new_health, knockback):
 	if new_health == 0:
 		go_to_state(DIE)
 	else:
-		if knockback == true:
+		if knockback == true and states_stack[0] != STATES[CHARGE_SEQUENCE]:
 			go_to_state(STAGGER)
 	._on_Health_health_changed(new_health, knockback)
 

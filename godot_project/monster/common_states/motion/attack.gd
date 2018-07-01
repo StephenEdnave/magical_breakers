@@ -45,26 +45,19 @@ func update(delta):
 
 
 func _on_Weapon_attack_started():
-	finished = false
-	
-	var angle = 0
 	var vector = Vector2()
 	if owner.has_target:
 		vector = owner.target_position - owner.global_position
-	angle = rad2deg(vector.angle())
+	var angle = rad2deg(vector.angle())
 	owner.get_node("WeaponPivot").rotation_degrees = angle
 	
 	var current_weapon = primary_weapon
 	var attack_current = Attacks.attacks[current_weapon.attack_current]
-	if attack_current.has("move_force"):
-		velocity = attack_current.move_force * Vector2(sign(owner.look_direction.x), 0).rotated(deg2rad(angle))
 	if attack_current.has("owner_animation"):
 		owner.Anim.play(attack_current.owner_animation)
+	if attack_current.has("move_force"):
+		velocity = attack_current.move_force * Vector2(sign(owner.look_direction.x), 0).rotated(deg2rad(angle))
 
 
 func _on_Weapon_attack_finished():
 	finished = true
-
-
-func attack():
-	pass
